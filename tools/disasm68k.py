@@ -13,6 +13,7 @@ import sys
 import names
 
 EXTRA_ENTRIES = []  # addresses
+REGIONS = {0x14D044: (0x14E263, "Z80 sound driver: copied to Z80 RAM $0000 by z80_load_driver")}  # start: (end, title)
 
 CC = "T F HI LS CC CS NE EQ VC VS PL MI GE LT GT LE".split()
 STOP = {"BRA", "JMP", "RTS", "RTE", "RTR", "ILLEGAL"}
@@ -379,6 +380,8 @@ def guesses(rom, code):
     """Entry points suggested by pointers: MOVE.L #rom_addr, long tables read with
     MOVE.L tbl(PC,Dn), word-offset tables used by JMP base(PC,Dn), and the bytes
     straight after an RTS/BRA/JMP (routines only reached through RAM pointers).
+    Returns (targets, table) pairs; table is ("l", address, None) or ("w", address, base) for the
+    jump tables, so main() can print them as dc.l / dc.w.
     shortcut: tables run until an entry fails plausible() or 64 entries; LEA-loaded tables are not read."""
     rd = lambda p: int.from_bytes(rom[p:p + 2], "big")
     out, prev = [], None
@@ -387,18 +390,37 @@ def guesses(rom, code):
         base = mnem.split(".")[0]
         for op in ops:
             if op[0] == "imm" and op[2] == "l" and 0x200 <= op[1] < len(rom) and not op[1] & 1:
-                out.append([op[1]])
+                out.append(([op[1]], None))
         if base in ("MOVE", "MOVEA") and mnem.endswith(".L") and ops[0][0] == "pcx":
             t = ops[0][1]
-            out.append([int.from_bytes(rom[t + 4 * i:t + 4 * i + 4], "big") for i in range(64) if t + 4 * i + 4 <= len(rom)])
+            out.append(([int.from_bytes(rom[t + 4 * i:t + 4 * i + 4], "big") for i in range(64) if t + 4 * i + 4 <= len(rom)],
+                        ("l", t, None)))
         if base == "JMP" and ops[0][0] == "pcx" and prev and prev[0] == "MOVE.W" and prev[1][0][0] == "pcx":
             t, b = prev[1][0][1], ops[0][1]
-            out.append([(b + sx(rd(t + 2 * i), 16)) & 0xFFFFFF for i in range(64) if t + 2 * i + 2 <= len(rom)])
-            out.append([(b + sx(rd(t - 2 * i), 16)) & 0xFFFFFF for i in range(1, 64) if t - 2 * i >= 0])
+            out.append(([(b + sx(rd(t + 2 * i), 16)) & 0xFFFFFF for i in range(64) if t + 2 * i + 2 <= len(rom)], ("w", t, b)))
+            out.append(([(b + sx(rd(t - 2 * i), 16)) & 0xFFFFFF for i in range(1, 64) if t - 2 * i >= 0], None))
         if base in STOP and a + n < len(rom):
-            out.append([a + n])
+            out.append(([a + n], None))
         prev = (mnem, ops)
     return out
+
+
+def typed_data(rom, code, used, found):
+    """{address: (size, value, target)} for the words to print as dc.l / dc.w: the vector table, and
+    each jump table's entries up to the first one that isn't traced code."""
+    typed = {4 * i: (4, int.from_bytes(rom[4 * i:4 * i + 4], "big"), None) for i in range(64)}
+    for _, tab in found:
+        if not tab:
+            continue
+        kind, t, b = tab
+        size = 4 if kind == "l" else 2
+        for p in range(t, min(t + 64 * size, len(rom) - size + 1), size):
+            v = int.from_bytes(rom[p:p + size], "big")
+            tgt = v if kind == "l" else (b + sx(v, 16)) & 0xFFFFFF
+            if any(used[p:p + size]) or tgt not in code:
+                break
+            typed[p] = (size, v, tgt if kind == "w" else None)
+    return typed
 
 
 def main(rom_path, outdir):
@@ -409,7 +431,7 @@ def main(rom_path, outdir):
     trace(rom, entries, st)
     while True:  # grow coverage from pointers until nothing new turns up
         found = 0
-        for seq in guesses(rom, code):
+        for seq, _ in guesses(rom, code):
             for t in seq:
                 if t in code:
                     continue
@@ -424,6 +446,7 @@ def main(rom_path, outdir):
     for t in code_names:
         assert t < len(rom) and (t in code or not used[t]), f"names.txt: ${t:06X} is inside an instruction"
     labels = {t for t in jumps | refs | set(entries) if t in code or not used[t]} | set(code_names)
+    typed = typed_data(rom, code, used, guesses(rom, code))
 
     os.makedirs(outdir, exist_ok=True)
     a, chunk = 0, 0x10000
@@ -431,6 +454,10 @@ def main(rom_path, outdir):
         start, end = a, min(a - a % chunk + chunk, len(rom))
         lines = [f"org ${a:06X}", ""]
         while a < end:
+            if a in (end for end, _ in REGIONS.values()):
+                lines += ["; ---- end of region ----", ""]
+            if a in REGIONS:
+                lines += ["", f"; ---- {REGIONS[a][1]} (${a:06X}-${REGIONS[a][0] - 1:06X}) ----"]
             if a in labels:
                 lines.append(f"{code_names.get(a, 'L_%06X' % a)}:")
             if a in code:
@@ -439,9 +466,18 @@ def main(rom_path, outdir):
                 raw = " ".join(f"{rom[i] << 8 | rom[i + 1]:04X}" for i in range(a, a + n, 2))
                 lines.append(f"    {text:<40}; ${a:06X}  {raw:<20} {ram_notes(ops, ram)}".rstrip())
                 a += n
+            elif a in typed:
+                size, v, tgt = typed[a]
+                lab = lambda t: code_names.get(t, f"L_{t:06X}") if t in labels else None
+                if size == 4:
+                    lines.append(f"    dc.l {lab(v) or '$%08X' % v:<59}; ${a:06X}")
+                else:
+                    lines.append(f"    dc.w ${v:04X}{'':<54}; ${a:06X}  -> {lab(tgt) or '$%06X' % tgt}")
+                a += size
             else:
                 stop = a + 1
-                while stop < len(rom) and stop not in code and stop not in labels and stop - a < 16:
+                bounds = set(REGIONS) | {end for end, _ in REGIONS.values()}
+                while stop < len(rom) and stop not in code and stop not in labels and stop not in typed                         and stop not in bounds and stop - a < 16:
                     stop += 1
                 lines.append(f"    dc.b {','.join('$%02X' % b for b in rom[a:stop]):<64}; ${a:06X}")
                 a = stop
