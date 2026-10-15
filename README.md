@@ -89,7 +89,10 @@ cycling (`$C20E11`) and pause on Start (`$C20831`). The other reads are "press a
 button" waits and the `$D108DB` list menu. There are no button-sequence tables or held
 combos, and no writes to the level, lives or money variables depend on input.
 
-Genesis lines show the address and the raw words. Unreached bytes are `dc.b`. The code sits
+Genesis lines show the address and the raw words. Unreached bytes are `dc.b`. The vector table and
+the jump tables the tracer followed are shown as `dc.l` (pointers) and `dc.w` (offsets, with their
+targets in the comment). The Z80 sound driver, `$14D044`–`$14E262`, is marked as a region; the
+68000 copies it into Z80 RAM at start-up (`z80_load_driver`). The code sits
 in `$000000`–`$01EB2E`, and about 55% of that is traced (4.4% of the ROM); the rest of that range
 is mostly tables. Above it the ROM is graphics and level data. Guessed entry points must decode cleanly along every
 path and avoid instructions only data turns into (`rare()` in `tools/disasm68k.py`); add

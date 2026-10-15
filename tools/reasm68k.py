@@ -212,6 +212,10 @@ def assemble(path, out, start):
             else:
                 if text.startswith("dc.b "):
                     b = bytes(int(v[1:], 16) for v in text[5:].split(","))
+                elif text.startswith(("dc.w ", "dc.l ")):  # $hex or L_xxxxxx
+                    size = 2 if text[3] == "w" else 4
+                    b = b"".join(int(v.strip()[2 if v.strip().startswith("L_") else 1:], 16).to_bytes(size, "big")
+                                 for v in text[5:].split(","))
                 else:
                     mnem, _, ops = text.partition(" ")
                     b = encode(mnem, ops.strip(), pc)

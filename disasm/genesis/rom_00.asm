@@ -1,23 +1,71 @@
 org $000000
 
 L_000000:
-    dc.b $00,$FF,$FF,$8E,$00,$00,$02,$00,$00,$00,$09,$5A,$00,$00,$09,$5A ; $000000
-    dc.b $00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A ; $000010
+    dc.l $00FFFF8E                                                  ; $000000
+    dc.l reset                                                      ; $000004
+    dc.l unused_interrupt                                           ; $000008
+    dc.l unused_interrupt                                           ; $00000C
+    dc.l unused_interrupt                                           ; $000010
+    dc.l unused_interrupt                                           ; $000014
+    dc.l unused_interrupt                                           ; $000018
+    dc.l unused_interrupt                                           ; $00001C
 L_000020:
-    dc.b $00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A ; $000020
-    dc.b $00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A ; $000030
-    dc.b $00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A ; $000040
-    dc.b $00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A ; $000050
-    dc.b $00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A ; $000060
-    dc.b $00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5C,$00,$00,$09,$5A ; $000070
-    dc.b $00,$00,$09,$5A,$00,$00,$04,$06,$00,$00,$09,$5A,$00,$00,$09,$5A ; $000080
-    dc.b $00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A ; $000090
-    dc.b $00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A ; $0000A0
-    dc.b $00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A ; $0000B0
-    dc.b $00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A ; $0000C0
-    dc.b $00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A ; $0000D0
-    dc.b $00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A ; $0000E0
-    dc.b $00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A,$00,$00,$09,$5A ; $0000F0
+    dc.l unused_interrupt                                           ; $000020
+    dc.l unused_interrupt                                           ; $000024
+    dc.l unused_interrupt                                           ; $000028
+    dc.l unused_interrupt                                           ; $00002C
+    dc.l unused_interrupt                                           ; $000030
+    dc.l unused_interrupt                                           ; $000034
+    dc.l unused_interrupt                                           ; $000038
+    dc.l unused_interrupt                                           ; $00003C
+    dc.l unused_interrupt                                           ; $000040
+    dc.l unused_interrupt                                           ; $000044
+    dc.l unused_interrupt                                           ; $000048
+    dc.l unused_interrupt                                           ; $00004C
+    dc.l unused_interrupt                                           ; $000050
+    dc.l unused_interrupt                                           ; $000054
+    dc.l unused_interrupt                                           ; $000058
+    dc.l unused_interrupt                                           ; $00005C
+    dc.l unused_interrupt                                           ; $000060
+    dc.l unused_interrupt                                           ; $000064
+    dc.l unused_interrupt                                           ; $000068
+    dc.l unused_interrupt                                           ; $00006C
+    dc.l unused_interrupt                                           ; $000070
+    dc.l unused_interrupt                                           ; $000074
+    dc.l vblank                                                     ; $000078
+    dc.l unused_interrupt                                           ; $00007C
+    dc.l unused_interrupt                                           ; $000080
+    dc.l trap1                                                      ; $000084
+    dc.l unused_interrupt                                           ; $000088
+    dc.l unused_interrupt                                           ; $00008C
+    dc.l unused_interrupt                                           ; $000090
+    dc.l unused_interrupt                                           ; $000094
+    dc.l unused_interrupt                                           ; $000098
+    dc.l unused_interrupt                                           ; $00009C
+    dc.l unused_interrupt                                           ; $0000A0
+    dc.l unused_interrupt                                           ; $0000A4
+    dc.l unused_interrupt                                           ; $0000A8
+    dc.l unused_interrupt                                           ; $0000AC
+    dc.l unused_interrupt                                           ; $0000B0
+    dc.l unused_interrupt                                           ; $0000B4
+    dc.l unused_interrupt                                           ; $0000B8
+    dc.l unused_interrupt                                           ; $0000BC
+    dc.l unused_interrupt                                           ; $0000C0
+    dc.l unused_interrupt                                           ; $0000C4
+    dc.l unused_interrupt                                           ; $0000C8
+    dc.l unused_interrupt                                           ; $0000CC
+    dc.l unused_interrupt                                           ; $0000D0
+    dc.l unused_interrupt                                           ; $0000D4
+    dc.l unused_interrupt                                           ; $0000D8
+    dc.l unused_interrupt                                           ; $0000DC
+    dc.l unused_interrupt                                           ; $0000E0
+    dc.l unused_interrupt                                           ; $0000E4
+    dc.l unused_interrupt                                           ; $0000E8
+    dc.l unused_interrupt                                           ; $0000EC
+    dc.l unused_interrupt                                           ; $0000F0
+    dc.l unused_interrupt                                           ; $0000F4
+    dc.l unused_interrupt                                           ; $0000F8
+    dc.l unused_interrupt                                           ; $0000FC
     dc.b $53,$45,$47,$41,$20,$47,$45,$4E,$45,$53,$49,$53,$20,$20,$20,$20 ; $000100
     dc.b $28,$43,$29,$54,$2D,$31,$32,$34,$31,$39,$39,$33,$2E,$53,$45,$50 ; $000110
     dc.b $53,$4F,$4C,$44,$49,$45,$52,$53,$20,$4F,$46,$20,$46,$4F,$52,$54 ; $000120
@@ -8804,9 +8852,15 @@ L_008CCA:
     MOVE.W (A7)+,D6                         ; $008CD0  3C1F
     RTS                                     ; $008CD2  4E75
 L_008CD4:
-    dc.b $00,$00,$39,$BA,$00,$00,$3A,$7A,$00,$00,$3B,$62,$00,$00,$3A,$7A ; $008CD4
-    dc.b $00,$00,$39,$EC,$00,$00,$3A,$C2,$00,$00,$3A,$FA,$00,$00,$3B,$62 ; $008CE4
-    dc.b $00,$00,$39,$BA                                                 ; $008CF4
+    dc.l L_0039BA                                                   ; $008CD4
+    dc.l L_003A7A                                                   ; $008CD8
+    dc.l L_003B62                                                   ; $008CDC
+    dc.l L_003A7A                                                   ; $008CE0
+    dc.l L_0039EC                                                   ; $008CE4
+    dc.l L_003AC2                                                   ; $008CE8
+    dc.l L_003AFA                                                   ; $008CEC
+    dc.l L_003B62                                                   ; $008CF0
+    dc.l L_0039BA                                                   ; $008CF4
 L_008CF8:
     CLR.W $372E(A5)                         ; $008CF8  426D 372E
     LEA $2D06(A5),A0                        ; $008CFC  41ED 2D06
@@ -11375,17 +11429,50 @@ L_00ACAC:
     MOVE.L L_00ACB6(PC,D0.W),-(A7)          ; $00ACB0  2F3B 0004
     RTS                                     ; $00ACB4  4E75
 L_00ACB6:
-    dc.b $00,$00,$AD,$66,$00,$00,$AD,$68,$00,$00,$AD,$6A,$00,$00,$AD,$6C ; $00ACB6
-    dc.b $00,$00,$AD,$6E,$00,$00,$AD,$70,$00,$00,$AD,$72,$00,$00,$AD,$74 ; $00ACC6
-    dc.b $00,$00,$AD,$76,$00,$00,$AD,$78,$00,$00,$AD,$7A,$00,$00,$AD,$7C ; $00ACD6
-    dc.b $00,$00,$AD,$7E,$00,$00,$AD,$80,$00,$00,$AD,$82,$00,$00,$AD,$84 ; $00ACE6
-    dc.b $00,$00,$AD,$86,$00,$00,$AD,$88,$00,$00,$AD,$8A,$00,$00,$AD,$8C ; $00ACF6
-    dc.b $00,$00,$AD,$8E,$00,$00,$AD,$90,$00,$00,$AD,$92,$00,$00,$AD,$94 ; $00AD06
-    dc.b $00,$00,$AD,$9C,$00,$00,$AD,$9E,$00,$00,$AD,$E4,$00,$00,$AD,$E6 ; $00AD16
-    dc.b $00,$00,$AD,$E8,$00,$00,$AE,$04,$00,$00,$AE,$0C,$00,$00,$AE,$0E ; $00AD26
-    dc.b $00,$00,$AE,$16,$00,$00,$AE,$18,$00,$00,$AE,$1A,$00,$00,$AE,$1C ; $00AD36
-    dc.b $00,$00,$AE,$1E,$00,$00,$AE,$20,$00,$00,$AE,$22,$00,$00,$AE,$56 ; $00AD46
-    dc.b $00,$00,$AE,$22,$00,$00,$AE,$58,$00,$00,$AE,$8A,$00,$00,$AE,$E8 ; $00AD56
+    dc.l L_00AD66                                                   ; $00ACB6
+    dc.l L_00AD68                                                   ; $00ACBA
+    dc.l L_00AD6A                                                   ; $00ACBE
+    dc.l L_00AD6C                                                   ; $00ACC2
+    dc.l L_00AD6E                                                   ; $00ACC6
+    dc.l L_00AD70                                                   ; $00ACCA
+    dc.l L_00AD72                                                   ; $00ACCE
+    dc.l L_00AD74                                                   ; $00ACD2
+    dc.l L_00AD76                                                   ; $00ACD6
+    dc.l L_00AD78                                                   ; $00ACDA
+    dc.l L_00AD7A                                                   ; $00ACDE
+    dc.l L_00AD7C                                                   ; $00ACE2
+    dc.l L_00AD7E                                                   ; $00ACE6
+    dc.l L_00AD80                                                   ; $00ACEA
+    dc.l L_00AD82                                                   ; $00ACEE
+    dc.l L_00AD84                                                   ; $00ACF2
+    dc.l L_00AD86                                                   ; $00ACF6
+    dc.l L_00AD88                                                   ; $00ACFA
+    dc.l L_00AD8A                                                   ; $00ACFE
+    dc.l L_00AD8C                                                   ; $00AD02
+    dc.l L_00AD8E                                                   ; $00AD06
+    dc.l L_00AD90                                                   ; $00AD0A
+    dc.l L_00AD92                                                   ; $00AD0E
+    dc.l L_00AD94                                                   ; $00AD12
+    dc.l L_00AD9C                                                   ; $00AD16
+    dc.l L_00AD9E                                                   ; $00AD1A
+    dc.l L_00ADE4                                                   ; $00AD1E
+    dc.l L_00ADE6                                                   ; $00AD22
+    dc.l L_00ADE8                                                   ; $00AD26
+    dc.l L_00AE04                                                   ; $00AD2A
+    dc.l L_00AE0C                                                   ; $00AD2E
+    dc.l L_00AE0E                                                   ; $00AD32
+    dc.l L_00AE16                                                   ; $00AD36
+    dc.l L_00AE18                                                   ; $00AD3A
+    dc.l L_00AE1A                                                   ; $00AD3E
+    dc.l L_00AE1C                                                   ; $00AD42
+    dc.l L_00AE1E                                                   ; $00AD46
+    dc.l L_00AE20                                                   ; $00AD4A
+    dc.l L_00AE22                                                   ; $00AD4E
+    dc.l L_00AE56                                                   ; $00AD52
+    dc.l L_00AE22                                                   ; $00AD56
+    dc.l L_00AE58                                                   ; $00AD5A
+    dc.l L_00AE8A                                                   ; $00AD5E
+    dc.l L_00AEE8                                                   ; $00AD62
 L_00AD66:
     RTS                                     ; $00AD66  4E75
 L_00AD68:
@@ -12609,10 +12696,23 @@ L_00C12A:
     MOVE.W L_00C134(PC,D0.W),D0             ; $00C12C  303B 0006
     JMP L_00C134(PC,D0.W)                   ; $00C130  4EFB 0002
 L_00C134:
-    dc.b $00,$20,$02,$60,$03,$00,$03,$96,$07,$D4,$08,$6A                 ; $00C134
+    dc.w $0020                                                      ; $00C134  -> L_00C154
+    dc.w $0260                                                      ; $00C136  -> L_00C394
+    dc.w $0300                                                      ; $00C138  -> L_00C434
+    dc.w $0396                                                      ; $00C13A  -> L_00C4CA
+    dc.w $07D4                                                      ; $00C13C  -> L_00C908
+    dc.w $086A                                                      ; $00C13E  -> L_00C99E
 L_00C140:
-    dc.b $08,$12,$08,$50,$08,$84,$01,$48,$03,$2E,$08,$D6,$00,$7E,$09,$50 ; $00C140
-    dc.b $00,$22,$00,$20                                                 ; $00C150
+    dc.w $0812                                                      ; $00C140  -> L_00C946
+    dc.w $0850                                                      ; $00C142  -> L_00C984
+    dc.w $0884                                                      ; $00C144  -> L_00C9B8
+    dc.w $0148                                                      ; $00C146  -> L_00C27C
+    dc.w $032E                                                      ; $00C148  -> L_00C462
+    dc.w $08D6                                                      ; $00C14A  -> L_00CA0A
+    dc.w $007E                                                      ; $00C14C  -> L_00C1B2
+    dc.w $0950                                                      ; $00C14E  -> L_00CA84
+    dc.w $0022                                                      ; $00C150  -> L_00C156
+    dc.w $0020                                                      ; $00C152  -> L_00C154
 L_00C154:
     RTS                                     ; $00C154  4E75
 L_00C156:
@@ -14077,10 +14177,22 @@ L_00D296:
     MOVEQ #$00,D5                           ; $00D2C0  7A00
     JMP (A1)                                ; $00D2C2  4ED1
 L_00D2C4:
-    dc.b $00,$00,$D3,$04,$00,$00,$D3,$06,$00,$00,$D3,$CA,$00,$00,$D3,$04 ; $00D2C4
-    dc.b $00,$00,$D4,$66,$00,$00,$D5,$0C,$00,$00,$D5,$0C,$00,$00,$D3,$04 ; $00D2D4
-    dc.b $00,$00,$D4,$B4,$00,$00,$D5,$0C,$00,$00,$D5,$0C,$00,$00,$D3,$04 ; $00D2E4
-    dc.b $00,$00,$D3,$04,$00,$00,$D3,$04,$00,$00,$D3,$04,$00,$00,$D3,$04 ; $00D2F4
+    dc.l L_00D304                                                   ; $00D2C4
+    dc.l L_00D306                                                   ; $00D2C8
+    dc.l L_00D3CA                                                   ; $00D2CC
+    dc.l L_00D304                                                   ; $00D2D0
+    dc.l L_00D466                                                   ; $00D2D4
+    dc.l L_00D50C                                                   ; $00D2D8
+    dc.l L_00D50C                                                   ; $00D2DC
+    dc.l L_00D304                                                   ; $00D2E0
+    dc.l L_00D4B4                                                   ; $00D2E4
+    dc.l L_00D50C                                                   ; $00D2E8
+    dc.l L_00D50C                                                   ; $00D2EC
+    dc.l L_00D304                                                   ; $00D2F0
+    dc.l L_00D304                                                   ; $00D2F4
+    dc.l L_00D304                                                   ; $00D2F8
+    dc.l L_00D304                                                   ; $00D2FC
+    dc.l L_00D304                                                   ; $00D300
 L_00D304:
     RTS                                     ; $00D304  4E75
 L_00D306:
@@ -17225,8 +17337,13 @@ L_00F64C:
 L_00F658:
     RTS                                     ; $00F658  4E75
 L_00F65A:
-    dc.b $00,$00,$F6,$58,$00,$00,$F6,$76,$00,$00,$F6,$84,$00,$00,$F6,$92 ; $00F65A
-    dc.b $00,$00,$F6,$A0,$00,$00,$F6,$AE,$00,$00,$F6,$BC                 ; $00F66A
+    dc.l L_00F658                                                   ; $00F65A
+    dc.l L_00F676                                                   ; $00F65E
+    dc.l L_00F684                                                   ; $00F662
+    dc.l L_00F692                                                   ; $00F666
+    dc.l L_00F6A0                                                   ; $00F66A
+    dc.l L_00F6AE                                                   ; $00F66E
+    dc.l L_00F6BC                                                   ; $00F672
 L_00F676:
     BCLR #$05,$45(A6)                       ; $00F676  08AE 0005 0045
     MOVE.B $6DF(A5),D0                      ; $00F67C  102D 06DF            p2_control
