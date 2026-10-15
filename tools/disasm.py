@@ -5,8 +5,9 @@ Traces code from the header vectors, tracking REP/SEP for M/X widths, and
 writes one .asm listing per bank (32 KB LoROM, 64 KB HiROM). Unreached bytes are emitted as db.
 Widths after a JSR/JSL are the ones the callee returns with (when all its exits
 agree), and PLP restores the widths saved by the matching PHP.
-JMP/JSR (abs,X) jump tables are followed (see jump_table). shortcut: other indirect
-jumps are not; add entry points to EXTRA_ENTRIES to grow coverage.
+JMP/JSR (abs,X) jump tables are followed (see jump_table). Other entry points are guessed
+from pointers (see guesses) and kept only if every path decodes cleanly (see plausible);
+add more to EXTRA_ENTRIES to grow coverage.
 """
 import os
 import sys
@@ -159,11 +160,8 @@ def jump_table(rom, table, mask, stride, code, data):
     return targets
 
 
-def trace(rom, entries):
-    code = {}      # offset -> (size, m, x)
-    labels = set()  # offsets
-    data = set()    # offsets of jump-table words, never traced as code
-    memo = {}
+def trace(rom, entries, st=None):
+    code, labels, data, memo = st or ({}, set(), set(), {})  # offset -> (size, m, x); label offsets; jump-table words
     work = [(a, m, x, ()) for a, m, x in entries]
     while work:
         addr, m, x, stk = work.pop()
@@ -201,7 +199,75 @@ def trace(rom, entries):
             if name in STOP:
                 break
             addr = nxt
-    return code, labels
+    return code, labels, data, memo
+
+
+def inside(code, off):
+    """Is off in the middle of a known instruction?"""
+    return any(off - k in code and code[off - k][0] > k for k in (1, 2, 3))
+
+
+def plausible(rom, start, m, x, st, rare, limit=3000):
+    """Would tracing from start with these widths decode cleanly: no opcode the traced code
+    never uses (BRK/COP/WDM/STP and friends), no landing inside known code or jump tables,
+    no running off ROM? Follows branches and calls like trace(). Used to vet guesses."""
+    code, _, data, memo = st
+    seen, work = set(), [(start, m, x, ())]
+    while work:
+        addr, m, x, stk = work.pop()
+        while True:
+            off = to_off(addr)
+            if off is None or off >= len(rom) or off in data or len(seen) > limit:
+                return False
+            if off in code or (off, m, x) in seen:
+                break
+            name, mode = OPS[rom[off]]
+            n = size_of(mode, m, x)
+            if rom[off] in rare or inside(code, off) or any(off + i in code or off + i in data for i in range(1, n)):
+                return False
+            seen.add((off, m, x))
+            arg = int.from_bytes(rom[off + 1:off + n], "little")
+            tgt = target(name, mode, addr, n, arg)
+            if tgt is not None:
+                if to_off(tgt) is None and name in ("JSL", "JML") and tgt >> 16 & 0x7F < 0x7E:
+                    return False
+                if to_off(tgt) is not None:
+                    work.append((tgt, m, x, () if name in ("JSR", "JSL") else stk))
+            if name in ("JSR", "JSL") and tgt is not None:
+                m, x = returns(rom, tgt, m, x, memo) or (m, x)
+            else:
+                m, x, stk = widths(name, arg, m, x, stk)
+            if name in STOP:
+                break
+            addr = (addr & 0xFF0000) | ((addr + n) & 0xFFFF)
+    return True
+
+
+def guesses(rom, code):
+    """Entry points suggested by pointers, as (snes_addr, m, x) using the widths at the
+    referencing site: long pointers built by LDA #lo / STA a ... LDA #bank / STA a+2 (the
+    object script pointers at $26/$2A), PEA #bank / PEA #lo pairs, and the bytes straight
+    after an RTS/RTL/JMP/JML/BRA/BRL (routines only reached through RAM pointers).
+    shortcut: the lo/bank stores must be within 8 instructions of each other."""
+    out, stores, prev, pea = [], {}, None, None
+    for i, off in enumerate(sorted(code)):
+        n, m, x = code[off]
+        name, mode = OPS[rom[off]]
+        arg = int.from_bytes(rom[off + 1:off + n], "little")
+        if name == "STA" and prev and prev[0] == "LDA" and prev[1] == "immM":
+            key = (mode, arg)
+            stores[key] = (prev[2], i)
+            lo = stores.get((mode, arg - 2))
+            if lo and i - lo[1] <= 8 and to_off(prev[2] << 16) is not None:
+                out.append((prev[2] << 16 | lo[0], m, x))
+        if name == "PEA":
+            if pea is not None and to_off(pea << 16 | arg) is not None and pea < 0x100:
+                out.append((pea << 16 | arg, m, x))
+            pea = arg
+        if name in STOP and name not in ("RTI", "STP"):
+            out.append((to_addr(off + n), m, x))
+        prev = (name, mode, arg)
+    return out
 
 
 def operand(rom, off, addr, name, mode, n, m, x, labels):
@@ -230,7 +296,22 @@ def main(rom_path, outdir):
     vec = lambda o: int.from_bytes(rom[h + o:h + o + 2], "little")
     entries = {vec(0x24): "COP", vec(0x26): "BRK", vec(0x2E): "IRQ", vec(0x2A): "NMI", vec(0x3C): "RESET"}  # RESET last wins shared addresses
     starts = [(0x800000 | a, True, True) for a in entries if a >= 0x8000] + EXTRA_ENTRIES
-    code, labels = trace(rom, starts)
+    st = trace(rom, starts)
+    code, labels = st[0], st[1]
+    rare = set(range(256)) - {rom[o] for o in code}  # opcodes the vector-reached code never uses
+    while True:  # grow coverage from pointers until nothing new turns up
+        found = 0
+        for a, m, x in guesses(rom, code):
+            if to_off(a) in code:
+                continue
+            for mx in dict.fromkeys([(m, x), (True, True), (False, False), (True, False), (False, True)]):
+                if plausible(rom, a, *mx, st, rare):
+                    labels.add(to_off(a))
+                    trace(rom, [(a, *mx)], st)
+                    found += 1
+                    break
+        if not found:
+            break
     labels |= {to_off(a) for a, _, _ in starts}
     names = {to_off(0x800000 | a): n for a, n in entries.items() if a >= 0x8000}
 

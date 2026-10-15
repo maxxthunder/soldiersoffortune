@@ -1295,8 +1295,19 @@ L_C30A08:
     DEY                     ; $C30A0A  88           MX
     BNE L_C309FA            ; $C30A0B  D0 ED        MX
     RTL                     ; $C30A0D  6B           MX
-    db $AF,$12,$42,$00,$89,$01,$00,$F0,$F7,$AF,$12,$42,$00,$89,$01,$00 ; $C30A0E
-    db $D0,$F7,$AF,$18,$42,$00,$0F,$1A,$42,$00,$89,$C0,$D0,$F0,$E1,$6B ; $C30A1E
+L_C30A0E:
+    LDA $004212             ; $C30A0E  AF 12 42 00  MX
+    BIT #$0001              ; $C30A12  89 01 00     MX
+    BEQ L_C30A0E            ; $C30A15  F0 F7        MX
+L_C30A17:
+    LDA $004212             ; $C30A17  AF 12 42 00  MX
+    BIT #$0001              ; $C30A1B  89 01 00     MX
+    BNE L_C30A17            ; $C30A1E  D0 F7        MX
+    LDA $004218             ; $C30A20  AF 18 42 00  MX
+    ORA $00421A             ; $C30A24  0F 1A 42 00  MX
+    BIT #$D0C0              ; $C30A28  89 C0 D0     MX
+    BEQ L_C30A0E            ; $C30A2B  F0 E1        MX
+    RTL                     ; $C30A2D  6B           MX
 L_C30A2E:
     LDA $004212             ; $C30A2E  AF 12 42 00  MX
     BIT #$0001              ; $C30A32  89 01 00     MX
@@ -1341,7 +1352,15 @@ L_C30A81:
     PLA                     ; $C30A81  68           MX
     SEP #$80                ; $C30A82  E2 80        MX
     RTL                     ; $C30A84  6B           MX
-    db $A0,$00,$00,$A9,$02,$00,$97,$DA,$A5,$DA,$1A,$1A,$85,$DA,$6B     ; $C30A85
+L_C30A85:
+    LDY #$0000              ; $C30A85  A0 00 00     MX
+    LDA #$0002              ; $C30A88  A9 02 00     MX
+    STA [$DA],Y             ; $C30A8B  97 DA        MX
+    LDA $DA                 ; $C30A8D  A5 DA        MX
+    INC                     ; $C30A8F  1A           MX
+    INC                     ; $C30A90  1A           MX
+    STA $DA                 ; $C30A91  85 DA        MX
+    RTL                     ; $C30A93  6B           MX
 L_C30A94:
     LDY #$0004              ; $C30A94  A0 04 00     MX
     LDA [$DA],Y             ; $C30A97  B7 DA        MX
