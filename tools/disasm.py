@@ -1,0 +1,181 @@
+"""Recursive-descent 65816 disassembler for LoROM SNES images.
+
+Usage: python tools/disasm.py <rom.sfc> <outdir>
+Traces code from the header vectors, tracking REP/SEP for M/X widths, and
+writes one .asm listing per 32 KB bank. Unreached bytes are emitted as db.
+shortcut: indirect jumps (JMP (abs,X) tables etc.) are not followed and flags
+after JSR/PLP are assumed unchanged; add entry points to EXTRA_ENTRIES to grow coverage.
+"""
+import os
+import sys
+
+EXTRA_ENTRIES = []  # (snes_addr, m, x)
+
+OPS = """
+BRK imm8|ORA dpix|COP imm8|ORA sr|TSB dp|ORA dp|ASL dp|ORA dpil|PHP imp|ORA immM|ASL imp|PHD imp|TSB abs|ORA abs|ASL abs|ORA long
+BPL rel|ORA dpiy|ORA dpi|ORA sriy|TRB dp|ORA dpx|ASL dpx|ORA dpily|CLC imp|ORA absy|INC imp|TCS imp|TRB abs|ORA absx|ASL absx|ORA longx
+JSR abs|AND dpix|JSL long|AND sr|BIT dp|AND dp|ROL dp|AND dpil|PLP imp|AND immM|ROL imp|PLD imp|BIT abs|AND abs|ROL abs|AND long
+BMI rel|AND dpiy|AND dpi|AND sriy|BIT dpx|AND dpx|ROL dpx|AND dpily|SEC imp|AND absy|DEC imp|TSC imp|BIT absx|AND absx|ROL absx|AND longx
+RTI imp|EOR dpix|WDM imm8|EOR sr|MVP bm|EOR dp|LSR dp|EOR dpil|PHA imp|EOR immM|LSR imp|PHK imp|JMP abs|EOR abs|LSR abs|EOR long
+BVC rel|EOR dpiy|EOR dpi|EOR sriy|MVN bm|EOR dpx|LSR dpx|EOR dpily|CLI imp|EOR absy|PHY imp|TCD imp|JML long|EOR absx|LSR absx|EOR longx
+RTS imp|ADC dpix|PER rel16|ADC sr|STZ dp|ADC dp|ROR dp|ADC dpil|PLA imp|ADC immM|ROR imp|RTL imp|JMP absi|ADC abs|ROR abs|ADC long
+BVS rel|ADC dpiy|ADC dpi|ADC sriy|STZ dpx|ADC dpx|ROR dpx|ADC dpily|SEI imp|ADC absy|PLY imp|TDC imp|JMP absix|ADC absx|ROR absx|ADC longx
+BRA rel|STA dpix|BRL rel16|STA sr|STY dp|STA dp|STX dp|STA dpil|DEY imp|BIT immM|TXA imp|PHB imp|STY abs|STA abs|STX abs|STA long
+BCC rel|STA dpiy|STA dpi|STA sriy|STY dpx|STA dpx|STX dpy|STA dpily|TYA imp|STA absy|TXS imp|TXY imp|STZ abs|STA absx|STZ absx|STA longx
+LDY immX|LDA dpix|LDX immX|LDA sr|LDY dp|LDA dp|LDX dp|LDA dpil|TAY imp|LDA immM|TAX imp|PLB imp|LDY abs|LDA abs|LDX abs|LDA long
+BCS rel|LDA dpiy|LDA dpi|LDA sriy|LDY dpx|LDA dpx|LDX dpy|LDA dpily|CLV imp|LDA absy|TSX imp|TYX imp|LDY absx|LDA absx|LDX absy|LDA longx
+CPY immX|CMP dpix|REP imm8|CMP sr|CPY dp|CMP dp|DEC dp|CMP dpil|INY imp|CMP immM|DEX imp|WAI imp|CPY abs|CMP abs|DEC abs|CMP long
+BNE rel|CMP dpiy|CMP dpi|CMP sriy|PEI dpi|CMP dpx|DEC dpx|CMP dpily|CLD imp|CMP absy|PHX imp|STP imp|JML absil|CMP absx|DEC absx|CMP longx
+CPX immX|SBC dpix|SEP imm8|SBC sr|CPX dp|SBC dp|INC dp|SBC dpil|INX imp|SBC immM|NOP imp|XBA imp|CPX abs|SBC abs|INC abs|SBC long
+BEQ rel|SBC dpiy|SBC dpi|SBC sriy|PEA abs|SBC dpx|INC dpx|SBC dpily|SED imp|SBC absy|PLX imp|XCE imp|JSR absix|SBC absx|INC absx|SBC longx
+"""
+OPS = [tuple(o.split()) for o in OPS.replace("\n", "|").strip("|").split("|")]
+assert len(OPS) == 256
+
+SIZE = {"imp": 1, "imm8": 2, "rel": 2, "rel16": 3, "bm": 3, "abs": 3, "absx": 3, "absy": 3,
+        "absi": 3, "absix": 3, "absil": 3, "long": 4, "longx": 4}
+FMT = {"imp": "", "imm8": "#${:02X}", "immM": "#${:0{w}X}", "immX": "#${:0{w}X}",
+       "dp": "${:02X}", "dpx": "${:02X},X", "dpy": "${:02X},Y", "dpi": "(${:02X})",
+       "dpix": "(${:02X},X)", "dpiy": "(${:02X}),Y", "dpil": "[${:02X}]", "dpily": "[${:02X}],Y",
+       "sr": "${:02X},S", "sriy": "(${:02X},S),Y", "abs": "${:04X}", "absx": "${:04X},X",
+       "absy": "${:04X},Y", "absi": "(${:04X})", "absix": "(${:04X},X)", "absil": "[${:04X}]",
+       "long": "${:06X}", "longx": "${:06X},X"}
+STOP = {"RTS", "RTL", "RTI", "JMP", "JML", "BRA", "BRL", "STP"}
+
+
+HIROM = False  # set by set_map()
+
+
+def set_map(rom):
+    """Pick LoROM or HiROM from the map-mode byte of the header at $FFC0."""
+    global HIROM
+    HIROM = len(rom) > 0xFFFF and rom[0xFFD5] & 0xEF in (0x21, 0x25)
+    return 0xFFC0 if HIROM else 0x7FC0
+
+
+def to_off(addr):
+    """SNES address -> file offset, or None if not ROM."""
+    bank, lo = addr >> 16 & 0x7F, addr & 0xFFFF
+    if HIROM:
+        if bank in (0x7E, 0x7F) or (bank < 0x40 and lo < 0x8000):
+            return None
+        return (bank & 0x3F) << 16 | lo
+    return bank * 0x8000 + lo - 0x8000 if lo >= 0x8000 else None
+
+
+def to_addr(off):
+    """File offset -> canonical address ($C0+ banks for HiROM, $80+ for LoROM)."""
+    if HIROM:
+        return 0xC00000 | off
+    return 0x800000 | (off // 0x8000) << 16 | 0x8000 | (off % 0x8000)
+
+
+def size_of(mode, m, x):
+    if mode == "immM":
+        return 2 if m else 3
+    if mode == "immX":
+        return 2 if x else 3
+    return SIZE.get(mode, 2)
+
+
+def trace(rom, entries):
+    code = {}      # offset -> (size, m, x)
+    labels = set()  # offsets
+    work = list(entries)
+    while work:
+        addr, m, x = work.pop()
+        while True:
+            off = to_off(addr)
+            if off is None or off >= len(rom) or off in code:
+                break
+            name, mode = OPS[rom[off]]
+            n = size_of(mode, m, x)
+            if off + n > len(rom) or any(off + i in code for i in range(1, n)):
+                break
+            code[off] = (n, m, x)
+            arg = int.from_bytes(rom[off + 1:off + n], "little")
+            nxt = (addr & 0xFF0000) | ((addr + n) & 0xFFFF)
+            tgt = None
+            if mode == "rel":
+                tgt = (addr & 0xFF0000) | ((addr + n + (arg - 256 if arg > 127 else arg)) & 0xFFFF)
+            elif mode == "rel16" and name == "BRL":
+                tgt = (addr & 0xFF0000) | ((addr + n + arg) & 0xFFFF)
+            elif mode == "abs" and name in ("JSR", "JMP"):
+                tgt = (addr & 0xFF0000) | arg
+            elif mode == "long" and name in ("JSL", "JML"):
+                tgt = arg
+            if tgt is not None and to_off(tgt) is not None and to_off(tgt) < len(rom):
+                labels.add(to_off(tgt))
+                work.append((tgt, m, x))
+            if name == "REP":
+                m, x = m and not arg & 0x20, x and not arg & 0x10
+            elif name == "SEP":
+                m, x = m or bool(arg & 0x20), x or bool(arg & 0x10)
+            elif name == "XCE":
+                pass  # shortcut: assumes native mode afterwards keeps current widths
+            if name in STOP:
+                break
+            addr = nxt
+    return code, labels
+
+
+def operand(rom, off, addr, name, mode, n, m, x, labels):
+    arg = int.from_bytes(rom[off + 1:off + n], "little")
+    if mode in ("rel", "rel16") and name != "PER":
+        d = arg - (1 << 8 * (n - 1)) if arg >> (8 * (n - 1) - 1) else arg
+        t = (addr & 0xFF0000) | ((addr + n + d) & 0xFFFF)
+        return f"L_{to_addr(to_off(t)):06X}" if to_off(t) in labels else f"${t & 0xFFFF:04X}"
+    if mode == "bm":
+        return f"${rom[off + 2]:02X},${rom[off + 1]:02X}"
+    if mode == "rel16":
+        return f"${(addr + n + arg) & 0xFFFF:04X}"
+    if name in ("JSR", "JMP") and mode == "abs":
+        t = (addr & 0xFF0000) | arg
+        if to_off(t) in labels:
+            return f"L_{to_addr(to_off(t)):06X}"
+    if name in ("JSL", "JML") and mode == "long" and to_off(arg) in labels and to_addr(to_off(arg)) == arg:
+        return f"L_{arg:06X}"  # only when the label name is the exact operand, so reasm keeps the bank
+    w = 2 if n == 2 else 4
+    return FMT[mode].format(arg, w=w)
+
+
+def main(rom_path, outdir):
+    rom = open(rom_path, "rb").read()
+    h = set_map(rom)
+    vec = lambda o: int.from_bytes(rom[h + o:h + o + 2], "little")
+    entries = {vec(0x24): "COP", vec(0x26): "BRK", vec(0x2E): "IRQ", vec(0x2A): "NMI", vec(0x3C): "RESET"}  # RESET last wins shared addresses
+    starts = [(0x800000 | a, True, True) for a in entries if a >= 0x8000] + EXTRA_ENTRIES
+    code, labels = trace(rom, starts)
+    labels |= {to_off(a) for a, _, _ in starts}
+    names = {to_off(0x800000 | a): n for a, n in entries.items() if a >= 0x8000}
+
+    os.makedirs(outdir, exist_ok=True)
+    size = 0x10000 if HIROM else 0x8000
+    for bank in range(len(rom) // size):
+        off, end = bank * size, (bank + 1) * size
+        org = to_addr(off)
+        lines = [f"; bank ${org >> 16:02X}  (file offset ${off:06X})", f"org ${org:06X}", ""]
+        while off < end:
+            addr = to_addr(off)
+            if off in labels:
+                lines.append(f"{names.get(off, 'L_%06X' % addr)}:")
+            if off in code:
+                n, m, x = code[off]
+                name, mode = OPS[rom[off]]
+                ops = operand(rom, off, addr, name, mode, n, m, x, labels)
+                raw = " ".join(f"{b:02X}" for b in rom[off:off + n])
+                lines.append(f"    {(name + ' ' + ops).strip():<24}; ${addr:06X}  {raw:<12} {'m' if m else 'M'}{'x' if x else 'X'}")
+                off += n
+            else:
+                stop = off + 1
+                while stop < end and stop not in code and stop not in labels and stop - off < 16:
+                    stop += 1
+                lines.append(f"    db {','.join('$%02X' % b for b in rom[off:stop]):<64}; ${addr:06X}")
+                off = stop
+        open(os.path.join(outdir, f"bank_{org >> 16:02X}.asm"), "w").write("\n".join(lines) + "\n")
+    print(f"{len(code)} instructions, {sum(v[0] for v in code.values())} code bytes "
+          f"({100 * sum(v[0] for v in code.values()) / len(rom):.1f}% of ROM), {len(labels)} labels")
+
+
+if __name__ == "__main__":
+    main(sys.argv[1], sys.argv[2])
