@@ -39,6 +39,26 @@ Checksum (computed with the checksum bits cleared): `(sum(v0..v11) - 66) & 0xF`.
 
 Money: before encoding, the game temporarily adds the resale value of each player's equipment to their cash ($CD329D; costs come from the table at $CD11A0 and the multipliers 250/300/15/250/80). After decoding, it subtracts the value of the equipment currently held, floored at 0. So a password keeps total worth, not the items themselves.
 
+## Leftover test passwords ($CD2D8A)
+
+Bank $CD holds 108 bytes of password text right after the menu strings (`PLAYER TWO`). They split into nine 12-character passwords, and all nine pass the checksum. The odds of that happening by chance are 1 in 16⁹. Nothing in the traced code points at them, and the six byte pairs `8A 2D` elsewhere in the ROM all sit inside data. They look like developer test passwords left in the build.
+
+They can't be entered: all nine have a level counter of 0 (world 1, level 1), and decode rejects that at $CD307C, so the game says INVALID PASSWORD. Decoded with that check skipped:
+
+| Password | Players | Characters (P1 + P2) | Lives | Stats | Money (P1 / P2) |
+|----------|---------|----------------------|-------|-------|-----------------|
+| `0R210R5DW5D9` | 1 | Thug + Scientist | 2 / 3 | 0 / 0 | 32200 / 32214 |
+| `0G11085GB5Q0` | 1 | Navvie + Gentleman | 3 / 3 | 0 / 0 | 31850 / 32320 |
+| `0V21045C@5DR` | 1 | Mercenary + Brigand | 2 / 3 | 0 / 0 | 32020 / 32240 |
+| `0K110W5JX5C5` | 1 | Navvie + Thug | 3 / 3 | 0 / 0 | 31950 / 32030 |
+| `Z@1044HGLH2S` | 2 | Gentleman + Brigand | 3 / 0 | 4 / 4 | 33914 / 32950 |
+| `HHN1SPJDV5R4` | 1 | Navvie + Mercenary | 31 / 3 | 10 / 0 | 40394 / 32280 |
+| `0H110455P5R4` | 1 | Navvie + Mercenary | 3 / 3 | 0 / 0 | 31740 / 32280 |
+| `H411005CQ5CQ` | 1 | Gentleman + Navvie | 3 / 3 | 0 / 0 | 32050 / 32050 |
+| `0011PR3ML6@Y` | 1 | Brigand + Mercenary | 3 / 3 | 10 / 10 | 28474 / 29324 |
+
+Money includes the resale value of equipment (see above). The same parties work from world 2 onward: set the world in the generator and it produces a password the game accepts.
+
 ## Verification
 
 All five SNES passwords from Almar's Guides decode with a valid checksum and re-encode to the same string. The characters and world they decode to match the guide's labels. The site prints "1" as "I" in three of them.
