@@ -1,7 +1,7 @@
 """Soldiers of Fortune (USA) password decoder/encoder, SNES and Genesis.
 
 Usage: python tools/sof_password.py [--genesis] [PASSWORD ...]   (no args: run self-test)
-SNES mirrors bank $CD: encode $CD3199, decode $CD303D, checksum $CD3398, XOR $CD323E,
+SNES mirrors bank $CD: encode $CD3199, decode $CD3039, checksum $CD3398, XOR $CD323E,
 text<->values $CD314E/$CD3177. Genesis mirrors 68000 code: build $733A, scramble $834E,
 decode $7548, checksum $752E. See docs/sof_password.md.
 """

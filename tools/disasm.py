@@ -3,8 +3,10 @@
 Usage: python tools/disasm.py <rom.sfc> <outdir>
 Traces code from the header vectors, tracking REP/SEP for M/X widths, and
 writes one .asm listing per 32 KB bank. Unreached bytes are emitted as db.
-shortcut: indirect jumps (JMP (abs,X) tables etc.) are not followed and flags
-after JSR/PLP are assumed unchanged; add entry points to EXTRA_ENTRIES to grow coverage.
+Widths after a JSR/JSL are the ones the callee returns with (when all its exits
+agree), and PLP restores the widths saved by the matching PHP.
+shortcut: indirect jumps (JMP (abs,X) tables etc.) are not followed; add entry
+points to EXTRA_ENTRIES to grow coverage.
 """
 import os
 import sys
@@ -78,12 +80,70 @@ def size_of(mode, m, x):
     return SIZE.get(mode, 2)
 
 
+def target(name, mode, addr, n, arg):
+    """Branch/jump/call destination, or None."""
+    if mode == "rel":
+        return (addr & 0xFF0000) | ((addr + n + (arg - 256 if arg > 127 else arg)) & 0xFFFF)
+    if mode == "rel16" and name == "BRL":
+        return (addr & 0xFF0000) | ((addr + n + arg) & 0xFFFF)
+    if mode == "abs" and name in ("JSR", "JMP"):
+        return (addr & 0xFF0000) | arg
+    if mode == "long" and name in ("JSL", "JML"):
+        return arg
+    return None
+
+
+def widths(name, arg, m, x, stk):
+    """M/X widths and PHP stack after one instruction (PLP restores what PHP saved)."""
+    if name == "REP":
+        return m and not arg & 0x20, x and not arg & 0x10, stk
+    if name == "SEP":
+        return m or bool(arg & 0x20), x or bool(arg & 0x10), stk
+    if name == "PHP":
+        return m, x, stk + ((m, x),)
+    if name == "PLP" and stk:
+        return stk[-1][0], stk[-1][1], stk[:-1]
+    return m, x, stk  # shortcut: XCE and unpaired PLP keep current widths
+
+
+def returns(rom, addr, m, x, memo):
+    """Widths a subroutine returns with, or None if unknown or its exits disagree."""
+    key = (addr, m, x)
+    if key in memo:
+        return memo[key]
+    memo[key] = None  # recursion guard
+    exits, seen, work = set(), set(), [(addr, m, x, ())]
+    while work and len(seen) < 5000:
+        addr, m, x, stk = work.pop()
+        while (off := to_off(addr)) is not None and off < len(rom) and (addr, m, x, stk) not in seen:
+            seen.add((addr, m, x, stk))
+            name, mode = OPS[rom[off]]
+            n = size_of(mode, m, x)
+            arg = int.from_bytes(rom[off + 1:off + n], "little")
+            tgt = target(name, mode, addr, n, arg)
+            if name in ("RTS", "RTL"):
+                exits.add((m, x))
+                break
+            if name in ("JSR", "JSL") and tgt is not None:
+                m, x = returns(rom, tgt, m, x, memo) or (m, x)
+            else:
+                if tgt is not None:
+                    work.append((tgt, m, x, stk))
+                m, x, stk = widths(name, arg, m, x, stk)
+                if name in STOP or name in ("JSR", "JSL"):  # indirect call: give up on this path
+                    break
+            addr = (addr & 0xFF0000) | ((addr + n) & 0xFFFF)
+    memo[key] = exits.pop() if len(exits) == 1 else None
+    return memo[key]
+
+
 def trace(rom, entries):
     code = {}      # offset -> (size, m, x)
     labels = set()  # offsets
-    work = list(entries)
+    memo = {}
+    work = [(a, m, x, ()) for a, m, x in entries]
     while work:
-        addr, m, x = work.pop()
+        addr, m, x, stk = work.pop()
         while True:
             off = to_off(addr)
             if off is None or off >= len(rom) or off in code:
@@ -95,24 +155,15 @@ def trace(rom, entries):
             code[off] = (n, m, x)
             arg = int.from_bytes(rom[off + 1:off + n], "little")
             nxt = (addr & 0xFF0000) | ((addr + n) & 0xFFFF)
-            tgt = None
-            if mode == "rel":
-                tgt = (addr & 0xFF0000) | ((addr + n + (arg - 256 if arg > 127 else arg)) & 0xFFFF)
-            elif mode == "rel16" and name == "BRL":
-                tgt = (addr & 0xFF0000) | ((addr + n + arg) & 0xFFFF)
-            elif mode == "abs" and name in ("JSR", "JMP"):
-                tgt = (addr & 0xFF0000) | arg
-            elif mode == "long" and name in ("JSL", "JML"):
-                tgt = arg
+            tgt = target(name, mode, addr, n, arg)
+            call = name in ("JSR", "JSL") and tgt is not None
             if tgt is not None and to_off(tgt) is not None and to_off(tgt) < len(rom):
                 labels.add(to_off(tgt))
-                work.append((tgt, m, x))
-            if name == "REP":
-                m, x = m and not arg & 0x20, x and not arg & 0x10
-            elif name == "SEP":
-                m, x = m or bool(arg & 0x20), x or bool(arg & 0x10)
-            elif name == "XCE":
-                pass  # shortcut: assumes native mode afterwards keeps current widths
+                work.append((tgt, m, x, () if call else stk))
+            if call:
+                m, x = returns(rom, tgt, m, x, memo) or (m, x)
+            else:
+                m, x, stk = widths(name, arg, m, x, stk)
             if name in STOP:
                 break
             addr = nxt

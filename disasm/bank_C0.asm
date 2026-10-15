@@ -3451,7 +3451,7 @@ L_C044A3:
     BNE L_C044A3            ; $C044A9  D0 F8        mX
     PHP                     ; $C044AB  08           mX
     JSR L_C0B16D            ; $C044AC  20 6D B1     mX
-    PLP                     ; $C044AF  28           mX
+    PLP                     ; $C044AF  28           MX
     JSL L_C20831            ; $C044B0  22 31 08 C2  mX
     CMP #$00                ; $C044B4  C9 00        mX
     BNE L_C0449B            ; $C044B6  D0 E3        mX
@@ -3465,7 +3465,7 @@ L_C044C0:
     BNE L_C044C0            ; $C044C6  D0 F8        mX
     PHP                     ; $C044C8  08           mX
     JSR L_C0B16D            ; $C044C9  20 6D B1     mX
-    PLP                     ; $C044CC  28           mX
+    PLP                     ; $C044CC  28           MX
     JSL L_C20831            ; $C044CD  22 31 08 C2  mX
     CMP #$00                ; $C044D1  C9 00        mX
     BEQ L_C044B8            ; $C044D3  F0 E3        mX
@@ -3482,7 +3482,7 @@ L_C044E5:
     BNE L_C044E5            ; $C044EB  D0 F8        mX
     PHP                     ; $C044ED  08           mX
     JSR L_C0B16D            ; $C044EE  20 6D B1     mX
-    PLP                     ; $C044F1  28           mX
+    PLP                     ; $C044F1  28           MX
     JSL L_C20831            ; $C044F2  22 31 08 C2  mX
     CMP #$00                ; $C044F6  C9 00        mX
     BNE L_C044DD            ; $C044F8  D0 E3        mX
@@ -6358,9 +6358,9 @@ L_C0B286:
     PEA $0000               ; $C0B2BD  F4 00 00     MX
     PLB                     ; $C0B2C0  AB           MX
     JSL L_CD01AA            ; $C0B2C1  22 AA 01 CD  MX
-    PLB                     ; $C0B2C5  AB           MX
-    PLB                     ; $C0B2C6  AB           MX
-    PLP                     ; $C0B2C7  28           MX
+    PLB                     ; $C0B2C5  AB           mX
+    PLB                     ; $C0B2C6  AB           mX
+    PLP                     ; $C0B2C7  28           mX
     JSR L_C0BB3C            ; $C0B2C8  20 3C BB     MX
     SEP #$20                ; $C0B2CB  E2 20        MX
     LDA $0212               ; $C0B2CD  AD 12 02     mX
@@ -6427,9 +6427,9 @@ L_C0B32E:
     PEA $0000               ; $C0B360  F4 00 00     MX
     PLB                     ; $C0B363  AB           MX
     JSL L_CD01BA            ; $C0B364  22 BA 01 CD  MX
-    PLB                     ; $C0B368  AB           MX
-    PLB                     ; $C0B369  AB           MX
-    PLP                     ; $C0B36A  28           MX
+    PLB                     ; $C0B368  AB           mX
+    PLB                     ; $C0B369  AB           mX
+    PLP                     ; $C0B36A  28           mX
     JSR L_C0BB3C            ; $C0B36B  20 3C BB     MX
     RTS                     ; $C0B36E  60           MX
 L_C0B36F:
@@ -6590,9 +6590,9 @@ L_C0B4A7:
     PEA $0000               ; $C0B4C8  F4 00 00     MX
     PLB                     ; $C0B4CB  AB           MX
     JSL L_CD01CD            ; $C0B4CC  22 CD 01 CD  MX
-    PLB                     ; $C0B4D0  AB           MX
-    PLB                     ; $C0B4D1  AB           MX
-    PLP                     ; $C0B4D2  28           MX
+    PLB                     ; $C0B4D0  AB           mX
+    PLB                     ; $C0B4D1  AB           mX
+    PLP                     ; $C0B4D2  28           mX
     JSR L_C0BB3C            ; $C0B4D3  20 3C BB     MX
     STZ $08AD               ; $C0B4D6  9C AD 08     MX
     STZ $08AF               ; $C0B4D9  9C AF 08     MX
@@ -6882,9 +6882,9 @@ L_C0B74C:
     PEA $0000               ; $C0B76D  F4 00 00     MX
     PLB                     ; $C0B770  AB           MX
     JSL L_CD020F            ; $C0B771  22 0F 02 CD  MX
-    PLB                     ; $C0B775  AB           MX
-    PLB                     ; $C0B776  AB           MX
-    PLP                     ; $C0B777  28           MX
+    PLB                     ; $C0B775  AB           mX
+    PLB                     ; $C0B776  AB           mX
+    PLP                     ; $C0B777  28           mX
     JSR L_C0BB3C            ; $C0B778  20 3C BB     MX
 L_C0B77B:
     RTS                     ; $C0B77B  60           MX
@@ -6918,9 +6918,9 @@ L_C0B77C:
     PEA $0000               ; $C0B7BD  F4 00 00     MX
     PLB                     ; $C0B7C0  AB           MX
     JSL L_CD01E0            ; $C0B7C1  22 E0 01 CD  MX
-    PLB                     ; $C0B7C5  AB           MX
-    PLB                     ; $C0B7C6  AB           MX
-    PLP                     ; $C0B7C7  28           MX
+    PLB                     ; $C0B7C5  AB           mX
+    PLB                     ; $C0B7C6  AB           mX
+    PLP                     ; $C0B7C7  28           mX
     JSR L_C0BB3C            ; $C0B7C8  20 3C BB     MX
     JSR L_C0B8D1            ; $C0B7CB  20 D1 B8     MX
     RTS                     ; $C0B7CE  60           MX
@@ -6954,9 +6954,9 @@ L_C0B7CF:
     PEA $0000               ; $C0B810  F4 00 00     MX
     PLB                     ; $C0B813  AB           MX
     JSL L_CD01FF            ; $C0B814  22 FF 01 CD  MX
-    PLB                     ; $C0B818  AB           MX
-    PLB                     ; $C0B819  AB           MX
-    PLP                     ; $C0B81A  28           MX
+    PLB                     ; $C0B818  AB           mX
+    PLB                     ; $C0B819  AB           mX
+    PLP                     ; $C0B81A  28           mX
     JSR L_C0BB3C            ; $C0B81B  20 3C BB     MX
     JSR L_C0B8D1            ; $C0B81E  20 D1 B8     MX
     RTS                     ; $C0B821  60           MX
@@ -7006,9 +7006,9 @@ L_C0B822:
     PEA $0000               ; $C0B88D  F4 00 00     MX
     PLB                     ; $C0B890  AB           MX
     JSL L_CD0222            ; $C0B891  22 22 02 CD  MX
-    PLB                     ; $C0B895  AB           MX
-    PLB                     ; $C0B896  AB           MX
-    PLP                     ; $C0B897  28           MX
+    PLB                     ; $C0B895  AB           mX
+    PLB                     ; $C0B896  AB           mX
+    PLP                     ; $C0B897  28           mX
     JSR L_C0BB3C            ; $C0B898  20 3C BB     MX
     RTS                     ; $C0B89B  60           MX
 L_C0B89C:
