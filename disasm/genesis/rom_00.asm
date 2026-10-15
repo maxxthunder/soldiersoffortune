@@ -622,7 +622,6 @@ L_000950:
     JSR L_00D91A                            ; $000950  4EB9 0000 D91A
     MOVE.L (A7)+,D1                         ; $000956  221F
     RTS                                     ; $000958  4E75
-HBLANK:
 L_00095A:
     RTE                                     ; $00095A  4E73
 VBLANK:

@@ -410,7 +410,8 @@ def main(rom_path, outdir):
         if not found:
             break
     labels = {t for t in jumps | refs | set(entries) if t in code or not used[t]}
-    names = {vec(i): n for i, n in VECTOR_NAMES.items()}
+    shared = [vec(i) for i in range(1, 64)]
+    names = {vec(i): n for i, n in VECTOR_NAMES.items() if shared.count(vec(i)) == 1}  # not the catch-all handler
 
     os.makedirs(outdir, exist_ok=True)
     a, chunk = 0, 0x10000

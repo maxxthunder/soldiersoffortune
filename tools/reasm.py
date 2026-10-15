@@ -1,4 +1,4 @@
-"""Reassemble the disasm/*.asm listings and compare to the original ROM.
+"""Reassemble the disasm/snes/*.asm listings and compare to the original ROM.
 
 Usage: python tools/reasm.py <disasm_dir> <rom.sfc> [out.sfc]
 Parses only the instruction text (the byte comments are ignored), so a
@@ -87,6 +87,7 @@ def assemble(path, out):
                     name, _, ops = text.partition(" ")
                     b = encode(name, ops.strip(), pc)
                 off = to_off(pc)
+                assert off is not None and off + len(b) <= len(out), f"outside the ROM at {pc:06X}"
                 out[off:off + len(b)] = b
                 pc += len(b)
         except Exception as e:

@@ -1,4 +1,4 @@
-"""Reassemble the disasm_genesis/*.asm listings and compare to the original ROM.
+"""Reassemble the disasm/genesis/*.asm listings and compare to the original ROM.
 
 Usage: python tools/reasm68k.py <disasm_dir> <rom.md> [out.md]
 Parses only the instruction text (the comments are ignored), so a byte-identical
