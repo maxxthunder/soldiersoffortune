@@ -1,0 +1,312 @@
+<title>Soldiers of Fortune Passwords</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@500;700&family=Alegreya+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: one column; the password plate is up top, then two player columns of settings (they stack on a phone) */
+:root {
+  --bg: #e9ecea; --panel: #f7f8f6; --ink: #1f2a27; --muted: #5b6863; --line: #c5cdc9;
+  --brass: #8a6416; --brass-soft: #f1e3c2; --plate: #23302c; --plate-ink: #f3dfa6; --bad: #a3271b;
+  --display: "Alegreya SC", Georgia, serif; --body: "Alegreya Sans", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #141a18; --panel: #1c2421; --ink: #e2e7e4; --muted: #95a39d; --line: #33403b;
+  --brass: #d8ab4f; --brass-soft: #3a2f17; --plate: #0c100f; --plate-ink: #f0cf74; --bad: #ff8a7a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #141a18; --panel: #1c2421; --ink: #e2e7e4; --muted: #95a39d; --line: #33403b;
+  --brass: #d8ab4f; --brass-soft: #3a2f17; --plate: #0c100f; --plate-ink: #f0cf74; --bad: #ff8a7a; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font: 16px/1.5 var(--body); }
+.wrap { max-width: 860px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 48px; display: grid; gap: 24px; }
+h1 { font: 700 clamp(1.7rem, 5vw, 2.4rem)/1.1 var(--display); margin: 0; letter-spacing: .02em; text-wrap: balance; }
+.sub { color: var(--muted); margin: 6px 0 0; max-width: 62ch; }
+.plate { background: var(--plate); color: var(--plate-ink); border-radius: 6px; padding: 20px; display: grid; gap: 14px;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--plate-ink) 25%, transparent); }
+.plate-label { font: 500 .75rem var(--body); letter-spacing: .14em; text-transform: uppercase; opacity: .75; }
+.code { font: 700 clamp(1.5rem, 7vw, 2.6rem)/1 var(--mono); letter-spacing: .12em; display: flex; flex-wrap: wrap; gap: .1em .6em; }
+.plate-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+button { font: 500 .95rem var(--body); border-radius: 4px; padding: 8px 14px; cursor: pointer; border: 1px solid var(--line); background: var(--panel); color: var(--ink); }
+button:hover { border-color: var(--brass); }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+.plate button { background: var(--plate-ink); color: var(--plate); border-color: transparent; font-weight: 700; }
+.plate .ghost { background: transparent; color: var(--plate-ink); border-color: color-mix(in srgb, var(--plate-ink) 40%, transparent); font-weight: 500; }
+.status { font-size: .9rem; opacity: .85; }
+section { display: grid; gap: 12px; }
+h2 { font: 700 1.15rem var(--display); margin: 0; letter-spacing: .03em; }
+.row { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+.seg label { padding: 6px 14px; cursor: pointer; background: var(--panel); border-left: 1px solid var(--line); }
+.seg label:first-child { border-left: 0; }
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg input:checked + span { color: var(--brass); font-weight: 700; }
+.seg label:has(input:checked) { background: var(--brass-soft); }
+.seg label:has(input:focus-visible) { outline: 2px solid var(--brass); outline-offset: -2px; }
+.players { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 16px; display: grid; gap: 14px; min-width: 0; }
+.field { display: grid; gap: 4px; }
+.field > span { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); display: flex; justify-content: space-between; gap: 8px; }
+.field output { font: 700 .9rem var(--mono); color: var(--ink); letter-spacing: 0; text-transform: none; }
+select, input[type=number], input[type=text] { font: 1rem var(--body); padding: 7px 9px; border-radius: 4px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); width: 100%; box-sizing: border-box; }
+input[type=range] { width: 100%; accent-color: var(--brass); }
+.hint { font-size: .85rem; color: var(--muted); margin: 0; }
+.err { color: var(--bad); font-size: .9rem; min-height: 1.3em; margin: 0; }
+.mono { font-family: var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.examples { display: flex; flex-wrap: wrap; gap: 8px; }
+.examples button { font-size: .85rem; }
+details { color: var(--muted); font-size: .92rem; }
+summary { cursor: pointer; color: var(--ink); }
+table { border-collapse: collapse; font-size: .88rem; }
+td, th { border-bottom: 1px solid var(--line); padding: 4px 10px 4px 0; text-align: left; vertical-align: top; }
+.tw { overflow-x: auto; }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Soldiers of Fortune Passwords</h1>
+    <p class="sub">Build a working password for any party and loadout, or paste one to see what it holds. The SNES and Genesis versions use different password formats, so pick yours first.</p>
+  </header>
+
+  <div class="row">
+    <div class="seg" role="radiogroup" aria-label="Console">
+      <label><input type="radio" name="console" id="c_snes" value="snes" checked><span>SNES</span></label>
+      <label><input type="radio" name="console" id="c_gen" value="gen"><span>Genesis</span></label>
+    </div>
+  </div>
+
+  <div class="plate" aria-live="polite">
+    <div class="plate-label">Password</div>
+    <div class="code" id="code"></div>
+    <div class="plate-row">
+      <button id="copy" type="button">Copy</button>
+      <button id="max" class="ghost" type="button">Max everything</button>
+      <button id="reset" class="ghost" type="button">Fresh party</button>
+      <span class="status" id="status"></span>
+    </div>
+  </div>
+
+  <section>
+    <h2>Game</h2>
+    <div class="row">
+      <div class="seg" role="radiogroup" aria-label="Players">
+        <label><input type="radio" name="players" id="pl1" value="0" checked><span>1 player</span></label>
+        <label><input type="radio" name="players" id="pl2" value="1"><span>2 players</span></label>
+      </div>
+      <div class="seg" role="radiogroup" aria-label="Start at world">
+        <label><input type="radio" name="world" id="w2" value="4" checked><span>World 2</span></label>
+        <label><input type="radio" name="world" id="w3" value="8"><span>World 3</span></label>
+        <label><input type="radio" name="world" id="w4" value="12"><span>World 4</span></label>
+      </div>
+    </div>
+    <p class="hint">Set up the game with the same player count as here, or it rejects the password.</p>
+  </section>
+
+  <div class="players">
+    <div class="card" id="p1"></div>
+    <div class="card" id="p2"></div>
+  </div>
+
+  <section>
+    <h2>Decode a password</h2>
+    <div class="row">
+      <input type="text" id="paste" class="mono" maxlength="16" placeholder="W1V19S2SH21Q" autocomplete="off" spellcheck="false" style="max-width:20ch">
+      <button id="load" type="button">Load into settings</button>
+    </div>
+    <p class="err" id="perr"></p>
+    <div class="examples" id="examples"></div>
+  </section>
+
+  <details>
+    <summary>How the password is built</summary>
+    <p>Each character is a 5-bit number. SNES: alphabet <span class="mono">BCDFGHJKLMNPQRSTVWXYZ0123456789@</span>, every number XORed with 21, code in bank $CD (encode $CD3199, decode $CD3039). Genesis: the same alphabet but <span class="mono">#</span> in place of <span class="mono">@</span>. Each number is XORed with a running sum of the ones before it, characters 1 and 6 swap places, and the checksum is a 4-bit add-and-rotate (encode $733A, decode $7548). Both versions store the same fields, listed here in SNES order:</p>
+    <div class="tw"><table>
+      <tr><th>Char</th><th>Holds</th></tr>
+      <tr><td>1</td><td>Player count, world, 1 checksum bit</td></tr>
+      <tr><td>2</td><td>Character pair (30 combinations of two different mercenaries)</td></tr>
+      <tr><td>3–4</td><td>P1 / P2 lives</td></tr>
+      <tr><td>5–6</td><td>P1 × 11 + P2 level (0–10 each), 3 checksum bits</td></tr>
+      <tr><td>7–9, 10–12</td><td>P1 / P2 money, bits 15–1</td></tr>
+    </table></div>
+    <p>The SNES checksum is (sum of the 12 numbers − 66) mod 16. Money in the password is cash plus the value of your gear. On load the game subtracts the value of the gear you start with, so your spendable cash ends up a little lower than the figure here. "Lives" and "level" are names inferred from the code: lives start at 3 on a new game, and level goes up through the worlds.</p>
+  </details>
+</div>
+
+<script>
+const ALPHABET = "BCDFGHJKLMNPQRSTVWXYZ0123456789@";
+const CHARS = ["Brigand", "Mercenary", "Gentleman", "Navvie", "Thug", "Scientist"];
+const PAIRS = [];
+for (let a = 0; a < 6; a++) for (let b = 0; b < 6; b++) if (a !== b) PAIRS.push([a, b]);
+const sum = v => v.reduce((s, x) => s + x, 0);
+const checksum = v => (sum(v) - 66) & 15;
+
+function encode(f) {
+  const v = new Array(12).fill(0);
+  v[0] = (f.level & 0x1E) | (f.two_players & 1);
+  v[1] = PAIRS.findIndex(([a, b]) => a === f.p1_char && b === f.p2_char);
+  if (v[1] < 0) throw new Error("Players need different characters.");
+  v[2] = f.p1_lives & 31; v[3] = f.p2_lives & 31;
+  const n = f.p1_stat * 11 + f.p2_stat;
+  v[4] = (n >> 2) & 31; v[5] = n & 3;
+  [[6, f.p1_money], [9, f.p2_money]].forEach(([i, m]) => { v[i] = (m >> 11) & 31; v[i + 1] = (m >> 6) & 31; v[i + 2] = (m >> 1) & 31; });
+  const c = checksum(v);
+  v[0] |= (c << 1) & 0x10; v[5] |= (c << 2) & 0x1C;
+  return v.map(x => ALPHABET[x ^ 0x15]).join("");
+}
+
+function clean(pw, alphabet) {
+  pw = pw.toUpperCase().replace(/[\s-]/g, "").replace(/I/g, "1").replace(/O/g, "0");
+  if (pw.length !== 12) throw new Error("A password has 12 characters; this has " + pw.length + ".");
+  const badc = [...pw].find(c => !alphabet.includes(c));
+  if (badc) throw new Error("“" + badc + "” isn't used in this version's passwords. Vowels never appear.");
+  return pw;
+}
+
+function decode(pw) {
+  pw = clean(pw, ALPHABET);
+  const v = [...pw].map(c => ALPHABET.indexOf(c) ^ 0x15);
+  const stored = ((v[0] & 0x10) >> 1) | ((v[5] & 0x1C) >> 2);
+  v[0] &= 0x0F; v[5] &= 0x03;
+  if (checksum(v) !== stored) throw new Error("Checksum doesn't match. Check for a mistyped character.");
+  if (!(v[0] & 0x0C)) throw new Error("World is out of range, so the game would reject this one.");
+  const n = (v[4] << 2) | v[5];
+  if (Math.floor(n / 11) >= 11) throw new Error("Level value is out of range, so the game would reject this one.");
+  if (v[1] >= PAIRS.length) throw new Error("Character pair is past the game's table.");
+  const money = i => (v[i] << 11) | (v[i + 1] << 6) | (v[i + 2] << 1);
+  return { two_players: v[0] & 1, level: v[0] & 0x0C, p1_char: PAIRS[v[1]][0], p2_char: PAIRS[v[1]][1],
+    p1_lives: v[2], p2_lives: v[3], p1_stat: Math.floor(n / 11), p2_stat: n % 11, p1_money: money(6), p2_money: money(9) };
+}
+
+// Genesis: same fields, different layout and scramble (68000 code $733A/$834E encode, $7548 decode)
+const GEN_ALPHABET = "BCDFGHJKLMNPQRSTVWXYZ0123456789#";
+function genChecksum(p) {
+  let d = 0;
+  p.forEach((x, i) => { d = (d + x) & 255; const r = (13 - i) & 7; d = ((d << r) | (d >> (8 - r))) & 255; });
+  return d & 0x55;
+}
+function genEncode(f) {
+  const pair = PAIRS.findIndex(([a, b]) => a === f.p1_char && b === f.p2_char);
+  if (pair < 0) throw new Error("Players need different characters.");
+  const n = f.p1_stat * 11 + f.p2_stat, m1 = f.p1_money >> 1, m2 = f.p2_money >> 1;
+  const p = [pair, (f.level & 0x1E) | (f.two_players & 1), f.p1_lives & 31, f.p2_lives & 31, n & 31, (n >> 5) & 3,
+    m1 & 31, (m1 >> 5) & 31, (m1 >> 10) & 31, (m2 >> 10) & 31, (m2 >> 5) & 31, m2 & 31];
+  const c = genChecksum(p);
+  p[1] |= (c & 1) << 4;
+  p[5] |= (((c >> 2) & 1) << 2) | (((c >> 4) & 1) << 3) | (((c >> 6) & 1) << 4);
+  const q = p.slice(); q[0] = p[5]; q[5] = p[0];
+  let s = q[0]; const v = [q[0]];
+  for (let i = 1; i < 12; i++) { const x = q[i] ^ s; v.push(x); s = (s + x) & 31; }
+  return v.map(x => GEN_ALPHABET[x]).join("");
+}
+function genDecode(pw) {
+  pw = clean(pw, GEN_ALPHABET);
+  const v = [...pw].map(c => GEN_ALPHABET.indexOf(c));
+  if (!v.some(x => x)) throw new Error("The game rejects a password of all B's.");
+  let s = v[0]; const p = [v[0]];
+  for (let i = 1; i < 12; i++) { p.push(v[i] ^ s); s = (s + v[i]) & 31; }
+  [p[0], p[5]] = [p[5], p[0]];
+  const stored = ((p[1] >> 4) & 1) | (((p[5] >> 2) & 1) << 2) | (((p[5] >> 3) & 1) << 4) | (((p[5] >> 4) & 1) << 6);
+  p[1] &= ~0x10; p[5] &= 3;
+  if (genChecksum(p) !== stored) throw new Error("Checksum doesn't match. Check for a mistyped character.");
+  if (p[0] >= PAIRS.length) throw new Error("Character pair is past the game's table.");
+  if ((p[1] & 2) || !(p[1] & ~1)) throw new Error("World is out of range, so the game would reject this one.");
+  const n = p[4] | (p[5] << 5);
+  if (Math.floor(n / 11) >= 11) throw new Error("Level value is out of range, so the game would reject this one.");
+  return { two_players: p[1] & 1, level: p[1] & ~1, p1_char: PAIRS[p[0]][0], p2_char: PAIRS[p[0]][1],
+    p1_lives: p[2], p2_lives: p[3], p1_stat: Math.floor(n / 11), p2_stat: n % 11,
+    p1_money: ((p[8] << 10) | (p[7] << 5) | p[6]) << 1, p2_money: ((p[9] << 10) | (p[10] << 5) | p[11]) << 1 };
+}
+
+// Node: export for the cross-check against tools/sof_password.py
+if (typeof module !== "undefined") { module.exports = { encode, decode, genEncode, genDecode }; }
+else {
+  const $ = id => document.getElementById(id);
+  const card = p => `
+    <h2>Player ${p}</h2>
+    <label class="field"><span>Character</span><select id="p${p}_char">${CHARS.map((c, i) => `<option value="${i}">${c}</option>`).join("")}</select></label>
+    <label class="field"><span>Lives <output id="p${p}_lives_o"></output></span><input type="range" id="p${p}_lives" min="0" max="31"></label>
+    <label class="field"><span>Level <output id="p${p}_stat_o"></output></span><input type="range" id="p${p}_stat" min="0" max="10"></label>
+    <label class="field"><span>Money</span><input type="number" id="p${p}_money" min="0" max="65534" step="2" inputmode="numeric"></label>`;
+  $("p1").innerHTML = card(1); $("p2").innerHTML = card(2);
+  $("p2").insertAdjacentHTML("beforeend", '<p class="hint">In 1-player games this is your computer-controlled partner.</p>');
+
+  const FRESH = { two_players: 0, level: 4, p1_char: 0, p2_char: 4, p1_lives: 3, p2_lives: 3, p1_stat: 0, p2_stat: 0, p1_money: 2000, p2_money: 2000 };
+  const clamp = (x, lo, hi) => Math.min(hi, Math.max(lo, x | 0));
+
+  function read() {
+    const f = { two_players: +document.querySelector("input[name=players]:checked").value,
+      level: +document.querySelector("input[name=world]:checked").value };
+    for (const p of [1, 2]) {
+      f[`p${p}_char`] = +$(`p${p}_char`).value;
+      f[`p${p}_lives`] = +$(`p${p}_lives`).value;
+      f[`p${p}_stat`] = +$(`p${p}_stat`).value;
+      f[`p${p}_money`] = clamp($(`p${p}_money`).value, 0, 65535) & ~1;
+    }
+    return f;
+  }
+  function write(f) {
+    $(f.two_players ? "pl2" : "pl1").checked = true;
+    $({ 4: "w2", 8: "w3", 12: "w4" }[f.level]).checked = true;
+    for (const p of [1, 2]) for (const k of ["char", "lives", "stat", "money"]) $(`p${p}_${k}`).value = f[`p${p}_${k}`];
+    render();
+  }
+  const isGen = () => $("c_gen").checked;
+  function render() {
+    const f = read();
+    for (const p of [1, 2]) { $(`p${p}_lives_o`).textContent = f[`p${p}_lives`]; $(`p${p}_stat_o`).textContent = f[`p${p}_stat`]; }
+    for (const p of [1, 2]) [...$(`p${p}_char`).options].forEach(o => {
+      o.disabled = +o.value === f[`p${3 - p}_char`];
+      if (o.value === "5") o.textContent = isGen() ? "Preacher" : "Scientist";
+    });
+    try {
+      const pw = (isGen() ? genEncode : encode)(f);
+      $("code").innerHTML = [0, 4, 8].map(i => `<span>${pw.slice(i, i + 4)}</span>`).join("");
+      $("status").textContent = "";
+      $("copy").disabled = false;
+    } catch (e) { $("code").textContent = "————————————"; $("status").textContent = e.message; $("copy").disabled = true; }
+    try { localStorage.setItem("sof-pw", JSON.stringify({ ...f, gen: isGen() })); } catch {}
+  }
+  document.querySelector(".wrap").addEventListener("input", e => {
+    if (e.target.name === "console") { showExamples(); $("perr").textContent = ""; }
+    if (e.target.id !== "paste") render();
+  });
+  $("copy").onclick = () => {
+    const pw = $("code").textContent;
+    navigator.clipboard.writeText(pw).then(() => $("status").textContent = "Copied",
+      () => { getSelection().selectAllChildren($("code")); $("status").textContent = "Selected. Press Ctrl+C to copy."; });
+  };
+  $("max").onclick = () => { const f = read(); write({ ...f, p1_lives: 31, p2_lives: 31, p1_stat: 10, p2_stat: 10, p1_money: 65534, p2_money: 65534 }); };
+  $("reset").onclick = () => write(FRESH);
+  function load(pw) {
+    // try the selected console first; if only the other one accepts it, switch to that console
+    const order = isGen() ? [[genDecode, "c_gen"], [decode, "c_snes"]] : [[decode, "c_snes"], [genDecode, "c_gen"]];
+    let first;
+    for (const [fn, id] of order) {
+      try {
+        const f = fn(pw);
+        const switched = !$(id).checked;
+        $(id).checked = true; showExamples(); write(f); $("perr").textContent = "";
+        $("status").textContent = "Loaded " + pw.toUpperCase() + (switched ? (id === "c_gen" ? " (Genesis password)" : " (SNES password)") : "");
+        return;
+      } catch (e) { first = first || e; }
+    }
+    $("perr").textContent = first.message;
+  }
+  $("load").onclick = () => load($("paste").value);
+  $("paste").addEventListener("keydown", e => { if (e.key === "Enter") load($("paste").value); });
+  const KNOWN = {
+    snes: [["W1V19S2SH21Q", "World 2 · Brigand + Thug"], ["C9W18N209ZPW", "World 2 · Gentleman + Mercenary"],
+      ["CJW19D2QQ2XF", "World 2 · Navvie + Scientist"], ["R18VDQWF01VP", "World 3 · Brigand + Thug"], ["4141L1V4QVX6", "World 4 · Brigand + Thug"]],
+    gen: [["JS2TF2MW4G8W", "World 3 · Gentleman + Brigand"], ["NS8SB98X#NBC", "World 2 · Preacher + Thug"],
+      ["T5S4LM2J8DWD", "World 2 · 2 players · Navvie + Gentleman"], ["X522Q03Y61Y5", "World 3 · Navvie + Preacher"]],
+  };
+  function showExamples() {
+    $("examples").innerHTML = KNOWN[isGen() ? "gen" : "snes"].map(([pw, t]) => `<button type="button" data-pw="${pw}" title="${pw}">${t}</button>`).join("");
+    $("paste").placeholder = KNOWN[isGen() ? "gen" : "snes"][0][0];
+  }
+  $("examples").onclick = e => { const b = e.target.closest("button"); if (b) { $("paste").value = b.dataset.pw; load(b.dataset.pw); } };
+
+  let saved = null;
+  try { saved = JSON.parse(localStorage.getItem("sof-pw")); } catch {}
+  if (saved && saved.gen) $("c_gen").checked = true;
+  showExamples();
+  try { write(saved && encode(saved) ? saved : decode("W1V19S2SH21Q")); } catch { write(FRESH); }
+}
+</script>
