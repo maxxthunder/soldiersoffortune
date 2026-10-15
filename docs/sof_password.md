@@ -39,6 +39,24 @@ Checksum (computed with the checksum bits cleared): `(sum(v0..v11) - 66) & 0xF`.
 
 Money: before encoding, the game temporarily adds the resale value of each player's equipment to their cash ($CD329D; costs come from the table at $CD11A0 and the multipliers 250/300/15/250/80). After decoding, it subtracts the value of the equipment currently held, floored at 0. So a password keeps total worth, not the items themselves.
 
+## Shop prices
+
+Both versions charge the same. SNES: menu prices at $CD1180 (one word per menu entry), special items at $CD11A0 (one word per item id). Genesis: longs at $45FC+$14A and $45FC+$196, with a copy at $1EF24.
+
+| Item | Price |
+|------|-------|
+| Extra life | 500 |
+| Skill +1 | 300 |
+| Health +5 | 75 |
+| Speed +1 | 250 |
+| Wisdom +1 (only characters that have it) | 80 |
+| Special power +1 | 150 |
+| Weapon power up | 250 |
+| Complete training | the sum of the stats above that aren't at their cap |
+| Special items 1–14 | 450, 500, 500, 500, 525, 500, 575, 550, 550, 550, 475, 550, 425, 575 |
+
+The special items are listed in the order of the shop text (bomb, shot burst, map, destroy nodes, repel monster, first aid, freeze monster, shield, party power, air burst, distract monster, molotov, ground mine, dynamite). The caps on each stat come from a per-character table indexed by Skill level ($CD2DF6). The generator's shopping list adds these prices up to set a player's money.
+
 ## Leftover test passwords ($CD2D8A)
 
 Bank $CD holds 108 bytes of password text right after the menu strings (`PLAYER TWO`). They split into nine 12-character passwords, and all nine pass the checksum. The odds of that happening by chance are 1 in 16⁹. Nothing in the traced code points at them, and the six byte pairs `8A 2D` elsewhere in the ROM all sit inside data. They look like developer test passwords left in the build.
