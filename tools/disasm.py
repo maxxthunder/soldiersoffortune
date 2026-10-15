@@ -1,12 +1,12 @@
-"""Recursive-descent 65816 disassembler for LoROM SNES images.
+"""Recursive-descent 65816 disassembler for LoROM and HiROM SNES images.
 
 Usage: python tools/disasm.py <rom.sfc> <outdir>
 Traces code from the header vectors, tracking REP/SEP for M/X widths, and
-writes one .asm listing per 32 KB bank. Unreached bytes are emitted as db.
+writes one .asm listing per bank (32 KB LoROM, 64 KB HiROM). Unreached bytes are emitted as db.
 Widths after a JSR/JSL are the ones the callee returns with (when all its exits
 agree), and PLP restores the widths saved by the matching PHP.
-shortcut: indirect jumps (JMP (abs,X) tables etc.) are not followed; add entry
-points to EXTRA_ENTRIES to grow coverage.
+JMP/JSR (abs,X) jump tables are followed (see jump_table). shortcut: other indirect
+jumps are not; add entry points to EXTRA_ENTRIES to grow coverage.
 """
 import os
 import sys
