@@ -43,6 +43,8 @@ Money: before encoding, the game temporarily adds the resale value of each playe
 
 All five SNES passwords from Almar's Guides decode with a valid checksum and re-encode to the same string. The characters and world they decode to match the guide's labels. The site prints "1" as "I" in three of them.
 
+`python tools/check_generator.py` (needs node) checks that the web generator `tools/sof_password_generator.html` matches `sof_password.py` on random states and strings, for both versions.
+
 ## Genesis version
 
 The Genesis cartridge (`Soldiers of Fortune (USA).md`, 68000 code) stores the **same fields** as the SNES but uses a **different encoding**, so passwords don't carry over between the two. Its sixth character is the Preacher instead of the Scientist. `python tools/sof_password.py --genesis PASSWORD` decodes one.
