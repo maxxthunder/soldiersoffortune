@@ -14,9 +14,21 @@ L_C20000:
     PLY                     ; $C20011  7A           MX
     PLA                     ; $C20012  68           MX
     PLP                     ; $C20013  28           MX
-    RTL                     ; $C20014  6B           MX
-    db $08,$C2,$20,$48,$5A,$DA,$A9,$06,$00,$A2,$FF,$FF,$22,$4D,$02,$C2 ; $C20015
-    db $FA,$7A,$68,$28,$6B                                             ; $C20025
+    RTL                     ; $C20014  6B           mX
+L_C20015:
+    PHP                     ; $C20015  08           mX
+    REP #$20                ; $C20016  C2 20        mX
+    PHA                     ; $C20018  48           MX
+    PHY                     ; $C20019  5A           MX
+    PHX                     ; $C2001A  DA           MX
+    LDA #$0006              ; $C2001B  A9 06 00     MX
+    LDX #$FFFF              ; $C2001E  A2 FF FF     MX
+    JSL L_C2024D            ; $C20021  22 4D 02 C2  MX
+    PLX                     ; $C20025  FA           MX
+    PLY                     ; $C20026  7A           MX
+    PLA                     ; $C20027  68           MX
+    PLP                     ; $C20028  28           MX
+    RTL                     ; $C20029  6B           mX
 L_C2002A:
     PHP                     ; $C2002A  08           mX
     REP #$20                ; $C2002B  C2 20        mX
@@ -30,10 +42,10 @@ L_C2002A:
     PLY                     ; $C2003B  7A           MX
     PLA                     ; $C2003C  68           MX
     PLP                     ; $C2003D  28           MX
-    RTL                     ; $C2003E  6B           MX
+    RTL                     ; $C2003E  6B           mX
 L_C2003F:
-    PHP                     ; $C2003F  08           MX
-    REP #$20                ; $C20040  C2 20        MX
+    PHP                     ; $C2003F  08           mX
+    REP #$20                ; $C20040  C2 20        mX
     PHA                     ; $C20042  48           MX
     PHY                     ; $C20043  5A           MX
     PHX                     ; $C20044  DA           MX
@@ -44,7 +56,7 @@ L_C2003F:
     PLY                     ; $C20050  7A           MX
     PLA                     ; $C20051  68           MX
     PLP                     ; $C20052  28           MX
-    RTL                     ; $C20053  6B           MX
+    RTL                     ; $C20053  6B           mX
 L_C20054:
     LDA $0739               ; $C20054  AD 39 07     MX
     BMI L_C200B2            ; $C20057  30 59        MX
@@ -203,7 +215,7 @@ L_C2017E:
     REP #$20                ; $C2017E  C2 20        mX
 L_C20180:
     PLP                     ; $C20180  28           MX
-    RTL                     ; $C20181  6B           MX
+    RTL                     ; $C20181  6B           mX
 L_C20182:
     PHX                     ; $C20182  DA           MX
     PHY                     ; $C20183  5A           MX
@@ -427,8 +439,8 @@ L_C20345:
     LDA #$00D4              ; $C2036D  A9 D4 00     MX
     STA $28                 ; $C20370  85 28        MX
     JSR L_C2037B            ; $C20372  20 7B 03     MX
-    STA $002143             ; $C20375  8F 43 21 00  MX
-    PLP                     ; $C20379  28           MX
+    STA $002143             ; $C20375  8F 43 21 00  mX
+    PLP                     ; $C20379  28           mX
     RTL                     ; $C2037A  6B           MX
 L_C2037B:
     SEP #$20                ; $C2037B  E2 20        MX
@@ -460,8 +472,8 @@ L_C203A0:
     STA $002143             ; $C203B3  8F 43 21 00  mx
     REP #$30                ; $C203B7  C2 30        mx
     JSR L_C2037B            ; $C203B9  20 7B 03     MX
-    STA $002143             ; $C203BC  8F 43 21 00  MX
-    PLP                     ; $C203C0  28           MX
+    STA $002143             ; $C203BC  8F 43 21 00  mX
+    PLP                     ; $C203C0  28           mX
     RTL                     ; $C203C1  6B           MX
 L_C203C2:
     PHP                     ; $C203C2  08           mX
@@ -975,12 +987,12 @@ L_C20851:
     REP #$20                ; $C20851  C2 20        mX
     LDA #$0001              ; $C20853  A9 01 00     MX
     PLP                     ; $C20856  28           MX
-    RTL                     ; $C20857  6B           MX
+    RTL                     ; $C20857  6B           mX
 L_C20858:
     REP #$20                ; $C20858  C2 20        mX
     LDA #$0000              ; $C2085A  A9 00 00     MX
     PLP                     ; $C2085D  28           MX
-    RTL                     ; $C2085E  6B           MX
+    RTL                     ; $C2085E  6B           mX
 L_C2085F:
     PHP                     ; $C2085F  08           MX
     SEP #$20                ; $C20860  E2 20        MX

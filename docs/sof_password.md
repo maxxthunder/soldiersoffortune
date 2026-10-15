@@ -2,7 +2,7 @@
 
 Tool: `python tools/sof_password.py [PASSWORD]` decodes a password; run it with no arguments to run the self-test.
 
-## Routines (bank $CD, untraced by `disasm.py`, so the listings show them as `db` bytes)
+## Routines (bank $CD)
 
 | Address  | What it does |
 |----------|------|
@@ -10,7 +10,7 @@ Tool: `python tools/sof_password.py [PASSWORD]` decodes a password; run it with 
 | $CD3199  | **Encode**: game state → 12 five-bit values at DP $64–$6F |
 | $CD3177  | Values → ASCII at $7F9560 via the alphabet |
 | $CD314E  | **Entry**: ASCII → values; sets $74=1 for a character not in the alphabet |
-| $CD303D  | **Decode/validate**: un-XOR, checksum, range checks, writes RAM; $74=1 means INVALID PASSWORD |
+| $CD3039  | **Decode/validate**: un-XOR, checksum, range checks, writes RAM; $74=1 means INVALID PASSWORD |
 | $CD3398  | Checksum |
 | $CD323E  | XOR every value with $15 |
 | $CD324D / $CD3127 | Pack / unpack a 16-bit money value into 3 values |
