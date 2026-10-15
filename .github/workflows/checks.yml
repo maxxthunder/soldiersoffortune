@@ -1,0 +1,46 @@
+# Runs the checks that don't need the ROMs, then publishes the password generator page.
+name: checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Password self-test
+        run: python tools/sof_password.py
+      - name: Web generator matches sof_password.py
+        run: python tools/check_generator.py
+      - name: Every 68000 opcode round-trips
+        run: python tools/check_68k.py
+      - name: names.txt loads
+        run: python -c "import sys; sys.path.insert(0, 'tools'); import names; names.load('snes'); names.load('genesis')"
+
+  pages:
+    needs: checks
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Copy the generator page to gh-pages
+        run: |
+          cp tools/sof_password_generator.html "$RUNNER_TEMP/index.html"
+          git fetch --depth=1 origin gh-pages
+          git checkout gh-pages
+          cp "$RUNNER_TEMP/index.html" index.html
+          if git diff --quiet; then echo "gh-pages is already up to date"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Update generator page from main (${GITHUB_SHA::7})"
+          git push origin gh-pages

@@ -24,6 +24,7 @@ The two versions' passwords store the same data but use different encodings.
 | `tools/sof_password_generator.html` | The same in a web page: build a password for any party, or decode one |
 | `tools/check_generator.py` | Checks the web page's JavaScript against `sof_password.py` |
 | `tools/names.py` | Loads `disasm/names.txt` |
+| `.github/workflows/checks.yml` | CI: runs the checks that don't need the ROMs, then copies the generator page to the `gh-pages` branch |
 | `tools/sof_genesis_romcheck.py` | Checks `sof_password.py` against the Genesis ROM's own password code, run in an emulator |
 
 ## You need
