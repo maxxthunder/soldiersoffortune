@@ -38,7 +38,9 @@ L_D10043:
     JSR L_D1055B            ; $D10047  20 5B 05     MX
     JSR L_D100DB            ; $D1004A  20 DB 00     MX
     JMP L_D10057            ; $D1004D  4C 57 00     MX
-    db $A9,$10,$00,$22,$45,$04,$C2                                     ; $D10050
+L_D10050:
+    LDA #$0010              ; $D10050  A9 10 00     MX
+    JSL L_C20445            ; $D10053  22 45 04 C2  MX
 L_D10057:
     JSR L_D1076E            ; $D10057  20 6E 07     MX
     PHX                     ; $D1005A  DA           MX
@@ -449,8 +451,16 @@ L_D103C7:
     BCS L_D10384            ; $D103E2  B0 A0        MX
     REP #$80                ; $D103E4  C2 80        MX
     RTS                     ; $D103E6  60           MX
-    db $20,$14,$04,$A9,$7F,$00,$A2,$00,$00,$A0,$20,$00,$22,$A8,$02,$C3 ; $D103E7
-    db $A9,$00,$7C,$20,$02,$04,$22,$89,$04,$C2,$60                     ; $D103F7
+L_D103E7:
+    JSR L_D10414            ; $D103E7  20 14 04     MX
+    LDA #$007F              ; $D103EA  A9 7F 00     MX
+    LDX #$0000              ; $D103ED  A2 00 00     MX
+    LDY #$0020              ; $D103F0  A0 20 00     MX
+    JSL L_C302A8            ; $D103F3  22 A8 02 C3  MX
+    LDA #$7C00              ; $D103F7  A9 00 7C     MX
+    JSR L_D10402            ; $D103FA  20 02 04     MX
+    JSL L_C20489            ; $D103FD  22 89 04 C2  MX
+    RTS                     ; $D10401  60           MX
 L_D10402:
     STA $002116             ; $D10402  8F 16 21 00  MX
     LDA #$0800              ; $D10406  A9 00 08     MX
@@ -458,11 +468,42 @@ L_D10402:
     LDY #$007E              ; $D1040C  A0 7E 00     MX
     JSL L_C308A0            ; $D1040F  22 A0 08 C3  MX
     RTS                     ; $D10413  60           MX
-    db $E2,$20,$A5,$ED,$29,$EF,$85,$ED,$85,$EF,$C2,$20,$DA,$5A,$F4,$00 ; $D10414
-    db $00,$F4,$7F,$00,$22,$00,$00,$C3,$68,$68,$68,$68,$9C,$FE,$09,$A9 ; $D10424
-    db $FD,$07,$A2,$FE,$09,$A0,$00,$0A,$8B,$54,$7E,$7E,$AB,$A9,$00,$00 ; $D10434
-    db $8F,$16,$21,$00,$A2,$20,$00,$A0,$00,$00,$20,$5E,$04,$0A,$0A,$0A ; $D10444
-    db $0A,$0A,$A0,$7F,$00,$22,$A0,$08,$C3,$60                         ; $D10454
+L_D10414:
+    SEP #$20                ; $D10414  E2 20        MX
+    LDA $ED                 ; $D10416  A5 ED        mX
+    AND #$EF                ; $D10418  29 EF        mX
+    STA $ED                 ; $D1041A  85 ED        mX
+    STA $EF                 ; $D1041C  85 EF        mX
+    REP #$20                ; $D1041E  C2 20        mX
+    PHX                     ; $D10420  DA           MX
+    PHY                     ; $D10421  5A           MX
+    PEA $0000               ; $D10422  F4 00 00     MX
+    PEA $007F               ; $D10425  F4 7F 00     MX
+    JSL L_C30000            ; $D10428  22 00 00 C3  MX
+    PLA                     ; $D1042C  68           MX
+    PLA                     ; $D1042D  68           MX
+    PLA                     ; $D1042E  68           MX
+    PLA                     ; $D1042F  68           MX
+    STZ $09FE               ; $D10430  9C FE 09     MX
+    LDA #$07FD              ; $D10433  A9 FD 07     MX
+    LDX #$09FE              ; $D10436  A2 FE 09     MX
+    LDY #$0A00              ; $D10439  A0 00 0A     MX
+    PHB                     ; $D1043C  8B           MX
+    MVN $7E,$7E             ; $D1043D  54 7E 7E     MX
+    PLB                     ; $D10440  AB           MX
+    LDA #$0000              ; $D10441  A9 00 00     MX
+    STA $002116             ; $D10444  8F 16 21 00  MX
+    LDX #$0020              ; $D10448  A2 20 00     MX
+    LDY #$0000              ; $D1044B  A0 00 00     MX
+    JSR L_D1045E            ; $D1044E  20 5E 04     MX
+    ASL                     ; $D10451  0A           MX
+    ASL                     ; $D10452  0A           MX
+    ASL                     ; $D10453  0A           MX
+    ASL                     ; $D10454  0A           MX
+    ASL                     ; $D10455  0A           MX
+    LDY #$007F              ; $D10456  A0 7F 00     MX
+    JSL L_C308A0            ; $D10459  22 A0 08 C3  MX
+    RTS                     ; $D1045D  60           MX
 L_D1045E:
     LDA $7F0000,X           ; $D1045E  BF 00 00 7F  MX
     ASL                     ; $D10462  0A           MX

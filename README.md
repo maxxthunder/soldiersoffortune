@@ -64,10 +64,22 @@ python tools/check_68k.py
 
 Each instruction line shows its address, its raw bytes and the register widths in effect:
 `m`/`x` mean 8-bit A/index registers, and `M`/`X` mean 16-bit. Bytes the tracer never
-reached are shown as `db` and may be code or data. Only about 3% of the ROM is traced as
-code so far. The rest is mostly graphics and data, plus code reached only through RAM
-vectors or other indirect jumps. To trace more of it, add `(address, m, x)` to
-`EXTRA_ENTRIES` in `tools/disasm.py`.
+reached are shown as `db` and may be code or data. About 4.5% of the ROM is traced as
+code (31,767 instructions, up from 3.1% when tracing only from the vectors). The extra
+entry points come from pointers: `LDA #lo`/`STA a`, `LDA #bank`/`STA a+2` pairs (the object
+script pointers that `JML [$46]` runs), `PEA` bank/address pairs, and the bytes after each
+`RTS`/`RTL`/`JMP`. A guess is kept only if every path from it decodes without opcodes that the
+vector-reached code never uses (`guesses()` and `plausible()` in `tools/disasm.py`). The rest
+of the ROM is mostly graphics and compressed data. To trace more of it, add
+`(address, m, x)` to `EXTRA_ENTRIES`.
+
+All 11 controller reads in the ROM (`$4218`–`$421B`) are now traced, and none of them
+checks for a cheat. The menus read through `$CD014C` (`$4C`/`$4E` held, `$50`/`$52` new;
+the new-press bytes are never read). In game, `$C0B16D` reads into `$94`–`$9A`. The main
+loop copies those to `$06F3`/`$06FB`/`$06FD`, where they drive player control, item
+cycling (`$C20E11`) and pause on Start (`$C20831`). The other reads are "press any
+button" waits and the `$D108DB` list menu. There are no button-sequence tables or held
+combos, and no writes to the level, lives or money variables depend on input.
 
 Genesis lines show the address and the raw words. Unreached bytes are `dc.b`. The code sits
 in `$000000`–`$01EB2E`, and about 55% of that is traced (4.4% of the ROM); the rest of that range
