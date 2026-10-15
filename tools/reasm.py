@@ -11,6 +11,9 @@ import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
 from disasm import OPS, set_map, to_off  # noqa: E402
+import names  # noqa: E402
+
+CODE_NAMES = names.load("snes")[0]
 
 OPCODE = {}
 for i, (n, mo) in enumerate(OPS):
@@ -71,7 +74,7 @@ def encode(name, ops, pc):
 def assemble(path, out):
     pc = None
     for ln, line in enumerate(open(path), 1):
-        text = line.split(";", 1)[0].strip()
+        text = names.unname(line.split(";", 1)[0].strip(), CODE_NAMES)
         if not text:
             continue
         try:

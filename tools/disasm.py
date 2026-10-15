@@ -12,6 +12,8 @@ add more to EXTRA_ENTRIES to grow coverage.
 import os
 import sys
 
+import names
+
 EXTRA_ENTRIES = []  # (snes_addr, m, x)
 
 OPS = """
@@ -290,11 +292,31 @@ def operand(rom, off, addr, name, mode, n, m, x, labels):
     return FMT[mode].format(arg, w=w)
 
 
+def ram_note(name, mode, arg, bank, ram):
+    """Name of the RAM variable an instruction touches, if names.txt has it. Direct page is taken
+    as $0000 only where the name allows that bank; absolute addresses below $2000 hit the low page."""
+    if name in ("JSR", "JMP", "JSL", "JML", "PEA", "PER") or mode in ("rel", "rel16", "bm", "imp", "sr", "sriy")             or mode.startswith("imm"):
+        return ""
+    if mode.startswith("dp"):
+        a, dp = 0x7E0000 | arg, True
+    elif mode.startswith("long"):
+        lo, b = arg & 0xFFFF, arg >> 16
+        a, dp = (0x7E0000 | lo if b & 0x7F < 0x40 and lo < 0x2000 else arg), False
+    else:
+        a, dp = (0x7E0000 | arg if arg < 0x2000 else None), False
+    hit = ram.get(a)
+    if not hit:
+        return ""
+    if hit[1]:  # a direct-page name, valid only in its bank
+        return hit[0] if dp and hit[1] == f"{bank:02X}" else ""
+    return hit[0]
+
+
 def main(rom_path, outdir):
     rom = open(rom_path, "rb").read()
     h = set_map(rom)
     vec = lambda o: int.from_bytes(rom[h + o:h + o + 2], "little")
-    entries = {vec(0x24): "COP", vec(0x26): "BRK", vec(0x2E): "IRQ", vec(0x2A): "NMI", vec(0x3C): "RESET"}  # RESET last wins shared addresses
+    entries = [vec(0x24), vec(0x26), vec(0x2E), vec(0x2A), vec(0x3C)]  # COP, BRK, IRQ, NMI, RESET; names are in names.txt
     starts = [(0x800000 | a, True, True) for a in entries if a >= 0x8000] + EXTRA_ENTRIES
     st = trace(rom, starts)
     code, labels = st[0], st[1]
@@ -313,7 +335,11 @@ def main(rom_path, outdir):
         if not found:
             break
     labels |= {to_off(a) for a, _, _ in starts}
-    names = {to_off(0x800000 | a): n for a, n in entries.items() if a >= 0x8000}
+    code_names, ram = names.load("snes")
+    for a in code_names:
+        o = to_off(a)
+        assert o is not None and to_addr(o) == a and not inside(code, o), f"names.txt: ${a:06X} is not a label position"
+        labels.add(o)
 
     os.makedirs(outdir, exist_ok=True)
     size = 0x10000 if HIROM else 0x8000
@@ -324,13 +350,14 @@ def main(rom_path, outdir):
         while off < end:
             addr = to_addr(off)
             if off in labels:
-                lines.append(f"{names.get(off, 'L_%06X' % addr)}:")
+                lines.append(f"{code_names.get(addr, 'L_%06X' % addr)}:")
             if off in code:
                 n, m, x = code[off]
                 name, mode = OPS[rom[off]]
-                ops = operand(rom, off, addr, name, mode, n, m, x, labels)
+                ops = names.name_labels(operand(rom, off, addr, name, mode, n, m, x, labels), code_names)
                 raw = " ".join(f"{b:02X}" for b in rom[off:off + n])
-                lines.append(f"    {(name + ' ' + ops).strip():<24}; ${addr:06X}  {raw:<12} {'m' if m else 'M'}{'x' if x else 'X'}")
+                note = ram_note(name, mode, int.from_bytes(rom[off + 1:off + n], "little"), addr >> 16, ram)
+                lines.append(f"    {(name + ' ' + ops).strip():<32}; ${addr:06X}  {raw:<12} {'m' if m else 'M'}{'x' if x else 'X'}  {note}".rstrip())
                 off += n
             else:
                 stop = off + 1

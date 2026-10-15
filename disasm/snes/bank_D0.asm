@@ -2,713 +2,713 @@
 org $D00000
 
 L_D00000:
-    LDY #$0000              ; $D00000  A0 00 00     MX
-    LDX #$0380              ; $D00003  A2 80 03     MX
-    LDA #$2472              ; $D00006  A9 72 24     MX
+    LDY #$0000                      ; $D00000  A0 00 00     MX
+    LDX #$0380                      ; $D00003  A2 80 03     MX
+    LDA #$2472                      ; $D00006  A9 72 24     MX
 L_D00009:
-    STA $11FE,Y             ; $D00009  99 FE 11     MX
-    INY                     ; $D0000C  C8           MX
-    INY                     ; $D0000D  C8           MX
-    DEX                     ; $D0000E  CA           MX
-    BNE L_D00009            ; $D0000F  D0 F8        MX
-    PEA $0000               ; $D00011  F4 00 00     MX
-    PEA $00C6               ; $D00014  F4 C6 00     MX
-    PEA $C7F6               ; $D00017  F4 F6 C7     MX
-    PEA $007F               ; $D0001A  F4 7F 00     MX
-    JSL L_C30000            ; $D0001D  22 00 00 C3  MX
-    PLA                     ; $D00021  68           MX
-    PLA                     ; $D00022  68           MX
-    PLA                     ; $D00023  68           MX
-    PLA                     ; $D00024  68           MX
-    LDX #$0000              ; $D00025  A2 00 00     MX
-    LDY #$0000              ; $D00028  A0 00 00     MX
-    LDA #$4B14              ; $D0002B  A9 14 4B     MX
-    STA $26                 ; $D0002E  85 26        MX
-    LDA #$00C1              ; $D00030  A9 C1 00     MX
-    STA $28                 ; $D00033  85 28        MX
-    LDA #$0011              ; $D00035  A9 11 00     MX
-    STA $46                 ; $D00038  85 46        MX
+    STA $11FE,Y                     ; $D00009  99 FE 11     MX
+    INY                             ; $D0000C  C8           MX
+    INY                             ; $D0000D  C8           MX
+    DEX                             ; $D0000E  CA           MX
+    BNE L_D00009                    ; $D0000F  D0 F8        MX
+    PEA $0000                       ; $D00011  F4 00 00     MX
+    PEA $00C6                       ; $D00014  F4 C6 00     MX
+    PEA $C7F6                       ; $D00017  F4 F6 C7     MX
+    PEA $007F                       ; $D0001A  F4 7F 00     MX
+    JSL L_C30000                    ; $D0001D  22 00 00 C3  MX
+    PLA                             ; $D00021  68           MX
+    PLA                             ; $D00022  68           MX
+    PLA                             ; $D00023  68           MX
+    PLA                             ; $D00024  68           MX
+    LDX #$0000                      ; $D00025  A2 00 00     MX
+    LDY #$0000                      ; $D00028  A0 00 00     MX
+    LDA #$4B14                      ; $D0002B  A9 14 4B     MX
+    STA $26                         ; $D0002E  85 26        MX
+    LDA #$00C1                      ; $D00030  A9 C1 00     MX
+    STA $28                         ; $D00033  85 28        MX
+    LDA #$0011                      ; $D00035  A9 11 00     MX
+    STA $46                         ; $D00038  85 46        MX
 L_D0003A:
-    LDA [$26],Y             ; $D0003A  B7 26        MX
-    STA $7FC7F6,X           ; $D0003C  9F F6 C7 7F  MX
-    INX                     ; $D00040  E8           MX
-    INX                     ; $D00041  E8           MX
-    INY                     ; $D00042  C8           MX
-    INY                     ; $D00043  C8           MX
-    DEC $46                 ; $D00044  C6 46        MX
-    BPL L_D0003A            ; $D00046  10 F2        MX
-    LDA #$107F              ; $D00048  A9 7F 10     MX
-    LDX #$C7F6              ; $D0004B  A2 F6 C7     MX
-    LDY #$0020              ; $D0004E  A0 20 00     MX
-    JSL L_C302A8            ; $D00051  22 A8 02 C3  MX
-    LDX #$0000              ; $D00055  A2 00 00     MX
-    LDY #$0010              ; $D00058  A0 10 00     MX
+    LDA [$26],Y                     ; $D0003A  B7 26        MX
+    STA $7FC7F6,X                   ; $D0003C  9F F6 C7 7F  MX
+    INX                             ; $D00040  E8           MX
+    INX                             ; $D00041  E8           MX
+    INY                             ; $D00042  C8           MX
+    INY                             ; $D00043  C8           MX
+    DEC $46                         ; $D00044  C6 46        MX
+    BPL L_D0003A                    ; $D00046  10 F2        MX
+    LDA #$107F                      ; $D00048  A9 7F 10     MX
+    LDX #$C7F6                      ; $D0004B  A2 F6 C7     MX
+    LDY #$0020                      ; $D0004E  A0 20 00     MX
+    JSL L_C302A8                    ; $D00051  22 A8 02 C3  MX
+    LDX #$0000                      ; $D00055  A2 00 00     MX
+    LDY #$0010                      ; $D00058  A0 10 00     MX
 L_D0005B:
-    LDA $7FC7F6,X           ; $D0005B  BF F6 C7 7F  MX
-    LSR                     ; $D0005F  4A           MX
-    AND #$3DEF              ; $D00060  29 EF 3D     MX
-    STA $7FC7F6,X           ; $D00063  9F F6 C7 7F  MX
-    INX                     ; $D00067  E8           MX
-    INX                     ; $D00068  E8           MX
-    DEY                     ; $D00069  88           MX
-    BNE L_D0005B            ; $D0006A  D0 EF        MX
-    LDA #$207F              ; $D0006C  A9 7F 20     MX
-    LDX #$C7F6              ; $D0006F  A2 F6 C7     MX
-    LDY #$0020              ; $D00072  A0 20 00     MX
-    JSL L_C302A8            ; $D00075  22 A8 02 C3  MX
-    LDX #$0000              ; $D00079  A2 00 00     MX
-    LDY #$0000              ; $D0007C  A0 00 00     MX
-    LDA #$4B34              ; $D0007F  A9 34 4B     MX
-    STA $26                 ; $D00082  85 26        MX
-    LDA #$00C1              ; $D00084  A9 C1 00     MX
-    STA $28                 ; $D00087  85 28        MX
-    LDA #$0011              ; $D00089  A9 11 00     MX
-    STA $46                 ; $D0008C  85 46        MX
+    LDA $7FC7F6,X                   ; $D0005B  BF F6 C7 7F  MX
+    LSR                             ; $D0005F  4A           MX
+    AND #$3DEF                      ; $D00060  29 EF 3D     MX
+    STA $7FC7F6,X                   ; $D00063  9F F6 C7 7F  MX
+    INX                             ; $D00067  E8           MX
+    INX                             ; $D00068  E8           MX
+    DEY                             ; $D00069  88           MX
+    BNE L_D0005B                    ; $D0006A  D0 EF        MX
+    LDA #$207F                      ; $D0006C  A9 7F 20     MX
+    LDX #$C7F6                      ; $D0006F  A2 F6 C7     MX
+    LDY #$0020                      ; $D00072  A0 20 00     MX
+    JSL L_C302A8                    ; $D00075  22 A8 02 C3  MX
+    LDX #$0000                      ; $D00079  A2 00 00     MX
+    LDY #$0000                      ; $D0007C  A0 00 00     MX
+    LDA #$4B34                      ; $D0007F  A9 34 4B     MX
+    STA $26                         ; $D00082  85 26        MX
+    LDA #$00C1                      ; $D00084  A9 C1 00     MX
+    STA $28                         ; $D00087  85 28        MX
+    LDA #$0011                      ; $D00089  A9 11 00     MX
+    STA $46                         ; $D0008C  85 46        MX
 L_D0008E:
-    LDA [$26],Y             ; $D0008E  B7 26        MX
-    STA $7FC7F6,X           ; $D00090  9F F6 C7 7F  MX
-    INX                     ; $D00094  E8           MX
-    INX                     ; $D00095  E8           MX
-    INY                     ; $D00096  C8           MX
-    INY                     ; $D00097  C8           MX
-    DEC $46                 ; $D00098  C6 46        MX
-    BPL L_D0008E            ; $D0009A  10 F2        MX
-    LDA #$307F              ; $D0009C  A9 7F 30     MX
-    LDX #$C7F6              ; $D0009F  A2 F6 C7     MX
-    LDY #$0020              ; $D000A2  A0 20 00     MX
-    JSL L_C302A8            ; $D000A5  22 A8 02 C3  MX
-    LDX #$0000              ; $D000A9  A2 00 00     MX
-    LDY #$0010              ; $D000AC  A0 10 00     MX
+    LDA [$26],Y                     ; $D0008E  B7 26        MX
+    STA $7FC7F6,X                   ; $D00090  9F F6 C7 7F  MX
+    INX                             ; $D00094  E8           MX
+    INX                             ; $D00095  E8           MX
+    INY                             ; $D00096  C8           MX
+    INY                             ; $D00097  C8           MX
+    DEC $46                         ; $D00098  C6 46        MX
+    BPL L_D0008E                    ; $D0009A  10 F2        MX
+    LDA #$307F                      ; $D0009C  A9 7F 30     MX
+    LDX #$C7F6                      ; $D0009F  A2 F6 C7     MX
+    LDY #$0020                      ; $D000A2  A0 20 00     MX
+    JSL L_C302A8                    ; $D000A5  22 A8 02 C3  MX
+    LDX #$0000                      ; $D000A9  A2 00 00     MX
+    LDY #$0010                      ; $D000AC  A0 10 00     MX
 L_D000AF:
-    LDA $7FC7F6,X           ; $D000AF  BF F6 C7 7F  MX
-    LSR                     ; $D000B3  4A           MX
-    AND #$3DEF              ; $D000B4  29 EF 3D     MX
-    STA $7FC7F6,X           ; $D000B7  9F F6 C7 7F  MX
-    INX                     ; $D000BB  E8           MX
-    INX                     ; $D000BC  E8           MX
-    DEY                     ; $D000BD  88           MX
-    BNE L_D000AF            ; $D000BE  D0 EF        MX
-    LDA #$407F              ; $D000C0  A9 7F 40     MX
-    LDX #$C7F6              ; $D000C3  A2 F6 C7     MX
-    LDY #$0020              ; $D000C6  A0 20 00     MX
-    JSL L_C302A8            ; $D000C9  22 A8 02 C3  MX
-    LDX #$0000              ; $D000CD  A2 00 00     MX
-    LDY #$0000              ; $D000D0  A0 00 00     MX
-    LDA #$4B54              ; $D000D3  A9 54 4B     MX
-    STA $26                 ; $D000D6  85 26        MX
-    LDA #$00C1              ; $D000D8  A9 C1 00     MX
-    STA $28                 ; $D000DB  85 28        MX
-    LDA #$0011              ; $D000DD  A9 11 00     MX
-    STA $46                 ; $D000E0  85 46        MX
+    LDA $7FC7F6,X                   ; $D000AF  BF F6 C7 7F  MX
+    LSR                             ; $D000B3  4A           MX
+    AND #$3DEF                      ; $D000B4  29 EF 3D     MX
+    STA $7FC7F6,X                   ; $D000B7  9F F6 C7 7F  MX
+    INX                             ; $D000BB  E8           MX
+    INX                             ; $D000BC  E8           MX
+    DEY                             ; $D000BD  88           MX
+    BNE L_D000AF                    ; $D000BE  D0 EF        MX
+    LDA #$407F                      ; $D000C0  A9 7F 40     MX
+    LDX #$C7F6                      ; $D000C3  A2 F6 C7     MX
+    LDY #$0020                      ; $D000C6  A0 20 00     MX
+    JSL L_C302A8                    ; $D000C9  22 A8 02 C3  MX
+    LDX #$0000                      ; $D000CD  A2 00 00     MX
+    LDY #$0000                      ; $D000D0  A0 00 00     MX
+    LDA #$4B54                      ; $D000D3  A9 54 4B     MX
+    STA $26                         ; $D000D6  85 26        MX
+    LDA #$00C1                      ; $D000D8  A9 C1 00     MX
+    STA $28                         ; $D000DB  85 28        MX
+    LDA #$0011                      ; $D000DD  A9 11 00     MX
+    STA $46                         ; $D000E0  85 46        MX
 L_D000E2:
-    LDA [$26],Y             ; $D000E2  B7 26        MX
-    STA $7FC7F6,X           ; $D000E4  9F F6 C7 7F  MX
-    INX                     ; $D000E8  E8           MX
-    INX                     ; $D000E9  E8           MX
-    INY                     ; $D000EA  C8           MX
-    INY                     ; $D000EB  C8           MX
-    DEC $46                 ; $D000EC  C6 46        MX
-    BPL L_D000E2            ; $D000EE  10 F2        MX
-    LDA #$507F              ; $D000F0  A9 7F 50     MX
-    LDX #$C7F6              ; $D000F3  A2 F6 C7     MX
-    LDY #$0020              ; $D000F6  A0 20 00     MX
-    JSL L_C302A8            ; $D000F9  22 A8 02 C3  MX
-    LDX #$0000              ; $D000FD  A2 00 00     MX
-    LDY #$0010              ; $D00100  A0 10 00     MX
+    LDA [$26],Y                     ; $D000E2  B7 26        MX
+    STA $7FC7F6,X                   ; $D000E4  9F F6 C7 7F  MX
+    INX                             ; $D000E8  E8           MX
+    INX                             ; $D000E9  E8           MX
+    INY                             ; $D000EA  C8           MX
+    INY                             ; $D000EB  C8           MX
+    DEC $46                         ; $D000EC  C6 46        MX
+    BPL L_D000E2                    ; $D000EE  10 F2        MX
+    LDA #$507F                      ; $D000F0  A9 7F 50     MX
+    LDX #$C7F6                      ; $D000F3  A2 F6 C7     MX
+    LDY #$0020                      ; $D000F6  A0 20 00     MX
+    JSL L_C302A8                    ; $D000F9  22 A8 02 C3  MX
+    LDX #$0000                      ; $D000FD  A2 00 00     MX
+    LDY #$0010                      ; $D00100  A0 10 00     MX
 L_D00103:
-    LDA $7FC7F6,X           ; $D00103  BF F6 C7 7F  MX
-    LSR                     ; $D00107  4A           MX
-    AND #$3DEF              ; $D00108  29 EF 3D     MX
-    STA $7FC7F6,X           ; $D0010B  9F F6 C7 7F  MX
-    INX                     ; $D0010F  E8           MX
-    INX                     ; $D00110  E8           MX
-    DEY                     ; $D00111  88           MX
-    BNE L_D00103            ; $D00112  D0 EF        MX
-    LDA #$607F              ; $D00114  A9 7F 60     MX
-    LDX #$C7F6              ; $D00117  A2 F6 C7     MX
-    LDY #$0020              ; $D0011A  A0 20 00     MX
-    JSL L_C302A8            ; $D0011D  22 A8 02 C3  MX
-    LDA #$0400              ; $D00121  A9 00 04     MX
-    STA $56                 ; $D00124  85 56        MX
-    LDY #$40A8              ; $D00126  A0 A8 40     MX
-    LDX #$0000              ; $D00129  A2 00 00     MX
-    LDA $0049,Y             ; $D0012C  B9 49 00     MX
-    BIT #$0020              ; $D0012F  89 20 00     MX
-    PHP                     ; $D00132  08           MX
-    AND #$FFDF              ; $D00133  29 DF FF     MX
-    STA $0049,Y             ; $D00136  99 49 00     MX
-    PLP                     ; $D00139  28           MX
-    LDA $90                 ; $D0013A  A5 90        MX
-    BNE L_D0014A            ; $D0013C  D0 0C        MX
-    LDA $0049,Y             ; $D0013E  B9 49 00     MX
-    ORA #$0020              ; $D00141  09 20 00     MX
-    STA $0049,Y             ; $D00144  99 49 00     MX
-    LDX #$0400              ; $D00147  A2 00 04     MX
+    LDA $7FC7F6,X                   ; $D00103  BF F6 C7 7F  MX
+    LSR                             ; $D00107  4A           MX
+    AND #$3DEF                      ; $D00108  29 EF 3D     MX
+    STA $7FC7F6,X                   ; $D0010B  9F F6 C7 7F  MX
+    INX                             ; $D0010F  E8           MX
+    INX                             ; $D00110  E8           MX
+    DEY                             ; $D00111  88           MX
+    BNE L_D00103                    ; $D00112  D0 EF        MX
+    LDA #$607F                      ; $D00114  A9 7F 60     MX
+    LDX #$C7F6                      ; $D00117  A2 F6 C7     MX
+    LDY #$0020                      ; $D0011A  A0 20 00     MX
+    JSL L_C302A8                    ; $D0011D  22 A8 02 C3  MX
+    LDA #$0400                      ; $D00121  A9 00 04     MX
+    STA $56                         ; $D00124  85 56        MX
+    LDY #$40A8                      ; $D00126  A0 A8 40     MX
+    LDX #$0000                      ; $D00129  A2 00 00     MX
+    LDA $0049,Y                     ; $D0012C  B9 49 00     MX
+    BIT #$0020                      ; $D0012F  89 20 00     MX
+    PHP                             ; $D00132  08           MX
+    AND #$FFDF                      ; $D00133  29 DF FF     MX
+    STA $0049,Y                     ; $D00136  99 49 00     MX
+    PLP                             ; $D00139  28           MX
+    LDA $90                         ; $D0013A  A5 90        MX
+    BNE L_D0014A                    ; $D0013C  D0 0C        MX
+    LDA $0049,Y                     ; $D0013E  B9 49 00     MX
+    ORA #$0020                      ; $D00141  09 20 00     MX
+    STA $0049,Y                     ; $D00144  99 49 00     MX
+    LDX #$0400                      ; $D00147  A2 00 04     MX
 L_D0014A:
-    STX $56                 ; $D0014A  86 56        MX
-    LDY #$40A8              ; $D0014C  A0 A8 40     MX
-    LDX #$09A4              ; $D0014F  A2 A4 09     MX
-    LDA #$0108              ; $D00152  A9 08 01     MX
-    JSR L_D0073B            ; $D00155  20 3B 07     MX
-    LDA $08B1               ; $D00158  AD B1 08     MX
-    LDY #$D808              ; $D0015B  A0 08 D8     MX
-    JSR L_D005A3            ; $D0015E  20 A3 05     MX
-    LDY #$0042              ; $D00161  A0 42 00     MX
-    LDA #$0000              ; $D00164  A9 00 00     MX
-    JSR L_D005C2            ; $D00167  20 C2 05     MX
-    LDY #$40A8              ; $D0016A  A0 A8 40     MX
-    LDA $0057,Y             ; $D0016D  B9 57 00     MX
-    AND #$00FF              ; $D00170  29 FF 00     MX
-    LDY #$05C2              ; $D00173  A0 C2 05     MX
-    JSR L_D005EA            ; $D00176  20 EA 05     MX
-    LDY #$411D              ; $D00179  A0 1D 41     MX
-    LDX #$0000              ; $D0017C  A2 00 00     MX
-    LDA $0049,Y             ; $D0017F  B9 49 00     MX
-    BIT #$0020              ; $D00182  89 20 00     MX
-    PHP                     ; $D00185  08           MX
-    AND #$FFDF              ; $D00186  29 DF FF     MX
-    STA $0049,Y             ; $D00189  99 49 00     MX
-    PLP                     ; $D0018C  28           MX
-    LDA $92                 ; $D0018D  A5 92        MX
-    BNE L_D0019D            ; $D0018F  D0 0C        MX
-    LDA $0049,Y             ; $D00191  B9 49 00     MX
-    ORA #$0020              ; $D00194  09 20 00     MX
-    STA $0049,Y             ; $D00197  99 49 00     MX
-    LDX #$0400              ; $D0019A  A2 00 04     MX
+    STX $56                         ; $D0014A  86 56        MX
+    LDY #$40A8                      ; $D0014C  A0 A8 40     MX
+    LDX #$09A4                      ; $D0014F  A2 A4 09     MX
+    LDA #$0108                      ; $D00152  A9 08 01     MX
+    JSR L_D0073B                    ; $D00155  20 3B 07     MX
+    LDA $08B1                       ; $D00158  AD B1 08     MX
+    LDY #$D808                      ; $D0015B  A0 08 D8     MX
+    JSR L_D005A3                    ; $D0015E  20 A3 05     MX
+    LDY #$0042                      ; $D00161  A0 42 00     MX
+    LDA #$0000                      ; $D00164  A9 00 00     MX
+    JSR L_D005C2                    ; $D00167  20 C2 05     MX
+    LDY #$40A8                      ; $D0016A  A0 A8 40     MX
+    LDA $0057,Y                     ; $D0016D  B9 57 00     MX
+    AND #$00FF                      ; $D00170  29 FF 00     MX
+    LDY #$05C2                      ; $D00173  A0 C2 05     MX
+    JSR L_D005EA                    ; $D00176  20 EA 05     MX
+    LDY #$411D                      ; $D00179  A0 1D 41     MX
+    LDX #$0000                      ; $D0017C  A2 00 00     MX
+    LDA $0049,Y                     ; $D0017F  B9 49 00     MX
+    BIT #$0020                      ; $D00182  89 20 00     MX
+    PHP                             ; $D00185  08           MX
+    AND #$FFDF                      ; $D00186  29 DF FF     MX
+    STA $0049,Y                     ; $D00189  99 49 00     MX
+    PLP                             ; $D0018C  28           MX
+    LDA $92                         ; $D0018D  A5 92        MX
+    BNE L_D0019D                    ; $D0018F  D0 0C        MX
+    LDA $0049,Y                     ; $D00191  B9 49 00     MX
+    ORA #$0020                      ; $D00194  09 20 00     MX
+    STA $0049,Y                     ; $D00197  99 49 00     MX
+    LDX #$0400                      ; $D0019A  A2 00 04     MX
 L_D0019D:
-    STX $56                 ; $D0019D  86 56        MX
-    LDY #$411D              ; $D0019F  A0 1D 41     MX
-    LDX #$09CC              ; $D001A2  A2 CC 09     MX
-    LDA #$0134              ; $D001A5  A9 34 01     MX
-    JSR L_D0073B            ; $D001A8  20 3B 07     MX
-    LDA $08B3               ; $D001AB  AD B3 08     MX
-    LDY #$D8C8              ; $D001AE  A0 C8 D8     MX
-    JSR L_D005A3            ; $D001B1  20 A3 05     MX
-    LDY #$006E              ; $D001B4  A0 6E 00     MX
-    LDA #$0001              ; $D001B7  A9 01 00     MX
-    JSR L_D005C2            ; $D001BA  20 C2 05     MX
-    LDY #$411D              ; $D001BD  A0 1D 41     MX
-    LDA $0057,Y             ; $D001C0  B9 57 00     MX
-    AND #$00FF              ; $D001C3  29 FF 00     MX
-    LDY #$05F4              ; $D001C6  A0 F4 05     MX
-    JSR L_D005EA            ; $D001C9  20 EA 05     MX
-    LDA $08F8               ; $D001CC  AD F8 08     MX
-    BNE L_D001F7            ; $D001CF  D0 26        MX
-    LDY #$005C              ; $D001D1  A0 5C 00     MX
-    LDA #$001F              ; $D001D4  A9 1F 00     MX
-    ORA #$3400              ; $D001D7  09 00 34     MX
-    STA $11FE,Y             ; $D001DA  99 FE 11     MX
-    LDY #$009C              ; $D001DD  A0 9C 00     MX
-    LDA #$0020              ; $D001E0  A9 20 00     MX
-    ORA #$3400              ; $D001E3  09 00 34     MX
-    STA $11FE,Y             ; $D001E6  99 FE 11     MX
-    LDY #$011C              ; $D001E9  A0 1C 01     MX
-    LDA #$001E              ; $D001EC  A9 1E 00     MX
-    ORA #$3400              ; $D001EF  09 00 34     MX
-    STA $11FE,Y             ; $D001F2  99 FE 11     MX
-    BRA L_D00203            ; $D001F5  80 0C        MX
+    STX $56                         ; $D0019D  86 56        MX
+    LDY #$411D                      ; $D0019F  A0 1D 41     MX
+    LDX #$09CC                      ; $D001A2  A2 CC 09     MX
+    LDA #$0134                      ; $D001A5  A9 34 01     MX
+    JSR L_D0073B                    ; $D001A8  20 3B 07     MX
+    LDA $08B3                       ; $D001AB  AD B3 08     MX
+    LDY #$D8C8                      ; $D001AE  A0 C8 D8     MX
+    JSR L_D005A3                    ; $D001B1  20 A3 05     MX
+    LDY #$006E                      ; $D001B4  A0 6E 00     MX
+    LDA #$0001                      ; $D001B7  A9 01 00     MX
+    JSR L_D005C2                    ; $D001BA  20 C2 05     MX
+    LDY #$411D                      ; $D001BD  A0 1D 41     MX
+    LDA $0057,Y                     ; $D001C0  B9 57 00     MX
+    AND #$00FF                      ; $D001C3  29 FF 00     MX
+    LDY #$05F4                      ; $D001C6  A0 F4 05     MX
+    JSR L_D005EA                    ; $D001C9  20 EA 05     MX
+    LDA $08F8                       ; $D001CC  AD F8 08     MX
+    BNE L_D001F7                    ; $D001CF  D0 26        MX
+    LDY #$005C                      ; $D001D1  A0 5C 00     MX
+    LDA #$001F                      ; $D001D4  A9 1F 00     MX
+    ORA #$3400                      ; $D001D7  09 00 34     MX
+    STA $11FE,Y                     ; $D001DA  99 FE 11     MX
+    LDY #$009C                      ; $D001DD  A0 9C 00     MX
+    LDA #$0020                      ; $D001E0  A9 20 00     MX
+    ORA #$3400                      ; $D001E3  09 00 34     MX
+    STA $11FE,Y                     ; $D001E6  99 FE 11     MX
+    LDY #$011C                      ; $D001E9  A0 1C 01     MX
+    LDA #$001E                      ; $D001EC  A9 1E 00     MX
+    ORA #$3400                      ; $D001EF  09 00 34     MX
+    STA $11FE,Y                     ; $D001F2  99 FE 11     MX
+    BRA L_D00203                    ; $D001F5  80 0C        MX
 L_D001F7:
-    LDY $086D               ; $D001F7  AC 6D 08     MX
-    LDA $0049,Y             ; $D001FA  B9 49 00     MX
-    ORA #$0001              ; $D001FD  09 01 00     MX
-    STA $0049,Y             ; $D00200  99 49 00     MX
+    LDY $086D                       ; $D001F7  AC 6D 08     MX
+    LDA $0049,Y                     ; $D001FA  B9 49 00     MX
+    ORA #$0001                      ; $D001FD  09 01 00     MX
+    STA $0049,Y                     ; $D00200  99 49 00     MX
 L_D00203:
-    LDA #$7000              ; $D00203  A9 00 70     MX
-    STA $002116             ; $D00206  8F 16 21 00  MX
-    LDA #$1000              ; $D0020A  A9 00 10     MX
-    LDX #$C9A8              ; $D0020D  A2 A8 C9     MX
-    LDY #$007F              ; $D00210  A0 7F 00     MX
-    JSL L_C308A0            ; $D00213  22 A0 08 C3  MX
-    LDA #$7800              ; $D00217  A9 00 78     MX
-    STA $002116             ; $D0021A  8F 16 21 00  MX
-    LDA #$0700              ; $D0021E  A9 00 07     MX
-    LDX #$11FE              ; $D00221  A2 FE 11     MX
-    LDY #$007E              ; $D00224  A0 7E 00     MX
-    JSL L_C308A0            ; $D00227  22 A0 08 C3  MX
-    RTL                     ; $D0022B  6B           MX
+    LDA #$7000                      ; $D00203  A9 00 70     MX
+    STA $002116                     ; $D00206  8F 16 21 00  MX
+    LDA #$1000                      ; $D0020A  A9 00 10     MX
+    LDX #$C9A8                      ; $D0020D  A2 A8 C9     MX
+    LDY #$007F                      ; $D00210  A0 7F 00     MX
+    JSL L_C308A0                    ; $D00213  22 A0 08 C3  MX
+    LDA #$7800                      ; $D00217  A9 00 78     MX
+    STA $002116                     ; $D0021A  8F 16 21 00  MX
+    LDA #$0700                      ; $D0021E  A9 00 07     MX
+    LDX #$11FE                      ; $D00221  A2 FE 11     MX
+    LDY #$007E                      ; $D00224  A0 7E 00     MX
+    JSL L_C308A0                    ; $D00227  22 A0 08 C3  MX
+    RTL                             ; $D0022B  6B           MX
 L_D0022C:
-    JSR L_D00814            ; $D0022C  20 14 08     MX
-    LDY #$40A8              ; $D0022F  A0 A8 40     MX
-    LDA #$0000              ; $D00232  A9 00 00     MX
-    STA $56                 ; $D00235  85 56        MX
-    LDA $0049,Y             ; $D00237  B9 49 00     MX
-    BIT #$0020              ; $D0023A  89 20 00     MX
-    BEQ L_D00260            ; $D0023D  F0 21        MX
-    LDA $0049,Y             ; $D0023F  B9 49 00     MX
-    AND #$FFD0              ; $D00242  29 D0 FF     MX
-    ORA #$000F              ; $D00245  09 0F 00     MX
-    STA $0049,Y             ; $D00248  99 49 00     MX
-    LDA #$8000              ; $D0024B  A9 00 80     MX
-    TSB $90                 ; $D0024E  04 90        MX
-    TSB $8A                 ; $D00250  04 8A        MX
-    LDA #$0400              ; $D00252  A9 00 04     MX
-    STA $56                 ; $D00255  85 56        MX
-    LDY #$0042              ; $D00257  A0 42 00     MX
-    LDA #$0000              ; $D0025A  A9 00 00     MX
-    JSR L_D005C2            ; $D0025D  20 C2 05     MX
+    JSR L_D00814                    ; $D0022C  20 14 08     MX
+    LDY #$40A8                      ; $D0022F  A0 A8 40     MX
+    LDA #$0000                      ; $D00232  A9 00 00     MX
+    STA $56                         ; $D00235  85 56        MX
+    LDA $0049,Y                     ; $D00237  B9 49 00     MX
+    BIT #$0020                      ; $D0023A  89 20 00     MX
+    BEQ L_D00260                    ; $D0023D  F0 21        MX
+    LDA $0049,Y                     ; $D0023F  B9 49 00     MX
+    AND #$FFD0                      ; $D00242  29 D0 FF     MX
+    ORA #$000F                      ; $D00245  09 0F 00     MX
+    STA $0049,Y                     ; $D00248  99 49 00     MX
+    LDA #$8000                      ; $D0024B  A9 00 80     MX
+    TSB $90                         ; $D0024E  04 90        MX
+    TSB $8A                         ; $D00250  04 8A        MX
+    LDA #$0400                      ; $D00252  A9 00 04     MX
+    STA $56                         ; $D00255  85 56        MX
+    LDY #$0042                      ; $D00257  A0 42 00     MX
+    LDA #$0000                      ; $D0025A  A9 00 00     MX
+    JSR L_D005C2                    ; $D0025D  20 C2 05     MX
 L_D00260:
-    LDA $0049,Y             ; $D00260  B9 49 00     MX
-    BIT #$0040              ; $D00263  89 40 00     MX
-    BEQ L_D00281            ; $D00266  F0 19        MX
-    AND #$FF00              ; $D00268  29 00 FF     MX
-    ORA #$000F              ; $D0026B  09 0F 00     MX
-    STA $0049,Y             ; $D0026E  99 49 00     MX
-    LDY #$0042              ; $D00271  A0 42 00     MX
-    LDA #$0000              ; $D00274  A9 00 00     MX
-    JSR L_D005C2            ; $D00277  20 C2 05     MX
-    LDA #$8000              ; $D0027A  A9 00 80     MX
-    TSB $90                 ; $D0027D  04 90        MX
-    TSB $8A                 ; $D0027F  04 8A        MX
+    LDA $0049,Y                     ; $D00260  B9 49 00     MX
+    BIT #$0040                      ; $D00263  89 40 00     MX
+    BEQ L_D00281                    ; $D00266  F0 19        MX
+    AND #$FF00                      ; $D00268  29 00 FF     MX
+    ORA #$000F                      ; $D0026B  09 0F 00     MX
+    STA $0049,Y                     ; $D0026E  99 49 00     MX
+    LDY #$0042                      ; $D00271  A0 42 00     MX
+    LDA #$0000                      ; $D00274  A9 00 00     MX
+    JSR L_D005C2                    ; $D00277  20 C2 05     MX
+    LDA #$8000                      ; $D0027A  A9 00 80     MX
+    TSB $90                         ; $D0027D  04 90        MX
+    TSB $8A                         ; $D0027F  04 8A        MX
 L_D00281:
-    LDA #$8000              ; $D00281  A9 00 80     MX
-    TRB $90                 ; $D00284  14 90        MX
-    BEQ L_D00293            ; $D00286  F0 0B        MX
-    LDA $90                 ; $D00288  A5 90        MX
-    BEQ L_D0028D            ; $D0028A  F0 01        MX
-    DEC                     ; $D0028C  3A           MX
+    LDA #$8000                      ; $D00281  A9 00 80     MX
+    TRB $90                         ; $D00284  14 90        MX
+    BEQ L_D00293                    ; $D00286  F0 0B        MX
+    LDA $90                         ; $D00288  A5 90        MX
+    BEQ L_D0028D                    ; $D0028A  F0 01        MX
+    DEC                             ; $D0028C  3A           MX
 L_D0028D:
-    LDY #$0102              ; $D0028D  A0 02 01     MX
-    JSR L_D004F7            ; $D00290  20 F7 04     MX
+    LDY #$0102                      ; $D0028D  A0 02 01     MX
+    JSR L_D004F7                    ; $D00290  20 F7 04     MX
 L_D00293:
-    LDA $8A                 ; $D00293  A5 8A        MX
-    BIT #$8000              ; $D00295  89 00 80     MX
-    BEQ L_D002AF            ; $D00298  F0 15        MX
-    AND #$7FFF              ; $D0029A  29 FF 7F     MX
-    STA $8A                 ; $D0029D  85 8A        MX
-    STA $4E                 ; $D0029F  85 4E        MX
-    LDA $88                 ; $D002A1  A5 88        MX
-    STA $4A                 ; $D002A3  85 4A        MX
-    JSL L_D00474            ; $D002A5  22 74 04 D0  MX
-    LDY #$0088              ; $D002A9  A0 88 00     MX
-    JSR L_D00404            ; $D002AC  20 04 04     MX
+    LDA $8A                         ; $D00293  A5 8A        MX
+    BIT #$8000                      ; $D00295  89 00 80     MX
+    BEQ L_D002AF                    ; $D00298  F0 15        MX
+    AND #$7FFF                      ; $D0029A  29 FF 7F     MX
+    STA $8A                         ; $D0029D  85 8A        MX
+    STA $4E                         ; $D0029F  85 4E        MX
+    LDA $88                         ; $D002A1  A5 88        MX
+    STA $4A                         ; $D002A3  85 4A        MX
+    JSL L_D00474                    ; $D002A5  22 74 04 D0  MX
+    LDY #$0088                      ; $D002A9  A0 88 00     MX
+    JSR L_D00404                    ; $D002AC  20 04 04     MX
 L_D002AF:
-    LDY #$40A8              ; $D002AF  A0 A8 40     MX
-    LDA $0049,Y             ; $D002B2  B9 49 00     MX
-    BIT #$0002              ; $D002B5  89 02 00     MX
-    BEQ L_D002CC            ; $D002B8  F0 12        MX
-    AND #$FFFD              ; $D002BA  29 FD FF     MX
-    STA $0049,Y             ; $D002BD  99 49 00     MX
-    LDA $0057,Y             ; $D002C0  B9 57 00     MX
-    AND #$00FF              ; $D002C3  29 FF 00     MX
-    LDY #$05C2              ; $D002C6  A0 C2 05     MX
-    JSR L_D005EA            ; $D002C9  20 EA 05     MX
+    LDY #$40A8                      ; $D002AF  A0 A8 40     MX
+    LDA $0049,Y                     ; $D002B2  B9 49 00     MX
+    BIT #$0002                      ; $D002B5  89 02 00     MX
+    BEQ L_D002CC                    ; $D002B8  F0 12        MX
+    AND #$FFFD                      ; $D002BA  29 FD FF     MX
+    STA $0049,Y                     ; $D002BD  99 49 00     MX
+    LDA $0057,Y                     ; $D002C0  B9 57 00     MX
+    AND #$00FF                      ; $D002C3  29 FF 00     MX
+    LDY #$05C2                      ; $D002C6  A0 C2 05     MX
+    JSR L_D005EA                    ; $D002C9  20 EA 05     MX
 L_D002CC:
-    LDY #$40A8              ; $D002CC  A0 A8 40     MX
-    LDX #$09A4              ; $D002CF  A2 A4 09     MX
-    LDA #$0108              ; $D002D2  A9 08 01     MX
-    JSR L_D0073B            ; $D002D5  20 3B 07     MX
-    LDY #$40A8              ; $D002D8  A0 A8 40     MX
-    LDA #$0604              ; $D002DB  A9 04 06     MX
-    STA $46                 ; $D002DE  85 46        MX
-    JSR L_D00A1C            ; $D002E0  20 1C 0A     MX
-    LDY #$411D              ; $D002E3  A0 1D 41     MX
-    LDA #$0000              ; $D002E6  A9 00 00     MX
-    STA $56                 ; $D002E9  85 56        MX
-    LDA $0049,Y             ; $D002EB  B9 49 00     MX
-    BIT #$0020              ; $D002EE  89 20 00     MX
-    BEQ L_D00314            ; $D002F1  F0 21        MX
-    LDA $0049,Y             ; $D002F3  B9 49 00     MX
-    AND #$FFD0              ; $D002F6  29 D0 FF     MX
-    ORA #$000F              ; $D002F9  09 0F 00     MX
-    STA $0049,Y             ; $D002FC  99 49 00     MX
-    LDA #$8000              ; $D002FF  A9 00 80     MX
-    TSB $92                 ; $D00302  04 92        MX
-    TSB $8E                 ; $D00304  04 8E        MX
-    LDA #$0400              ; $D00306  A9 00 04     MX
-    STA $56                 ; $D00309  85 56        MX
-    LDY #$006E              ; $D0030B  A0 6E 00     MX
-    LDA #$0001              ; $D0030E  A9 01 00     MX
-    JSR L_D005C2            ; $D00311  20 C2 05     MX
+    LDY #$40A8                      ; $D002CC  A0 A8 40     MX
+    LDX #$09A4                      ; $D002CF  A2 A4 09     MX
+    LDA #$0108                      ; $D002D2  A9 08 01     MX
+    JSR L_D0073B                    ; $D002D5  20 3B 07     MX
+    LDY #$40A8                      ; $D002D8  A0 A8 40     MX
+    LDA #$0604                      ; $D002DB  A9 04 06     MX
+    STA $46                         ; $D002DE  85 46        MX
+    JSR L_D00A1C                    ; $D002E0  20 1C 0A     MX
+    LDY #$411D                      ; $D002E3  A0 1D 41     MX
+    LDA #$0000                      ; $D002E6  A9 00 00     MX
+    STA $56                         ; $D002E9  85 56        MX
+    LDA $0049,Y                     ; $D002EB  B9 49 00     MX
+    BIT #$0020                      ; $D002EE  89 20 00     MX
+    BEQ L_D00314                    ; $D002F1  F0 21        MX
+    LDA $0049,Y                     ; $D002F3  B9 49 00     MX
+    AND #$FFD0                      ; $D002F6  29 D0 FF     MX
+    ORA #$000F                      ; $D002F9  09 0F 00     MX
+    STA $0049,Y                     ; $D002FC  99 49 00     MX
+    LDA #$8000                      ; $D002FF  A9 00 80     MX
+    TSB $92                         ; $D00302  04 92        MX
+    TSB $8E                         ; $D00304  04 8E        MX
+    LDA #$0400                      ; $D00306  A9 00 04     MX
+    STA $56                         ; $D00309  85 56        MX
+    LDY #$006E                      ; $D0030B  A0 6E 00     MX
+    LDA #$0001                      ; $D0030E  A9 01 00     MX
+    JSR L_D005C2                    ; $D00311  20 C2 05     MX
 L_D00314:
-    LDY #$411D              ; $D00314  A0 1D 41     MX
-    LDA $0049,Y             ; $D00317  B9 49 00     MX
-    BIT #$0040              ; $D0031A  89 40 00     MX
-    BEQ L_D00338            ; $D0031D  F0 19        MX
-    AND #$FF00              ; $D0031F  29 00 FF     MX
-    ORA #$000F              ; $D00322  09 0F 00     MX
-    STA $0049,Y             ; $D00325  99 49 00     MX
-    LDY #$006E              ; $D00328  A0 6E 00     MX
-    LDA #$0001              ; $D0032B  A9 01 00     MX
-    JSR L_D005C2            ; $D0032E  20 C2 05     MX
-    LDA #$8000              ; $D00331  A9 00 80     MX
-    TSB $92                 ; $D00334  04 92        MX
-    TSB $8E                 ; $D00336  04 8E        MX
+    LDY #$411D                      ; $D00314  A0 1D 41     MX
+    LDA $0049,Y                     ; $D00317  B9 49 00     MX
+    BIT #$0040                      ; $D0031A  89 40 00     MX
+    BEQ L_D00338                    ; $D0031D  F0 19        MX
+    AND #$FF00                      ; $D0031F  29 00 FF     MX
+    ORA #$000F                      ; $D00322  09 0F 00     MX
+    STA $0049,Y                     ; $D00325  99 49 00     MX
+    LDY #$006E                      ; $D00328  A0 6E 00     MX
+    LDA #$0001                      ; $D0032B  A9 01 00     MX
+    JSR L_D005C2                    ; $D0032E  20 C2 05     MX
+    LDA #$8000                      ; $D00331  A9 00 80     MX
+    TSB $92                         ; $D00334  04 92        MX
+    TSB $8E                         ; $D00336  04 8E        MX
 L_D00338:
-    LDA #$8000              ; $D00338  A9 00 80     MX
-    TRB $92                 ; $D0033B  14 92        MX
-    BEQ L_D0034A            ; $D0033D  F0 0B        MX
-    LDA $92                 ; $D0033F  A5 92        MX
-    BEQ L_D00344            ; $D00341  F0 01        MX
-    DEC                     ; $D00343  3A           MX
+    LDA #$8000                      ; $D00338  A9 00 80     MX
+    TRB $92                         ; $D0033B  14 92        MX
+    BEQ L_D0034A                    ; $D0033D  F0 0B        MX
+    LDA $92                         ; $D0033F  A5 92        MX
+    BEQ L_D00344                    ; $D00341  F0 01        MX
+    DEC                             ; $D00343  3A           MX
 L_D00344:
-    LDY #$012E              ; $D00344  A0 2E 01     MX
-    JSR L_D004F7            ; $D00347  20 F7 04     MX
+    LDY #$012E                      ; $D00344  A0 2E 01     MX
+    JSR L_D004F7                    ; $D00347  20 F7 04     MX
 L_D0034A:
-    LDA $8E                 ; $D0034A  A5 8E        MX
-    BIT #$8000              ; $D0034C  89 00 80     MX
-    BEQ L_D00366            ; $D0034F  F0 15        MX
-    AND #$7FFF              ; $D00351  29 FF 7F     MX
-    STA $8E                 ; $D00354  85 8E        MX
-    STA $4E                 ; $D00356  85 4E        MX
-    LDA $8C                 ; $D00358  A5 8C        MX
-    STA $4A                 ; $D0035A  85 4A        MX
-    JSL L_D00474            ; $D0035C  22 74 04 D0  MX
-    LDY #$00B4              ; $D00360  A0 B4 00     MX
-    JSR L_D00404            ; $D00363  20 04 04     MX
+    LDA $8E                         ; $D0034A  A5 8E        MX
+    BIT #$8000                      ; $D0034C  89 00 80     MX
+    BEQ L_D00366                    ; $D0034F  F0 15        MX
+    AND #$7FFF                      ; $D00351  29 FF 7F     MX
+    STA $8E                         ; $D00354  85 8E        MX
+    STA $4E                         ; $D00356  85 4E        MX
+    LDA $8C                         ; $D00358  A5 8C        MX
+    STA $4A                         ; $D0035A  85 4A        MX
+    JSL L_D00474                    ; $D0035C  22 74 04 D0  MX
+    LDY #$00B4                      ; $D00360  A0 B4 00     MX
+    JSR L_D00404                    ; $D00363  20 04 04     MX
 L_D00366:
-    LDY #$411D              ; $D00366  A0 1D 41     MX
-    LDA $0049,Y             ; $D00369  B9 49 00     MX
-    BIT #$0002              ; $D0036C  89 02 00     MX
-    BEQ L_D00383            ; $D0036F  F0 12        MX
-    AND #$FFFD              ; $D00371  29 FD FF     MX
-    STA $0049,Y             ; $D00374  99 49 00     MX
-    LDA $0057,Y             ; $D00377  B9 57 00     MX
-    AND #$00FF              ; $D0037A  29 FF 00     MX
-    LDY #$05F4              ; $D0037D  A0 F4 05     MX
-    JSR L_D005EA            ; $D00380  20 EA 05     MX
+    LDY #$411D                      ; $D00366  A0 1D 41     MX
+    LDA $0049,Y                     ; $D00369  B9 49 00     MX
+    BIT #$0002                      ; $D0036C  89 02 00     MX
+    BEQ L_D00383                    ; $D0036F  F0 12        MX
+    AND #$FFFD                      ; $D00371  29 FD FF     MX
+    STA $0049,Y                     ; $D00374  99 49 00     MX
+    LDA $0057,Y                     ; $D00377  B9 57 00     MX
+    AND #$00FF                      ; $D0037A  29 FF 00     MX
+    LDY #$05F4                      ; $D0037D  A0 F4 05     MX
+    JSR L_D005EA                    ; $D00380  20 EA 05     MX
 L_D00383:
-    LDY #$411D              ; $D00383  A0 1D 41     MX
-    LDX #$09CC              ; $D00386  A2 CC 09     MX
-    LDA #$0134              ; $D00389  A9 34 01     MX
-    JSR L_D0073B            ; $D0038C  20 3B 07     MX
-    LDY #$411D              ; $D0038F  A0 1D 41     MX
-    LDA #$0636              ; $D00392  A9 36 06     MX
-    STA $46                 ; $D00395  85 46        MX
-    JSR L_D00A1C            ; $D00397  20 1C 0A     MX
-    LDA $08F8               ; $D0039A  AD F8 08     MX
-    BNE L_D003D9            ; $D0039D  D0 3A        MX
-    LDA #$0000              ; $D0039F  A9 00 00     MX
-    STA $56                 ; $D003A2  85 56        MX
-    LDA #$0002              ; $D003A4  A9 02 00     MX
-    TRB $68                 ; $D003A7  14 68        MX
-    BEQ L_D003B4            ; $D003A9  F0 09        MX
-    LDA $08A9               ; $D003AB  AD A9 08     MX
-    LDY #$0060              ; $D003AE  A0 60 00     MX
-    JSR L_D004BC            ; $D003B1  20 BC 04     MX
+    LDY #$411D                      ; $D00383  A0 1D 41     MX
+    LDX #$09CC                      ; $D00386  A2 CC 09     MX
+    LDA #$0134                      ; $D00389  A9 34 01     MX
+    JSR L_D0073B                    ; $D0038C  20 3B 07     MX
+    LDY #$411D                      ; $D0038F  A0 1D 41     MX
+    LDA #$0636                      ; $D00392  A9 36 06     MX
+    STA $46                         ; $D00395  85 46        MX
+    JSR L_D00A1C                    ; $D00397  20 1C 0A     MX
+    LDA $08F8                       ; $D0039A  AD F8 08     MX
+    BNE L_D003D9                    ; $D0039D  D0 3A        MX
+    LDA #$0000                      ; $D0039F  A9 00 00     MX
+    STA $56                         ; $D003A2  85 56        MX
+    LDA #$0002                      ; $D003A4  A9 02 00     MX
+    TRB $68                         ; $D003A7  14 68        MX
+    BEQ L_D003B4                    ; $D003A9  F0 09        MX
+    LDA $08A9                       ; $D003AB  AD A9 08     MX
+    LDY #$0060                      ; $D003AE  A0 60 00     MX
+    JSR L_D004BC                    ; $D003B1  20 BC 04     MX
 L_D003B4:
-    LDA #$0008              ; $D003B4  A9 08 00     MX
-    TRB $68                 ; $D003B7  14 68        MX
-    BEQ L_D003C4            ; $D003B9  F0 09        MX
-    LDA $08AD               ; $D003BB  AD AD 08     MX
-    LDY #$011E              ; $D003BE  A0 1E 01     MX
-    JSR L_D0052E            ; $D003C1  20 2E 05     MX
+    LDA #$0008                      ; $D003B4  A9 08 00     MX
+    TRB $68                         ; $D003B7  14 68        MX
+    BEQ L_D003C4                    ; $D003B9  F0 09        MX
+    LDA $08AD                       ; $D003BB  AD AD 08     MX
+    LDY #$011E                      ; $D003BE  A0 1E 01     MX
+    JSR L_D0052E                    ; $D003C1  20 2E 05     MX
 L_D003C4:
-    LDA $08A9               ; $D003C4  AD A9 08     MX
-    BNE L_D003D9            ; $D003C7  D0 10        MX
-    LDA $0715               ; $D003C9  AD 15 07     MX
-    BIT #$0003              ; $D003CC  89 03 00     MX
-    BNE L_D003D9            ; $D003CF  D0 08        MX
-    JSR L_D003DA            ; $D003D1  20 DA 03     MX
-    LDA #$8000              ; $D003D4  A9 00 80     MX
-    TSB $68                 ; $D003D7  04 68        MX
+    LDA $08A9                       ; $D003C4  AD A9 08     MX
+    BNE L_D003D9                    ; $D003C7  D0 10        MX
+    LDA $0715                       ; $D003C9  AD 15 07     MX
+    BIT #$0003                      ; $D003CC  89 03 00     MX
+    BNE L_D003D9                    ; $D003CF  D0 08        MX
+    JSR L_D003DA                    ; $D003D1  20 DA 03     MX
+    LDA #$8000                      ; $D003D4  A9 00 80     MX
+    TSB $68                         ; $D003D7  04 68        MX
 L_D003D9:
-    RTL                     ; $D003D9  6B           MX
+    RTL                             ; $D003D9  6B           MX
 L_D003DA:
-    LDY #$0060              ; $D003DA  A0 60 00     MX
-    BIT #$0004              ; $D003DD  89 04 00     MX
-    BEQ L_D003F4            ; $D003E0  F0 12        MX
-    LDA #$340A              ; $D003E2  A9 0A 34     MX
-    STA $11FE,Y             ; $D003E5  99 FE 11     MX
-    STA $1200,Y             ; $D003E8  99 00 12     MX
-    INC                     ; $D003EB  1A           MX
-    STA $123E,Y             ; $D003EC  99 3E 12     MX
-    STA $1240,Y             ; $D003EF  99 40 12     MX
-    BRA L_D00403            ; $D003F2  80 0F        MX
+    LDY #$0060                      ; $D003DA  A0 60 00     MX
+    BIT #$0004                      ; $D003DD  89 04 00     MX
+    BEQ L_D003F4                    ; $D003E0  F0 12        MX
+    LDA #$340A                      ; $D003E2  A9 0A 34     MX
+    STA $11FE,Y                     ; $D003E5  99 FE 11     MX
+    STA $1200,Y                     ; $D003E8  99 00 12     MX
+    INC                             ; $D003EB  1A           MX
+    STA $123E,Y                     ; $D003EC  99 3E 12     MX
+    STA $1240,Y                     ; $D003EF  99 40 12     MX
+    BRA L_D00403                    ; $D003F2  80 0F        MX
 L_D003F4:
-    LDA #$2472              ; $D003F4  A9 72 24     MX
-    STA $11FE,Y             ; $D003F7  99 FE 11     MX
-    STA $1200,Y             ; $D003FA  99 00 12     MX
-    STA $123E,Y             ; $D003FD  99 3E 12     MX
-    STA $1240,Y             ; $D00400  99 40 12     MX
+    LDA #$2472                      ; $D003F4  A9 72 24     MX
+    STA $11FE,Y                     ; $D003F7  99 FE 11     MX
+    STA $1200,Y                     ; $D003FA  99 00 12     MX
+    STA $123E,Y                     ; $D003FD  99 3E 12     MX
+    STA $1240,Y                     ; $D00400  99 40 12     MX
 L_D00403:
-    RTS                     ; $D00403  60           MX
+    RTS                             ; $D00403  60           MX
 L_D00404:
-    LDA $48                 ; $D00404  A5 48        MX
-    AND #$000F              ; $D00406  29 0F 00     MX
-    CLC                     ; $D00409  18           MX
-    ADC #$0000              ; $D0040A  69 00 00     MX
-    ORA #$2400              ; $D0040D  09 00 24     MX
-    CLC                     ; $D00410  18           MX
-    ADC $56                 ; $D00411  65 56        MX
-    STA $11FE,Y             ; $D00413  99 FE 11     MX
-    INY                     ; $D00416  C8           MX
-    INY                     ; $D00417  C8           MX
-    LDA $47                 ; $D00418  A5 47        MX
-    AND #$00FF              ; $D0041A  29 FF 00     MX
-    LSR                     ; $D0041D  4A           MX
-    LSR                     ; $D0041E  4A           MX
-    LSR                     ; $D0041F  4A           MX
-    LSR                     ; $D00420  4A           MX
-    CLC                     ; $D00421  18           MX
-    ADC #$0000              ; $D00422  69 00 00     MX
-    ORA #$2400              ; $D00425  09 00 24     MX
-    CLC                     ; $D00428  18           MX
-    ADC $56                 ; $D00429  65 56        MX
-    STA $11FE,Y             ; $D0042B  99 FE 11     MX
-    INY                     ; $D0042E  C8           MX
-    INY                     ; $D0042F  C8           MX
-    LDA $47                 ; $D00430  A5 47        MX
-    AND #$000F              ; $D00432  29 0F 00     MX
-    CLC                     ; $D00435  18           MX
-    ADC #$0000              ; $D00436  69 00 00     MX
-    ORA #$2400              ; $D00439  09 00 24     MX
-    CLC                     ; $D0043C  18           MX
-    ADC $56                 ; $D0043D  65 56        MX
-    STA $11FE,Y             ; $D0043F  99 FE 11     MX
-    INY                     ; $D00442  C8           MX
-    INY                     ; $D00443  C8           MX
-    LDA $46                 ; $D00444  A5 46        MX
-    AND #$00FF              ; $D00446  29 FF 00     MX
-    LSR                     ; $D00449  4A           MX
-    LSR                     ; $D0044A  4A           MX
-    LSR                     ; $D0044B  4A           MX
-    LSR                     ; $D0044C  4A           MX
-    CLC                     ; $D0044D  18           MX
-    ADC #$0000              ; $D0044E  69 00 00     MX
-    ORA #$2400              ; $D00451  09 00 24     MX
-    CLC                     ; $D00454  18           MX
-    ADC $56                 ; $D00455  65 56        MX
-    STA $11FE,Y             ; $D00457  99 FE 11     MX
-    INY                     ; $D0045A  C8           MX
-    INY                     ; $D0045B  C8           MX
-    LDA $46                 ; $D0045C  A5 46        MX
-    AND #$000F              ; $D0045E  29 0F 00     MX
-    CLC                     ; $D00461  18           MX
-    ADC #$0000              ; $D00462  69 00 00     MX
-    ORA #$2400              ; $D00465  09 00 24     MX
-    CLC                     ; $D00468  18           MX
-    ADC $56                 ; $D00469  65 56        MX
-    STA $11FE,Y             ; $D0046B  99 FE 11     MX
-    LDA #$8000              ; $D0046E  A9 00 80     MX
-    TSB $68                 ; $D00471  04 68        MX
-    RTS                     ; $D00473  60           MX
+    LDA $48                         ; $D00404  A5 48        MX
+    AND #$000F                      ; $D00406  29 0F 00     MX
+    CLC                             ; $D00409  18           MX
+    ADC #$0000                      ; $D0040A  69 00 00     MX
+    ORA #$2400                      ; $D0040D  09 00 24     MX
+    CLC                             ; $D00410  18           MX
+    ADC $56                         ; $D00411  65 56        MX
+    STA $11FE,Y                     ; $D00413  99 FE 11     MX
+    INY                             ; $D00416  C8           MX
+    INY                             ; $D00417  C8           MX
+    LDA $47                         ; $D00418  A5 47        MX
+    AND #$00FF                      ; $D0041A  29 FF 00     MX
+    LSR                             ; $D0041D  4A           MX
+    LSR                             ; $D0041E  4A           MX
+    LSR                             ; $D0041F  4A           MX
+    LSR                             ; $D00420  4A           MX
+    CLC                             ; $D00421  18           MX
+    ADC #$0000                      ; $D00422  69 00 00     MX
+    ORA #$2400                      ; $D00425  09 00 24     MX
+    CLC                             ; $D00428  18           MX
+    ADC $56                         ; $D00429  65 56        MX
+    STA $11FE,Y                     ; $D0042B  99 FE 11     MX
+    INY                             ; $D0042E  C8           MX
+    INY                             ; $D0042F  C8           MX
+    LDA $47                         ; $D00430  A5 47        MX
+    AND #$000F                      ; $D00432  29 0F 00     MX
+    CLC                             ; $D00435  18           MX
+    ADC #$0000                      ; $D00436  69 00 00     MX
+    ORA #$2400                      ; $D00439  09 00 24     MX
+    CLC                             ; $D0043C  18           MX
+    ADC $56                         ; $D0043D  65 56        MX
+    STA $11FE,Y                     ; $D0043F  99 FE 11     MX
+    INY                             ; $D00442  C8           MX
+    INY                             ; $D00443  C8           MX
+    LDA $46                         ; $D00444  A5 46        MX
+    AND #$00FF                      ; $D00446  29 FF 00     MX
+    LSR                             ; $D00449  4A           MX
+    LSR                             ; $D0044A  4A           MX
+    LSR                             ; $D0044B  4A           MX
+    LSR                             ; $D0044C  4A           MX
+    CLC                             ; $D0044D  18           MX
+    ADC #$0000                      ; $D0044E  69 00 00     MX
+    ORA #$2400                      ; $D00451  09 00 24     MX
+    CLC                             ; $D00454  18           MX
+    ADC $56                         ; $D00455  65 56        MX
+    STA $11FE,Y                     ; $D00457  99 FE 11     MX
+    INY                             ; $D0045A  C8           MX
+    INY                             ; $D0045B  C8           MX
+    LDA $46                         ; $D0045C  A5 46        MX
+    AND #$000F                      ; $D0045E  29 0F 00     MX
+    CLC                             ; $D00461  18           MX
+    ADC #$0000                      ; $D00462  69 00 00     MX
+    ORA #$2400                      ; $D00465  09 00 24     MX
+    CLC                             ; $D00468  18           MX
+    ADC $56                         ; $D00469  65 56        MX
+    STA $11FE,Y                     ; $D0046B  99 FE 11     MX
+    LDA #$8000                      ; $D0046E  A9 00 80     MX
+    TSB $68                         ; $D00471  04 68        MX
+    RTS                             ; $D00473  60           MX
 L_D00474:
-    PHX                     ; $D00474  DA           MX
-    LDX #$0000              ; $D00475  A2 00 00     MX
-    STZ $46                 ; $D00478  64 46        MX
-    STZ $48                 ; $D0047A  64 48        MX
-    SED                     ; $D0047C  F8           MX
+    PHX                             ; $D00474  DA           MX
+    LDX #$0000                      ; $D00475  A2 00 00     MX
+    STZ $46                         ; $D00478  64 46        MX
+    STZ $48                         ; $D0047A  64 48        MX
+    SED                             ; $D0047C  F8           MX
 L_D0047D:
-    LSR $4E                 ; $D0047D  46 4E        MX
-    PHP                     ; $D0047F  08           MX
-    ROR $4A                 ; $D00480  66 4A        MX
-    BCC L_D00495            ; $D00482  90 11        MX
-    LDA $46                 ; $D00484  A5 46        MX
-    CLC                     ; $D00486  18           MX
-    ADC $C14B74,X           ; $D00487  7F 74 4B C1  MX
-    STA $46                 ; $D0048B  85 46        MX
-    LDA $48                 ; $D0048D  A5 48        MX
-    ADC $C14B76,X           ; $D0048F  7F 76 4B C1  MX
-    STA $48                 ; $D00493  85 48        MX
+    LSR $4E                         ; $D0047D  46 4E        MX
+    PHP                             ; $D0047F  08           MX
+    ROR $4A                         ; $D00480  66 4A        MX
+    BCC L_D00495                    ; $D00482  90 11        MX
+    LDA $46                         ; $D00484  A5 46        MX
+    CLC                             ; $D00486  18           MX
+    ADC $C14B74,X                   ; $D00487  7F 74 4B C1  MX
+    STA $46                         ; $D0048B  85 46        MX
+    LDA $48                         ; $D0048D  A5 48        MX
+    ADC $C14B76,X                   ; $D0048F  7F 76 4B C1  MX
+    STA $48                         ; $D00493  85 48        MX
 L_D00495:
-    INX                     ; $D00495  E8           MX
-    INX                     ; $D00496  E8           MX
-    INX                     ; $D00497  E8           MX
-    INX                     ; $D00498  E8           MX
-    PLP                     ; $D00499  28           MX
-    BNE L_D0047D            ; $D0049A  D0 E1        MX
+    INX                             ; $D00495  E8           MX
+    INX                             ; $D00496  E8           MX
+    INX                             ; $D00497  E8           MX
+    INX                             ; $D00498  E8           MX
+    PLP                             ; $D00499  28           MX
+    BNE L_D0047D                    ; $D0049A  D0 E1        MX
 L_D0049C:
-    LSR $4A                 ; $D0049C  46 4A        MX
-    PHP                     ; $D0049E  08           MX
-    BCC L_D004B2            ; $D0049F  90 11        MX
-    LDA $46                 ; $D004A1  A5 46        MX
-    CLC                     ; $D004A3  18           MX
-    ADC $C14B74,X           ; $D004A4  7F 74 4B C1  MX
-    STA $46                 ; $D004A8  85 46        MX
-    LDA $48                 ; $D004AA  A5 48        MX
-    ADC $C14B76,X           ; $D004AC  7F 76 4B C1  MX
-    STA $48                 ; $D004B0  85 48        MX
+    LSR $4A                         ; $D0049C  46 4A        MX
+    PHP                             ; $D0049E  08           MX
+    BCC L_D004B2                    ; $D0049F  90 11        MX
+    LDA $46                         ; $D004A1  A5 46        MX
+    CLC                             ; $D004A3  18           MX
+    ADC $C14B74,X                   ; $D004A4  7F 74 4B C1  MX
+    STA $46                         ; $D004A8  85 46        MX
+    LDA $48                         ; $D004AA  A5 48        MX
+    ADC $C14B76,X                   ; $D004AC  7F 76 4B C1  MX
+    STA $48                         ; $D004B0  85 48        MX
 L_D004B2:
-    INX                     ; $D004B2  E8           MX
-    INX                     ; $D004B3  E8           MX
-    INX                     ; $D004B4  E8           MX
-    INX                     ; $D004B5  E8           MX
-    PLP                     ; $D004B6  28           MX
-    BNE L_D0049C            ; $D004B7  D0 E3        MX
-    CLD                     ; $D004B9  D8           MX
-    PLX                     ; $D004BA  FA           MX
-    RTL                     ; $D004BB  6B           MX
+    INX                             ; $D004B2  E8           MX
+    INX                             ; $D004B3  E8           MX
+    INX                             ; $D004B4  E8           MX
+    INX                             ; $D004B5  E8           MX
+    PLP                             ; $D004B6  28           MX
+    BNE L_D0049C                    ; $D004B7  D0 E3        MX
+    CLD                             ; $D004B9  D8           MX
+    PLX                             ; $D004BA  FA           MX
+    RTL                             ; $D004BB  6B           MX
 L_D004BC:
-    STA $004204             ; $D004BC  8F 04 42 00  MX
-    SEP #$20                ; $D004C0  E2 20        MX
-    LDA #$0A                ; $D004C2  A9 0A        mX
-    STA $004206             ; $D004C4  8F 06 42 00  mX
-    REP #$20                ; $D004C8  C2 20        mX
-    LDA #$8000              ; $D004CA  A9 00 80     MX
-    TSB $68                 ; $D004CD  04 68        MX
-    NOP                     ; $D004CF  EA           MX
-    LDA $004214             ; $D004D0  AF 14 42 00  MX
-    ASL                     ; $D004D4  0A           MX
-    CLC                     ; $D004D5  18           MX
-    ADC #$000A              ; $D004D6  69 0A 00     MX
-    ORA #$3400              ; $D004D9  09 00 34     MX
-    STA $11FE,Y             ; $D004DC  99 FE 11     MX
-    INC                     ; $D004DF  1A           MX
-    STA $123E,Y             ; $D004E0  99 3E 12     MX
-    LDA $004216             ; $D004E3  AF 16 42 00  MX
-    ASL                     ; $D004E7  0A           MX
-    CLC                     ; $D004E8  18           MX
-    ADC #$000A              ; $D004E9  69 0A 00     MX
-    ORA #$3400              ; $D004EC  09 00 34     MX
-    STA $1200,Y             ; $D004EF  99 00 12     MX
-    INC                     ; $D004F2  1A           MX
-    STA $1240,Y             ; $D004F3  99 40 12     MX
-    RTS                     ; $D004F6  60           MX
+    STA $004204                     ; $D004BC  8F 04 42 00  MX
+    SEP #$20                        ; $D004C0  E2 20        MX
+    LDA #$0A                        ; $D004C2  A9 0A        mX
+    STA $004206                     ; $D004C4  8F 06 42 00  mX
+    REP #$20                        ; $D004C8  C2 20        mX
+    LDA #$8000                      ; $D004CA  A9 00 80     MX
+    TSB $68                         ; $D004CD  04 68        MX
+    NOP                             ; $D004CF  EA           MX
+    LDA $004214                     ; $D004D0  AF 14 42 00  MX
+    ASL                             ; $D004D4  0A           MX
+    CLC                             ; $D004D5  18           MX
+    ADC #$000A                      ; $D004D6  69 0A 00     MX
+    ORA #$3400                      ; $D004D9  09 00 34     MX
+    STA $11FE,Y                     ; $D004DC  99 FE 11     MX
+    INC                             ; $D004DF  1A           MX
+    STA $123E,Y                     ; $D004E0  99 3E 12     MX
+    LDA $004216                     ; $D004E3  AF 16 42 00  MX
+    ASL                             ; $D004E7  0A           MX
+    CLC                             ; $D004E8  18           MX
+    ADC #$000A                      ; $D004E9  69 0A 00     MX
+    ORA #$3400                      ; $D004EC  09 00 34     MX
+    STA $1200,Y                     ; $D004EF  99 00 12     MX
+    INC                             ; $D004F2  1A           MX
+    STA $1240,Y                     ; $D004F3  99 40 12     MX
+    RTS                             ; $D004F6  60           MX
 L_D004F7:
-    STA $004204             ; $D004F7  8F 04 42 00  MX
-    SEP #$20                ; $D004FB  E2 20        MX
-    LDA #$0A                ; $D004FD  A9 0A        mX
-    STA $004206             ; $D004FF  8F 06 42 00  mX
-    REP #$20                ; $D00503  C2 20        mX
-    LDA #$8000              ; $D00505  A9 00 80     MX
-    TSB $68                 ; $D00508  04 68        MX
-    NOP                     ; $D0050A  EA           MX
-    LDA $004214             ; $D0050B  AF 14 42 00  MX
-    CLC                     ; $D0050F  18           MX
-    ADC #$0000              ; $D00510  69 00 00     MX
-    ORA #$2C00              ; $D00513  09 00 2C     MX
-    CLC                     ; $D00516  18           MX
-    ADC $56                 ; $D00517  65 56        MX
-    STA $11FE,Y             ; $D00519  99 FE 11     MX
-    LDA $004216             ; $D0051C  AF 16 42 00  MX
-    CLC                     ; $D00520  18           MX
-    ADC #$0000              ; $D00521  69 00 00     MX
-    ORA #$2C00              ; $D00524  09 00 2C     MX
-    CLC                     ; $D00527  18           MX
-    ADC $56                 ; $D00528  65 56        MX
-    STA $1200,Y             ; $D0052A  99 00 12     MX
-    RTS                     ; $D0052D  60           MX
+    STA $004204                     ; $D004F7  8F 04 42 00  MX
+    SEP #$20                        ; $D004FB  E2 20        MX
+    LDA #$0A                        ; $D004FD  A9 0A        mX
+    STA $004206                     ; $D004FF  8F 06 42 00  mX
+    REP #$20                        ; $D00503  C2 20        mX
+    LDA #$8000                      ; $D00505  A9 00 80     MX
+    TSB $68                         ; $D00508  04 68        MX
+    NOP                             ; $D0050A  EA           MX
+    LDA $004214                     ; $D0050B  AF 14 42 00  MX
+    CLC                             ; $D0050F  18           MX
+    ADC #$0000                      ; $D00510  69 00 00     MX
+    ORA #$2C00                      ; $D00513  09 00 2C     MX
+    CLC                             ; $D00516  18           MX
+    ADC $56                         ; $D00517  65 56        MX
+    STA $11FE,Y                     ; $D00519  99 FE 11     MX
+    LDA $004216                     ; $D0051C  AF 16 42 00  MX
+    CLC                             ; $D00520  18           MX
+    ADC #$0000                      ; $D00521  69 00 00     MX
+    ORA #$2C00                      ; $D00524  09 00 2C     MX
+    CLC                             ; $D00527  18           MX
+    ADC $56                         ; $D00528  65 56        MX
+    STA $1200,Y                     ; $D0052A  99 00 12     MX
+    RTS                             ; $D0052D  60           MX
 L_D0052E:
-    STA $004204             ; $D0052E  8F 04 42 00  MX
-    SEP #$20                ; $D00532  E2 20        MX
-    LDA #$0A                ; $D00534  A9 0A        mX
-    STA $004206             ; $D00536  8F 06 42 00  mX
-    REP #$20                ; $D0053A  C2 20        mX
-    LDA #$8000              ; $D0053C  A9 00 80     MX
-    TSB $68                 ; $D0053F  04 68        MX
-    NOP                     ; $D00541  EA           MX
-    LDA $004216             ; $D00542  AF 16 42 00  MX
-    TAX                     ; $D00546  AA           MX
-    LDA $004214             ; $D00547  AF 14 42 00  MX
-    STA $004204             ; $D0054B  8F 04 42 00  MX
-    SEP #$20                ; $D0054F  E2 20        MX
-    LDA #$0A                ; $D00551  A9 0A        mX
-    STA $004206             ; $D00553  8F 06 42 00  mX
-    REP #$20                ; $D00557  C2 20        mX
-    TXA                     ; $D00559  8A           MX
-    CLC                     ; $D0055A  18           MX
-    ADC #$0000              ; $D0055B  69 00 00     MX
-    ORA #$3400              ; $D0055E  09 00 34     MX
-    STA $1204,Y             ; $D00561  99 04 12     MX
-    LDA $004216             ; $D00564  AF 16 42 00  MX
-    TAX                     ; $D00568  AA           MX
-    LDA $004214             ; $D00569  AF 14 42 00  MX
-    STA $004204             ; $D0056D  8F 04 42 00  MX
-    SEP #$20                ; $D00571  E2 20        MX
-    LDA #$0A                ; $D00573  A9 0A        mX
-    STA $004206             ; $D00575  8F 06 42 00  mX
-    REP #$20                ; $D00579  C2 20        mX
-    TXA                     ; $D0057B  8A           MX
-    CLC                     ; $D0057C  18           MX
-    ADC #$0000              ; $D0057D  69 00 00     MX
-    ORA #$3400              ; $D00580  09 00 34     MX
-    STA $1202,Y             ; $D00583  99 02 12     MX
-    LDA $004216             ; $D00586  AF 16 42 00  MX
-    CLC                     ; $D0058A  18           MX
-    ADC #$0000              ; $D0058B  69 00 00     MX
-    ORA #$3400              ; $D0058E  09 00 34     MX
-    STA $1200,Y             ; $D00591  99 00 12     MX
-    LDA $004214             ; $D00594  AF 14 42 00  MX
-    CLC                     ; $D00598  18           MX
-    ADC #$0000              ; $D00599  69 00 00     MX
-    ORA #$3400              ; $D0059C  09 00 34     MX
-    STA $11FE,Y             ; $D0059F  99 FE 11     MX
-    RTS                     ; $D005A2  60           MX
+    STA $004204                     ; $D0052E  8F 04 42 00  MX
+    SEP #$20                        ; $D00532  E2 20        MX
+    LDA #$0A                        ; $D00534  A9 0A        mX
+    STA $004206                     ; $D00536  8F 06 42 00  mX
+    REP #$20                        ; $D0053A  C2 20        mX
+    LDA #$8000                      ; $D0053C  A9 00 80     MX
+    TSB $68                         ; $D0053F  04 68        MX
+    NOP                             ; $D00541  EA           MX
+    LDA $004216                     ; $D00542  AF 16 42 00  MX
+    TAX                             ; $D00546  AA           MX
+    LDA $004214                     ; $D00547  AF 14 42 00  MX
+    STA $004204                     ; $D0054B  8F 04 42 00  MX
+    SEP #$20                        ; $D0054F  E2 20        MX
+    LDA #$0A                        ; $D00551  A9 0A        mX
+    STA $004206                     ; $D00553  8F 06 42 00  mX
+    REP #$20                        ; $D00557  C2 20        mX
+    TXA                             ; $D00559  8A           MX
+    CLC                             ; $D0055A  18           MX
+    ADC #$0000                      ; $D0055B  69 00 00     MX
+    ORA #$3400                      ; $D0055E  09 00 34     MX
+    STA $1204,Y                     ; $D00561  99 04 12     MX
+    LDA $004216                     ; $D00564  AF 16 42 00  MX
+    TAX                             ; $D00568  AA           MX
+    LDA $004214                     ; $D00569  AF 14 42 00  MX
+    STA $004204                     ; $D0056D  8F 04 42 00  MX
+    SEP #$20                        ; $D00571  E2 20        MX
+    LDA #$0A                        ; $D00573  A9 0A        mX
+    STA $004206                     ; $D00575  8F 06 42 00  mX
+    REP #$20                        ; $D00579  C2 20        mX
+    TXA                             ; $D0057B  8A           MX
+    CLC                             ; $D0057C  18           MX
+    ADC #$0000                      ; $D0057D  69 00 00     MX
+    ORA #$3400                      ; $D00580  09 00 34     MX
+    STA $1202,Y                     ; $D00583  99 02 12     MX
+    LDA $004216                     ; $D00586  AF 16 42 00  MX
+    CLC                             ; $D0058A  18           MX
+    ADC #$0000                      ; $D0058B  69 00 00     MX
+    ORA #$3400                      ; $D0058E  09 00 34     MX
+    STA $1200,Y                     ; $D00591  99 00 12     MX
+    LDA $004214                     ; $D00594  AF 14 42 00  MX
+    CLC                             ; $D00598  18           MX
+    ADC #$0000                      ; $D00599  69 00 00     MX
+    ORA #$3400                      ; $D0059C  09 00 34     MX
+    STA $11FE,Y                     ; $D0059F  99 FE 11     MX
+    RTS                             ; $D005A2  60           MX
 L_D005A3:
-    DEC                     ; $D005A3  3A           MX
-    ASL                     ; $D005A4  0A           MX
-    STA $42                 ; $D005A5  85 42        MX
-    ASL                     ; $D005A7  0A           MX
-    CLC                     ; $D005A8  18           MX
-    ADC $42                 ; $D005A9  65 42        MX
-    CLC                     ; $D005AB  18           MX
-    ADC #$007F              ; $D005AC  69 7F 00     MX
-    ASL                     ; $D005AF  0A           MX
-    ASL                     ; $D005B0  0A           MX
-    ASL                     ; $D005B1  0A           MX
-    ASL                     ; $D005B2  0A           MX
-    ASL                     ; $D005B3  0A           MX
-    CLC                     ; $D005B4  18           MX
-    ADC #$C9A8              ; $D005B5  69 A8 C9     MX
-    TAX                     ; $D005B8  AA           MX
-    LDA #$00C0              ; $D005B9  A9 C0 00     MX
-    PHB                     ; $D005BC  8B           MX
-    MVN $7F,$7F             ; $D005BD  54 7F 7F     MX
-    PLB                     ; $D005C0  AB           MX
-    RTS                     ; $D005C1  60           MX
+    DEC                             ; $D005A3  3A           MX
+    ASL                             ; $D005A4  0A           MX
+    STA $42                         ; $D005A5  85 42        MX
+    ASL                             ; $D005A7  0A           MX
+    CLC                             ; $D005A8  18           MX
+    ADC $42                         ; $D005A9  65 42        MX
+    CLC                             ; $D005AB  18           MX
+    ADC #$007F                      ; $D005AC  69 7F 00     MX
+    ASL                             ; $D005AF  0A           MX
+    ASL                             ; $D005B0  0A           MX
+    ASL                             ; $D005B1  0A           MX
+    ASL                             ; $D005B2  0A           MX
+    ASL                             ; $D005B3  0A           MX
+    CLC                             ; $D005B4  18           MX
+    ADC #$C9A8                      ; $D005B5  69 A8 C9     MX
+    TAX                             ; $D005B8  AA           MX
+    LDA #$00C0                      ; $D005B9  A9 C0 00     MX
+    PHB                             ; $D005BC  8B           MX
+    MVN $7F,$7F                     ; $D005BD  54 7F 7F     MX
+    PLB                             ; $D005C0  AB           MX
+    RTS                             ; $D005C1  60           MX
 L_D005C2:
-    ASL                     ; $D005C2  0A           MX
-    STA $46                 ; $D005C3  85 46        MX
-    ASL                     ; $D005C5  0A           MX
-    CLC                     ; $D005C6  18           MX
-    ADC $46                 ; $D005C7  65 46        MX
-    LDX #$0003              ; $D005C9  A2 03 00     MX
-    CLC                     ; $D005CC  18           MX
-    ADC #$0073              ; $D005CD  69 73 00     MX
-    ORA #$2400              ; $D005D0  09 00 24     MX
-    CLC                     ; $D005D3  18           MX
-    ADC $56                 ; $D005D4  65 56        MX
+    ASL                             ; $D005C2  0A           MX
+    STA $46                         ; $D005C3  85 46        MX
+    ASL                             ; $D005C5  0A           MX
+    CLC                             ; $D005C6  18           MX
+    ADC $46                         ; $D005C7  65 46        MX
+    LDX #$0003                      ; $D005C9  A2 03 00     MX
+    CLC                             ; $D005CC  18           MX
+    ADC #$0073                      ; $D005CD  69 73 00     MX
+    ORA #$2400                      ; $D005D0  09 00 24     MX
+    CLC                             ; $D005D3  18           MX
+    ADC $56                         ; $D005D4  65 56        MX
 L_D005D6:
-    STA $11FE,Y             ; $D005D6  99 FE 11     MX
-    INC                     ; $D005D9  1A           MX
-    STA $1200,Y             ; $D005DA  99 00 12     MX
-    INC                     ; $D005DD  1A           MX
-    PHA                     ; $D005DE  48           MX
-    TYA                     ; $D005DF  98           MX
-    CLC                     ; $D005E0  18           MX
-    ADC #$0040              ; $D005E1  69 40 00     MX
-    TAY                     ; $D005E4  A8           MX
-    PLA                     ; $D005E5  68           MX
-    DEX                     ; $D005E6  CA           MX
-    BNE L_D005D6            ; $D005E7  D0 ED        MX
-    RTS                     ; $D005E9  60           MX
+    STA $11FE,Y                     ; $D005D6  99 FE 11     MX
+    INC                             ; $D005D9  1A           MX
+    STA $1200,Y                     ; $D005DA  99 00 12     MX
+    INC                             ; $D005DD  1A           MX
+    PHA                             ; $D005DE  48           MX
+    TYA                             ; $D005DF  98           MX
+    CLC                             ; $D005E0  18           MX
+    ADC #$0040                      ; $D005E1  69 40 00     MX
+    TAY                             ; $D005E4  A8           MX
+    PLA                             ; $D005E5  68           MX
+    DEX                             ; $D005E6  CA           MX
+    BNE L_D005D6                    ; $D005E7  D0 ED        MX
+    RTS                             ; $D005E9  60           MX
 L_D005EA:
-    ASL                     ; $D005EA  0A           MX
-    STA $42                 ; $D005EB  85 42        MX
-    ASL                     ; $D005ED  0A           MX
-    ASL                     ; $D005EE  0A           MX
-    CLC                     ; $D005EF  18           MX
-    ADC $42                 ; $D005F0  65 42        MX
-    ASL                     ; $D005F2  0A           MX
-    ASL                     ; $D005F3  0A           MX
-    TAX                     ; $D005F4  AA           MX
-    LDA #$0004              ; $D005F5  A9 04 00     MX
-    STA $4A                 ; $D005F8  85 4A        MX
+    ASL                             ; $D005EA  0A           MX
+    STA $42                         ; $D005EB  85 42        MX
+    ASL                             ; $D005ED  0A           MX
+    ASL                             ; $D005EE  0A           MX
+    CLC                             ; $D005EF  18           MX
+    ADC $42                         ; $D005F0  65 42        MX
+    ASL                             ; $D005F2  0A           MX
+    ASL                             ; $D005F3  0A           MX
+    TAX                             ; $D005F4  AA           MX
+    LDA #$0004                      ; $D005F5  A9 04 00     MX
+    STA $4A                         ; $D005F8  85 4A        MX
 L_D005FA:
-    LDA #$0005              ; $D005FA  A9 05 00     MX
-    STA $46                 ; $D005FD  85 46        MX
+    LDA #$0005                      ; $D005FA  A9 05 00     MX
+    STA $46                         ; $D005FD  85 46        MX
 L_D005FF:
-    LDA $D00623,X           ; $D005FF  BF 23 06 D0  MX
-    BEQ L_D0060B            ; $D00603  F0 06        MX
-    CLC                     ; $D00605  18           MX
-    ADC $56                 ; $D00606  65 56        MX
-    STA $11FE,Y             ; $D00608  99 FE 11     MX
+    LDA $D00623,X                   ; $D005FF  BF 23 06 D0  MX
+    BEQ L_D0060B                    ; $D00603  F0 06        MX
+    CLC                             ; $D00605  18           MX
+    ADC $56                         ; $D00606  65 56        MX
+    STA $11FE,Y                     ; $D00608  99 FE 11     MX
 L_D0060B:
-    INX                     ; $D0060B  E8           MX
-    INX                     ; $D0060C  E8           MX
-    INY                     ; $D0060D  C8           MX
-    INY                     ; $D0060E  C8           MX
-    DEC $46                 ; $D0060F  C6 46        MX
-    BNE L_D005FF            ; $D00611  D0 EC        MX
-    TYA                     ; $D00613  98           MX
-    CLC                     ; $D00614  18           MX
-    ADC #$0036              ; $D00615  69 36 00     MX
-    TAY                     ; $D00618  A8           MX
-    DEC $4A                 ; $D00619  C6 4A        MX
-    BNE L_D005FA            ; $D0061B  D0 DD        MX
-    LDA #$4000              ; $D0061D  A9 00 40     MX
-    TSB $68                 ; $D00620  04 68        MX
-    RTS                     ; $D00622  60           MX
+    INX                             ; $D0060B  E8           MX
+    INX                             ; $D0060C  E8           MX
+    INY                             ; $D0060D  C8           MX
+    INY                             ; $D0060E  C8           MX
+    DEC $46                         ; $D0060F  C6 46        MX
+    BNE L_D005FF                    ; $D00611  D0 EC        MX
+    TYA                             ; $D00613  98           MX
+    CLC                             ; $D00614  18           MX
+    ADC #$0036                      ; $D00615  69 36 00     MX
+    TAY                             ; $D00618  A8           MX
+    DEC $4A                         ; $D00619  C6 4A        MX
+    BNE L_D005FA                    ; $D0061B  D0 DD        MX
+    LDA #$4000                      ; $D0061D  A9 00 40     MX
+    TSB $68                         ; $D00620  04 68        MX
+    RTS                             ; $D00622  60           MX
     db $21,$24,$22,$24,$22,$24,$26,$2C,$27,$2C,$23,$24,$00,$00,$00,$00 ; $D00623
     db $28,$2C,$29,$2C,$23,$24,$00,$00,$00,$00,$28,$2C,$29,$2C,$24,$24 ; $D00633
     db $25,$24,$25,$24,$2A,$2C,$2B,$2C,$21,$24,$22,$24,$22,$24,$26,$2C ; $D00643
@@ -728,237 +728,237 @@ L_D0060B:
     db $30,$2C,$31,$2C,$23,$24,$00,$00,$00,$00,$30,$2C,$31,$2C,$24,$24 ; $D00723
     db $25,$24,$25,$24,$2C,$2C,$2D,$2C                                 ; $D00733
 L_D0073B:
-    STZ $5E                 ; $D0073B  64 5E        MX
-    PHA                     ; $D0073D  48           MX
-    PHX                     ; $D0073E  DA           MX
-    LDA $56                 ; $D0073F  A5 56        MX
-    BNE L_D0074E            ; $D00741  D0 0B        MX
-    LDA $006B,Y             ; $D00743  B9 6B 00     MX
-    BIT #$0080              ; $D00746  89 80 00     MX
-    BNE L_D0074E            ; $D00749  D0 03        MX
-    JMP L_D00811            ; $D0074B  4C 11 08     MX
+    STZ $5E                         ; $D0073B  64 5E        MX
+    PHA                             ; $D0073D  48           MX
+    PHX                             ; $D0073E  DA           MX
+    LDA $56                         ; $D0073F  A5 56        MX
+    BNE L_D0074E                    ; $D00741  D0 0B        MX
+    LDA $006B,Y                     ; $D00743  B9 6B 00     MX
+    BIT #$0080                      ; $D00746  89 80 00     MX
+    BNE L_D0074E                    ; $D00749  D0 03        MX
+    JMP L_D00811                    ; $D0074B  4C 11 08     MX
 L_D0074E:
-    PHY                     ; $D0074E  5A           MX
-    LDA $03,S               ; $D0074F  A3 03        MX
-    TAY                     ; $D00751  A8           MX
-    LDA $0004,Y             ; $D00752  B9 04 00     MX
-    PLY                     ; $D00755  7A           MX
-    AND #$00FF              ; $D00756  29 FF 00     MX
-    STA $5A                 ; $D00759  85 5A        MX
-    LDA $0048,Y             ; $D0075B  B9 48 00     MX
-    AND #$00FF              ; $D0075E  29 FF 00     MX
-    BNE L_D00765            ; $D00761  D0 02        MX
-    STA $5A                 ; $D00763  85 5A        MX
+    PHY                             ; $D0074E  5A           MX
+    LDA $03,S                       ; $D0074F  A3 03        MX
+    TAY                             ; $D00751  A8           MX
+    LDA $0004,Y                     ; $D00752  B9 04 00     MX
+    PLY                             ; $D00755  7A           MX
+    AND #$00FF                      ; $D00756  29 FF 00     MX
+    STA $5A                         ; $D00759  85 5A        MX
+    LDA $0048,Y                     ; $D0075B  B9 48 00     MX
+    AND #$00FF                      ; $D0075E  29 FF 00     MX
+    BNE L_D00765                    ; $D00761  D0 02        MX
+    STA $5A                         ; $D00763  85 5A        MX
 L_D00765:
-    TAX                     ; $D00765  AA           MX
-    LDA $D009B8,X           ; $D00766  BF B8 09 D0  MX
-    AND #$00FF              ; $D0076A  29 FF 00     MX
-    STA $46                 ; $D0076D  85 46        MX
-    CMP #$0003              ; $D0076F  C9 03 00     MX
-    BCS L_D00789            ; $D00772  B0 15        MX
-    LDA #$0070              ; $D00774  A9 70 00     MX
-    STA $5E                 ; $D00777  85 5E        MX
-    LDA $0715               ; $D00779  AD 15 07     MX
-    BIT #$0001              ; $D0077C  89 01 00     MX
-    BEQ L_D0079A            ; $D0077F  F0 19        MX
-    LDA #$0038              ; $D00781  A9 38 00     MX
-    STA $5E                 ; $D00784  85 5E        MX
-    JMP L_D0079A            ; $D00786  4C 9A 07     MX
+    TAX                             ; $D00765  AA           MX
+    LDA $D009B8,X                   ; $D00766  BF B8 09 D0  MX
+    AND #$00FF                      ; $D0076A  29 FF 00     MX
+    STA $46                         ; $D0076D  85 46        MX
+    CMP #$0003                      ; $D0076F  C9 03 00     MX
+    BCS L_D00789                    ; $D00772  B0 15        MX
+    LDA #$0070                      ; $D00774  A9 70 00     MX
+    STA $5E                         ; $D00777  85 5E        MX
+    LDA $0715                       ; $D00779  AD 15 07     MX
+    BIT #$0001                      ; $D0077C  89 01 00     MX
+    BEQ L_D0079A                    ; $D0077F  F0 19        MX
+    LDA #$0038                      ; $D00781  A9 38 00     MX
+    STA $5E                         ; $D00784  85 5E        MX
+    JMP L_D0079A                    ; $D00786  4C 9A 07     MX
 L_D00789:
-    LDA $0049,Y             ; $D00789  B9 49 00     MX
-    BIT #$0001              ; $D0078C  89 01 00     MX
-    BNE L_D00794            ; $D0078F  D0 03        MX
-    JMP L_D00811            ; $D00791  4C 11 08     MX
+    LDA $0049,Y                     ; $D00789  B9 49 00     MX
+    BIT #$0001                      ; $D0078C  89 01 00     MX
+    BNE L_D00794                    ; $D0078F  D0 03        MX
+    JMP L_D00811                    ; $D00791  4C 11 08     MX
 L_D00794:
-    AND #$FFFE              ; $D00794  29 FE FF     MX
-    STA $0049,Y             ; $D00797  99 49 00     MX
+    AND #$FFFE                      ; $D00794  29 FE FF     MX
+    STA $0049,Y                     ; $D00797  99 49 00     MX
 L_D0079A:
-    LDA $5A                 ; $D0079A  A5 5A        MX
-    TAX                     ; $D0079C  AA           MX
-    LDA $D009B8,X           ; $D0079D  BF B8 09 D0  MX
-    AND #$00FF              ; $D007A1  29 FF 00     MX
-    STA $4A                 ; $D007A4  85 4A        MX
-    LDA #$0005              ; $D007A6  A9 05 00     MX
-    STA $62                 ; $D007A9  85 62        MX
-    LDA $03,S               ; $D007AB  A3 03        MX
-    TAY                     ; $D007AD  A8           MX
+    LDA $5A                         ; $D0079A  A5 5A        MX
+    TAX                             ; $D0079C  AA           MX
+    LDA $D009B8,X                   ; $D0079D  BF B8 09 D0  MX
+    AND #$00FF                      ; $D007A1  29 FF 00     MX
+    STA $4A                         ; $D007A4  85 4A        MX
+    LDA #$0005                      ; $D007A6  A9 05 00     MX
+    STA $62                         ; $D007A9  85 62        MX
+    LDA $03,S                       ; $D007AB  A3 03        MX
+    TAY                             ; $D007AD  A8           MX
 L_D007AE:
-    LDA #$0006              ; $D007AE  A9 06 00     MX
-    STA $4E                 ; $D007B1  85 4E        MX
-    STA $52                 ; $D007B3  85 52        MX
-    LDA $46                 ; $D007B5  A5 46        MX
-    SEC                     ; $D007B7  38           MX
-    SBC #$0006              ; $D007B8  E9 06 00     MX
-    STA $46                 ; $D007BB  85 46        MX
-    BPL L_D007CA            ; $D007BD  10 0B        MX
-    CLC                     ; $D007BF  18           MX
-    ADC #$0006              ; $D007C0  69 06 00     MX
-    STA $4E                 ; $D007C3  85 4E        MX
-    LDA #$0000              ; $D007C5  A9 00 00     MX
-    STA $46                 ; $D007C8  85 46        MX
+    LDA #$0006                      ; $D007AE  A9 06 00     MX
+    STA $4E                         ; $D007B1  85 4E        MX
+    STA $52                         ; $D007B3  85 52        MX
+    LDA $46                         ; $D007B5  A5 46        MX
+    SEC                             ; $D007B7  38           MX
+    SBC #$0006                      ; $D007B8  E9 06 00     MX
+    STA $46                         ; $D007BB  85 46        MX
+    BPL L_D007CA                    ; $D007BD  10 0B        MX
+    CLC                             ; $D007BF  18           MX
+    ADC #$0006                      ; $D007C0  69 06 00     MX
+    STA $4E                         ; $D007C3  85 4E        MX
+    LDA #$0000                      ; $D007C5  A9 00 00     MX
+    STA $46                         ; $D007C8  85 46        MX
 L_D007CA:
-    LDA $4A                 ; $D007CA  A5 4A        MX
-    SEC                     ; $D007CC  38           MX
-    SBC #$0006              ; $D007CD  E9 06 00     MX
-    STA $4A                 ; $D007D0  85 4A        MX
-    BPL L_D007DF            ; $D007D2  10 0B        MX
-    CLC                     ; $D007D4  18           MX
-    ADC #$0006              ; $D007D5  69 06 00     MX
-    STA $52                 ; $D007D8  85 52        MX
-    LDA #$0000              ; $D007DA  A9 00 00     MX
-    STA $4A                 ; $D007DD  85 4A        MX
+    LDA $4A                         ; $D007CA  A5 4A        MX
+    SEC                             ; $D007CC  38           MX
+    SBC #$0006                      ; $D007CD  E9 06 00     MX
+    STA $4A                         ; $D007D0  85 4A        MX
+    BPL L_D007DF                    ; $D007D2  10 0B        MX
+    CLC                             ; $D007D4  18           MX
+    ADC #$0006                      ; $D007D5  69 06 00     MX
+    STA $52                         ; $D007D8  85 52        MX
+    LDA #$0000                      ; $D007DA  A9 00 00     MX
+    STA $4A                         ; $D007DD  85 4A        MX
 L_D007DF:
-    LDA $52                 ; $D007DF  A5 52        MX
-    ASL                     ; $D007E1  0A           MX
-    ASL                     ; $D007E2  0A           MX
-    ASL                     ; $D007E3  0A           MX
-    ORA $4E                 ; $D007E4  05 4E        MX
-    CLC                     ; $D007E6  18           MX
-    ADC $5E                 ; $D007E7  65 5E        MX
-    TAX                     ; $D007E9  AA           MX
-    LDA $D00910,X           ; $D007EA  BF 10 09 D0  MX
-    AND #$00FF              ; $D007EE  29 FF 00     MX
-    ORA #$2C00              ; $D007F1  09 00 2C     MX
-    CLC                     ; $D007F4  18           MX
-    ADC $56                 ; $D007F5  65 56        MX
-    STA $11FE,Y             ; $D007F7  99 FE 11     MX
-    INY                     ; $D007FA  C8           MX
-    INY                     ; $D007FB  C8           MX
-    DEC $62                 ; $D007FC  C6 62        MX
-    BNE L_D007AE            ; $D007FE  D0 AE        MX
-    LDA #$003D              ; $D00800  A9 3D 00     MX
-    ORA #$2C00              ; $D00803  09 00 2C     MX
-    CLC                     ; $D00806  18           MX
-    ADC $56                 ; $D00807  65 56        MX
-    STA $11FE,Y             ; $D00809  99 FE 11     MX
-    LDA #$8000              ; $D0080C  A9 00 80     MX
-    TSB $68                 ; $D0080F  04 68        MX
+    LDA $52                         ; $D007DF  A5 52        MX
+    ASL                             ; $D007E1  0A           MX
+    ASL                             ; $D007E2  0A           MX
+    ASL                             ; $D007E3  0A           MX
+    ORA $4E                         ; $D007E4  05 4E        MX
+    CLC                             ; $D007E6  18           MX
+    ADC $5E                         ; $D007E7  65 5E        MX
+    TAX                             ; $D007E9  AA           MX
+    LDA $D00910,X                   ; $D007EA  BF 10 09 D0  MX
+    AND #$00FF                      ; $D007EE  29 FF 00     MX
+    ORA #$2C00                      ; $D007F1  09 00 2C     MX
+    CLC                             ; $D007F4  18           MX
+    ADC $56                         ; $D007F5  65 56        MX
+    STA $11FE,Y                     ; $D007F7  99 FE 11     MX
+    INY                             ; $D007FA  C8           MX
+    INY                             ; $D007FB  C8           MX
+    DEC $62                         ; $D007FC  C6 62        MX
+    BNE L_D007AE                    ; $D007FE  D0 AE        MX
+    LDA #$003D                      ; $D00800  A9 3D 00     MX
+    ORA #$2C00                      ; $D00803  09 00 2C     MX
+    CLC                             ; $D00806  18           MX
+    ADC $56                         ; $D00807  65 56        MX
+    STA $11FE,Y                     ; $D00809  99 FE 11     MX
+    LDA #$8000                      ; $D0080C  A9 00 80     MX
+    TSB $68                         ; $D0080F  04 68        MX
 L_D00811:
-    PLX                     ; $D00811  FA           MX
-    PLA                     ; $D00812  68           MX
-    RTS                     ; $D00813  60           MX
+    PLX                             ; $D00811  FA           MX
+    PLA                             ; $D00812  68           MX
+    RTS                             ; $D00813  60           MX
 L_D00814:
-    LDA $08F8               ; $D00814  AD F8 08     MX
-    BNE L_D0081C            ; $D00817  D0 03        MX
-    JMP L_D0090F            ; $D00819  4C 0F 09     MX
+    LDA $08F8                       ; $D00814  AD F8 08     MX
+    BNE L_D0081C                    ; $D00817  D0 03        MX
+    JMP L_D0090F                    ; $D00819  4C 0F 09     MX
 L_D0081C:
-    LDA #$00DC              ; $D0081C  A9 DC 00     MX
-    LDY $086D               ; $D0081F  AC 6D 08     MX
-    STZ $5E                 ; $D00822  64 5E        MX
-    PHA                     ; $D00824  48           MX
-    PHX                     ; $D00825  DA           MX
-    LDA #$0064              ; $D00826  A9 64 00     MX
-    AND #$00FF              ; $D00829  29 FF 00     MX
-    STA $5A                 ; $D0082C  85 5A        MX
-    LDA $0048,Y             ; $D0082E  B9 48 00     MX
-    AND #$00FF              ; $D00831  29 FF 00     MX
-    BNE L_D0084B            ; $D00834  D0 15        MX
-    LDA #$0004              ; $D00836  A9 04 00     MX
-    CMP $001E,Y             ; $D00839  D9 1E 00     MX
-    BEQ L_D00846            ; $D0083C  F0 08        MX
-    LDA $0048,Y             ; $D0083E  B9 48 00     MX
-    AND #$00FF              ; $D00841  29 FF 00     MX
-    BRA L_D0084B            ; $D00844  80 05        MX
+    LDA #$00DC                      ; $D0081C  A9 DC 00     MX
+    LDY $086D                       ; $D0081F  AC 6D 08     MX
+    STZ $5E                         ; $D00822  64 5E        MX
+    PHA                             ; $D00824  48           MX
+    PHX                             ; $D00825  DA           MX
+    LDA #$0064                      ; $D00826  A9 64 00     MX
+    AND #$00FF                      ; $D00829  29 FF 00     MX
+    STA $5A                         ; $D0082C  85 5A        MX
+    LDA $0048,Y                     ; $D0082E  B9 48 00     MX
+    AND #$00FF                      ; $D00831  29 FF 00     MX
+    BNE L_D0084B                    ; $D00834  D0 15        MX
+    LDA #$0004                      ; $D00836  A9 04 00     MX
+    CMP $001E,Y                     ; $D00839  D9 1E 00     MX
+    BEQ L_D00846                    ; $D0083C  F0 08        MX
+    LDA $0048,Y                     ; $D0083E  B9 48 00     MX
+    AND #$00FF                      ; $D00841  29 FF 00     MX
+    BRA L_D0084B                    ; $D00844  80 05        MX
 L_D00846:
-    LDA #$0000              ; $D00846  A9 00 00     MX
-    STA $5A                 ; $D00849  85 5A        MX
+    LDA #$0000                      ; $D00846  A9 00 00     MX
+    STA $5A                         ; $D00849  85 5A        MX
 L_D0084B:
-    TAX                     ; $D0084B  AA           MX
-    LDA $006C,Y             ; $D0084C  B9 6C 00     MX
-    BIT #$0001              ; $D0084F  89 01 00     MX
-    BNE L_D0085A            ; $D00852  D0 06        MX
-    LDA $C80464,X           ; $D00854  BF 64 04 C8  MX
-    BRA L_D0085E            ; $D00858  80 04        MX
+    TAX                             ; $D0084B  AA           MX
+    LDA $006C,Y                     ; $D0084C  B9 6C 00     MX
+    BIT #$0001                      ; $D0084F  89 01 00     MX
+    BNE L_D0085A                    ; $D00852  D0 06        MX
+    LDA $C80464,X                   ; $D00854  BF 64 04 C8  MX
+    BRA L_D0085E                    ; $D00858  80 04        MX
 L_D0085A:
-    LDA $C804E6,X           ; $D0085A  BF E6 04 C8  MX
+    LDA $C804E6,X                   ; $D0085A  BF E6 04 C8  MX
 L_D0085E:
-    AND #$00FF              ; $D0085E  29 FF 00     MX
-    TAX                     ; $D00861  AA           MX
-    LDA $D009B8,X           ; $D00862  BF B8 09 D0  MX
-    AND #$00FF              ; $D00866  29 FF 00     MX
-    STA $46                 ; $D00869  85 46        MX
-    CMP #$0003              ; $D0086B  C9 03 00     MX
-    BCS L_D00885            ; $D0086E  B0 15        MX
-    LDA #$0070              ; $D00870  A9 70 00     MX
-    STA $5E                 ; $D00873  85 5E        MX
-    LDA $0715               ; $D00875  AD 15 07     MX
-    BIT #$0001              ; $D00878  89 01 00     MX
-    BEQ L_D00896            ; $D0087B  F0 19        MX
-    LDA #$0038              ; $D0087D  A9 38 00     MX
-    STA $5E                 ; $D00880  85 5E        MX
-    JMP L_D00896            ; $D00882  4C 96 08     MX
+    AND #$00FF                      ; $D0085E  29 FF 00     MX
+    TAX                             ; $D00861  AA           MX
+    LDA $D009B8,X                   ; $D00862  BF B8 09 D0  MX
+    AND #$00FF                      ; $D00866  29 FF 00     MX
+    STA $46                         ; $D00869  85 46        MX
+    CMP #$0003                      ; $D0086B  C9 03 00     MX
+    BCS L_D00885                    ; $D0086E  B0 15        MX
+    LDA #$0070                      ; $D00870  A9 70 00     MX
+    STA $5E                         ; $D00873  85 5E        MX
+    LDA $0715                       ; $D00875  AD 15 07     MX
+    BIT #$0001                      ; $D00878  89 01 00     MX
+    BEQ L_D00896                    ; $D0087B  F0 19        MX
+    LDA #$0038                      ; $D0087D  A9 38 00     MX
+    STA $5E                         ; $D00880  85 5E        MX
+    JMP L_D00896                    ; $D00882  4C 96 08     MX
 L_D00885:
-    LDA $0049,Y             ; $D00885  B9 49 00     MX
-    BIT #$0001              ; $D00888  89 01 00     MX
-    BNE L_D00890            ; $D0088B  D0 03        MX
-    JMP L_D0090D            ; $D0088D  4C 0D 09     MX
+    LDA $0049,Y                     ; $D00885  B9 49 00     MX
+    BIT #$0001                      ; $D00888  89 01 00     MX
+    BNE L_D00890                    ; $D0088B  D0 03        MX
+    JMP L_D0090D                    ; $D0088D  4C 0D 09     MX
 L_D00890:
-    AND #$FFFE              ; $D00890  29 FE FF     MX
-    STA $0049,Y             ; $D00893  99 49 00     MX
+    AND #$FFFE                      ; $D00890  29 FE FF     MX
+    STA $0049,Y                     ; $D00893  99 49 00     MX
 L_D00896:
-    LDA $5A                 ; $D00896  A5 5A        MX
-    TAX                     ; $D00898  AA           MX
-    LDA $D009B8,X           ; $D00899  BF B8 09 D0  MX
-    AND #$00FF              ; $D0089D  29 FF 00     MX
-    STA $4A                 ; $D008A0  85 4A        MX
-    LDA #$0005              ; $D008A2  A9 05 00     MX
-    STA $62                 ; $D008A5  85 62        MX
-    LDA $03,S               ; $D008A7  A3 03        MX
-    TAY                     ; $D008A9  A8           MX
+    LDA $5A                         ; $D00896  A5 5A        MX
+    TAX                             ; $D00898  AA           MX
+    LDA $D009B8,X                   ; $D00899  BF B8 09 D0  MX
+    AND #$00FF                      ; $D0089D  29 FF 00     MX
+    STA $4A                         ; $D008A0  85 4A        MX
+    LDA #$0005                      ; $D008A2  A9 05 00     MX
+    STA $62                         ; $D008A5  85 62        MX
+    LDA $03,S                       ; $D008A7  A3 03        MX
+    TAY                             ; $D008A9  A8           MX
 L_D008AA:
-    LDA #$0006              ; $D008AA  A9 06 00     MX
-    STA $4E                 ; $D008AD  85 4E        MX
-    STA $52                 ; $D008AF  85 52        MX
-    LDA $46                 ; $D008B1  A5 46        MX
-    SEC                     ; $D008B3  38           MX
-    SBC #$0006              ; $D008B4  E9 06 00     MX
-    STA $46                 ; $D008B7  85 46        MX
-    BPL L_D008C6            ; $D008B9  10 0B        MX
-    CLC                     ; $D008BB  18           MX
-    ADC #$0006              ; $D008BC  69 06 00     MX
-    STA $4E                 ; $D008BF  85 4E        MX
-    LDA #$0000              ; $D008C1  A9 00 00     MX
-    STA $46                 ; $D008C4  85 46        MX
+    LDA #$0006                      ; $D008AA  A9 06 00     MX
+    STA $4E                         ; $D008AD  85 4E        MX
+    STA $52                         ; $D008AF  85 52        MX
+    LDA $46                         ; $D008B1  A5 46        MX
+    SEC                             ; $D008B3  38           MX
+    SBC #$0006                      ; $D008B4  E9 06 00     MX
+    STA $46                         ; $D008B7  85 46        MX
+    BPL L_D008C6                    ; $D008B9  10 0B        MX
+    CLC                             ; $D008BB  18           MX
+    ADC #$0006                      ; $D008BC  69 06 00     MX
+    STA $4E                         ; $D008BF  85 4E        MX
+    LDA #$0000                      ; $D008C1  A9 00 00     MX
+    STA $46                         ; $D008C4  85 46        MX
 L_D008C6:
-    LDA $4A                 ; $D008C6  A5 4A        MX
-    SEC                     ; $D008C8  38           MX
-    SBC #$0006              ; $D008C9  E9 06 00     MX
-    STA $4A                 ; $D008CC  85 4A        MX
-    BPL L_D008DB            ; $D008CE  10 0B        MX
-    CLC                     ; $D008D0  18           MX
-    ADC #$0006              ; $D008D1  69 06 00     MX
-    STA $52                 ; $D008D4  85 52        MX
-    LDA #$0000              ; $D008D6  A9 00 00     MX
-    STA $4A                 ; $D008D9  85 4A        MX
+    LDA $4A                         ; $D008C6  A5 4A        MX
+    SEC                             ; $D008C8  38           MX
+    SBC #$0006                      ; $D008C9  E9 06 00     MX
+    STA $4A                         ; $D008CC  85 4A        MX
+    BPL L_D008DB                    ; $D008CE  10 0B        MX
+    CLC                             ; $D008D0  18           MX
+    ADC #$0006                      ; $D008D1  69 06 00     MX
+    STA $52                         ; $D008D4  85 52        MX
+    LDA #$0000                      ; $D008D6  A9 00 00     MX
+    STA $4A                         ; $D008D9  85 4A        MX
 L_D008DB:
-    LDA $52                 ; $D008DB  A5 52        MX
-    ASL                     ; $D008DD  0A           MX
-    ASL                     ; $D008DE  0A           MX
-    ASL                     ; $D008DF  0A           MX
-    ORA $4E                 ; $D008E0  05 4E        MX
-    CLC                     ; $D008E2  18           MX
-    ADC $5E                 ; $D008E3  65 5E        MX
-    TAX                     ; $D008E5  AA           MX
-    LDA $D00910,X           ; $D008E6  BF 10 09 D0  MX
-    AND #$00FF              ; $D008EA  29 FF 00     MX
-    ORA #$2C00              ; $D008ED  09 00 2C     MX
-    STA $11FE,Y             ; $D008F0  99 FE 11     MX
-    STA $123E,Y             ; $D008F3  99 3E 12     MX
-    INY                     ; $D008F6  C8           MX
-    INY                     ; $D008F7  C8           MX
-    DEC $62                 ; $D008F8  C6 62        MX
-    BNE L_D008AA            ; $D008FA  D0 AE        MX
-    LDA #$003D              ; $D008FC  A9 3D 00     MX
-    ORA #$2C00              ; $D008FF  09 00 2C     MX
-    STA $11FE,Y             ; $D00902  99 FE 11     MX
-    STA $123E,Y             ; $D00905  99 3E 12     MX
-    LDA #$8000              ; $D00908  A9 00 80     MX
-    TSB $68                 ; $D0090B  04 68        MX
+    LDA $52                         ; $D008DB  A5 52        MX
+    ASL                             ; $D008DD  0A           MX
+    ASL                             ; $D008DE  0A           MX
+    ASL                             ; $D008DF  0A           MX
+    ORA $4E                         ; $D008E0  05 4E        MX
+    CLC                             ; $D008E2  18           MX
+    ADC $5E                         ; $D008E3  65 5E        MX
+    TAX                             ; $D008E5  AA           MX
+    LDA $D00910,X                   ; $D008E6  BF 10 09 D0  MX
+    AND #$00FF                      ; $D008EA  29 FF 00     MX
+    ORA #$2C00                      ; $D008ED  09 00 2C     MX
+    STA $11FE,Y                     ; $D008F0  99 FE 11     MX
+    STA $123E,Y                     ; $D008F3  99 3E 12     MX
+    INY                             ; $D008F6  C8           MX
+    INY                             ; $D008F7  C8           MX
+    DEC $62                         ; $D008F8  C6 62        MX
+    BNE L_D008AA                    ; $D008FA  D0 AE        MX
+    LDA #$003D                      ; $D008FC  A9 3D 00     MX
+    ORA #$2C00                      ; $D008FF  09 00 2C     MX
+    STA $11FE,Y                     ; $D00902  99 FE 11     MX
+    STA $123E,Y                     ; $D00905  99 3E 12     MX
+    LDA #$8000                      ; $D00908  A9 00 80     MX
+    TSB $68                         ; $D0090B  04 68        MX
 L_D0090D:
-    PLX                     ; $D0090D  FA           MX
-    PLA                     ; $D0090E  68           MX
+    PLX                             ; $D0090D  FA           MX
+    PLA                             ; $D0090E  68           MX
 L_D0090F:
-    RTS                     ; $D0090F  60           MX
+    RTS                             ; $D0090F  60           MX
     db $36,$36,$3A,$3B,$3B,$37,$34,$34,$36,$36,$3A,$3B,$3B,$37,$34,$34 ; $D00910
     db $3C,$3C,$3A,$3B,$3B,$37,$34,$34,$3C,$3A,$3A,$3B,$3B,$37,$34,$34 ; $D00920
     db $3C,$3A,$3A,$3B,$3B,$37,$34,$34,$35,$35,$39,$38,$38,$37,$34,$34 ; $D00930
@@ -977,57 +977,57 @@ L_D0090F:
     db $16,$16,$16,$16,$17,$17,$17,$18,$18,$18,$19,$19,$19,$19,$1A,$1A ; $D00A00
     db $1A,$1B,$1B,$1B,$1C,$1C,$1C,$1C,$1D,$1D,$1D,$1E                 ; $D00A10
 L_D00A1C:
-    LDA $0049,Y             ; $D00A1C  B9 49 00     MX
-    BIT #$0008              ; $D00A1F  89 08 00     MX
-    BEQ L_D00A3E            ; $D00A22  F0 1A        MX
-    AND #$FFF7              ; $D00A24  29 F7 FF     MX
-    STA $0049,Y             ; $D00A27  99 49 00     MX
-    LDX #$09A4              ; $D00A2A  A2 A4 09     MX
-    LDA $0040,Y             ; $D00A2D  B9 40 00     MX
-    BIT #$0001              ; $D00A30  89 01 00     MX
-    BEQ L_D00A38            ; $D00A33  F0 03        MX
-    LDX #$09CC              ; $D00A35  A2 CC 09     MX
+    LDA $0049,Y                     ; $D00A1C  B9 49 00     MX
+    BIT #$0008                      ; $D00A1F  89 08 00     MX
+    BEQ L_D00A3E                    ; $D00A22  F0 1A        MX
+    AND #$FFF7                      ; $D00A24  29 F7 FF     MX
+    STA $0049,Y                     ; $D00A27  99 49 00     MX
+    LDX #$09A4                      ; $D00A2A  A2 A4 09     MX
+    LDA $0040,Y                     ; $D00A2D  B9 40 00     MX
+    BIT #$0001                      ; $D00A30  89 01 00     MX
+    BEQ L_D00A38                    ; $D00A33  F0 03        MX
+    LDX #$09CC                      ; $D00A35  A2 CC 09     MX
 L_D00A38:
-    LDA $0018,X             ; $D00A38  BD 18 00     MX
-    JSR L_D00A3F            ; $D00A3B  20 3F 0A     MX
+    LDA $0018,X                     ; $D00A38  BD 18 00     MX
+    JSR L_D00A3F                    ; $D00A3B  20 3F 0A     MX
 L_D00A3E:
-    RTS                     ; $D00A3E  60           MX
+    RTS                             ; $D00A3E  60           MX
 L_D00A3F:
-    PHA                     ; $D00A3F  48           MX
-    TAX                     ; $D00A40  AA           MX
-    LDA $0841               ; $D00A41  AD 41 08     MX
-    BMI L_D00A49            ; $D00A44  30 03        MX
-    LDX #$0009              ; $D00A46  A2 09 00     MX
+    PHA                             ; $D00A3F  48           MX
+    TAX                             ; $D00A40  AA           MX
+    LDA $0841                       ; $D00A41  AD 41 08     MX
+    BMI L_D00A49                    ; $D00A44  30 03        MX
+    LDX #$0009                      ; $D00A46  A2 09 00     MX
 L_D00A49:
-    LDA $0851               ; $D00A49  AD 51 08     MX
-    BMI L_D00A51            ; $D00A4C  30 03        MX
-    LDX #$0008              ; $D00A4E  A2 08 00     MX
+    LDA $0851                       ; $D00A49  AD 51 08     MX
+    BMI L_D00A51                    ; $D00A4C  30 03        MX
+    LDX #$0008                      ; $D00A4E  A2 08 00     MX
 L_D00A51:
-    TXA                     ; $D00A51  8A           MX
-    PLX                     ; $D00A52  FA           MX
-    DEC                     ; $D00A53  3A           MX
-    LDY $46                 ; $D00A54  A4 46        MX
-    CMP #$0003              ; $D00A56  C9 03 00     MX
-    BCC L_D00A5C            ; $D00A59  90 01        MX
-    DEC                     ; $D00A5B  3A           MX
+    TXA                             ; $D00A51  8A           MX
+    PLX                             ; $D00A52  FA           MX
+    DEC                             ; $D00A53  3A           MX
+    LDY $46                         ; $D00A54  A4 46        MX
+    CMP #$0003                      ; $D00A56  C9 03 00     MX
+    BCC L_D00A5C                    ; $D00A59  90 01        MX
+    DEC                             ; $D00A5B  3A           MX
 L_D00A5C:
-    ASL                     ; $D00A5C  0A           MX
-    ASL                     ; $D00A5D  0A           MX
-    CLC                     ; $D00A5E  18           MX
-    ADC #$003E              ; $D00A5F  69 3E 00     MX
-    ORA #$2400              ; $D00A62  09 00 24     MX
-    CLC                     ; $D00A65  18           MX
-    ADC $56                 ; $D00A66  65 56        MX
-    STA $11FE,Y             ; $D00A68  99 FE 11     MX
-    INC                     ; $D00A6B  1A           MX
-    STA $1200,Y             ; $D00A6C  99 00 12     MX
-    INC                     ; $D00A6F  1A           MX
-    STA $123E,Y             ; $D00A70  99 3E 12     MX
-    INC                     ; $D00A73  1A           MX
-    STA $1240,Y             ; $D00A74  99 40 12     MX
-    LDA #$4000              ; $D00A77  A9 00 40     MX
-    TSB $68                 ; $D00A7A  04 68        MX
-    RTS                     ; $D00A7C  60           MX
+    ASL                             ; $D00A5C  0A           MX
+    ASL                             ; $D00A5D  0A           MX
+    CLC                             ; $D00A5E  18           MX
+    ADC #$003E                      ; $D00A5F  69 3E 00     MX
+    ORA #$2400                      ; $D00A62  09 00 24     MX
+    CLC                             ; $D00A65  18           MX
+    ADC $56                         ; $D00A66  65 56        MX
+    STA $11FE,Y                     ; $D00A68  99 FE 11     MX
+    INC                             ; $D00A6B  1A           MX
+    STA $1200,Y                     ; $D00A6C  99 00 12     MX
+    INC                             ; $D00A6F  1A           MX
+    STA $123E,Y                     ; $D00A70  99 3E 12     MX
+    INC                             ; $D00A73  1A           MX
+    STA $1240,Y                     ; $D00A74  99 40 12     MX
+    LDA #$4000                      ; $D00A77  A9 00 40     MX
+    TSB $68                         ; $D00A7A  04 68        MX
+    RTS                             ; $D00A7C  60           MX
     db $01,$00,$00,$00,$00,$00,$7F,$60,$60,$60,$00,$64,$00,$7F,$01,$60 ; $D00A7D
     db $01,$01,$00,$00,$52,$4E,$43,$02,$00,$00,$05,$12,$00,$00,$01,$84 ; $D00A8D
     db $A9,$FA,$1D,$29,$02,$01,$17,$00,$5D,$00,$D8,$7B,$92,$63,$CE,$5A ; $D00A9D

@@ -10,6 +10,8 @@ points to EXTRA_ENTRIES to grow coverage.
 import os
 import sys
 
+import names
+
 EXTRA_ENTRIES = []  # addresses
 
 CC = "T F HI LS CC CS NE EQ VC VS PL MI GE LT GT LE".split()
@@ -24,7 +26,6 @@ def rare(mnem, ops):
     if base in ("ADDX", "SUBX"):
         return ops[0][0] == "pre"
     return base in RARE or mnem == "ORI.B" and ops[1][0] == "D"
-VECTOR_NAMES = {1: "RESET", 28: "HBLANK", 30: "VBLANK"}
 
 # EA kinds 0-11: Dn An (An) (An)+ -(An) d16(An) d8(An,Xn) abs.W abs.L d16(PC) d8(PC,Xn) #imm
 ALL = set(range(12))
@@ -323,6 +324,16 @@ def targets(mnem, ops, rom_len):
     return code, data
 
 
+def ram_notes(ops, ram):
+    """Names of the RAM variables an instruction touches: d16(A5)/d8(A5,Xn) offsets (A5 = $FF0000) and absolute addresses."""
+    out = []
+    for o in ops:
+        a = (0xFF0000 + o[1]) & 0xFFFFFF if o[0] in ("d16", "d8x") and o[2] == 5 else ea_addr(o) if o[0] in ("absw", "absl") else None
+        if a in ram:
+            out.append(ram[a][0])
+    return " ".join(out)
+
+
 def trace(rom, entries, st):
     code, used, jumps, refs = st
     work = list(entries)
@@ -409,9 +420,10 @@ def main(rom_path, outdir):
                 found += 1
         if not found:
             break
-    labels = {t for t in jumps | refs | set(entries) if t in code or not used[t]}
-    shared = [vec(i) for i in range(1, 64)]
-    names = {vec(i): n for i, n in VECTOR_NAMES.items() if shared.count(vec(i)) == 1}  # not the catch-all handler
+    code_names, ram = names.load("genesis")
+    for t in code_names:
+        assert t < len(rom) and (t in code or not used[t]), f"names.txt: ${t:06X} is inside an instruction"
+    labels = {t for t in jumps | refs | set(entries) if t in code or not used[t]} | set(code_names)
 
     os.makedirs(outdir, exist_ok=True)
     a, chunk = 0, 0x10000
@@ -419,15 +431,13 @@ def main(rom_path, outdir):
         start, end = a, min(a - a % chunk + chunk, len(rom))
         lines = [f"org ${a:06X}", ""]
         while a < end:
-            if a in names:
-                lines.append(f"{names[a]}:")
             if a in labels:
-                lines.append(f"L_{a:06X}:")
+                lines.append(f"{code_names.get(a, 'L_%06X' % a)}:")
             if a in code:
                 mnem, ops, n = code[a]
-                text = f"{mnem} {','.join(fmt(o, labels) for o in ops)}".strip()
+                text = names.name_labels(f"{mnem} {','.join(fmt(o, labels) for o in ops)}".strip(), code_names)
                 raw = " ".join(f"{rom[i] << 8 | rom[i + 1]:04X}" for i in range(a, a + n, 2))
-                lines.append(f"    {text:<40}; ${a:06X}  {raw}")
+                lines.append(f"    {text:<40}; ${a:06X}  {raw:<20} {ram_notes(ops, ram)}".rstrip())
                 a += n
             else:
                 stop = a + 1

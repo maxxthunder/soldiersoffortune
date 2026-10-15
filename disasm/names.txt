@@ -1,0 +1,139 @@
+# Names used in the listings. One per line: platform  kind  address  name  [bank]
+#   kind code: a routine or data label; it replaces L_xxxxxx in the listing and reassembles to that address
+#   kind ram:  a variable; it is shown at the end of the comment on every line that uses it
+# SNES RAM below $10000 is the low page ($7E0000 mirror). A bank (e.g. CD) limits a direct-page name
+# to code in that bank, because bank C0 moves the direct page onto object data.
+# Genesis RAM is written as the full address; the listings show it as an offset from A5 ($FF0000).
+# Names are lowercase. See docs/ram_map.md for what the variables hold.
+
+# ---- SNES: vectors
+snes code $C0FFB2 irq                      # JML [$0000]: the handler address is in RAM
+snes code $C0FFB5 nmi                      # JML [$0004]
+snes code $C0FFB8 reset                    # also the COP vector
+snes code $C0FFE0 brk
+
+# ---- SNES: controllers
+snes code $CD014C read_pads
+snes code $CD0189 clear_pads
+snes ram  $4C     pad1_held      CD
+snes ram  $4E     pad2_held      CD
+snes ram  $50     pad1_pressed   CD
+snes ram  $52     pad2_pressed   CD
+snes ram  $E8     pads_enabled   CD
+snes code $C0B16D game_read_pads          # in game; the main loop copies the result to $06F3/$06FB/$06FD
+snes code $C20E11 cycle_item
+snes code $C20831 pause_on_start
+snes code $D108DB list_menu
+
+# ---- SNES: passwords
+snes code $CD01E0 end_of_level_password
+snes code $CD1C20 password_entry_loop
+snes code $CD1CB2 password_try_decode
+snes code $CD1CF8 show_invalid_password
+snes code $CD3039 password_decode
+snes code $CD3127 password_unpack_money
+snes code $CD314E password_text_to_values
+snes code $CD3177 password_values_to_text
+snes code $CD3199 password_encode
+snes code $CD323E password_xor
+snes code $CD324D password_pack_money
+snes code $CD329D add_equipment_value
+snes code $CD32F7 subtract_equipment_value
+snes code $CD3398 password_checksum
+snes code $CD28B5 password_alphabet
+snes code $CD28E2 password_grid
+snes code $CD2D8A dev_test_passwords
+snes code $CD2FFD character_pairs
+snes ram  $020A   password_length
+snes ram  $020E   password_cursor
+snes ram  $74     password_invalid CD
+snes ram  $7F9560 password_text
+
+# ---- SNES: party and progress
+snes ram  $0212   two_players
+snes ram  $0214   level_counter
+snes ram  $0220   p1_character
+snes ram  $025E   p2_character
+snes ram  $0224   p1_money
+snes ram  $0262   p2_money
+snes ram  $022C   p1_stat
+snes ram  $026A   p2_stat
+snes ram  $022E   p1_stat_copy
+snes ram  $026C   p2_stat_copy
+snes ram  $0258   p1_lives
+snes ram  $0296   p2_lives
+snes ram  $0260   p2_is_cpu
+
+# ---- Genesis: vectors
+genesis code $000200 reset
+genesis code $00095A unused_interrupt     # every vector not listed here
+genesis code $00095C vblank
+genesis code $000406 trap1
+
+# ---- Genesis: controllers
+genesis code $0009B0 read_pad1
+genesis code $000A5A read_pad2
+genesis ram  $FF03D6 pad1_raw_th_high
+genesis ram  $FF03D7 pad1_raw_th_low
+genesis ram  $FF03D8 pad2_raw_th_high
+genesis ram  $FF03D9 pad2_raw_th_low
+genesis ram  $FF0061 pad1
+genesis ram  $FF0060 pad2
+genesis ram  $FF065A pads_menu
+genesis ram  $FF0656 pad2_last
+genesis ram  $FF0657 pad1_last
+genesis ram  $FF0659 fire_pressed
+genesis ram  $FF06E2 key_pressed
+genesis ram  $FF06DF p2_control
+genesis ram  $FF06E0 p1_control
+genesis ram  $FF065B pad2_enabled
+
+# ---- Genesis: passwords
+genesis code $00733A password_build
+genesis code $00752E password_checksum
+genesis code $007548 password_decode
+genesis code $007488 add_equipment_value
+genesis code $00834A password_encode
+genesis code $00834E password_scramble
+genesis code $008194 password_entry_key
+genesis code $0072FA character_pairs
+genesis code $008420 password_tiles
+genesis code $008444 password_keys
+genesis ram  $FF03B0 password_text
+genesis ram  $FF03BE password_values
+genesis ram  $FF06EC password_cursor_row
+genesis ram  $FF06ED password_cursor_col
+
+# ---- Genesis: party and progress
+genesis ram  $FF415C p2_control_type
+genesis ram  $FF0960 level_counter
+genesis ram  $FF0946 p1_character
+genesis ram  $FF0948 p2_character
+genesis ram  $FF004C p1_lives
+genesis ram  $FF004E p2_lives
+genesis ram  $FF0AE4 p1_money
+genesis ram  $FF0B0C p2_money
+genesis ram  $FF0AF8 p1_stat
+genesis ram  $FF0B20 p2_stat
+genesis ram  $FF0AFC p1_special
+genesis ram  $FF0B24 p2_special
+genesis ram  $FF08CE p1_specials_owned
+genesis ram  $FF08D2 p2_specials_owned
+genesis ram  $FF046E equipment_costs_ptr
+
+# ---- Genesis: game
+genesis code $00CBE0 swap_special_powers
+genesis code $00CC98 cycle_special_power
+genesis code $002C1A demo_input
+genesis ram  $FF40B8 p1_object
+genesis ram  $FF412E p2_object
+genesis ram  $FF0472 frame_counter
+genesis ram  $FF085C game_mode
+genesis ram  $FF0860 demo_input_ptr
+genesis ram  $FF085E demo_input_pos
+
+# ---- Genesis: sound
+genesis code $14CF08 z80_send_commands    # copies the mailbox to Z80 RAM $1F80
+genesis code $14CF72 z80_load_driver
+genesis code $14D044 z80_driver
+genesis ram  $FFFF94 sound_mailbox

@@ -2,2174 +2,2174 @@
 org $C20000
 
 L_C20000:
-    PHP                     ; $C20000  08           mX
-    REP #$20                ; $C20001  C2 20        mX
-    PHA                     ; $C20003  48           MX
-    PHY                     ; $C20004  5A           MX
-    PHX                     ; $C20005  DA           MX
-    LDA #$0000              ; $C20006  A9 00 00     MX
-    LDX #$FFFF              ; $C20009  A2 FF FF     MX
-    JSL L_C2024D            ; $C2000C  22 4D 02 C2  MX
-    PLX                     ; $C20010  FA           MX
-    PLY                     ; $C20011  7A           MX
-    PLA                     ; $C20012  68           MX
-    PLP                     ; $C20013  28           MX
-    RTL                     ; $C20014  6B           mX
+    PHP                             ; $C20000  08           mX
+    REP #$20                        ; $C20001  C2 20        mX
+    PHA                             ; $C20003  48           MX
+    PHY                             ; $C20004  5A           MX
+    PHX                             ; $C20005  DA           MX
+    LDA #$0000                      ; $C20006  A9 00 00     MX
+    LDX #$FFFF                      ; $C20009  A2 FF FF     MX
+    JSL L_C2024D                    ; $C2000C  22 4D 02 C2  MX
+    PLX                             ; $C20010  FA           MX
+    PLY                             ; $C20011  7A           MX
+    PLA                             ; $C20012  68           MX
+    PLP                             ; $C20013  28           MX
+    RTL                             ; $C20014  6B           mX
 L_C20015:
-    PHP                     ; $C20015  08           mX
-    REP #$20                ; $C20016  C2 20        mX
-    PHA                     ; $C20018  48           MX
-    PHY                     ; $C20019  5A           MX
-    PHX                     ; $C2001A  DA           MX
-    LDA #$0006              ; $C2001B  A9 06 00     MX
-    LDX #$FFFF              ; $C2001E  A2 FF FF     MX
-    JSL L_C2024D            ; $C20021  22 4D 02 C2  MX
-    PLX                     ; $C20025  FA           MX
-    PLY                     ; $C20026  7A           MX
-    PLA                     ; $C20027  68           MX
-    PLP                     ; $C20028  28           MX
-    RTL                     ; $C20029  6B           mX
+    PHP                             ; $C20015  08           mX
+    REP #$20                        ; $C20016  C2 20        mX
+    PHA                             ; $C20018  48           MX
+    PHY                             ; $C20019  5A           MX
+    PHX                             ; $C2001A  DA           MX
+    LDA #$0006                      ; $C2001B  A9 06 00     MX
+    LDX #$FFFF                      ; $C2001E  A2 FF FF     MX
+    JSL L_C2024D                    ; $C20021  22 4D 02 C2  MX
+    PLX                             ; $C20025  FA           MX
+    PLY                             ; $C20026  7A           MX
+    PLA                             ; $C20027  68           MX
+    PLP                             ; $C20028  28           MX
+    RTL                             ; $C20029  6B           mX
 L_C2002A:
-    PHP                     ; $C2002A  08           mX
-    REP #$20                ; $C2002B  C2 20        mX
-    PHA                     ; $C2002D  48           MX
-    PHY                     ; $C2002E  5A           MX
-    PHX                     ; $C2002F  DA           MX
-    LDA #$0005              ; $C20030  A9 05 00     MX
-    LDX #$FFFF              ; $C20033  A2 FF FF     MX
-    JSL L_C2024D            ; $C20036  22 4D 02 C2  MX
-    PLX                     ; $C2003A  FA           MX
-    PLY                     ; $C2003B  7A           MX
-    PLA                     ; $C2003C  68           MX
-    PLP                     ; $C2003D  28           MX
-    RTL                     ; $C2003E  6B           mX
+    PHP                             ; $C2002A  08           mX
+    REP #$20                        ; $C2002B  C2 20        mX
+    PHA                             ; $C2002D  48           MX
+    PHY                             ; $C2002E  5A           MX
+    PHX                             ; $C2002F  DA           MX
+    LDA #$0005                      ; $C20030  A9 05 00     MX
+    LDX #$FFFF                      ; $C20033  A2 FF FF     MX
+    JSL L_C2024D                    ; $C20036  22 4D 02 C2  MX
+    PLX                             ; $C2003A  FA           MX
+    PLY                             ; $C2003B  7A           MX
+    PLA                             ; $C2003C  68           MX
+    PLP                             ; $C2003D  28           MX
+    RTL                             ; $C2003E  6B           mX
 L_C2003F:
-    PHP                     ; $C2003F  08           mX
-    REP #$20                ; $C20040  C2 20        mX
-    PHA                     ; $C20042  48           MX
-    PHY                     ; $C20043  5A           MX
-    PHX                     ; $C20044  DA           MX
-    LDA #$0003              ; $C20045  A9 03 00     MX
-    LDX #$FFFF              ; $C20048  A2 FF FF     MX
-    JSL L_C2024D            ; $C2004B  22 4D 02 C2  MX
-    PLX                     ; $C2004F  FA           MX
-    PLY                     ; $C20050  7A           MX
-    PLA                     ; $C20051  68           MX
-    PLP                     ; $C20052  28           MX
-    RTL                     ; $C20053  6B           mX
+    PHP                             ; $C2003F  08           mX
+    REP #$20                        ; $C20040  C2 20        mX
+    PHA                             ; $C20042  48           MX
+    PHY                             ; $C20043  5A           MX
+    PHX                             ; $C20044  DA           MX
+    LDA #$0003                      ; $C20045  A9 03 00     MX
+    LDX #$FFFF                      ; $C20048  A2 FF FF     MX
+    JSL L_C2024D                    ; $C2004B  22 4D 02 C2  MX
+    PLX                             ; $C2004F  FA           MX
+    PLY                             ; $C20050  7A           MX
+    PLA                             ; $C20051  68           MX
+    PLP                             ; $C20052  28           MX
+    RTL                             ; $C20053  6B           mX
 L_C20054:
-    LDA $0739               ; $C20054  AD 39 07     MX
-    BMI L_C200B2            ; $C20057  30 59        MX
-    JSL L_C203C2            ; $C20059  22 C2 03 C2  MX
-    LDA $46                 ; $C2005D  A5 46        MX
-    STA $004204             ; $C2005F  8F 04 42 00  MX
-    SEP #$20                ; $C20063  E2 20        MX
-    LDA $24                 ; $C20065  A5 24        mX
-    STA $004206             ; $C20067  8F 06 42 00  mX
-    REP #$20                ; $C2006B  C2 20        mX
-    NOP                     ; $C2006D  EA           MX
-    NOP                     ; $C2006E  EA           MX
-    NOP                     ; $C2006F  EA           MX
-    NOP                     ; $C20070  EA           MX
-    NOP                     ; $C20071  EA           MX
-    NOP                     ; $C20072  EA           MX
-    NOP                     ; $C20073  EA           MX
-    LDA $004216             ; $C20074  AF 16 42 00  MX
-    BNE L_C200B2            ; $C20078  D0 38        MX
-    LDA $0739               ; $C2007A  AD 39 07     MX
-    TAX                     ; $C2007D  AA           MX
-    PHX                     ; $C2007E  DA           MX
-    LDA $C113A5,X           ; $C2007F  BF A5 13 C1  MX
-    AND #$00FF              ; $C20083  29 FF 00     MX
-    CMP $073B               ; $C20086  CD 3B 07     MX
-    BEQ L_C20092            ; $C20089  F0 07        MX
-    STA $073B               ; $C2008B  8D 3B 07     MX
-    JSL L_C2010F            ; $C2008E  22 0F 01 C2  MX
+    LDA $0739                       ; $C20054  AD 39 07     MX
+    BMI L_C200B2                    ; $C20057  30 59        MX
+    JSL L_C203C2                    ; $C20059  22 C2 03 C2  MX
+    LDA $46                         ; $C2005D  A5 46        MX
+    STA $004204                     ; $C2005F  8F 04 42 00  MX
+    SEP #$20                        ; $C20063  E2 20        MX
+    LDA $24                         ; $C20065  A5 24        mX
+    STA $004206                     ; $C20067  8F 06 42 00  mX
+    REP #$20                        ; $C2006B  C2 20        mX
+    NOP                             ; $C2006D  EA           MX
+    NOP                             ; $C2006E  EA           MX
+    NOP                             ; $C2006F  EA           MX
+    NOP                             ; $C20070  EA           MX
+    NOP                             ; $C20071  EA           MX
+    NOP                             ; $C20072  EA           MX
+    NOP                             ; $C20073  EA           MX
+    LDA $004216                     ; $C20074  AF 16 42 00  MX
+    BNE L_C200B2                    ; $C20078  D0 38        MX
+    LDA $0739                       ; $C2007A  AD 39 07     MX
+    TAX                             ; $C2007D  AA           MX
+    PHX                             ; $C2007E  DA           MX
+    LDA $C113A5,X                   ; $C2007F  BF A5 13 C1  MX
+    AND #$00FF                      ; $C20083  29 FF 00     MX
+    CMP $073B                       ; $C20086  CD 3B 07     MX
+    BEQ L_C20092                    ; $C20089  F0 07        MX
+    STA $073B                       ; $C2008B  8D 3B 07     MX
+    JSL L_C2010F                    ; $C2008E  22 0F 01 C2  MX
 L_C20092:
-    PLX                     ; $C20092  FA           MX
-    LDA $C113B5,X           ; $C20093  BF B5 13 C1  MX
-    AND #$00FF              ; $C20097  29 FF 00     MX
-    BEQ L_C200AC            ; $C2009A  F0 10        MX
-    ASL                     ; $C2009C  0A           MX
-    TAX                     ; $C2009D  AA           MX
-    LDA $C1609A,X           ; $C2009E  BF 9A 60 C1  MX
-    AND #$00FF              ; $C200A2  29 FF 00     MX
-    LDX #$FFFF              ; $C200A5  A2 FF FF     MX
-    JSL L_C2024D            ; $C200A8  22 4D 02 C2  MX
+    PLX                             ; $C20092  FA           MX
+    LDA $C113B5,X                   ; $C20093  BF B5 13 C1  MX
+    AND #$00FF                      ; $C20097  29 FF 00     MX
+    BEQ L_C200AC                    ; $C2009A  F0 10        MX
+    ASL                             ; $C2009C  0A           MX
+    TAX                             ; $C2009D  AA           MX
+    LDA $C1609A,X                   ; $C2009E  BF 9A 60 C1  MX
+    AND #$00FF                      ; $C200A2  29 FF 00     MX
+    LDX #$FFFF                      ; $C200A5  A2 FF FF     MX
+    JSL L_C2024D                    ; $C200A8  22 4D 02 C2  MX
 L_C200AC:
-    LDA #$FFFF              ; $C200AC  A9 FF FF     MX
-    STA $0739               ; $C200AF  8D 39 07     MX
+    LDA #$FFFF                      ; $C200AC  A9 FF FF     MX
+    STA $0739                       ; $C200AF  8D 39 07     MX
 L_C200B2:
-    RTL                     ; $C200B2  6B           MX
+    RTL                             ; $C200B2  6B           MX
 L_C200B3:
-    LDA #$00FF              ; $C200B3  A9 FF 00     MX
-    STA $004204             ; $C200B6  8F 04 42 00  MX
-    LDA $4E                 ; $C200BA  A5 4E        MX
-    SEC                     ; $C200BC  38           MX
-    SBC $4A                 ; $C200BD  E5 4A        MX
-    SEP #$20                ; $C200BF  E2 20        MX
-    STA $004206             ; $C200C1  8F 06 42 00  mX
-    REP #$20                ; $C200C5  C2 20        mX
-    NOP                     ; $C200C7  EA           MX
-    NOP                     ; $C200C8  EA           MX
-    NOP                     ; $C200C9  EA           MX
-    NOP                     ; $C200CA  EA           MX
-    NOP                     ; $C200CB  EA           MX
-    NOP                     ; $C200CC  EA           MX
-    NOP                     ; $C200CD  EA           MX
-    NOP                     ; $C200CE  EA           MX
-    LDA $004214             ; $C200CF  AF 14 42 00  MX
-    INC                     ; $C200D3  1A           MX
-    STA $46                 ; $C200D4  85 46        MX
-    JSL L_C048A9            ; $C200D6  22 A9 48 C0  MX
-    CMP #$0000              ; $C200DA  C9 00 00     MX
-    BNE L_C200E0            ; $C200DD  D0 01        MX
-    INC                     ; $C200DF  1A           MX
+    LDA #$00FF                      ; $C200B3  A9 FF 00     MX
+    STA $004204                     ; $C200B6  8F 04 42 00  MX
+    LDA $4E                         ; $C200BA  A5 4E        MX
+    SEC                             ; $C200BC  38           MX
+    SBC $4A                         ; $C200BD  E5 4A        MX
+    SEP #$20                        ; $C200BF  E2 20        MX
+    STA $004206                     ; $C200C1  8F 06 42 00  mX
+    REP #$20                        ; $C200C5  C2 20        mX
+    NOP                             ; $C200C7  EA           MX
+    NOP                             ; $C200C8  EA           MX
+    NOP                             ; $C200C9  EA           MX
+    NOP                             ; $C200CA  EA           MX
+    NOP                             ; $C200CB  EA           MX
+    NOP                             ; $C200CC  EA           MX
+    NOP                             ; $C200CD  EA           MX
+    NOP                             ; $C200CE  EA           MX
+    LDA $004214                     ; $C200CF  AF 14 42 00  MX
+    INC                             ; $C200D3  1A           MX
+    STA $46                         ; $C200D4  85 46        MX
+    JSL L_C048A9                    ; $C200D6  22 A9 48 C0  MX
+    CMP #$0000                      ; $C200DA  C9 00 00     MX
+    BNE L_C200E0                    ; $C200DD  D0 01        MX
+    INC                             ; $C200DF  1A           MX
 L_C200E0:
-    STA $004204             ; $C200E0  8F 04 42 00  MX
-    LDA $46                 ; $C200E4  A5 46        MX
-    SEP #$20                ; $C200E6  E2 20        MX
-    STA $004206             ; $C200E8  8F 06 42 00  mX
-    REP #$20                ; $C200EC  C2 20        mX
-    NOP                     ; $C200EE  EA           MX
-    NOP                     ; $C200EF  EA           MX
-    NOP                     ; $C200F0  EA           MX
-    NOP                     ; $C200F1  EA           MX
-    NOP                     ; $C200F2  EA           MX
-    NOP                     ; $C200F3  EA           MX
-    NOP                     ; $C200F4  EA           MX
-    NOP                     ; $C200F5  EA           MX
-    LDA $004214             ; $C200F6  AF 14 42 00  MX
-    CLC                     ; $C200FA  18           MX
-    ADC $4A                 ; $C200FB  65 4A        MX
-    STA $46                 ; $C200FD  85 46        MX
-    RTL                     ; $C200FF  6B           MX
+    STA $004204                     ; $C200E0  8F 04 42 00  MX
+    LDA $46                         ; $C200E4  A5 46        MX
+    SEP #$20                        ; $C200E6  E2 20        MX
+    STA $004206                     ; $C200E8  8F 06 42 00  mX
+    REP #$20                        ; $C200EC  C2 20        mX
+    NOP                             ; $C200EE  EA           MX
+    NOP                             ; $C200EF  EA           MX
+    NOP                             ; $C200F0  EA           MX
+    NOP                             ; $C200F1  EA           MX
+    NOP                             ; $C200F2  EA           MX
+    NOP                             ; $C200F3  EA           MX
+    NOP                             ; $C200F4  EA           MX
+    NOP                             ; $C200F5  EA           MX
+    LDA $004214                     ; $C200F6  AF 14 42 00  MX
+    CLC                             ; $C200FA  18           MX
+    ADC $4A                         ; $C200FB  65 4A        MX
+    STA $46                         ; $C200FD  85 46        MX
+    RTL                             ; $C200FF  6B           MX
 L_C20100:
-    PHP                     ; $C20100  08           MX
-    REP #$20                ; $C20101  C2 20        MX
-    LDA #$0081              ; $C20103  A9 81 00     MX
-    LDX #$0000              ; $C20106  A2 00 00     MX
-    JSL L_C2024D            ; $C20109  22 4D 02 C2  MX
-    PLP                     ; $C2010D  28           MX
-    RTL                     ; $C2010E  6B           MX
+    PHP                             ; $C20100  08           MX
+    REP #$20                        ; $C20101  C2 20        MX
+    LDA #$0081                      ; $C20103  A9 81 00     MX
+    LDX #$0000                      ; $C20106  A2 00 00     MX
+    JSL L_C2024D                    ; $C20109  22 4D 02 C2  MX
+    PLP                             ; $C2010D  28           MX
+    RTL                             ; $C2010E  6B           MX
 L_C2010F:
-    PHP                     ; $C2010F  08           mX
-    REP #$20                ; $C20110  C2 20        mX
-    AND #$00FF              ; $C20112  29 FF 00     MX
-    CMP #$002A              ; $C20115  C9 2A 00     MX
-    BCC L_C2011D            ; $C20118  90 03        MX
-    JMP L_C20180            ; $C2011A  4C 80 01     MX
+    PHP                             ; $C2010F  08           mX
+    REP #$20                        ; $C20110  C2 20        mX
+    AND #$00FF                      ; $C20112  29 FF 00     MX
+    CMP #$002A                      ; $C20115  C9 2A 00     MX
+    BCC L_C2011D                    ; $C20118  90 03        MX
+    JMP L_C20180                    ; $C2011A  4C 80 01     MX
 L_C2011D:
-    SEP #$20                ; $C2011D  E2 20        MX
-    STA $0E                 ; $C2011F  85 0E        mX
-    REP #$20                ; $C20121  C2 20        mX
-    ASL                     ; $C20123  0A           MX
-    TAX                     ; $C20124  AA           MX
-    LDA $C80000,X           ; $C20125  BF 00 00 C8  MX
-    STA $24                 ; $C20129  85 24        MX
-    LDA $C1609A,X           ; $C2012B  BF 9A 60 C1  MX
-    BEQ L_C20155            ; $C2012F  F0 24        MX
-    PHX                     ; $C20131  DA           MX
-    PHA                     ; $C20132  48           MX
-    XBA                     ; $C20133  EB           MX
-    AND #$00FF              ; $C20134  29 FF 00     MX
-    SEP #$20                ; $C20137  E2 20        MX
-    CMP $0D                 ; $C20139  C5 0D        mX
-    REP #$20                ; $C2013B  C2 20        mX
-    BEQ L_C20153            ; $C2013D  F0 14        MX
-    LDA #$0000              ; $C2013F  A9 00 00     MX
-    LDX #$0000              ; $C20142  A2 00 00     MX
-    JSL L_C2024D            ; $C20145  22 4D 02 C2  MX
-    LDA $01,S               ; $C20149  A3 01        MX
-    XBA                     ; $C2014B  EB           MX
-    AND #$00FF              ; $C2014C  29 FF 00     MX
-    JSL L_C04171            ; $C2014F  22 71 41 C0  MX
+    SEP #$20                        ; $C2011D  E2 20        MX
+    STA $0E                         ; $C2011F  85 0E        mX
+    REP #$20                        ; $C20121  C2 20        mX
+    ASL                             ; $C20123  0A           MX
+    TAX                             ; $C20124  AA           MX
+    LDA $C80000,X                   ; $C20125  BF 00 00 C8  MX
+    STA $24                         ; $C20129  85 24        MX
+    LDA $C1609A,X                   ; $C2012B  BF 9A 60 C1  MX
+    BEQ L_C20155                    ; $C2012F  F0 24        MX
+    PHX                             ; $C20131  DA           MX
+    PHA                             ; $C20132  48           MX
+    XBA                             ; $C20133  EB           MX
+    AND #$00FF                      ; $C20134  29 FF 00     MX
+    SEP #$20                        ; $C20137  E2 20        MX
+    CMP $0D                         ; $C20139  C5 0D        mX
+    REP #$20                        ; $C2013B  C2 20        mX
+    BEQ L_C20153                    ; $C2013D  F0 14        MX
+    LDA #$0000                      ; $C2013F  A9 00 00     MX
+    LDX #$0000                      ; $C20142  A2 00 00     MX
+    JSL L_C2024D                    ; $C20145  22 4D 02 C2  MX
+    LDA $01,S                       ; $C20149  A3 01        MX
+    XBA                             ; $C2014B  EB           MX
+    AND #$00FF                      ; $C2014C  29 FF 00     MX
+    JSL L_C04171                    ; $C2014F  22 71 41 C0  MX
 L_C20153:
-    PLA                     ; $C20153  68           MX
-    PLX                     ; $C20154  FA           MX
+    PLA                             ; $C20153  68           MX
+    PLX                             ; $C20154  FA           MX
 L_C20155:
-    LDA $C1609A,X           ; $C20155  BF 9A 60 C1  MX
-    SEP #$20                ; $C20159  E2 20        MX
-    CMP #$FF                ; $C2015B  C9 FF        mX
-    BEQ L_C2017E            ; $C2015D  F0 1F        mX
-    PHA                     ; $C2015F  48           mX
-    LDA #$FF                ; $C20160  A9 FF        mX
-    PHA                     ; $C20162  48           mX
-    STZ $20                 ; $C20163  64 20        mX
-    LDA $23                 ; $C20165  A5 23        mX
-    BNE L_C20171            ; $C20167  D0 08        mX
-    PLA                     ; $C20169  68           mX
-    STA $22                 ; $C2016A  85 22        mX
-    PLA                     ; $C2016C  68           mX
-    STA $23                 ; $C2016D  85 23        mX
-    BRA L_C2017A            ; $C2016F  80 09        mX
+    LDA $C1609A,X                   ; $C20155  BF 9A 60 C1  MX
+    SEP #$20                        ; $C20159  E2 20        MX
+    CMP #$FF                        ; $C2015B  C9 FF        mX
+    BEQ L_C2017E                    ; $C2015D  F0 1F        mX
+    PHA                             ; $C2015F  48           mX
+    LDA #$FF                        ; $C20160  A9 FF        mX
+    PHA                             ; $C20162  48           mX
+    STZ $20                         ; $C20163  64 20        mX
+    LDA $23                         ; $C20165  A5 23        mX
+    BNE L_C20171                    ; $C20167  D0 08        mX
+    PLA                             ; $C20169  68           mX
+    STA $22                         ; $C2016A  85 22        mX
+    PLA                             ; $C2016C  68           mX
+    STA $23                         ; $C2016D  85 23        mX
+    BRA L_C2017A                    ; $C2016F  80 09        mX
 L_C20171:
-    PLA                     ; $C20171  68           mX
-    PLA                     ; $C20172  68           mX
-    LDX #$FFFF              ; $C20173  A2 FF FF     mX
-    JSL L_C2024D            ; $C20176  22 4D 02 C2  mX
+    PLA                             ; $C20171  68           mX
+    PLA                             ; $C20172  68           mX
+    LDX #$FFFF                      ; $C20173  A2 FF FF     mX
+    JSL L_C2024D                    ; $C20176  22 4D 02 C2  mX
 L_C2017A:
-    LDA #$FF                ; $C2017A  A9 FF        mX
-    STA $20                 ; $C2017C  85 20        mX
+    LDA #$FF                        ; $C2017A  A9 FF        mX
+    STA $20                         ; $C2017C  85 20        mX
 L_C2017E:
-    REP #$20                ; $C2017E  C2 20        mX
+    REP #$20                        ; $C2017E  C2 20        mX
 L_C20180:
-    PLP                     ; $C20180  28           MX
-    RTL                     ; $C20181  6B           mX
+    PLP                             ; $C20180  28           MX
+    RTL                             ; $C20181  6B           mX
 L_C20182:
-    PHX                     ; $C20182  DA           MX
-    PHY                     ; $C20183  5A           MX
-    PHP                     ; $C20184  08           MX
-    DEC                     ; $C20185  3A           MX
-    BPL L_C2018B            ; $C20186  10 03        MX
-    JMP L_C20249            ; $C20188  4C 49 02     MX
+    PHX                             ; $C20182  DA           MX
+    PHY                             ; $C20183  5A           MX
+    PHP                             ; $C20184  08           MX
+    DEC                             ; $C20185  3A           MX
+    BPL L_C2018B                    ; $C20186  10 03        MX
+    JMP L_C20249                    ; $C20188  4C 49 02     MX
 L_C2018B:
-    REP #$30                ; $C2018B  C2 30        MX
-    AND #$00FF              ; $C2018D  29 FF 00     MX
-    ASL                     ; $C20190  0A           MX
-    ASL                     ; $C20191  0A           MX
-    TAX                     ; $C20192  AA           MX
-    SEP #$20                ; $C20193  E2 20        MX
-    LDA $C10E40,X           ; $C20195  BF 40 0E C1  mX
-    BPL L_C2019E            ; $C20199  10 03        mX
-    JMP L_C20249            ; $C2019B  4C 49 02     mX
+    REP #$30                        ; $C2018B  C2 30        MX
+    AND #$00FF                      ; $C2018D  29 FF 00     MX
+    ASL                             ; $C20190  0A           MX
+    ASL                             ; $C20191  0A           MX
+    TAX                             ; $C20192  AA           MX
+    SEP #$20                        ; $C20193  E2 20        MX
+    LDA $C10E40,X                   ; $C20195  BF 40 0E C1  mX
+    BPL L_C2019E                    ; $C20199  10 03        mX
+    JMP L_C20249                    ; $C2019B  4C 49 02     mX
 L_C2019E:
-    XBA                     ; $C2019E  EB           mX
-    LDA $C10E41,X           ; $C2019F  BF 41 0E C1  mX
-    AND #$0F                ; $C201A3  29 0F        mX
-    BEQ L_C201C0            ; $C201A5  F0 19        mX
-    PHX                     ; $C201A7  DA           mX
-    SEP #$10                ; $C201A8  E2 10        mX
-    LDA $08C7               ; $C201AA  AD C7 08     mx
-    LSR                     ; $C201AD  4A           mx
-    LSR                     ; $C201AE  4A           mx
-    TAX                     ; $C201AF  AA           mx
-    LDA $C1605E,X           ; $C201B0  BF 5E 60 C1  mx
-    REP #$10                ; $C201B4  C2 10        mx
-    PLX                     ; $C201B6  FA           mX
-    AND $C10E41,X           ; $C201B7  3F 41 0E C1  mX
-    BNE L_C201C0            ; $C201BB  D0 03        mX
-    JMP L_C20249            ; $C201BD  4C 49 02     mX
+    XBA                             ; $C2019E  EB           mX
+    LDA $C10E41,X                   ; $C2019F  BF 41 0E C1  mX
+    AND #$0F                        ; $C201A3  29 0F        mX
+    BEQ L_C201C0                    ; $C201A5  F0 19        mX
+    PHX                             ; $C201A7  DA           mX
+    SEP #$10                        ; $C201A8  E2 10        mX
+    LDA $08C7                       ; $C201AA  AD C7 08     mx
+    LSR                             ; $C201AD  4A           mx
+    LSR                             ; $C201AE  4A           mx
+    TAX                             ; $C201AF  AA           mx
+    LDA $C1605E,X                   ; $C201B0  BF 5E 60 C1  mx
+    REP #$10                        ; $C201B4  C2 10        mx
+    PLX                             ; $C201B6  FA           mX
+    AND $C10E41,X                   ; $C201B7  3F 41 0E C1  mX
+    BNE L_C201C0                    ; $C201BB  D0 03        mX
+    JMP L_C20249                    ; $C201BD  4C 49 02     mX
 L_C201C0:
-    LDA $C10E41,X           ; $C201C0  BF 41 0E C1  mX
-    BIT #$40                ; $C201C4  89 40        mX
-    BNE L_C2020D            ; $C201C6  D0 45        mX
-    BIT #$20                ; $C201C8  89 20        mX
-    BEQ L_C20233            ; $C201CA  F0 67        mX
-    XBA                     ; $C201CC  EB           mX
-    REP #$20                ; $C201CD  C2 20        mX
-    AND #$0FFF              ; $C201CF  29 FF 0F     MX
-    ASL                     ; $C201D2  0A           MX
-    TAX                     ; $C201D3  AA           MX
-    LDA $C10D78,X           ; $C201D4  BF 78 0D C1  MX
-    TAX                     ; $C201D8  AA           MX
-    PHA                     ; $C201D9  48           MX
-    LDA $C10D78,X           ; $C201DA  BF 78 0D C1  MX
-    STA $4E                 ; $C201DE  85 4E        MX
-    LDA #$0000              ; $C201E0  A9 00 00     MX
-    STA $4A                 ; $C201E3  85 4A        MX
-    JSL L_C200B3            ; $C201E5  22 B3 00 C2  MX
-    LDA $46                 ; $C201E9  A5 46        MX
-    ASL                     ; $C201EB  0A           MX
-    ASL                     ; $C201EC  0A           MX
-    CLC                     ; $C201ED  18           MX
-    ADC $01,S               ; $C201EE  63 01        MX
-    PLX                     ; $C201F0  FA           MX
-    TAX                     ; $C201F1  AA           MX
-    LDA $C10D7A,X           ; $C201F2  BF 7A 0D C1  MX
-    SEP #$20                ; $C201F6  E2 20        MX
-    CMP #$00                ; $C201F8  C9 00        mX
-    BEQ L_C20249            ; $C201FA  F0 4D        mX
-    CMP #$42                ; $C201FC  C9 42        mX
-    BCS L_C20249            ; $C201FE  B0 49        mX
-    TAY                     ; $C20200  A8           mX
-    LDA $C10D7C,X           ; $C20201  BF 7C 0D C1  mX
-    ASL                     ; $C20205  0A           mX
-    ASL                     ; $C20206  0A           mX
-    LDA #$FF                ; $C20207  A9 FF        mX
-    TAX                     ; $C20209  AA           mX
-    TYA                     ; $C2020A  98           mX
-    BRA L_C20245            ; $C2020B  80 38        mX
+    LDA $C10E41,X                   ; $C201C0  BF 41 0E C1  mX
+    BIT #$40                        ; $C201C4  89 40        mX
+    BNE L_C2020D                    ; $C201C6  D0 45        mX
+    BIT #$20                        ; $C201C8  89 20        mX
+    BEQ L_C20233                    ; $C201CA  F0 67        mX
+    XBA                             ; $C201CC  EB           mX
+    REP #$20                        ; $C201CD  C2 20        mX
+    AND #$0FFF                      ; $C201CF  29 FF 0F     MX
+    ASL                             ; $C201D2  0A           MX
+    TAX                             ; $C201D3  AA           MX
+    LDA $C10D78,X                   ; $C201D4  BF 78 0D C1  MX
+    TAX                             ; $C201D8  AA           MX
+    PHA                             ; $C201D9  48           MX
+    LDA $C10D78,X                   ; $C201DA  BF 78 0D C1  MX
+    STA $4E                         ; $C201DE  85 4E        MX
+    LDA #$0000                      ; $C201E0  A9 00 00     MX
+    STA $4A                         ; $C201E3  85 4A        MX
+    JSL L_C200B3                    ; $C201E5  22 B3 00 C2  MX
+    LDA $46                         ; $C201E9  A5 46        MX
+    ASL                             ; $C201EB  0A           MX
+    ASL                             ; $C201EC  0A           MX
+    CLC                             ; $C201ED  18           MX
+    ADC $01,S                       ; $C201EE  63 01        MX
+    PLX                             ; $C201F0  FA           MX
+    TAX                             ; $C201F1  AA           MX
+    LDA $C10D7A,X                   ; $C201F2  BF 7A 0D C1  MX
+    SEP #$20                        ; $C201F6  E2 20        MX
+    CMP #$00                        ; $C201F8  C9 00        mX
+    BEQ L_C20249                    ; $C201FA  F0 4D        mX
+    CMP #$42                        ; $C201FC  C9 42        mX
+    BCS L_C20249                    ; $C201FE  B0 49        mX
+    TAY                             ; $C20200  A8           mX
+    LDA $C10D7C,X                   ; $C20201  BF 7C 0D C1  mX
+    ASL                             ; $C20205  0A           mX
+    ASL                             ; $C20206  0A           mX
+    LDA #$FF                        ; $C20207  A9 FF        mX
+    TAX                             ; $C20209  AA           mX
+    TYA                             ; $C2020A  98           mX
+    BRA L_C20245                    ; $C2020B  80 38        mX
 L_C2020D:
-    XBA                     ; $C2020D  EB           mX
-    REP #$20                ; $C2020E  C2 20        mX
-    AND #$0FFF              ; $C20210  29 FF 0F     MX
-    ASL                     ; $C20213  0A           MX
-    TAX                     ; $C20214  AA           MX
-    LDA $C10D78,X           ; $C20215  BF 78 0D C1  MX
-    TAX                     ; $C20219  AA           MX
-    SEP #$20                ; $C2021A  E2 20        MX
-    LDA $C10D78,X           ; $C2021C  BF 78 0D C1  mX
-    BEQ L_C20249            ; $C20220  F0 27        mX
-    CMP #$42                ; $C20222  C9 42        mX
-    BCS L_C20249            ; $C20224  B0 23        mX
-    TAY                     ; $C20226  A8           mX
-    LDA $C10D7A,X           ; $C20227  BF 7A 0D C1  mX
-    ASL                     ; $C2022B  0A           mX
-    ASL                     ; $C2022C  0A           mX
-    LDA #$FF                ; $C2022D  A9 FF        mX
-    TAX                     ; $C2022F  AA           mX
-    TYA                     ; $C20230  98           mX
-    BRA L_C20245            ; $C20231  80 12        mX
+    XBA                             ; $C2020D  EB           mX
+    REP #$20                        ; $C2020E  C2 20        mX
+    AND #$0FFF                      ; $C20210  29 FF 0F     MX
+    ASL                             ; $C20213  0A           MX
+    TAX                             ; $C20214  AA           MX
+    LDA $C10D78,X                   ; $C20215  BF 78 0D C1  MX
+    TAX                             ; $C20219  AA           MX
+    SEP #$20                        ; $C2021A  E2 20        MX
+    LDA $C10D78,X                   ; $C2021C  BF 78 0D C1  mX
+    BEQ L_C20249                    ; $C20220  F0 27        mX
+    CMP #$42                        ; $C20222  C9 42        mX
+    BCS L_C20249                    ; $C20224  B0 23        mX
+    TAY                             ; $C20226  A8           mX
+    LDA $C10D7A,X                   ; $C20227  BF 7A 0D C1  mX
+    ASL                             ; $C2022B  0A           mX
+    ASL                             ; $C2022C  0A           mX
+    LDA #$FF                        ; $C2022D  A9 FF        mX
+    TAX                             ; $C2022F  AA           mX
+    TYA                             ; $C20230  98           mX
+    BRA L_C20245                    ; $C20231  80 12        mX
 L_C20233:
-    XBA                     ; $C20233  EB           mX
-    BEQ L_C20249            ; $C20234  F0 13        mX
-    CMP #$42                ; $C20236  C9 42        mX
-    BCS L_C20249            ; $C20238  B0 0F        mX
-    TAY                     ; $C2023A  A8           mX
-    LDA $C10E43,X           ; $C2023B  BF 43 0E C1  mX
-    ASL                     ; $C2023F  0A           mX
-    ASL                     ; $C20240  0A           mX
-    LDA #$FF                ; $C20241  A9 FF        mX
-    TAX                     ; $C20243  AA           mX
-    TYA                     ; $C20244  98           mX
+    XBA                             ; $C20233  EB           mX
+    BEQ L_C20249                    ; $C20234  F0 13        mX
+    CMP #$42                        ; $C20236  C9 42        mX
+    BCS L_C20249                    ; $C20238  B0 0F        mX
+    TAY                             ; $C2023A  A8           mX
+    LDA $C10E43,X                   ; $C2023B  BF 43 0E C1  mX
+    ASL                             ; $C2023F  0A           mX
+    ASL                             ; $C20240  0A           mX
+    LDA #$FF                        ; $C20241  A9 FF        mX
+    TAX                             ; $C20243  AA           mX
+    TYA                             ; $C20244  98           mX
 L_C20245:
-    JSL L_C2024D            ; $C20245  22 4D 02 C2  mX
+    JSL L_C2024D                    ; $C20245  22 4D 02 C2  mX
 L_C20249:
-    PLP                     ; $C20249  28           MX
-    PLY                     ; $C2024A  7A           MX
-    PLX                     ; $C2024B  FA           MX
-    RTL                     ; $C2024C  6B           MX
+    PLP                             ; $C20249  28           MX
+    PLY                             ; $C2024A  7A           MX
+    PLX                             ; $C2024B  FA           MX
+    RTL                             ; $C2024C  6B           MX
 L_C2024D:
-    PHP                     ; $C2024D  08           MX
-    SEP #$20                ; $C2024E  E2 20        MX
-    STZ $20                 ; $C20250  64 20        mX
-    PHX                     ; $C20252  DA           mX
-    PHA                     ; $C20253  48           mX
-    CMP #$00                ; $C20254  C9 00        mX
-    BEQ L_C2027B            ; $C20256  F0 23        mX
-    BMI L_C2027B            ; $C20258  30 21        mX
-    LDX #$0000              ; $C2025A  A2 00 00     mX
+    PHP                             ; $C2024D  08           MX
+    SEP #$20                        ; $C2024E  E2 20        MX
+    STZ $20                         ; $C20250  64 20        mX
+    PHX                             ; $C20252  DA           mX
+    PHA                             ; $C20253  48           mX
+    CMP #$00                        ; $C20254  C9 00        mX
+    BEQ L_C2027B                    ; $C20256  F0 23        mX
+    BMI L_C2027B                    ; $C20258  30 21        mX
+    LDX #$0000                      ; $C2025A  A2 00 00     mX
 L_C2025D:
-    LDA $10,X               ; $C2025D  B5 10        mX
-    BEQ L_C20269            ; $C2025F  F0 08        mX
-    INX                     ; $C20261  E8           mX
-    CPX #$0008              ; $C20262  E0 08 00     mX
-    BNE L_C2025D            ; $C20265  D0 F6        mX
-    BRA L_C20271            ; $C20267  80 08        mX
+    LDA $10,X                       ; $C2025D  B5 10        mX
+    BEQ L_C20269                    ; $C2025F  F0 08        mX
+    INX                             ; $C20261  E8           mX
+    CPX #$0008                      ; $C20262  E0 08 00     mX
+    BNE L_C2025D                    ; $C20265  D0 F6        mX
+    BRA L_C20271                    ; $C20267  80 08        mX
 L_C20269:
-    LDA $02,S               ; $C20269  A3 02        mX
-    STA $18,X               ; $C2026B  95 18        mX
-    LDA $01,S               ; $C2026D  A3 01        mX
-    STA $10,X               ; $C2026F  95 10        mX
+    LDA $02,S                       ; $C20269  A3 02        mX
+    STA $18,X                       ; $C2026B  95 18        mX
+    LDA $01,S                       ; $C2026D  A3 01        mX
+    STA $10,X                       ; $C2026F  95 10        mX
 L_C20271:
-    LDA #$FF                ; $C20271  A9 FF        mX
-    STA $20                 ; $C20273  85 20        mX
-    PLA                     ; $C20275  68           mX
-    PLX                     ; $C20276  FA           mX
-    REP #$20                ; $C20277  C2 20        mX
-    PLP                     ; $C20279  28           MX
-    RTL                     ; $C2027A  6B           MX
+    LDA #$FF                        ; $C20271  A9 FF        mX
+    STA $20                         ; $C20273  85 20        mX
+    PLA                             ; $C20275  68           mX
+    PLX                             ; $C20276  FA           mX
+    REP #$20                        ; $C20277  C2 20        mX
+    PLP                             ; $C20279  28           MX
+    RTL                             ; $C2027A  6B           MX
 L_C2027B:
-    PHA                     ; $C2027B  48           mX
-    LDX #$000F              ; $C2027C  A2 0F 00     mX
-    LDA #$00                ; $C2027F  A9 00        mX
-    STA $004200             ; $C20281  8F 00 42 00  mX
+    PHA                             ; $C2027B  48           mX
+    LDX #$000F                      ; $C2027C  A2 0F 00     mX
+    LDA #$00                        ; $C2027F  A9 00        mX
+    STA $004200                     ; $C20281  8F 00 42 00  mX
 L_C20285:
-    STA $0F,X               ; $C20285  95 0F        mX
-    DEX                     ; $C20287  CA           mX
-    BNE L_C20285            ; $C20288  D0 FB        mX
+    STA $0F,X                       ; $C20285  95 0F        mX
+    DEX                             ; $C20287  CA           mX
+    BNE L_C20285                    ; $C20288  D0 FB        mX
 L_C2028A:
-    LDA $002140             ; $C2028A  AF 40 21 00  mX
-    CMP $0C                 ; $C2028E  C5 0C        mX
-    BNE L_C2028A            ; $C20290  D0 F8        mX
-    LDA #$FF                ; $C20292  A9 FF        mX
-    STA $002141             ; $C20294  8F 41 21 00  mX
-    PLA                     ; $C20298  68           mX
-    STA $002140             ; $C20299  8F 40 21 00  mX
-    LDA $0C                 ; $C2029D  A5 0C        mX
-    INC                     ; $C2029F  1A           mX
-    STA $0C                 ; $C202A0  85 0C        mX
-    STA $002143             ; $C202A2  8F 43 21 00  mX
-    LDA $0B                 ; $C202A6  A5 0B        mX
-    STA $004200             ; $C202A8  8F 00 42 00  mX
-    JMP L_C20271            ; $C202AC  4C 71 02     mX
+    LDA $002140                     ; $C2028A  AF 40 21 00  mX
+    CMP $0C                         ; $C2028E  C5 0C        mX
+    BNE L_C2028A                    ; $C20290  D0 F8        mX
+    LDA #$FF                        ; $C20292  A9 FF        mX
+    STA $002141                     ; $C20294  8F 41 21 00  mX
+    PLA                             ; $C20298  68           mX
+    STA $002140                     ; $C20299  8F 40 21 00  mX
+    LDA $0C                         ; $C2029D  A5 0C        mX
+    INC                             ; $C2029F  1A           mX
+    STA $0C                         ; $C202A0  85 0C        mX
+    STA $002143                     ; $C202A2  8F 43 21 00  mX
+    LDA $0B                         ; $C202A6  A5 0B        mX
+    STA $004200                     ; $C202A8  8F 00 42 00  mX
+    JMP L_C20271                    ; $C202AC  4C 71 02     mX
 L_C202AF:
-    PHP                     ; $C202AF  08           MX
-    SEP #$20                ; $C202B0  E2 20        MX
-    STZ $20                 ; $C202B2  64 20        mX
-    PHX                     ; $C202B4  DA           mX
-    PHA                     ; $C202B5  48           mX
-    LDX #$0000              ; $C202B6  A2 00 00     mX
+    PHP                             ; $C202AF  08           MX
+    SEP #$20                        ; $C202B0  E2 20        MX
+    STZ $20                         ; $C202B2  64 20        mX
+    PHX                             ; $C202B4  DA           mX
+    PHA                             ; $C202B5  48           mX
+    LDX #$0000                      ; $C202B6  A2 00 00     mX
 L_C202B9:
-    LDA $10,X               ; $C202B9  B5 10        mX
-    BEQ L_C202C4            ; $C202BB  F0 07        mX
-    INX                     ; $C202BD  E8           mX
-    CPX #$0008              ; $C202BE  E0 08 00     mX
-    BNE L_C202B9            ; $C202C1  D0 F6        mX
-    DEX                     ; $C202C3  CA           mX
+    LDA $10,X                       ; $C202B9  B5 10        mX
+    BEQ L_C202C4                    ; $C202BB  F0 07        mX
+    INX                             ; $C202BD  E8           mX
+    CPX #$0008                      ; $C202BE  E0 08 00     mX
+    BNE L_C202B9                    ; $C202C1  D0 F6        mX
+    DEX                             ; $C202C3  CA           mX
 L_C202C4:
-    LDA #$FF                ; $C202C4  A9 FF        mX
-    STA $18,X               ; $C202C6  95 18        mX
-    LDA $01,S               ; $C202C8  A3 01        mX
-    STA $10,X               ; $C202CA  95 10        mX
-    LDA #$FF                ; $C202CC  A9 FF        mX
-    STA $20                 ; $C202CE  85 20        mX
-    PLA                     ; $C202D0  68           mX
-    PLX                     ; $C202D1  FA           mX
-    REP #$20                ; $C202D2  C2 20        mX
-    PLP                     ; $C202D4  28           MX
-    RTL                     ; $C202D5  6B           MX
+    LDA #$FF                        ; $C202C4  A9 FF        mX
+    STA $18,X                       ; $C202C6  95 18        mX
+    LDA $01,S                       ; $C202C8  A3 01        mX
+    STA $10,X                       ; $C202CA  95 10        mX
+    LDA #$FF                        ; $C202CC  A9 FF        mX
+    STA $20                         ; $C202CE  85 20        mX
+    PLA                             ; $C202D0  68           mX
+    PLX                             ; $C202D1  FA           mX
+    REP #$20                        ; $C202D2  C2 20        mX
+    PLP                             ; $C202D4  28           MX
+    RTL                             ; $C202D5  6B           MX
 L_C202D6:
-    PHY                     ; $C202D6  5A           MX
-    LDY #$0000              ; $C202D7  A0 00 00     MX
-    PHA                     ; $C202DA  48           MX
-    LDA #$9703              ; $C202DB  A9 03 97     MX
-    PHX                     ; $C202DE  DA           MX
-    INY                     ; $C202DF  C8           MX
-    LDA #$9700              ; $C202E0  A9 00 97     MX
-    PHX                     ; $C202E3  DA           MX
-    INY                     ; $C202E4  C8           MX
-    PLA                     ; $C202E5  68           MX
-    STA [$DA],Y             ; $C202E6  97 DA        MX
-    LDY $DA                 ; $C202E8  A4 DA        MX
-    INY                     ; $C202EA  C8           MX
-    INY                     ; $C202EB  C8           MX
-    INY                     ; $C202EC  C8           MX
-    STY $DA                 ; $C202ED  84 DA        MX
-    PLY                     ; $C202EF  7A           MX
-    RTS                     ; $C202F0  60           MX
+    PHY                             ; $C202D6  5A           MX
+    LDY #$0000                      ; $C202D7  A0 00 00     MX
+    PHA                             ; $C202DA  48           MX
+    LDA #$9703                      ; $C202DB  A9 03 97     MX
+    PHX                             ; $C202DE  DA           MX
+    INY                             ; $C202DF  C8           MX
+    LDA #$9700                      ; $C202E0  A9 00 97     MX
+    PHX                             ; $C202E3  DA           MX
+    INY                             ; $C202E4  C8           MX
+    PLA                             ; $C202E5  68           MX
+    STA [$DA],Y                     ; $C202E6  97 DA        MX
+    LDY $DA                         ; $C202E8  A4 DA        MX
+    INY                             ; $C202EA  C8           MX
+    INY                             ; $C202EB  C8           MX
+    INY                             ; $C202EC  C8           MX
+    STY $DA                         ; $C202ED  84 DA        MX
+    PLY                             ; $C202EF  7A           MX
+    RTS                             ; $C202F0  60           MX
 L_C202F1:
-    LDA $20                 ; $C202F1  A5 20        MX
-    BEQ L_C20344            ; $C202F3  F0 4F        MX
-    LDA $002140             ; $C202F5  AF 40 21 00  MX
-    CMP $0C                 ; $C202F9  C5 0C        MX
-    BNE L_C20344            ; $C202FB  D0 47        MX
-    LDA $23                 ; $C202FD  A5 23        MX
-    BEQ L_C20309            ; $C202FF  F0 08        MX
-    PHA                     ; $C20301  48           MX
-    LDA $22                 ; $C20302  A5 22        MX
-    PHA                     ; $C20304  48           MX
-    STZ $23                 ; $C20305  64 23        MX
-    BRA L_C20331            ; $C20307  80 28        MX
+    LDA $20                         ; $C202F1  A5 20        MX
+    BEQ L_C20344                    ; $C202F3  F0 4F        MX
+    LDA $002140                     ; $C202F5  AF 40 21 00  MX
+    CMP $0C                         ; $C202F9  C5 0C        MX
+    BNE L_C20344                    ; $C202FB  D0 47        MX
+    LDA $23                         ; $C202FD  A5 23        MX
+    BEQ L_C20309                    ; $C202FF  F0 08        MX
+    PHA                             ; $C20301  48           MX
+    LDA $22                         ; $C20302  A5 22        MX
+    PHA                             ; $C20304  48           MX
+    STZ $23                         ; $C20305  64 23        MX
+    BRA L_C20331                    ; $C20307  80 28        MX
 L_C20309:
-    LDX #$0000              ; $C20309  A2 00 00     MX
-    LDY #$0008              ; $C2030C  A0 08 00     MX
+    LDX #$0000                      ; $C20309  A2 00 00     MX
+    LDY #$0008                      ; $C2030C  A0 08 00     MX
 L_C2030F:
-    LDA $10,X               ; $C2030F  B5 10        MX
-    BNE L_C20319            ; $C20311  D0 06        MX
-    INX                     ; $C20313  E8           MX
-    DEY                     ; $C20314  88           MX
-    BNE L_C2030F            ; $C20315  D0 F8        MX
-    BRA L_C20344            ; $C20317  80 2B        MX
+    LDA $10,X                       ; $C2030F  B5 10        MX
+    BNE L_C20319                    ; $C20311  D0 06        MX
+    INX                             ; $C20313  E8           MX
+    DEY                             ; $C20314  88           MX
+    BNE L_C2030F                    ; $C20315  D0 F8        MX
+    BRA L_C20344                    ; $C20317  80 2B        MX
 L_C20319:
-    PHA                     ; $C20319  48           MX
-    LDA $18,X               ; $C2031A  B5 18        MX
-    PHA                     ; $C2031C  48           MX
+    PHA                             ; $C20319  48           MX
+    LDA $18,X                       ; $C2031A  B5 18        MX
+    PHA                             ; $C2031C  48           MX
 L_C2031D:
-    STZ $10,X               ; $C2031D  74 10        MX
-    STZ $18,X               ; $C2031F  74 18        MX
-    CPX #$0007              ; $C20321  E0 07 00     MX
-    BEQ L_C20331            ; $C20324  F0 0B        MX
-    LDA $11,X               ; $C20326  B5 11        MX
-    STA $10,X               ; $C20328  95 10        MX
-    LDA $19,X               ; $C2032A  B5 19        MX
-    STA $18,X               ; $C2032C  95 18        MX
-    INX                     ; $C2032E  E8           MX
-    BRA L_C2031D            ; $C2032F  80 EC        MX
+    STZ $10,X                       ; $C2031D  74 10        MX
+    STZ $18,X                       ; $C2031F  74 18        MX
+    CPX #$0007                      ; $C20321  E0 07 00     MX
+    BEQ L_C20331                    ; $C20324  F0 0B        MX
+    LDA $11,X                       ; $C20326  B5 11        MX
+    STA $10,X                       ; $C20328  95 10        MX
+    LDA $19,X                       ; $C2032A  B5 19        MX
+    STA $18,X                       ; $C2032C  95 18        MX
+    INX                             ; $C2032E  E8           MX
+    BRA L_C2031D                    ; $C2032F  80 EC        MX
 L_C20331:
-    PLA                     ; $C20331  68           MX
-    STA $002141             ; $C20332  8F 41 21 00  MX
-    PLA                     ; $C20336  68           MX
-    STA $002140             ; $C20337  8F 40 21 00  MX
-    LDA $0C                 ; $C2033B  A5 0C        MX
-    INC                     ; $C2033D  1A           MX
-    STA $0C                 ; $C2033E  85 0C        MX
-    STA $002143             ; $C20340  8F 43 21 00  MX
+    PLA                             ; $C20331  68           MX
+    STA $002141                     ; $C20332  8F 41 21 00  MX
+    PLA                             ; $C20336  68           MX
+    STA $002140                     ; $C20337  8F 40 21 00  MX
+    LDA $0C                         ; $C2033B  A5 0C        MX
+    INC                             ; $C2033D  1A           MX
+    STA $0C                         ; $C2033E  85 0C        MX
+    STA $002143                     ; $C20340  8F 43 21 00  MX
 L_C20344:
-    RTL                     ; $C20344  6B           MX
+    RTL                             ; $C20344  6B           MX
 L_C20345:
-    PHP                     ; $C20345  08           MX
-    REP #$30                ; $C20346  C2 30        MX
-    STZ $10                 ; $C20348  64 10        MX
-    STZ $12                 ; $C2034A  64 12        MX
-    STZ $14                 ; $C2034C  64 14        MX
-    STZ $16                 ; $C2034E  64 16        MX
-    STZ $18                 ; $C20350  64 18        MX
-    STZ $1A                 ; $C20352  64 1A        MX
-    STZ $1C                 ; $C20354  64 1C        MX
-    STZ $1E                 ; $C20356  64 1E        MX
-    STZ $22                 ; $C20358  64 22        MX
-    LDA #$0000              ; $C2035A  A9 00 00     MX
-    STA $26                 ; $C2035D  85 26        MX
-    LDA #$00D4              ; $C2035F  A9 D4 00     MX
-    STA $28                 ; $C20362  85 28        MX
-    JSL L_C203CF            ; $C20364  22 CF 03 C2  MX
-    LDA #$00CD              ; $C20368  A9 CD 00     MX
-    STA $26                 ; $C2036B  85 26        MX
-    LDA #$00D4              ; $C2036D  A9 D4 00     MX
-    STA $28                 ; $C20370  85 28        MX
-    JSR L_C2037B            ; $C20372  20 7B 03     MX
-    STA $002143             ; $C20375  8F 43 21 00  mX
-    PLP                     ; $C20379  28           mX
-    RTL                     ; $C2037A  6B           MX
+    PHP                             ; $C20345  08           MX
+    REP #$30                        ; $C20346  C2 30        MX
+    STZ $10                         ; $C20348  64 10        MX
+    STZ $12                         ; $C2034A  64 12        MX
+    STZ $14                         ; $C2034C  64 14        MX
+    STZ $16                         ; $C2034E  64 16        MX
+    STZ $18                         ; $C20350  64 18        MX
+    STZ $1A                         ; $C20352  64 1A        MX
+    STZ $1C                         ; $C20354  64 1C        MX
+    STZ $1E                         ; $C20356  64 1E        MX
+    STZ $22                         ; $C20358  64 22        MX
+    LDA #$0000                      ; $C2035A  A9 00 00     MX
+    STA $26                         ; $C2035D  85 26        MX
+    LDA #$00D4                      ; $C2035F  A9 D4 00     MX
+    STA $28                         ; $C20362  85 28        MX
+    JSL L_C203CF                    ; $C20364  22 CF 03 C2  MX
+    LDA #$00CD                      ; $C20368  A9 CD 00     MX
+    STA $26                         ; $C2036B  85 26        MX
+    LDA #$00D4                      ; $C2036D  A9 D4 00     MX
+    STA $28                         ; $C20370  85 28        MX
+    JSR L_C2037B                    ; $C20372  20 7B 03     MX
+    STA $002143                     ; $C20375  8F 43 21 00  mX
+    PLP                             ; $C20379  28           mX
+    RTL                             ; $C2037A  6B           MX
 L_C2037B:
-    SEP #$20                ; $C2037B  E2 20        MX
-    LDA #$00                ; $C2037D  A9 00        mX
-    STA $004200             ; $C2037F  8F 00 42 00  mX
-    JSL L_C203CF            ; $C20383  22 CF 03 C2  mX
-    LDA $0B                 ; $C20387  A5 0B        mX
-    STA $004200             ; $C20389  8F 00 42 00  mX
+    SEP #$20                        ; $C2037B  E2 20        MX
+    LDA #$00                        ; $C2037D  A9 00        mX
+    STA $004200                     ; $C2037F  8F 00 42 00  mX
+    JSL L_C203CF                    ; $C20383  22 CF 03 C2  mX
+    LDA $0B                         ; $C20387  A5 0B        mX
+    STA $004200                     ; $C20389  8F 00 42 00  mX
 L_C2038D:
-    LDA $002140             ; $C2038D  AF 40 21 00  mX
-    BNE L_C2038D            ; $C20391  D0 FA        mX
-    LDA #$FF                ; $C20393  A9 FF        mX
-    STA $002142             ; $C20395  8F 42 21 00  mX
-    STA $0C                 ; $C20399  85 0C        mX
-    RTS                     ; $C2039B  60           mX
+    LDA $002140                     ; $C2038D  AF 40 21 00  mX
+    BNE L_C2038D                    ; $C20391  D0 FA        mX
+    LDA #$FF                        ; $C20393  A9 FF        mX
+    STA $002142                     ; $C20395  8F 42 21 00  mX
+    STA $0C                         ; $C20399  85 0C        mX
+    RTS                             ; $C2039B  60           mX
 L_C2039C:
-    PHP                     ; $C2039C  08           MX
-    SEI                     ; $C2039D  78           MX
-    SEP #$30                ; $C2039E  E2 30        MX
+    PHP                             ; $C2039C  08           MX
+    SEI                             ; $C2039D  78           MX
+    SEP #$30                        ; $C2039E  E2 30        MX
 L_C203A0:
-    LDA $002140             ; $C203A0  AF 40 21 00  mx
-    CMP $0C                 ; $C203A4  C5 0C        mx
-    BNE L_C203A0            ; $C203A6  D0 F8        mx
-    LDA #$82                ; $C203A8  A9 82        mx
-    STA $002140             ; $C203AA  8F 40 21 00  mx
-    LDA $0C                 ; $C203AE  A5 0C        mx
-    INC                     ; $C203B0  1A           mx
-    STA $0C                 ; $C203B1  85 0C        mx
-    STA $002143             ; $C203B3  8F 43 21 00  mx
-    REP #$30                ; $C203B7  C2 30        mx
-    JSR L_C2037B            ; $C203B9  20 7B 03     MX
-    STA $002143             ; $C203BC  8F 43 21 00  mX
-    PLP                     ; $C203C0  28           mX
-    RTL                     ; $C203C1  6B           MX
+    LDA $002140                     ; $C203A0  AF 40 21 00  mx
+    CMP $0C                         ; $C203A4  C5 0C        mx
+    BNE L_C203A0                    ; $C203A6  D0 F8        mx
+    LDA #$82                        ; $C203A8  A9 82        mx
+    STA $002140                     ; $C203AA  8F 40 21 00  mx
+    LDA $0C                         ; $C203AE  A5 0C        mx
+    INC                             ; $C203B0  1A           mx
+    STA $0C                         ; $C203B1  85 0C        mx
+    STA $002143                     ; $C203B3  8F 43 21 00  mx
+    REP #$30                        ; $C203B7  C2 30        mx
+    JSR L_C2037B                    ; $C203B9  20 7B 03     MX
+    STA $002143                     ; $C203BC  8F 43 21 00  mX
+    PLP                             ; $C203C0  28           mX
+    RTL                             ; $C203C1  6B           MX
 L_C203C2:
-    PHP                     ; $C203C2  08           mX
-    REP #$20                ; $C203C3  C2 20        mX
-    LDA $002141             ; $C203C5  AF 41 21 00  MX
-    STA $46                 ; $C203C9  85 46        MX
-    SEP #$20                ; $C203CB  E2 20        MX
-    PLP                     ; $C203CD  28           mX
-    RTL                     ; $C203CE  6B           mX
+    PHP                             ; $C203C2  08           mX
+    REP #$20                        ; $C203C3  C2 20        mX
+    LDA $002141                     ; $C203C5  AF 41 21 00  MX
+    STA $46                         ; $C203C9  85 46        MX
+    SEP #$20                        ; $C203CB  E2 20        MX
+    PLP                             ; $C203CD  28           mX
+    RTL                             ; $C203CE  6B           mX
 L_C203CF:
-    PHP                     ; $C203CF  08           mX
-    REP #$30                ; $C203D0  C2 30        mX
-    LDY #$0000              ; $C203D2  A0 00 00     MX
-    LDA #$BBAA              ; $C203D5  A9 AA BB     MX
+    PHP                             ; $C203CF  08           mX
+    REP #$30                        ; $C203D0  C2 30        mX
+    LDY #$0000                      ; $C203D2  A0 00 00     MX
+    LDA #$BBAA                      ; $C203D5  A9 AA BB     MX
 L_C203D8:
-    CMP $002140             ; $C203D8  CF 40 21 00  MX
-    BNE L_C203D8            ; $C203DC  D0 FA        MX
-    SEP #$20                ; $C203DE  E2 20        MX
-    LDA #$CC                ; $C203E0  A9 CC        mX
-    BRA L_C2040D            ; $C203E2  80 29        mX
+    CMP $002140                     ; $C203D8  CF 40 21 00  MX
+    BNE L_C203D8                    ; $C203DC  D0 FA        MX
+    SEP #$20                        ; $C203DE  E2 20        MX
+    LDA #$CC                        ; $C203E0  A9 CC        mX
+    BRA L_C2040D                    ; $C203E2  80 29        mX
 L_C203E4:
-    LDA [$26],Y             ; $C203E4  B7 26        mX
-    INY                     ; $C203E6  C8           mX
-    XBA                     ; $C203E7  EB           mX
-    LDA #$00                ; $C203E8  A9 00        mX
-    BRA L_C203F8            ; $C203EA  80 0C        mX
+    LDA [$26],Y                     ; $C203E4  B7 26        mX
+    INY                             ; $C203E6  C8           mX
+    XBA                             ; $C203E7  EB           mX
+    LDA #$00                        ; $C203E8  A9 00        mX
+    BRA L_C203F8                    ; $C203EA  80 0C        mX
 L_C203EC:
-    XBA                     ; $C203EC  EB           mX
-    LDA [$26],Y             ; $C203ED  B7 26        mX
-    INY                     ; $C203EF  C8           mX
-    XBA                     ; $C203F0  EB           mX
+    XBA                             ; $C203EC  EB           mX
+    LDA [$26],Y                     ; $C203ED  B7 26        mX
+    INY                             ; $C203EF  C8           mX
+    XBA                             ; $C203F0  EB           mX
 L_C203F1:
-    CMP $002140             ; $C203F1  CF 40 21 00  mX
-    BNE L_C203F1            ; $C203F5  D0 FA        mX
-    INC                     ; $C203F7  1A           mX
+    CMP $002140                     ; $C203F1  CF 40 21 00  mX
+    BNE L_C203F1                    ; $C203F5  D0 FA        mX
+    INC                             ; $C203F7  1A           mX
 L_C203F8:
-    REP #$20                ; $C203F8  C2 20        mX
-    STA $002140             ; $C203FA  8F 40 21 00  MX
-    SEP #$20                ; $C203FE  E2 20        MX
-    DEX                     ; $C20400  CA           mX
-    BNE L_C203EC            ; $C20401  D0 E9        mX
+    REP #$20                        ; $C203F8  C2 20        mX
+    STA $002140                     ; $C203FA  8F 40 21 00  MX
+    SEP #$20                        ; $C203FE  E2 20        MX
+    DEX                             ; $C20400  CA           mX
+    BNE L_C203EC                    ; $C20401  D0 E9        mX
 L_C20403:
-    CMP $002140             ; $C20403  CF 40 21 00  mX
-    BNE L_C20403            ; $C20407  D0 FA        mX
+    CMP $002140                     ; $C20403  CF 40 21 00  mX
+    BNE L_C20403                    ; $C20407  D0 FA        mX
 L_C20409:
-    ADC #$03                ; $C20409  69 03        mX
-    BEQ L_C20409            ; $C2040B  F0 FC        mX
+    ADC #$03                        ; $C20409  69 03        mX
+    BEQ L_C20409                    ; $C2040B  F0 FC        mX
 L_C2040D:
-    PHA                     ; $C2040D  48           mX
-    REP #$20                ; $C2040E  C2 20        mX
-    LDA [$26],Y             ; $C20410  B7 26        MX
-    INY                     ; $C20412  C8           MX
-    INY                     ; $C20413  C8           MX
-    TAX                     ; $C20414  AA           MX
-    LDA [$26],Y             ; $C20415  B7 26        MX
-    INY                     ; $C20417  C8           MX
-    INY                     ; $C20418  C8           MX
-    STA $002142             ; $C20419  8F 42 21 00  MX
-    SEP #$20                ; $C2041D  E2 20        MX
-    CPX #$0001              ; $C2041F  E0 01 00     mX
-    LDA #$00                ; $C20422  A9 00        mX
-    ROL                     ; $C20424  2A           mX
-    STA $002141             ; $C20425  8F 41 21 00  mX
-    ADC #$7F                ; $C20429  69 7F        mX
-    PLA                     ; $C2042B  68           mX
-    STA $002140             ; $C2042C  8F 40 21 00  mX
+    PHA                             ; $C2040D  48           mX
+    REP #$20                        ; $C2040E  C2 20        mX
+    LDA [$26],Y                     ; $C20410  B7 26        MX
+    INY                             ; $C20412  C8           MX
+    INY                             ; $C20413  C8           MX
+    TAX                             ; $C20414  AA           MX
+    LDA [$26],Y                     ; $C20415  B7 26        MX
+    INY                             ; $C20417  C8           MX
+    INY                             ; $C20418  C8           MX
+    STA $002142                     ; $C20419  8F 42 21 00  MX
+    SEP #$20                        ; $C2041D  E2 20        MX
+    CPX #$0001                      ; $C2041F  E0 01 00     mX
+    LDA #$00                        ; $C20422  A9 00        mX
+    ROL                             ; $C20424  2A           mX
+    STA $002141                     ; $C20425  8F 41 21 00  mX
+    ADC #$7F                        ; $C20429  69 7F        mX
+    PLA                             ; $C2042B  68           mX
+    STA $002140                     ; $C2042C  8F 40 21 00  mX
 L_C20430:
-    CMP $002140             ; $C20430  CF 40 21 00  mX
-    BNE L_C20430            ; $C20434  D0 FA        mX
-    BVS L_C203E4            ; $C20436  70 AC        mX
-    PLP                     ; $C20438  28           mX
-    RTL                     ; $C20439  6B           mX
+    CMP $002140                     ; $C20430  CF 40 21 00  mX
+    BNE L_C20430                    ; $C20434  D0 FA        mX
+    BVS L_C203E4                    ; $C20436  70 AC        mX
+    PLP                             ; $C20438  28           mX
+    RTL                             ; $C20439  6B           mX
 L_C2043A:
-    PHA                     ; $C2043A  48           mX
-    JSL L_C20445            ; $C2043B  22 45 04 C2  mX
-    PLA                     ; $C2043F  68           MX
-    JSL L_C20466            ; $C20440  22 66 04 C2  MX
-    RTL                     ; $C20444  6B           MX
+    PHA                             ; $C2043A  48           mX
+    JSL L_C20445                    ; $C2043B  22 45 04 C2  mX
+    PLA                             ; $C2043F  68           MX
+    JSL L_C20466                    ; $C20440  22 66 04 C2  MX
+    RTL                             ; $C20444  6B           MX
 L_C20445:
-    SEP #$20                ; $C20445  E2 20        MX
-    STA $002131             ; $C20447  8F 31 21 00  mX
-    LDA #$E0                ; $C2044B  A9 E0        mX
+    SEP #$20                        ; $C20445  E2 20        MX
+    STA $002131                     ; $C20447  8F 31 21 00  mX
+    LDA #$E0                        ; $C2044B  A9 E0        mX
 L_C2044D:
-    PHA                     ; $C2044D  48           mX
-    STA $002132             ; $C2044E  8F 32 21 00  mX
-    LDA $66                 ; $C20452  A5 66        mX
+    PHA                             ; $C2044D  48           mX
+    STA $002132                     ; $C2044E  8F 32 21 00  mX
+    LDA $66                         ; $C20452  A5 66        mX
 L_C20454:
-    CMP $66                 ; $C20454  C5 66        mX
-    BEQ L_C20454            ; $C20456  F0 FC        mX
-    PLA                     ; $C20458  68           mX
-    INC                     ; $C20459  1A           mX
-    INC                     ; $C2045A  1A           mX
-    BMI L_C2044D            ; $C2045B  30 F0        mX
-    LDA #$FF                ; $C2045D  A9 FF        mX
-    STA $002132             ; $C2045F  8F 32 21 00  mX
-    REP #$20                ; $C20463  C2 20        mX
-    RTL                     ; $C20465  6B           MX
+    CMP $66                         ; $C20454  C5 66        mX
+    BEQ L_C20454                    ; $C20456  F0 FC        mX
+    PLA                             ; $C20458  68           mX
+    INC                             ; $C20459  1A           mX
+    INC                             ; $C2045A  1A           mX
+    BMI L_C2044D                    ; $C2045B  30 F0        mX
+    LDA #$FF                        ; $C2045D  A9 FF        mX
+    STA $002132                     ; $C2045F  8F 32 21 00  mX
+    REP #$20                        ; $C20463  C2 20        mX
+    RTL                             ; $C20465  6B           MX
 L_C20466:
-    SEP #$20                ; $C20466  E2 20        MX
-    STA $002131             ; $C20468  8F 31 21 00  mX
-    LDA #$FF                ; $C2046C  A9 FF        mX
+    SEP #$20                        ; $C20466  E2 20        MX
+    STA $002131                     ; $C20468  8F 31 21 00  mX
+    LDA #$FF                        ; $C2046C  A9 FF        mX
 L_C2046E:
-    STA $002132             ; $C2046E  8F 32 21 00  mX
-    PHA                     ; $C20472  48           mX
-    LDA $66                 ; $C20473  A5 66        mX
+    STA $002132                     ; $C2046E  8F 32 21 00  mX
+    PHA                             ; $C20472  48           mX
+    LDA $66                         ; $C20473  A5 66        mX
 L_C20475:
-    CMP $66                 ; $C20475  C5 66        mX
-    BEQ L_C20475            ; $C20477  F0 FC        mX
-    PLA                     ; $C20479  68           mX
-    DEC                     ; $C2047A  3A           mX
-    DEC                     ; $C2047B  3A           mX
-    CMP #$E0                ; $C2047C  C9 E0        mX
-    BCS L_C2046E            ; $C2047E  B0 EE        mX
-    LDA #$00                ; $C20480  A9 00        mX
-    STA $002132             ; $C20482  8F 32 21 00  mX
-    REP #$20                ; $C20486  C2 20        mX
-    RTL                     ; $C20488  6B           MX
+    CMP $66                         ; $C20475  C5 66        mX
+    BEQ L_C20475                    ; $C20477  F0 FC        mX
+    PLA                             ; $C20479  68           mX
+    DEC                             ; $C2047A  3A           mX
+    DEC                             ; $C2047B  3A           mX
+    CMP #$E0                        ; $C2047C  C9 E0        mX
+    BCS L_C2046E                    ; $C2047E  B0 EE        mX
+    LDA #$00                        ; $C20480  A9 00        mX
+    STA $002132                     ; $C20482  8F 32 21 00  mX
+    REP #$20                        ; $C20486  C2 20        mX
+    RTL                             ; $C20488  6B           MX
 L_C20489:
-    SEP #$20                ; $C20489  E2 20        MX
-    LDA $DE                 ; $C2048B  A5 DE        mX
-    STA $00420C             ; $C2048D  8F 0C 42 00  mX
-    LDA #$00                ; $C20491  A9 00        mX
-    STA $002132             ; $C20493  8F 32 21 00  mX
+    SEP #$20                        ; $C20489  E2 20        MX
+    LDA $DE                         ; $C2048B  A5 DE        mX
+    STA $00420C                     ; $C2048D  8F 0C 42 00  mX
+    LDA #$00                        ; $C20491  A9 00        mX
+    STA $002132                     ; $C20493  8F 32 21 00  mX
 L_C20497:
-    XBA                     ; $C20497  EB           mX
-    LDA $66                 ; $C20498  A5 66        mX
+    XBA                             ; $C20497  EB           mX
+    LDA $66                         ; $C20498  A5 66        mX
 L_C2049A:
-    CMP $66                 ; $C2049A  C5 66        mX
-    BEQ L_C2049A            ; $C2049C  F0 FC        mX
-    XBA                     ; $C2049E  EB           mX
-    STA $002100             ; $C2049F  8F 00 21 00  mX
-    INC                     ; $C204A3  1A           mX
-    CMP #$10                ; $C204A4  C9 10        mX
-    BCC L_C20497            ; $C204A6  90 EF        mX
-    REP #$20                ; $C204A8  C2 20        mX
-    RTL                     ; $C204AA  6B           MX
+    CMP $66                         ; $C2049A  C5 66        mX
+    BEQ L_C2049A                    ; $C2049C  F0 FC        mX
+    XBA                             ; $C2049E  EB           mX
+    STA $002100                     ; $C2049F  8F 00 21 00  mX
+    INC                             ; $C204A3  1A           mX
+    CMP #$10                        ; $C204A4  C9 10        mX
+    BCC L_C20497                    ; $C204A6  90 EF        mX
+    REP #$20                        ; $C204A8  C2 20        mX
+    RTL                             ; $C204AA  6B           MX
 L_C204AB:
-    SEP #$20                ; $C204AB  E2 20        MX
-    LDA #$0F                ; $C204AD  A9 0F        mX
+    SEP #$20                        ; $C204AB  E2 20        MX
+    LDA #$0F                        ; $C204AD  A9 0F        mX
 L_C204AF:
-    XBA                     ; $C204AF  EB           mX
-    LDA $66                 ; $C204B0  A5 66        mX
+    XBA                             ; $C204AF  EB           mX
+    LDA $66                         ; $C204B0  A5 66        mX
 L_C204B2:
-    CMP $66                 ; $C204B2  C5 66        mX
-    BEQ L_C204B2            ; $C204B4  F0 FC        mX
-    XBA                     ; $C204B6  EB           mX
-    STA $002100             ; $C204B7  8F 00 21 00  mX
-    DEC                     ; $C204BB  3A           mX
-    BPL L_C204AF            ; $C204BC  10 F1        mX
-    LDA #$80                ; $C204BE  A9 80        mX
-    STA $002100             ; $C204C0  8F 00 21 00  mX
-    LDA #$00                ; $C204C4  A9 00        mX
-    STA $00420C             ; $C204C6  8F 0C 42 00  mX
-    REP #$20                ; $C204CA  C2 20        mX
-    RTL                     ; $C204CC  6B           MX
+    CMP $66                         ; $C204B2  C5 66        mX
+    BEQ L_C204B2                    ; $C204B4  F0 FC        mX
+    XBA                             ; $C204B6  EB           mX
+    STA $002100                     ; $C204B7  8F 00 21 00  mX
+    DEC                             ; $C204BB  3A           mX
+    BPL L_C204AF                    ; $C204BC  10 F1        mX
+    LDA #$80                        ; $C204BE  A9 80        mX
+    STA $002100                     ; $C204C0  8F 00 21 00  mX
+    LDA #$00                        ; $C204C4  A9 00        mX
+    STA $00420C                     ; $C204C6  8F 0C 42 00  mX
+    REP #$20                        ; $C204CA  C2 20        mX
+    RTL                             ; $C204CC  6B           MX
 L_C204CD:
-    SEP #$20                ; $C204CD  E2 20        MX
-    AND #$FE                ; $C204CF  29 FE        mX
-    PHA                     ; $C204D1  48           mX
-    LDA #$0F                ; $C204D2  A9 0F        mX
-    STA $002100             ; $C204D4  8F 00 21 00  mX
-    LDA #$80                ; $C204D8  A9 80        mX
+    SEP #$20                        ; $C204CD  E2 20        MX
+    AND #$FE                        ; $C204CF  29 FE        mX
+    PHA                             ; $C204D1  48           mX
+    LDA #$0F                        ; $C204D2  A9 0F        mX
+    STA $002100                     ; $C204D4  8F 00 21 00  mX
+    LDA #$80                        ; $C204D8  A9 80        mX
 L_C204DA:
-    PHA                     ; $C204DA  48           mX
-    LDA $66                 ; $C204DB  A5 66        mX
+    PHA                             ; $C204DA  48           mX
+    LDA $66                         ; $C204DB  A5 66        mX
 L_C204DD:
-    CMP $66                 ; $C204DD  C5 66        mX
-    BEQ L_C204DD            ; $C204DF  F0 FC        mX
-    PLA                     ; $C204E1  68           mX
-    DEC                     ; $C204E2  3A           mX
-    DEC                     ; $C204E3  3A           mX
-    STA $002126             ; $C204E4  8F 26 21 00  mX
-    EOR #$FF                ; $C204E8  49 FF        mX
-    STA $002127             ; $C204EA  8F 27 21 00  mX
-    EOR #$FF                ; $C204EE  49 FF        mX
-    CMP $01,S               ; $C204F0  C3 01        mX
-    BNE L_C204DA            ; $C204F2  D0 E6        mX
-    PLA                     ; $C204F4  68           mX
-    BNE L_C20507            ; $C204F5  D0 10        mX
-    STA $002123             ; $C204F7  8F 23 21 00  mX
-    STA $002124             ; $C204FB  8F 24 21 00  mX
-    STA $002125             ; $C204FF  8F 25 21 00  mX
-    STA $00212E             ; $C20503  8F 2E 21 00  mX
+    CMP $66                         ; $C204DD  C5 66        mX
+    BEQ L_C204DD                    ; $C204DF  F0 FC        mX
+    PLA                             ; $C204E1  68           mX
+    DEC                             ; $C204E2  3A           mX
+    DEC                             ; $C204E3  3A           mX
+    STA $002126                     ; $C204E4  8F 26 21 00  mX
+    EOR #$FF                        ; $C204E8  49 FF        mX
+    STA $002127                     ; $C204EA  8F 27 21 00  mX
+    EOR #$FF                        ; $C204EE  49 FF        mX
+    CMP $01,S                       ; $C204F0  C3 01        mX
+    BNE L_C204DA                    ; $C204F2  D0 E6        mX
+    PLA                             ; $C204F4  68           mX
+    BNE L_C20507                    ; $C204F5  D0 10        mX
+    STA $002123                     ; $C204F7  8F 23 21 00  mX
+    STA $002124                     ; $C204FB  8F 24 21 00  mX
+    STA $002125                     ; $C204FF  8F 25 21 00  mX
+    STA $00212E                     ; $C20503  8F 2E 21 00  mX
 L_C20507:
-    REP #$20                ; $C20507  C2 20        mX
-    RTL                     ; $C20509  6B           MX
+    REP #$20                        ; $C20507  C2 20        mX
+    RTL                             ; $C20509  6B           MX
 L_C2050A:
-    SEP #$20                ; $C2050A  E2 20        MX
-    AND #$FE                ; $C2050C  29 FE        mX
-    PHA                     ; $C2050E  48           mX
-    LDA $66                 ; $C2050F  A5 66        mX
+    SEP #$20                        ; $C2050A  E2 20        MX
+    AND #$FE                        ; $C2050C  29 FE        mX
+    PHA                             ; $C2050E  48           mX
+    LDA $66                         ; $C2050F  A5 66        mX
 L_C20511:
-    CMP $66                 ; $C20511  C5 66        mX
-    BEQ L_C20511            ; $C20513  F0 FC        mX
-    LDA $01,S               ; $C20515  A3 01        mX
-    STA $002126             ; $C20517  8F 26 21 00  mX
-    EOR #$FF                ; $C2051B  49 FF        mX
-    STA $002127             ; $C2051D  8F 27 21 00  mX
-    LDA #$33                ; $C20521  A9 33        mX
-    STA $002123             ; $C20523  8F 23 21 00  mX
-    STA $002124             ; $C20527  8F 24 21 00  mX
-    STA $002125             ; $C2052B  8F 25 21 00  mX
-    LDA #$1F                ; $C2052F  A9 1F        mX
-    STA $00212E             ; $C20531  8F 2E 21 00  mX
-    PLA                     ; $C20535  68           mX
+    CMP $66                         ; $C20511  C5 66        mX
+    BEQ L_C20511                    ; $C20513  F0 FC        mX
+    LDA $01,S                       ; $C20515  A3 01        mX
+    STA $002126                     ; $C20517  8F 26 21 00  mX
+    EOR #$FF                        ; $C2051B  49 FF        mX
+    STA $002127                     ; $C2051D  8F 27 21 00  mX
+    LDA #$33                        ; $C20521  A9 33        mX
+    STA $002123                     ; $C20523  8F 23 21 00  mX
+    STA $002124                     ; $C20527  8F 24 21 00  mX
+    STA $002125                     ; $C2052B  8F 25 21 00  mX
+    LDA #$1F                        ; $C2052F  A9 1F        mX
+    STA $00212E                     ; $C20531  8F 2E 21 00  mX
+    PLA                             ; $C20535  68           mX
 L_C20536:
-    PHA                     ; $C20536  48           mX
-    LDA $66                 ; $C20537  A5 66        mX
+    PHA                             ; $C20536  48           mX
+    LDA $66                         ; $C20537  A5 66        mX
 L_C20539:
-    CMP $66                 ; $C20539  C5 66        mX
-    BEQ L_C20539            ; $C2053B  F0 FC        mX
-    PLA                     ; $C2053D  68           mX
-    STA $002126             ; $C2053E  8F 26 21 00  mX
-    EOR #$FF                ; $C20542  49 FF        mX
-    STA $002127             ; $C20544  8F 27 21 00  mX
-    EOR #$FF                ; $C20548  49 FF        mX
-    INC                     ; $C2054A  1A           mX
-    INC                     ; $C2054B  1A           mX
-    BPL L_C20536            ; $C2054C  10 E8        mX
-    LDA #$80                ; $C2054E  A9 80        mX
-    STA $002100             ; $C20550  8F 00 21 00  mX
-    REP #$20                ; $C20554  C2 20        mX
-    RTL                     ; $C20556  6B           MX
+    CMP $66                         ; $C20539  C5 66        mX
+    BEQ L_C20539                    ; $C2053B  F0 FC        mX
+    PLA                             ; $C2053D  68           mX
+    STA $002126                     ; $C2053E  8F 26 21 00  mX
+    EOR #$FF                        ; $C20542  49 FF        mX
+    STA $002127                     ; $C20544  8F 27 21 00  mX
+    EOR #$FF                        ; $C20548  49 FF        mX
+    INC                             ; $C2054A  1A           mX
+    INC                             ; $C2054B  1A           mX
+    BPL L_C20536                    ; $C2054C  10 E8        mX
+    LDA #$80                        ; $C2054E  A9 80        mX
+    STA $002100                     ; $C20550  8F 00 21 00  mX
+    REP #$20                        ; $C20554  C2 20        mX
+    RTL                             ; $C20556  6B           MX
 L_C20557:
-    PHA                     ; $C20557  48           MX
-    PHX                     ; $C20558  DA           MX
-    PHY                     ; $C20559  5A           MX
-    LDA #$2200              ; $C2055A  A9 00 22     MX
-    STA $004300             ; $C2055D  8F 00 43 00  MX
-    LDA #$0008              ; $C20561  A9 08 00     MX
+    PHA                             ; $C20557  48           MX
+    PHX                             ; $C20558  DA           MX
+    PHY                             ; $C20559  5A           MX
+    LDA #$2200                      ; $C2055A  A9 00 22     MX
+    STA $004300                     ; $C2055D  8F 00 43 00  MX
+    LDA #$0008                      ; $C20561  A9 08 00     MX
 L_C20564:
-    PHA                     ; $C20564  48           MX
-    JSR L_C20608            ; $C20565  20 08 06     MX
-    TXA                     ; $C20568  8A           MX
-    STA $004302             ; $C20569  8F 02 43 00  MX
-    LDA #$007F              ; $C2056D  A9 7F 00     MX
-    STA $004304             ; $C20570  8F 04 43 00  MX
-    TYA                     ; $C20574  98           MX
-    ASL                     ; $C20575  0A           MX
-    STA $004305             ; $C20576  8F 05 43 00  MX
-    LDA $66                 ; $C2057A  A5 66        MX
+    PHA                             ; $C20564  48           MX
+    JSR L_C20608                    ; $C20565  20 08 06     MX
+    TXA                             ; $C20568  8A           MX
+    STA $004302                     ; $C20569  8F 02 43 00  MX
+    LDA #$007F                      ; $C2056D  A9 7F 00     MX
+    STA $004304                     ; $C20570  8F 04 43 00  MX
+    TYA                             ; $C20574  98           MX
+    ASL                             ; $C20575  0A           MX
+    STA $004305                     ; $C20576  8F 05 43 00  MX
+    LDA $66                         ; $C2057A  A5 66        MX
 L_C2057C:
-    CMP $66                 ; $C2057C  C5 66        MX
-    BEQ L_C2057C            ; $C2057E  F0 FC        MX
-    LDA $66                 ; $C20580  A5 66        MX
+    CMP $66                         ; $C2057C  C5 66        MX
+    BEQ L_C2057C                    ; $C2057E  F0 FC        MX
+    LDA $66                         ; $C20580  A5 66        MX
 L_C20582:
-    CMP $66                 ; $C20582  C5 66        MX
-    BEQ L_C20582            ; $C20584  F0 FC        MX
-    SEP #$20                ; $C20586  E2 20        MX
-    LDA $07,S               ; $C20588  A3 07        mX
-    STA $002121             ; $C2058A  8F 21 21 00  mX
-    LDA #$01                ; $C2058E  A9 01        mX
-    STA $00420B             ; $C20590  8F 0B 42 00  mX
-    REP #$20                ; $C20594  C2 20        mX
-    PLA                     ; $C20596  68           MX
-    DEC                     ; $C20597  3A           MX
-    BNE L_C20564            ; $C20598  D0 CA        MX
-    PLY                     ; $C2059A  7A           MX
-    PLX                     ; $C2059B  FA           MX
-    PLA                     ; $C2059C  68           MX
-    RTL                     ; $C2059D  6B           MX
+    CMP $66                         ; $C20582  C5 66        MX
+    BEQ L_C20582                    ; $C20584  F0 FC        MX
+    SEP #$20                        ; $C20586  E2 20        MX
+    LDA $07,S                       ; $C20588  A3 07        mX
+    STA $002121                     ; $C2058A  8F 21 21 00  mX
+    LDA #$01                        ; $C2058E  A9 01        mX
+    STA $00420B                     ; $C20590  8F 0B 42 00  mX
+    REP #$20                        ; $C20594  C2 20        mX
+    PLA                             ; $C20596  68           MX
+    DEC                             ; $C20597  3A           MX
+    BNE L_C20564                    ; $C20598  D0 CA        MX
+    PLY                             ; $C2059A  7A           MX
+    PLX                             ; $C2059B  FA           MX
+    PLA                             ; $C2059C  68           MX
+    RTL                             ; $C2059D  6B           MX
 L_C2059E:
-    PHX                     ; $C2059E  DA           MX
-    PHY                     ; $C2059F  5A           MX
-    LDA #$2200              ; $C205A0  A9 00 22     MX
-    STA $004300             ; $C205A3  8F 00 43 00  MX
-    LDA #$0020              ; $C205A7  A9 20 00     MX
+    PHX                             ; $C2059E  DA           MX
+    PHY                             ; $C2059F  5A           MX
+    LDA #$2200                      ; $C205A0  A9 00 22     MX
+    STA $004300                     ; $C205A3  8F 00 43 00  MX
+    LDA #$0020                      ; $C205A7  A9 20 00     MX
 L_C205AA:
-    JSR L_C205F1            ; $C205AA  20 F1 05     MX
-    PHA                     ; $C205AD  48           MX
-    PHX                     ; $C205AE  DA           MX
-    TXA                     ; $C205AF  8A           MX
-    CLC                     ; $C205B0  18           MX
-    ADC #$0100              ; $C205B1  69 00 01     MX
-    TAX                     ; $C205B4  AA           MX
-    LDA $03,S               ; $C205B5  A3 03        MX
+    JSR L_C205F1                    ; $C205AA  20 F1 05     MX
+    PHA                             ; $C205AD  48           MX
+    PHX                             ; $C205AE  DA           MX
+    TXA                             ; $C205AF  8A           MX
+    CLC                             ; $C205B0  18           MX
+    ADC #$0100                      ; $C205B1  69 00 01     MX
+    TAX                             ; $C205B4  AA           MX
+    LDA $03,S                       ; $C205B5  A3 03        MX
 L_C205B7:
-    JSR L_C20608            ; $C205B7  20 08 06     MX
-    DEC                     ; $C205BA  3A           MX
-    BNE L_C205B7            ; $C205BB  D0 FA        MX
-    PLX                     ; $C205BD  FA           MX
-    TXA                     ; $C205BE  8A           MX
-    CLC                     ; $C205BF  18           MX
-    ADC #$0100              ; $C205C0  69 00 01     MX
-    STA $004302             ; $C205C3  8F 02 43 00  MX
-    LDA #$007F              ; $C205C7  A9 7F 00     MX
-    STA $004304             ; $C205CA  8F 04 43 00  MX
-    TYA                     ; $C205CE  98           MX
-    ASL                     ; $C205CF  0A           MX
-    STA $004305             ; $C205D0  8F 05 43 00  MX
-    LDA $66                 ; $C205D4  A5 66        MX
+    JSR L_C20608                    ; $C205B7  20 08 06     MX
+    DEC                             ; $C205BA  3A           MX
+    BNE L_C205B7                    ; $C205BB  D0 FA        MX
+    PLX                             ; $C205BD  FA           MX
+    TXA                             ; $C205BE  8A           MX
+    CLC                             ; $C205BF  18           MX
+    ADC #$0100                      ; $C205C0  69 00 01     MX
+    STA $004302                     ; $C205C3  8F 02 43 00  MX
+    LDA #$007F                      ; $C205C7  A9 7F 00     MX
+    STA $004304                     ; $C205CA  8F 04 43 00  MX
+    TYA                             ; $C205CE  98           MX
+    ASL                             ; $C205CF  0A           MX
+    STA $004305                     ; $C205D0  8F 05 43 00  MX
+    LDA $66                         ; $C205D4  A5 66        MX
 L_C205D6:
-    CMP $66                 ; $C205D6  C5 66        MX
-    BEQ L_C205D6            ; $C205D8  F0 FC        MX
-    TXA                     ; $C205DA  8A           MX
-    LSR                     ; $C205DB  4A           MX
-    SEP #$20                ; $C205DC  E2 20        MX
-    STA $002121             ; $C205DE  8F 21 21 00  mX
-    LDA #$01                ; $C205E2  A9 01        mX
-    STA $00420B             ; $C205E4  8F 0B 42 00  mX
-    REP #$20                ; $C205E8  C2 20        mX
-    PLA                     ; $C205EA  68           MX
-    DEC                     ; $C205EB  3A           MX
-    BNE L_C205AA            ; $C205EC  D0 BC        MX
-    PLY                     ; $C205EE  7A           MX
-    PLX                     ; $C205EF  FA           MX
-    RTL                     ; $C205F0  6B           MX
+    CMP $66                         ; $C205D6  C5 66        MX
+    BEQ L_C205D6                    ; $C205D8  F0 FC        MX
+    TXA                             ; $C205DA  8A           MX
+    LSR                             ; $C205DB  4A           MX
+    SEP #$20                        ; $C205DC  E2 20        MX
+    STA $002121                     ; $C205DE  8F 21 21 00  mX
+    LDA #$01                        ; $C205E2  A9 01        mX
+    STA $00420B                     ; $C205E4  8F 0B 42 00  mX
+    REP #$20                        ; $C205E8  C2 20        mX
+    PLA                             ; $C205EA  68           MX
+    DEC                             ; $C205EB  3A           MX
+    BNE L_C205AA                    ; $C205EC  D0 BC        MX
+    PLY                             ; $C205EE  7A           MX
+    PLX                             ; $C205EF  FA           MX
+    RTL                             ; $C205F0  6B           MX
 L_C205F1:
-    PHA                     ; $C205F1  48           MX
-    PHX                     ; $C205F2  DA           MX
-    PHY                     ; $C205F3  5A           MX
-    TYA                     ; $C205F4  98           MX
-    ASL                     ; $C205F5  0A           MX
-    DEC                     ; $C205F6  3A           MX
-    PHA                     ; $C205F7  48           MX
-    TXA                     ; $C205F8  8A           MX
-    CLC                     ; $C205F9  18           MX
-    ADC #$0100              ; $C205FA  69 00 01     MX
-    TAY                     ; $C205FD  A8           MX
-    PLA                     ; $C205FE  68           MX
-    PHB                     ; $C205FF  8B           MX
-    MVN $7F,$7F             ; $C20600  54 7F 7F     MX
-    PLB                     ; $C20603  AB           MX
-    PLY                     ; $C20604  7A           MX
-    PLX                     ; $C20605  FA           MX
-    PLA                     ; $C20606  68           MX
-    RTS                     ; $C20607  60           MX
+    PHA                             ; $C205F1  48           MX
+    PHX                             ; $C205F2  DA           MX
+    PHY                             ; $C205F3  5A           MX
+    TYA                             ; $C205F4  98           MX
+    ASL                             ; $C205F5  0A           MX
+    DEC                             ; $C205F6  3A           MX
+    PHA                             ; $C205F7  48           MX
+    TXA                             ; $C205F8  8A           MX
+    CLC                             ; $C205F9  18           MX
+    ADC #$0100                      ; $C205FA  69 00 01     MX
+    TAY                             ; $C205FD  A8           MX
+    PLA                             ; $C205FE  68           MX
+    PHB                             ; $C205FF  8B           MX
+    MVN $7F,$7F                     ; $C20600  54 7F 7F     MX
+    PLB                             ; $C20603  AB           MX
+    PLY                             ; $C20604  7A           MX
+    PLX                             ; $C20605  FA           MX
+    PLA                             ; $C20606  68           MX
+    RTS                             ; $C20607  60           MX
 L_C20608:
-    PHA                     ; $C20608  48           MX
-    PHX                     ; $C20609  DA           MX
-    PHY                     ; $C2060A  5A           MX
+    PHA                             ; $C20608  48           MX
+    PHX                             ; $C20609  DA           MX
+    PHY                             ; $C2060A  5A           MX
 L_C2060B:
-    LDA $7F0000,X           ; $C2060B  BF 00 00 7F  MX
-    PHA                     ; $C2060F  48           MX
-    AND #$7FE0              ; $C20610  29 E0 7F     MX
-    STA $7F0000,X           ; $C20613  9F 00 00 7F  MX
-    PLA                     ; $C20617  68           MX
-    AND #$001F              ; $C20618  29 1F 00     MX
-    SEC                     ; $C2061B  38           MX
-    SBC #$0001              ; $C2061C  E9 01 00     MX
-    BMI L_C20629            ; $C2061F  30 08        MX
-    ORA $7F0000,X           ; $C20621  1F 00 00 7F  MX
-    STA $7F0000,X           ; $C20625  9F 00 00 7F  MX
+    LDA $7F0000,X                   ; $C2060B  BF 00 00 7F  MX
+    PHA                             ; $C2060F  48           MX
+    AND #$7FE0                      ; $C20610  29 E0 7F     MX
+    STA $7F0000,X                   ; $C20613  9F 00 00 7F  MX
+    PLA                             ; $C20617  68           MX
+    AND #$001F                      ; $C20618  29 1F 00     MX
+    SEC                             ; $C2061B  38           MX
+    SBC #$0001                      ; $C2061C  E9 01 00     MX
+    BMI L_C20629                    ; $C2061F  30 08        MX
+    ORA $7F0000,X                   ; $C20621  1F 00 00 7F  MX
+    STA $7F0000,X                   ; $C20625  9F 00 00 7F  MX
 L_C20629:
-    LDA $7F0000,X           ; $C20629  BF 00 00 7F  MX
-    PHA                     ; $C2062D  48           MX
-    AND #$7C1F              ; $C2062E  29 1F 7C     MX
-    STA $7F0000,X           ; $C20631  9F 00 00 7F  MX
-    PLA                     ; $C20635  68           MX
-    AND #$03E0              ; $C20636  29 E0 03     MX
-    SEC                     ; $C20639  38           MX
-    SBC #$0020              ; $C2063A  E9 20 00     MX
-    BMI L_C20647            ; $C2063D  30 08        MX
-    ORA $7F0000,X           ; $C2063F  1F 00 00 7F  MX
-    STA $7F0000,X           ; $C20643  9F 00 00 7F  MX
+    LDA $7F0000,X                   ; $C20629  BF 00 00 7F  MX
+    PHA                             ; $C2062D  48           MX
+    AND #$7C1F                      ; $C2062E  29 1F 7C     MX
+    STA $7F0000,X                   ; $C20631  9F 00 00 7F  MX
+    PLA                             ; $C20635  68           MX
+    AND #$03E0                      ; $C20636  29 E0 03     MX
+    SEC                             ; $C20639  38           MX
+    SBC #$0020                      ; $C2063A  E9 20 00     MX
+    BMI L_C20647                    ; $C2063D  30 08        MX
+    ORA $7F0000,X                   ; $C2063F  1F 00 00 7F  MX
+    STA $7F0000,X                   ; $C20643  9F 00 00 7F  MX
 L_C20647:
-    LDA $7F0000,X           ; $C20647  BF 00 00 7F  MX
-    PHA                     ; $C2064B  48           MX
-    AND #$03FF              ; $C2064C  29 FF 03     MX
-    STA $7F0000,X           ; $C2064F  9F 00 00 7F  MX
-    PLA                     ; $C20653  68           MX
-    AND #$7C00              ; $C20654  29 00 7C     MX
-    SEC                     ; $C20657  38           MX
-    SBC #$0400              ; $C20658  E9 00 04     MX
-    BMI L_C20665            ; $C2065B  30 08        MX
-    ORA $7F0000,X           ; $C2065D  1F 00 00 7F  MX
-    STA $7F0000,X           ; $C20661  9F 00 00 7F  MX
+    LDA $7F0000,X                   ; $C20647  BF 00 00 7F  MX
+    PHA                             ; $C2064B  48           MX
+    AND #$03FF                      ; $C2064C  29 FF 03     MX
+    STA $7F0000,X                   ; $C2064F  9F 00 00 7F  MX
+    PLA                             ; $C20653  68           MX
+    AND #$7C00                      ; $C20654  29 00 7C     MX
+    SEC                             ; $C20657  38           MX
+    SBC #$0400                      ; $C20658  E9 00 04     MX
+    BMI L_C20665                    ; $C2065B  30 08        MX
+    ORA $7F0000,X                   ; $C2065D  1F 00 00 7F  MX
+    STA $7F0000,X                   ; $C20661  9F 00 00 7F  MX
 L_C20665:
-    INX                     ; $C20665  E8           MX
-    INX                     ; $C20666  E8           MX
-    DEY                     ; $C20667  88           MX
-    BNE L_C2060B            ; $C20668  D0 A1        MX
-    PLY                     ; $C2066A  7A           MX
-    PLX                     ; $C2066B  FA           MX
-    PLA                     ; $C2066C  68           MX
-    RTS                     ; $C2066D  60           MX
+    INX                             ; $C20665  E8           MX
+    INX                             ; $C20666  E8           MX
+    DEY                             ; $C20667  88           MX
+    BNE L_C2060B                    ; $C20668  D0 A1        MX
+    PLY                             ; $C2066A  7A           MX
+    PLX                             ; $C2066B  FA           MX
+    PLA                             ; $C2066C  68           MX
+    RTS                             ; $C2066D  60           MX
 L_C2066E:
-    LDA $0831               ; $C2066E  AD 31 08     MX
-    SEC                     ; $C20671  38           MX
-    SBC $082D               ; $C20672  ED 2D 08     MX
-    BPL L_C20683            ; $C20675  10 0C        MX
-    EOR #$FFFF              ; $C20677  49 FF FF     MX
-    INC                     ; $C2067A  1A           MX
-    STA $0831               ; $C2067B  8D 31 08     MX
-    LDA #$FFFF              ; $C2067E  A9 FF FF     MX
-    BRA L_C20689            ; $C20681  80 06        MX
+    LDA $0831                       ; $C2066E  AD 31 08     MX
+    SEC                             ; $C20671  38           MX
+    SBC $082D                       ; $C20672  ED 2D 08     MX
+    BPL L_C20683                    ; $C20675  10 0C        MX
+    EOR #$FFFF                      ; $C20677  49 FF FF     MX
+    INC                             ; $C2067A  1A           MX
+    STA $0831                       ; $C2067B  8D 31 08     MX
+    LDA #$FFFF                      ; $C2067E  A9 FF FF     MX
+    BRA L_C20689                    ; $C20681  80 06        MX
 L_C20683:
-    STA $0831               ; $C20683  8D 31 08     MX
-    LDA #$0001              ; $C20686  A9 01 00     MX
+    STA $0831                       ; $C20683  8D 31 08     MX
+    LDA #$0001                      ; $C20686  A9 01 00     MX
 L_C20689:
-    STA $083B               ; $C20689  8D 3B 08     MX
-    LDA $0833               ; $C2068C  AD 33 08     MX
-    SEC                     ; $C2068F  38           MX
-    SBC $082F               ; $C20690  ED 2F 08     MX
-    BPL L_C206A1            ; $C20693  10 0C        MX
-    EOR #$FFFF              ; $C20695  49 FF FF     MX
-    INC                     ; $C20698  1A           MX
-    STA $0833               ; $C20699  8D 33 08     MX
-    LDA #$FFFF              ; $C2069C  A9 FF FF     MX
-    BRA L_C206A7            ; $C2069F  80 06        MX
+    STA $083B                       ; $C20689  8D 3B 08     MX
+    LDA $0833                       ; $C2068C  AD 33 08     MX
+    SEC                             ; $C2068F  38           MX
+    SBC $082F                       ; $C20690  ED 2F 08     MX
+    BPL L_C206A1                    ; $C20693  10 0C        MX
+    EOR #$FFFF                      ; $C20695  49 FF FF     MX
+    INC                             ; $C20698  1A           MX
+    STA $0833                       ; $C20699  8D 33 08     MX
+    LDA #$FFFF                      ; $C2069C  A9 FF FF     MX
+    BRA L_C206A7                    ; $C2069F  80 06        MX
 L_C206A1:
-    STA $0833               ; $C206A1  8D 33 08     MX
-    LDA #$0001              ; $C206A4  A9 01 00     MX
+    STA $0833                       ; $C206A1  8D 33 08     MX
+    LDA #$0001                      ; $C206A4  A9 01 00     MX
 L_C206A7:
-    STA $083D               ; $C206A7  8D 3D 08     MX
-    LDA $0833               ; $C206AA  AD 33 08     MX
-    SEC                     ; $C206AD  38           MX
-    SBC $0831               ; $C206AE  ED 31 08     MX
-    ASL                     ; $C206B1  0A           MX
-    BPL L_C206C9            ; $C206B2  10 15        MX
-    STA $0837               ; $C206B4  8D 37 08     MX
-    LDA $0833               ; $C206B7  AD 33 08     MX
-    ASL                     ; $C206BA  0A           MX
-    STA $0839               ; $C206BB  8D 39 08     MX
-    SEC                     ; $C206BE  38           MX
-    SBC $0831               ; $C206BF  ED 31 08     MX
-    STA $0835               ; $C206C2  8D 35 08     MX
-    STZ $083F               ; $C206C5  9C 3F 08     MX
-    RTL                     ; $C206C8  6B           MX
+    STA $083D                       ; $C206A7  8D 3D 08     MX
+    LDA $0833                       ; $C206AA  AD 33 08     MX
+    SEC                             ; $C206AD  38           MX
+    SBC $0831                       ; $C206AE  ED 31 08     MX
+    ASL                             ; $C206B1  0A           MX
+    BPL L_C206C9                    ; $C206B2  10 15        MX
+    STA $0837                       ; $C206B4  8D 37 08     MX
+    LDA $0833                       ; $C206B7  AD 33 08     MX
+    ASL                             ; $C206BA  0A           MX
+    STA $0839                       ; $C206BB  8D 39 08     MX
+    SEC                             ; $C206BE  38           MX
+    SBC $0831                       ; $C206BF  ED 31 08     MX
+    STA $0835                       ; $C206C2  8D 35 08     MX
+    STZ $083F                       ; $C206C5  9C 3F 08     MX
+    RTL                             ; $C206C8  6B           MX
 L_C206C9:
-    EOR #$FFFF              ; $C206C9  49 FF FF     MX
-    INC                     ; $C206CC  1A           MX
-    STA $0837               ; $C206CD  8D 37 08     MX
-    LDA $0831               ; $C206D0  AD 31 08     MX
-    ASL                     ; $C206D3  0A           MX
-    STA $0839               ; $C206D4  8D 39 08     MX
-    SEC                     ; $C206D7  38           MX
-    SBC $0833               ; $C206D8  ED 33 08     MX
-    STA $0835               ; $C206DB  8D 35 08     MX
-    LDA #$0001              ; $C206DE  A9 01 00     MX
-    STA $083F               ; $C206E1  8D 3F 08     MX
-    RTL                     ; $C206E4  6B           MX
+    EOR #$FFFF                      ; $C206C9  49 FF FF     MX
+    INC                             ; $C206CC  1A           MX
+    STA $0837                       ; $C206CD  8D 37 08     MX
+    LDA $0831                       ; $C206D0  AD 31 08     MX
+    ASL                             ; $C206D3  0A           MX
+    STA $0839                       ; $C206D4  8D 39 08     MX
+    SEC                             ; $C206D7  38           MX
+    SBC $0833                       ; $C206D8  ED 33 08     MX
+    STA $0835                       ; $C206DB  8D 35 08     MX
+    LDA #$0001                      ; $C206DE  A9 01 00     MX
+    STA $083F                       ; $C206E1  8D 3F 08     MX
+    RTL                             ; $C206E4  6B           MX
 L_C206E5:
-    LDX #$0010              ; $C206E5  A2 10 00     MX
-    LDA $083B               ; $C206E8  AD 3B 08     MX
-    STA $0831               ; $C206EB  8D 31 08     MX
-    LDA $083D               ; $C206EE  AD 3D 08     MX
-    STA $0833               ; $C206F1  8D 33 08     MX
-    LDA $083F               ; $C206F4  AD 3F 08     MX
-    BNE L_C20726            ; $C206F7  D0 2D        MX
+    LDX #$0010                      ; $C206E5  A2 10 00     MX
+    LDA $083B                       ; $C206E8  AD 3B 08     MX
+    STA $0831                       ; $C206EB  8D 31 08     MX
+    LDA $083D                       ; $C206EE  AD 3D 08     MX
+    STA $0833                       ; $C206F1  8D 33 08     MX
+    LDA $083F                       ; $C206F4  AD 3F 08     MX
+    BNE L_C20726                    ; $C206F7  D0 2D        MX
 L_C206F9:
-    LDA $082D               ; $C206F9  AD 2D 08     MX
-    CLC                     ; $C206FC  18           MX
-    ADC $0831               ; $C206FD  6D 31 08     MX
-    STA $082D               ; $C20700  8D 2D 08     MX
-    LDA $0835               ; $C20703  AD 35 08     MX
-    BMI L_C2071B            ; $C20706  30 13        MX
-    CLC                     ; $C20708  18           MX
-    ADC $0837               ; $C20709  6D 37 08     MX
-    STA $0835               ; $C2070C  8D 35 08     MX
-    LDA $082F               ; $C2070F  AD 2F 08     MX
-    CLC                     ; $C20712  18           MX
-    ADC $0833               ; $C20713  6D 33 08     MX
-    STA $082F               ; $C20716  8D 2F 08     MX
-    BRA L_C20722            ; $C20719  80 07        MX
+    LDA $082D                       ; $C206F9  AD 2D 08     MX
+    CLC                             ; $C206FC  18           MX
+    ADC $0831                       ; $C206FD  6D 31 08     MX
+    STA $082D                       ; $C20700  8D 2D 08     MX
+    LDA $0835                       ; $C20703  AD 35 08     MX
+    BMI L_C2071B                    ; $C20706  30 13        MX
+    CLC                             ; $C20708  18           MX
+    ADC $0837                       ; $C20709  6D 37 08     MX
+    STA $0835                       ; $C2070C  8D 35 08     MX
+    LDA $082F                       ; $C2070F  AD 2F 08     MX
+    CLC                             ; $C20712  18           MX
+    ADC $0833                       ; $C20713  6D 33 08     MX
+    STA $082F                       ; $C20716  8D 2F 08     MX
+    BRA L_C20722                    ; $C20719  80 07        MX
 L_C2071B:
-    CLC                     ; $C2071B  18           MX
-    ADC $0839               ; $C2071C  6D 39 08     MX
-    STA $0835               ; $C2071F  8D 35 08     MX
+    CLC                             ; $C2071B  18           MX
+    ADC $0839                       ; $C2071C  6D 39 08     MX
+    STA $0835                       ; $C2071F  8D 35 08     MX
 L_C20722:
-    DEX                     ; $C20722  CA           MX
-    BNE L_C206F9            ; $C20723  D0 D4        MX
-    RTL                     ; $C20725  6B           MX
+    DEX                             ; $C20722  CA           MX
+    BNE L_C206F9                    ; $C20723  D0 D4        MX
+    RTL                             ; $C20725  6B           MX
 L_C20726:
-    LDA $082F               ; $C20726  AD 2F 08     MX
-    CLC                     ; $C20729  18           MX
-    ADC $0833               ; $C2072A  6D 33 08     MX
-    STA $082F               ; $C2072D  8D 2F 08     MX
-    LDA $0835               ; $C20730  AD 35 08     MX
-    BMI L_C20748            ; $C20733  30 13        MX
-    CLC                     ; $C20735  18           MX
-    ADC $0837               ; $C20736  6D 37 08     MX
-    STA $0835               ; $C20739  8D 35 08     MX
-    LDA $082D               ; $C2073C  AD 2D 08     MX
-    CLC                     ; $C2073F  18           MX
-    ADC $0831               ; $C20740  6D 31 08     MX
-    STA $082D               ; $C20743  8D 2D 08     MX
-    BRA L_C2074F            ; $C20746  80 07        MX
+    LDA $082F                       ; $C20726  AD 2F 08     MX
+    CLC                             ; $C20729  18           MX
+    ADC $0833                       ; $C2072A  6D 33 08     MX
+    STA $082F                       ; $C2072D  8D 2F 08     MX
+    LDA $0835                       ; $C20730  AD 35 08     MX
+    BMI L_C20748                    ; $C20733  30 13        MX
+    CLC                             ; $C20735  18           MX
+    ADC $0837                       ; $C20736  6D 37 08     MX
+    STA $0835                       ; $C20739  8D 35 08     MX
+    LDA $082D                       ; $C2073C  AD 2D 08     MX
+    CLC                             ; $C2073F  18           MX
+    ADC $0831                       ; $C20740  6D 31 08     MX
+    STA $082D                       ; $C20743  8D 2D 08     MX
+    BRA L_C2074F                    ; $C20746  80 07        MX
 L_C20748:
-    CLC                     ; $C20748  18           MX
-    ADC $0839               ; $C20749  6D 39 08     MX
-    STA $0835               ; $C2074C  8D 35 08     MX
+    CLC                             ; $C20748  18           MX
+    ADC $0839                       ; $C20749  6D 39 08     MX
+    STA $0835                       ; $C2074C  8D 35 08     MX
 L_C2074F:
-    DEX                     ; $C2074F  CA           MX
-    BNE L_C20726            ; $C20750  D0 D4        MX
-    RTL                     ; $C20752  6B           MX
+    DEX                             ; $C2074F  CA           MX
+    BNE L_C20726                    ; $C20750  D0 D4        MX
+    RTL                             ; $C20752  6B           MX
 L_C20753:
-    PHP                     ; $C20753  08           MX
-    REP #$20                ; $C20754  C2 20        MX
-    PHX                     ; $C20756  DA           MX
-    PHA                     ; $C20757  48           MX
-    AND #$00FF              ; $C20758  29 FF 00     MX
-    SEP #$20                ; $C2075B  E2 20        MX
-    BEQ L_C2076D            ; $C2075D  F0 0E        mX
-    TAX                     ; $C2075F  AA           mX
-    LDA $C80054,X           ; $C20760  BF 54 00 C8  mX
-    CLC                     ; $C20764  18           mX
-    ADC $01,S               ; $C20765  63 01        mX
-    BEQ L_C2076B            ; $C20767  F0 02        mX
-    BPL L_C2076D            ; $C20769  10 02        mX
+    PHP                             ; $C20753  08           MX
+    REP #$20                        ; $C20754  C2 20        MX
+    PHX                             ; $C20756  DA           MX
+    PHA                             ; $C20757  48           MX
+    AND #$00FF                      ; $C20758  29 FF 00     MX
+    SEP #$20                        ; $C2075B  E2 20        MX
+    BEQ L_C2076D                    ; $C2075D  F0 0E        mX
+    TAX                             ; $C2075F  AA           mX
+    LDA $C80054,X                   ; $C20760  BF 54 00 C8  mX
+    CLC                             ; $C20764  18           mX
+    ADC $01,S                       ; $C20765  63 01        mX
+    BEQ L_C2076B                    ; $C20767  F0 02        mX
+    BPL L_C2076D                    ; $C20769  10 02        mX
 L_C2076B:
-    LDA #$01                ; $C2076B  A9 01        mX
+    LDA #$01                        ; $C2076B  A9 01        mX
 L_C2076D:
-    REP #$20                ; $C2076D  C2 20        mX
-    PLX                     ; $C2076F  FA           MX
-    AND #$00FF              ; $C20770  29 FF 00     MX
-    PLX                     ; $C20773  FA           MX
-    PLP                     ; $C20774  28           MX
-    RTL                     ; $C20775  6B           MX
+    REP #$20                        ; $C2076D  C2 20        mX
+    PLX                             ; $C2076F  FA           MX
+    AND #$00FF                      ; $C20770  29 FF 00     MX
+    PLX                             ; $C20773  FA           MX
+    PLP                             ; $C20774  28           MX
+    RTL                             ; $C20775  6B           MX
 L_C20776:
-    PHP                     ; $C20776  08           MX
-    REP #$20                ; $C20777  C2 20        MX
-    PHA                     ; $C20779  48           MX
-    PHX                     ; $C2077A  DA           MX
-    LDA $46                 ; $C2077B  A5 46        MX
-    AND #$00FF              ; $C2077D  29 FF 00     MX
-    SEP #$20                ; $C20780  E2 20        MX
-    BEQ L_C20792            ; $C20782  F0 0E        mX
-    TAX                     ; $C20784  AA           mX
-    LDA $C80054,X           ; $C20785  BF 54 00 C8  mX
-    CLC                     ; $C20789  18           mX
-    ADC $46                 ; $C2078A  65 46        mX
-    BEQ L_C20790            ; $C2078C  F0 02        mX
-    BPL L_C20792            ; $C2078E  10 02        mX
+    PHP                             ; $C20776  08           MX
+    REP #$20                        ; $C20777  C2 20        MX
+    PHA                             ; $C20779  48           MX
+    PHX                             ; $C2077A  DA           MX
+    LDA $46                         ; $C2077B  A5 46        MX
+    AND #$00FF                      ; $C2077D  29 FF 00     MX
+    SEP #$20                        ; $C20780  E2 20        MX
+    BEQ L_C20792                    ; $C20782  F0 0E        mX
+    TAX                             ; $C20784  AA           mX
+    LDA $C80054,X                   ; $C20785  BF 54 00 C8  mX
+    CLC                             ; $C20789  18           mX
+    ADC $46                         ; $C2078A  65 46        mX
+    BEQ L_C20790                    ; $C2078C  F0 02        mX
+    BPL L_C20792                    ; $C2078E  10 02        mX
 L_C20790:
-    LDA #$01                ; $C20790  A9 01        mX
+    LDA #$01                        ; $C20790  A9 01        mX
 L_C20792:
-    REP #$20                ; $C20792  C2 20        mX
-    AND #$00FF              ; $C20794  29 FF 00     MX
-    STA $46                 ; $C20797  85 46        MX
-    PLX                     ; $C20799  FA           MX
-    PLA                     ; $C2079A  68           MX
-    PLP                     ; $C2079B  28           MX
-    RTL                     ; $C2079C  6B           MX
+    REP #$20                        ; $C20792  C2 20        mX
+    AND #$00FF                      ; $C20794  29 FF 00     MX
+    STA $46                         ; $C20797  85 46        MX
+    PLX                             ; $C20799  FA           MX
+    PLA                             ; $C2079A  68           MX
+    PLP                             ; $C2079B  28           MX
+    RTL                             ; $C2079C  6B           MX
 L_C2079D:
-    PHX                     ; $C2079D  DA           MX
-    PHA                     ; $C2079E  48           MX
-    AND #$00FF              ; $C2079F  29 FF 00     MX
-    BEQ L_C207BF            ; $C207A2  F0 1B        MX
-    SEP #$20                ; $C207A4  E2 20        MX
-    TAX                     ; $C207A6  AA           mX
-    LDA $C80154,X           ; $C207A7  BF 54 01 C8  mX
-    CLC                     ; $C207AB  18           mX
-    ADC $01,S               ; $C207AC  63 01        mX
-    BNE L_C207B2            ; $C207AE  D0 02        mX
-    LDA #$01                ; $C207B0  A9 01        mX
+    PHX                             ; $C2079D  DA           MX
+    PHA                             ; $C2079E  48           MX
+    AND #$00FF                      ; $C2079F  29 FF 00     MX
+    BEQ L_C207BF                    ; $C207A2  F0 1B        MX
+    SEP #$20                        ; $C207A4  E2 20        MX
+    TAX                             ; $C207A6  AA           mX
+    LDA $C80154,X                   ; $C207A7  BF 54 01 C8  mX
+    CLC                             ; $C207AB  18           mX
+    ADC $01,S                       ; $C207AC  63 01        mX
+    BNE L_C207B2                    ; $C207AE  D0 02        mX
+    LDA #$01                        ; $C207B0  A9 01        mX
 L_C207B2:
-    REP #$20                ; $C207B2  C2 20        mX
-    AND #$00FF              ; $C207B4  29 FF 00     MX
-    BIT #$0080              ; $C207B7  89 80 00     MX
-    BEQ L_C207BF            ; $C207BA  F0 03        MX
-    ORA #$FF00              ; $C207BC  09 00 FF     MX
+    REP #$20                        ; $C207B2  C2 20        mX
+    AND #$00FF                      ; $C207B4  29 FF 00     MX
+    BIT #$0080                      ; $C207B7  89 80 00     MX
+    BEQ L_C207BF                    ; $C207BA  F0 03        MX
+    ORA #$FF00                      ; $C207BC  09 00 FF     MX
 L_C207BF:
-    PLX                     ; $C207BF  FA           MX
-    PLX                     ; $C207C0  FA           MX
-    RTL                     ; $C207C1  6B           MX
+    PLX                             ; $C207BF  FA           MX
+    PLX                             ; $C207C0  FA           MX
+    RTL                             ; $C207C1  6B           MX
 L_C207C2:
-    LDA $076D               ; $C207C2  AD 6D 07     MX
-    LSR                     ; $C207C5  4A           MX
-    LSR                     ; $C207C6  4A           MX
-    STA $004202             ; $C207C7  8F 02 42 00  MX
-    LDA $0757               ; $C207CB  AD 57 07     MX
-    CLC                     ; $C207CE  18           MX
-    ADC #$0060              ; $C207CF  69 60 00     MX
-    BPL L_C207D7            ; $C207D2  10 03        MX
-    LDA #$0000              ; $C207D4  A9 00 00     MX
+    LDA $076D                       ; $C207C2  AD 6D 07     MX
+    LSR                             ; $C207C5  4A           MX
+    LSR                             ; $C207C6  4A           MX
+    STA $004202                     ; $C207C7  8F 02 42 00  MX
+    LDA $0757                       ; $C207CB  AD 57 07     MX
+    CLC                             ; $C207CE  18           MX
+    ADC #$0060                      ; $C207CF  69 60 00     MX
+    BPL L_C207D7                    ; $C207D2  10 03        MX
+    LDA #$0000                      ; $C207D4  A9 00 00     MX
 L_C207D7:
-    LSR                     ; $C207D7  4A           MX
-    LSR                     ; $C207D8  4A           MX
-    LSR                     ; $C207D9  4A           MX
-    LSR                     ; $C207DA  4A           MX
-    LSR                     ; $C207DB  4A           MX
-    LSR                     ; $C207DC  4A           MX
-    SEP #$20                ; $C207DD  E2 20        MX
-    STA $004203             ; $C207DF  8F 03 42 00  mX
-    REP #$20                ; $C207E3  C2 20        mX
-    NOP                     ; $C207E5  EA           MX
-    NOP                     ; $C207E6  EA           MX
-    NOP                     ; $C207E7  EA           MX
-    NOP                     ; $C207E8  EA           MX
-    NOP                     ; $C207E9  EA           MX
-    NOP                     ; $C207EA  EA           MX
-    NOP                     ; $C207EB  EA           MX
-    NOP                     ; $C207EC  EA           MX
-    LDA $004216             ; $C207ED  AF 16 42 00  MX
-    STA $46                 ; $C207F1  85 46        MX
-    SEP #$20                ; $C207F3  E2 20        MX
-    LDA $076D               ; $C207F5  AD 6D 07     mX
-    STA $004202             ; $C207F8  8F 02 42 00  mX
-    REP #$20                ; $C207FC  C2 20        mX
-    LDA $0755               ; $C207FE  AD 55 07     MX
-    CLC                     ; $C20801  18           MX
-    ADC #$0080              ; $C20802  69 80 00     MX
-    LSR                     ; $C20805  4A           MX
-    LSR                     ; $C20806  4A           MX
-    LSR                     ; $C20807  4A           MX
-    LSR                     ; $C20808  4A           MX
-    LSR                     ; $C20809  4A           MX
-    LSR                     ; $C2080A  4A           MX
-    CLC                     ; $C2080B  18           MX
-    ADC $46                 ; $C2080C  65 46        MX
-    CLC                     ; $C2080E  18           MX
-    ADC $06DE               ; $C2080F  6D DE 06     MX
-    TAY                     ; $C20812  A8           MX
-    LDA $68E0,Y             ; $C20813  B9 E0 68     MX
-    AND #$000F              ; $C20816  29 0F 00     MX
-    BEQ L_C20830            ; $C20819  F0 15        MX
-    SEP #$20                ; $C2081B  E2 20        MX
-    CMP $0F                 ; $C2081D  C5 0F        mX
-    REP #$20                ; $C2081F  C2 20        mX
-    BEQ L_C20830            ; $C20821  F0 0D        MX
-    SEP #$20                ; $C20823  E2 20        MX
-    STA $0F                 ; $C20825  85 0F        mX
-    REP #$20                ; $C20827  C2 20        mX
-    CLC                     ; $C20829  18           MX
-    ADC $06E8               ; $C2082A  6D E8 06     MX
-    STA $0739               ; $C2082D  8D 39 07     MX
+    LSR                             ; $C207D7  4A           MX
+    LSR                             ; $C207D8  4A           MX
+    LSR                             ; $C207D9  4A           MX
+    LSR                             ; $C207DA  4A           MX
+    LSR                             ; $C207DB  4A           MX
+    LSR                             ; $C207DC  4A           MX
+    SEP #$20                        ; $C207DD  E2 20        MX
+    STA $004203                     ; $C207DF  8F 03 42 00  mX
+    REP #$20                        ; $C207E3  C2 20        mX
+    NOP                             ; $C207E5  EA           MX
+    NOP                             ; $C207E6  EA           MX
+    NOP                             ; $C207E7  EA           MX
+    NOP                             ; $C207E8  EA           MX
+    NOP                             ; $C207E9  EA           MX
+    NOP                             ; $C207EA  EA           MX
+    NOP                             ; $C207EB  EA           MX
+    NOP                             ; $C207EC  EA           MX
+    LDA $004216                     ; $C207ED  AF 16 42 00  MX
+    STA $46                         ; $C207F1  85 46        MX
+    SEP #$20                        ; $C207F3  E2 20        MX
+    LDA $076D                       ; $C207F5  AD 6D 07     mX
+    STA $004202                     ; $C207F8  8F 02 42 00  mX
+    REP #$20                        ; $C207FC  C2 20        mX
+    LDA $0755                       ; $C207FE  AD 55 07     MX
+    CLC                             ; $C20801  18           MX
+    ADC #$0080                      ; $C20802  69 80 00     MX
+    LSR                             ; $C20805  4A           MX
+    LSR                             ; $C20806  4A           MX
+    LSR                             ; $C20807  4A           MX
+    LSR                             ; $C20808  4A           MX
+    LSR                             ; $C20809  4A           MX
+    LSR                             ; $C2080A  4A           MX
+    CLC                             ; $C2080B  18           MX
+    ADC $46                         ; $C2080C  65 46        MX
+    CLC                             ; $C2080E  18           MX
+    ADC $06DE                       ; $C2080F  6D DE 06     MX
+    TAY                             ; $C20812  A8           MX
+    LDA $68E0,Y                     ; $C20813  B9 E0 68     MX
+    AND #$000F                      ; $C20816  29 0F 00     MX
+    BEQ L_C20830                    ; $C20819  F0 15        MX
+    SEP #$20                        ; $C2081B  E2 20        MX
+    CMP $0F                         ; $C2081D  C5 0F        mX
+    REP #$20                        ; $C2081F  C2 20        mX
+    BEQ L_C20830                    ; $C20821  F0 0D        MX
+    SEP #$20                        ; $C20823  E2 20        MX
+    STA $0F                         ; $C20825  85 0F        mX
+    REP #$20                        ; $C20827  C2 20        mX
+    CLC                             ; $C20829  18           MX
+    ADC $06E8                       ; $C2082A  6D E8 06     MX
+    STA $0739                       ; $C2082D  8D 39 07     MX
 L_C20830:
-    RTL                     ; $C20830  6B           MX
-L_C20831:
-    PHP                     ; $C20831  08           mX
-    SEP #$20                ; $C20832  E2 20        mX
-    LDA $414B               ; $C20834  AD 4B 41     mX
-    CMP #$06                ; $C20837  C9 06        mX
-    BEQ L_C20846            ; $C20839  F0 0B        mX
-    LDA $4188               ; $C2083B  AD 88 41     mX
-    BPL L_C20846            ; $C2083E  10 06        mX
-    LDA $94                 ; $C20840  A5 94        mX
-    BIT #$10                ; $C20842  89 10        mX
-    BNE L_C20851            ; $C20844  D0 0B        mX
+    RTL                             ; $C20830  6B           MX
+pause_on_start:
+    PHP                             ; $C20831  08           mX
+    SEP #$20                        ; $C20832  E2 20        mX
+    LDA $414B                       ; $C20834  AD 4B 41     mX
+    CMP #$06                        ; $C20837  C9 06        mX
+    BEQ L_C20846                    ; $C20839  F0 0B        mX
+    LDA $4188                       ; $C2083B  AD 88 41     mX
+    BPL L_C20846                    ; $C2083E  10 06        mX
+    LDA $94                         ; $C20840  A5 94        mX
+    BIT #$10                        ; $C20842  89 10        mX
+    BNE L_C20851                    ; $C20844  D0 0B        mX
 L_C20846:
-    LDA $4113               ; $C20846  AD 13 41     mX
-    BPL L_C20858            ; $C20849  10 0D        mX
-    LDA $96                 ; $C2084B  A5 96        mX
-    BIT #$10                ; $C2084D  89 10        mX
-    BEQ L_C20858            ; $C2084F  F0 07        mX
+    LDA $4113                       ; $C20846  AD 13 41     mX
+    BPL L_C20858                    ; $C20849  10 0D        mX
+    LDA $96                         ; $C2084B  A5 96        mX
+    BIT #$10                        ; $C2084D  89 10        mX
+    BEQ L_C20858                    ; $C2084F  F0 07        mX
 L_C20851:
-    REP #$20                ; $C20851  C2 20        mX
-    LDA #$0001              ; $C20853  A9 01 00     MX
-    PLP                     ; $C20856  28           MX
-    RTL                     ; $C20857  6B           mX
+    REP #$20                        ; $C20851  C2 20        mX
+    LDA #$0001                      ; $C20853  A9 01 00     MX
+    PLP                             ; $C20856  28           MX
+    RTL                             ; $C20857  6B           mX
 L_C20858:
-    REP #$20                ; $C20858  C2 20        mX
-    LDA #$0000              ; $C2085A  A9 00 00     MX
-    PLP                     ; $C2085D  28           MX
-    RTL                     ; $C2085E  6B           mX
+    REP #$20                        ; $C20858  C2 20        mX
+    LDA #$0000                      ; $C2085A  A9 00 00     MX
+    PLP                             ; $C2085D  28           MX
+    RTL                             ; $C2085E  6B           mX
 L_C2085F:
-    PHP                     ; $C2085F  08           MX
-    SEP #$20                ; $C20860  E2 20        MX
-    LDA $414B               ; $C20862  AD 4B 41     mX
-    CMP #$06                ; $C20865  C9 06        mX
-    BEQ L_C20874            ; $C20867  F0 0B        mX
-    LDA $4188               ; $C20869  AD 88 41     mX
-    BPL L_C20874            ; $C2086C  10 06        mX
-    LDA $94                 ; $C2086E  A5 94        mX
-    BIT #$90                ; $C20870  89 90        mX
-    BNE L_C2087F            ; $C20872  D0 0B        mX
+    PHP                             ; $C2085F  08           MX
+    SEP #$20                        ; $C20860  E2 20        MX
+    LDA $414B                       ; $C20862  AD 4B 41     mX
+    CMP #$06                        ; $C20865  C9 06        mX
+    BEQ L_C20874                    ; $C20867  F0 0B        mX
+    LDA $4188                       ; $C20869  AD 88 41     mX
+    BPL L_C20874                    ; $C2086C  10 06        mX
+    LDA $94                         ; $C2086E  A5 94        mX
+    BIT #$90                        ; $C20870  89 90        mX
+    BNE L_C2087F                    ; $C20872  D0 0B        mX
 L_C20874:
-    LDA $4113               ; $C20874  AD 13 41     mX
-    BPL L_C20886            ; $C20877  10 0D        mX
-    LDA $96                 ; $C20879  A5 96        mX
-    BIT #$90                ; $C2087B  89 90        mX
-    BEQ L_C20886            ; $C2087D  F0 07        mX
+    LDA $4113                       ; $C20874  AD 13 41     mX
+    BPL L_C20886                    ; $C20877  10 0D        mX
+    LDA $96                         ; $C20879  A5 96        mX
+    BIT #$90                        ; $C2087B  89 90        mX
+    BEQ L_C20886                    ; $C2087D  F0 07        mX
 L_C2087F:
-    REP #$20                ; $C2087F  C2 20        mX
-    LDA #$0001              ; $C20881  A9 01 00     MX
-    PLP                     ; $C20884  28           MX
-    RTL                     ; $C20885  6B           MX
+    REP #$20                        ; $C2087F  C2 20        mX
+    LDA #$0001                      ; $C20881  A9 01 00     MX
+    PLP                             ; $C20884  28           MX
+    RTL                             ; $C20885  6B           MX
 L_C20886:
-    REP #$20                ; $C20886  C2 20        mX
-    LDA #$0000              ; $C20888  A9 00 00     MX
-    PLP                     ; $C2088B  28           MX
-    RTL                     ; $C2088C  6B           MX
+    REP #$20                        ; $C20886  C2 20        mX
+    LDA #$0000                      ; $C20888  A9 00 00     MX
+    PLP                             ; $C2088B  28           MX
+    RTL                             ; $C2088C  6B           MX
 L_C2088D:
-    SEP #$20                ; $C2088D  E2 20        MX
-    LDA $0862               ; $C2088F  AD 62 08     mX
-    BNE L_C208A0            ; $C20892  D0 0C        mX
-    LDA $0863               ; $C20894  AD 63 08     mX
-    STA $0862               ; $C20897  8D 62 08     mX
-    LDA $0864               ; $C2089A  AD 64 08     mX
-    STA $0863               ; $C2089D  8D 63 08     mX
+    SEP #$20                        ; $C2088D  E2 20        MX
+    LDA $0862                       ; $C2088F  AD 62 08     mX
+    BNE L_C208A0                    ; $C20892  D0 0C        mX
+    LDA $0863                       ; $C20894  AD 63 08     mX
+    STA $0862                       ; $C20897  8D 62 08     mX
+    LDA $0864                       ; $C2089A  AD 64 08     mX
+    STA $0863                       ; $C2089D  8D 63 08     mX
 L_C208A0:
-    LDA $0863               ; $C208A0  AD 63 08     mX
-    BNE L_C208AB            ; $C208A3  D0 06        mX
-    LDA $0864               ; $C208A5  AD 64 08     mX
-    STA $0863               ; $C208A8  8D 63 08     mX
+    LDA $0863                       ; $C208A0  AD 63 08     mX
+    BNE L_C208AB                    ; $C208A3  D0 06        mX
+    LDA $0864                       ; $C208A5  AD 64 08     mX
+    STA $0863                       ; $C208A8  8D 63 08     mX
 L_C208AB:
-    LDA $0866               ; $C208AB  AD 66 08     mX
-    BNE L_C208BC            ; $C208AE  D0 0C        mX
-    LDA $0867               ; $C208B0  AD 67 08     mX
-    STA $0866               ; $C208B3  8D 66 08     mX
-    LDA $0868               ; $C208B6  AD 68 08     mX
-    STA $0867               ; $C208B9  8D 67 08     mX
+    LDA $0866                       ; $C208AB  AD 66 08     mX
+    BNE L_C208BC                    ; $C208AE  D0 0C        mX
+    LDA $0867                       ; $C208B0  AD 67 08     mX
+    STA $0866                       ; $C208B3  8D 66 08     mX
+    LDA $0868                       ; $C208B6  AD 68 08     mX
+    STA $0867                       ; $C208B9  8D 67 08     mX
 L_C208BC:
-    LDA $0867               ; $C208BC  AD 67 08     mX
-    BNE L_C208C7            ; $C208BF  D0 06        mX
-    LDA $0868               ; $C208C1  AD 68 08     mX
-    STA $0867               ; $C208C4  8D 67 08     mX
+    LDA $0867                       ; $C208BC  AD 67 08     mX
+    BNE L_C208C7                    ; $C208BF  D0 06        mX
+    LDA $0868                       ; $C208C1  AD 68 08     mX
+    STA $0867                       ; $C208C4  8D 67 08     mX
 L_C208C7:
-    REP #$20                ; $C208C7  C2 20        mX
-    RTL                     ; $C208C9  6B           MX
+    REP #$20                        ; $C208C7  C2 20        mX
+    RTL                             ; $C208C9  6B           MX
 L_C208CA:
-    JSL L_C0CC51            ; $C208CA  22 51 CC C0  MX
-    BPL L_C208D3            ; $C208CE  10 03        MX
-    TAX                     ; $C208D0  AA           MX
-    BRA L_C2092A            ; $C208D1  80 57        MX
+    JSL L_C0CC51                    ; $C208CA  22 51 CC C0  MX
+    BPL L_C208D3                    ; $C208CE  10 03        MX
+    TAX                             ; $C208D0  AA           MX
+    BRA L_C2092A                    ; $C208D1  80 57        MX
 L_C208D3:
-    TAX                     ; $C208D3  AA           MX
-    LDA $0000,Y             ; $C208D4  B9 00 00     MX
-    STA $0000,X             ; $C208D7  9D 00 00     MX
-    STA $0004,X             ; $C208DA  9D 04 00     MX
-    LDA $0002,Y             ; $C208DD  B9 02 00     MX
-    STA $0002,X             ; $C208E0  9D 02 00     MX
-    STA $0006,X             ; $C208E3  9D 06 00     MX
-    STZ $002A,X             ; $C208E6  9E 2A 00     MX
-    STZ $002C,X             ; $C208E9  9E 2C 00     MX
-    LDA #$03BE              ; $C208EC  A9 BE 03     MX
-    STA $0026,X             ; $C208EF  9D 26 00     MX
-    LDA #$00C0              ; $C208F2  A9 C0 00     MX
-    STA $0028,X             ; $C208F5  9D 28 00     MX
-    STZ $0022,X             ; $C208F8  9E 22 00     MX
-    SEP #$20                ; $C208FB  E2 20        MX
-    LDA #$C1                ; $C208FD  A9 C1        mX
-    STA $006B,X             ; $C208FF  9D 6B 00     mX
-    LDA #$00                ; $C20902  A9 00        mX
-    STA $0041,X             ; $C20904  9D 41 00     mX
-    LDA #$00                ; $C20907  A9 00        mX
-    STA $0043,X             ; $C20909  9D 43 00     mX
-    REP #$20                ; $C2090C  C2 20        mX
-    PHY                     ; $C2090E  5A           MX
-    LDY #$078D              ; $C2090F  A0 8D 07     MX
-    LDA $0000,Y             ; $C20912  B9 00 00     MX
-    STA $0061,X             ; $C20915  9D 61 00     MX
-    LDA $0002,Y             ; $C20918  B9 02 00     MX
-    STA $005F,X             ; $C2091B  9D 5F 00     MX
-    PLY                     ; $C2091E  7A           MX
-    LDA $0008,Y             ; $C2091F  B9 08 00     MX
-    STA $0008,X             ; $C20922  9D 08 00     MX
-    LDA $56                 ; $C20925  A5 56        MX
-    STA $005D,X             ; $C20927  9D 5D 00     MX
+    TAX                             ; $C208D3  AA           MX
+    LDA $0000,Y                     ; $C208D4  B9 00 00     MX
+    STA $0000,X                     ; $C208D7  9D 00 00     MX
+    STA $0004,X                     ; $C208DA  9D 04 00     MX
+    LDA $0002,Y                     ; $C208DD  B9 02 00     MX
+    STA $0002,X                     ; $C208E0  9D 02 00     MX
+    STA $0006,X                     ; $C208E3  9D 06 00     MX
+    STZ $002A,X                     ; $C208E6  9E 2A 00     MX
+    STZ $002C,X                     ; $C208E9  9E 2C 00     MX
+    LDA #$03BE                      ; $C208EC  A9 BE 03     MX
+    STA $0026,X                     ; $C208EF  9D 26 00     MX
+    LDA #$00C0                      ; $C208F2  A9 C0 00     MX
+    STA $0028,X                     ; $C208F5  9D 28 00     MX
+    STZ $0022,X                     ; $C208F8  9E 22 00     MX
+    SEP #$20                        ; $C208FB  E2 20        MX
+    LDA #$C1                        ; $C208FD  A9 C1        mX
+    STA $006B,X                     ; $C208FF  9D 6B 00     mX
+    LDA #$00                        ; $C20902  A9 00        mX
+    STA $0041,X                     ; $C20904  9D 41 00     mX
+    LDA #$00                        ; $C20907  A9 00        mX
+    STA $0043,X                     ; $C20909  9D 43 00     mX
+    REP #$20                        ; $C2090C  C2 20        mX
+    PHY                             ; $C2090E  5A           MX
+    LDY #$078D                      ; $C2090F  A0 8D 07     MX
+    LDA $0000,Y                     ; $C20912  B9 00 00     MX
+    STA $0061,X                     ; $C20915  9D 61 00     MX
+    LDA $0002,Y                     ; $C20918  B9 02 00     MX
+    STA $005F,X                     ; $C2091B  9D 5F 00     MX
+    PLY                             ; $C2091E  7A           MX
+    LDA $0008,Y                     ; $C2091F  B9 08 00     MX
+    STA $0008,X                     ; $C20922  9D 08 00     MX
+    LDA $56                         ; $C20925  A5 56        MX
+    STA $005D,X                     ; $C20927  9D 5D 00     MX
 L_C2092A:
-    RTL                     ; $C2092A  6B           MX
+    RTL                             ; $C2092A  6B           MX
 L_C2092B:
-    JSL L_C0CC51            ; $C2092B  22 51 CC C0  MX
-    BPL L_C20934            ; $C2092F  10 03        MX
-    TAX                     ; $C20931  AA           MX
-    BRA L_C209A1            ; $C20932  80 6D        MX
+    JSL L_C0CC51                    ; $C2092B  22 51 CC C0  MX
+    BPL L_C20934                    ; $C2092F  10 03        MX
+    TAX                             ; $C20931  AA           MX
+    BRA L_C209A1                    ; $C20932  80 6D        MX
 L_C20934:
-    TAX                     ; $C20934  AA           MX
-    LDA $0000,Y             ; $C20935  B9 00 00     MX
-    STA $0000,X             ; $C20938  9D 00 00     MX
-    STA $0004,X             ; $C2093B  9D 04 00     MX
-    LDA $0002,Y             ; $C2093E  B9 02 00     MX
-    STA $0002,X             ; $C20941  9D 02 00     MX
-    STA $0006,X             ; $C20944  9D 06 00     MX
-    STZ $002A,X             ; $C20947  9E 2A 00     MX
-    STZ $002C,X             ; $C2094A  9E 2C 00     MX
-    LDA $0045,X             ; $C2094D  BD 45 00     MX
-    ORA #$0040              ; $C20950  09 40 00     MX
-    STA $0045,X             ; $C20953  9D 45 00     MX
-    LDA #$03BE              ; $C20956  A9 BE 03     MX
-    STA $0026,X             ; $C20959  9D 26 00     MX
-    LDA #$00C0              ; $C2095C  A9 C0 00     MX
-    STA $0028,X             ; $C2095F  9D 28 00     MX
-    STZ $0022,X             ; $C20962  9E 22 00     MX
-    PHY                     ; $C20965  5A           MX
-    LDY #$078D              ; $C20966  A0 8D 07     MX
-    LDA $0000,Y             ; $C20969  B9 00 00     MX
-    STA $0061,X             ; $C2096C  9D 61 00     MX
-    LDA $0002,Y             ; $C2096F  B9 02 00     MX
-    STA $005F,X             ; $C20972  9D 5F 00     MX
-    PLY                     ; $C20975  7A           MX
-    LDA $0008,Y             ; $C20976  B9 08 00     MX
-    STA $0008,X             ; $C20979  9D 08 00     MX
-    LDA $005D,Y             ; $C2097C  B9 5D 00     MX
-    STA $005D,X             ; $C2097F  9D 5D 00     MX
-    SEP #$20                ; $C20982  E2 20        MX
-    LDA #$C1                ; $C20984  A9 C1        mX
-    STA $006B,X             ; $C20986  9D 6B 00     mX
-    STZ $0043,X             ; $C20989  9E 43 00     mX
-    LDA #$00                ; $C2098C  A9 00        mX
-    ORA #$02                ; $C2098E  09 02        mX
-    STA $0041,X             ; $C20990  9D 41 00     mX
-    LDA $0051,Y             ; $C20993  B9 51 00     mX
-    STA $0048,X             ; $C20996  9D 48 00     mX
-    LDA $0042,Y             ; $C20999  B9 42 00     mX
-    STA $0042,X             ; $C2099C  9D 42 00     mX
-    REP #$20                ; $C2099F  C2 20        mX
+    TAX                             ; $C20934  AA           MX
+    LDA $0000,Y                     ; $C20935  B9 00 00     MX
+    STA $0000,X                     ; $C20938  9D 00 00     MX
+    STA $0004,X                     ; $C2093B  9D 04 00     MX
+    LDA $0002,Y                     ; $C2093E  B9 02 00     MX
+    STA $0002,X                     ; $C20941  9D 02 00     MX
+    STA $0006,X                     ; $C20944  9D 06 00     MX
+    STZ $002A,X                     ; $C20947  9E 2A 00     MX
+    STZ $002C,X                     ; $C2094A  9E 2C 00     MX
+    LDA $0045,X                     ; $C2094D  BD 45 00     MX
+    ORA #$0040                      ; $C20950  09 40 00     MX
+    STA $0045,X                     ; $C20953  9D 45 00     MX
+    LDA #$03BE                      ; $C20956  A9 BE 03     MX
+    STA $0026,X                     ; $C20959  9D 26 00     MX
+    LDA #$00C0                      ; $C2095C  A9 C0 00     MX
+    STA $0028,X                     ; $C2095F  9D 28 00     MX
+    STZ $0022,X                     ; $C20962  9E 22 00     MX
+    PHY                             ; $C20965  5A           MX
+    LDY #$078D                      ; $C20966  A0 8D 07     MX
+    LDA $0000,Y                     ; $C20969  B9 00 00     MX
+    STA $0061,X                     ; $C2096C  9D 61 00     MX
+    LDA $0002,Y                     ; $C2096F  B9 02 00     MX
+    STA $005F,X                     ; $C20972  9D 5F 00     MX
+    PLY                             ; $C20975  7A           MX
+    LDA $0008,Y                     ; $C20976  B9 08 00     MX
+    STA $0008,X                     ; $C20979  9D 08 00     MX
+    LDA $005D,Y                     ; $C2097C  B9 5D 00     MX
+    STA $005D,X                     ; $C2097F  9D 5D 00     MX
+    SEP #$20                        ; $C20982  E2 20        MX
+    LDA #$C1                        ; $C20984  A9 C1        mX
+    STA $006B,X                     ; $C20986  9D 6B 00     mX
+    STZ $0043,X                     ; $C20989  9E 43 00     mX
+    LDA #$00                        ; $C2098C  A9 00        mX
+    ORA #$02                        ; $C2098E  09 02        mX
+    STA $0041,X                     ; $C20990  9D 41 00     mX
+    LDA $0051,Y                     ; $C20993  B9 51 00     mX
+    STA $0048,X                     ; $C20996  9D 48 00     mX
+    LDA $0042,Y                     ; $C20999  B9 42 00     mX
+    STA $0042,X                     ; $C2099C  9D 42 00     mX
+    REP #$20                        ; $C2099F  C2 20        mX
 L_C209A1:
-    RTL                     ; $C209A1  6B           MX
+    RTL                             ; $C209A1  6B           MX
 L_C209A2:
-    PHA                     ; $C209A2  48           MX
-    JSR L_C20ADE            ; $C209A3  20 DE 0A     MX
-    PLY                     ; $C209A6  7A           MX
-    JSR L_C20A47            ; $C209A7  20 47 0A     MX
-    JSR L_C20B2C            ; $C209AA  20 2C 0B     MX
-    JSR L_C20BC0            ; $C209AD  20 C0 0B     MX
-    JSR L_C20C87            ; $C209B0  20 87 0C     MX
-    JSL L_C0B23D            ; $C209B3  22 3D B2 C0  MX
-    SEP #$20                ; $C209B7  E2 20        MX
-    LDA #$02                ; $C209B9  A9 02        mX
-    STA $00420B             ; $C209BB  8F 0B 42 00  mX
-    REP #$20                ; $C209BF  C2 20        mX
-    LDA #$0000              ; $C209C1  A9 00 00     MX
-    BIT $08ED               ; $C209C4  2C ED 08     MX
-    BPL L_C209D0            ; $C209C7  10 07        MX
-    LDA $08ED               ; $C209C9  AD ED 08     MX
-    EOR #$FFFF              ; $C209CC  49 FF FF     MX
-    INC                     ; $C209CF  1A           MX
+    PHA                             ; $C209A2  48           MX
+    JSR L_C20ADE                    ; $C209A3  20 DE 0A     MX
+    PLY                             ; $C209A6  7A           MX
+    JSR L_C20A47                    ; $C209A7  20 47 0A     MX
+    JSR L_C20B2C                    ; $C209AA  20 2C 0B     MX
+    JSR L_C20BC0                    ; $C209AD  20 C0 0B     MX
+    JSR L_C20C87                    ; $C209B0  20 87 0C     MX
+    JSL L_C0B23D                    ; $C209B3  22 3D B2 C0  MX
+    SEP #$20                        ; $C209B7  E2 20        MX
+    LDA #$02                        ; $C209B9  A9 02        mX
+    STA $00420B                     ; $C209BB  8F 0B 42 00  mX
+    REP #$20                        ; $C209BF  C2 20        mX
+    LDA #$0000                      ; $C209C1  A9 00 00     MX
+    BIT $08ED                       ; $C209C4  2C ED 08     MX
+    BPL L_C209D0                    ; $C209C7  10 07        MX
+    LDA $08ED                       ; $C209C9  AD ED 08     MX
+    EOR #$FFFF                      ; $C209CC  49 FF FF     MX
+    INC                             ; $C209CF  1A           MX
 L_C209D0:
-    JSL L_C204CD            ; $C209D0  22 CD 04 C2  MX
+    JSL L_C204CD                    ; $C209D0  22 CD 04 C2  MX
 L_C209D4:
-    INC $089F               ; $C209D4  EE 9F 08     MX
-    LDA $089F               ; $C209D7  AD 9F 08     MX
-    BIT #$0007              ; $C209DA  89 07 00     MX
-    BNE L_C209E2            ; $C209DD  D0 03        MX
-    JSR L_C20C87            ; $C209DF  20 87 0C     MX
+    INC $089F                       ; $C209D4  EE 9F 08     MX
+    LDA $089F                       ; $C209D7  AD 9F 08     MX
+    BIT #$0007                      ; $C209DA  89 07 00     MX
+    BNE L_C209E2                    ; $C209DD  D0 03        MX
+    JSR L_C20C87                    ; $C209DF  20 87 0C     MX
 L_C209E2:
-    LDA $004212             ; $C209E2  AF 12 42 00  MX
-    BIT #$0001              ; $C209E6  89 01 00     MX
-    BEQ L_C209E2            ; $C209E9  F0 F7        MX
+    LDA $004212                     ; $C209E2  AF 12 42 00  MX
+    BIT #$0001                      ; $C209E6  89 01 00     MX
+    BEQ L_C209E2                    ; $C209E9  F0 F7        MX
 L_C209EB:
-    LDA $004212             ; $C209EB  AF 12 42 00  MX
-    BIT #$0001              ; $C209EF  89 01 00     MX
-    BNE L_C209EB            ; $C209F2  D0 F7        MX
-    JSL L_C0B23D            ; $C209F4  22 3D B2 C0  MX
-    SEP #$20                ; $C209F8  E2 20        MX
-    LDA #$02                ; $C209FA  A9 02        mX
-    STA $00420B             ; $C209FC  8F 0B 42 00  mX
-    LDA #$00                ; $C20A00  A9 00        mX
-    REP #$20                ; $C20A02  C2 20        mX
-    LDA $004218             ; $C20A04  AF 18 42 00  MX
-    ORA $00421A             ; $C20A08  0F 1A 42 00  MX
-    BIT #$D0C0              ; $C20A0C  89 C0 D0     MX
-    BEQ L_C209D4            ; $C20A0F  F0 C3        MX
+    LDA $004212                     ; $C209EB  AF 12 42 00  MX
+    BIT #$0001                      ; $C209EF  89 01 00     MX
+    BNE L_C209EB                    ; $C209F2  D0 F7        MX
+    JSL L_C0B23D                    ; $C209F4  22 3D B2 C0  MX
+    SEP #$20                        ; $C209F8  E2 20        MX
+    LDA #$02                        ; $C209FA  A9 02        mX
+    STA $00420B                     ; $C209FC  8F 0B 42 00  mX
+    LDA #$00                        ; $C20A00  A9 00        mX
+    REP #$20                        ; $C20A02  C2 20        mX
+    LDA $004218                     ; $C20A04  AF 18 42 00  MX
+    ORA $00421A                     ; $C20A08  0F 1A 42 00  MX
+    BIT #$D0C0                      ; $C20A0C  89 C0 D0     MX
+    BEQ L_C209D4                    ; $C20A0F  F0 C3        MX
 L_C20A11:
-    LDA $004212             ; $C20A11  AF 12 42 00  MX
-    BIT #$0001              ; $C20A15  89 01 00     MX
-    BEQ L_C20A11            ; $C20A18  F0 F7        MX
+    LDA $004212                     ; $C20A11  AF 12 42 00  MX
+    BIT #$0001                      ; $C20A15  89 01 00     MX
+    BEQ L_C20A11                    ; $C20A18  F0 F7        MX
 L_C20A1A:
-    LDA $004212             ; $C20A1A  AF 12 42 00  MX
-    BIT #$0001              ; $C20A1E  89 01 00     MX
-    BNE L_C20A1A            ; $C20A21  D0 F7        MX
-    LDA $004218             ; $C20A23  AF 18 42 00  MX
-    ORA $00421A             ; $C20A27  0F 1A 42 00  MX
-    BIT #$D0C0              ; $C20A2B  89 C0 D0     MX
-    BNE L_C20A11            ; $C20A2E  D0 E1        MX
-    LDA #$0000              ; $C20A30  A9 00 00     MX
-    BIT $08ED               ; $C20A33  2C ED 08     MX
-    BPL L_C20A3F            ; $C20A36  10 07        MX
-    LDA $08ED               ; $C20A38  AD ED 08     MX
-    EOR #$FFFF              ; $C20A3B  49 FF FF     MX
-    INC                     ; $C20A3E  1A           MX
+    LDA $004212                     ; $C20A1A  AF 12 42 00  MX
+    BIT #$0001                      ; $C20A1E  89 01 00     MX
+    BNE L_C20A1A                    ; $C20A21  D0 F7        MX
+    LDA $004218                     ; $C20A23  AF 18 42 00  MX
+    ORA $00421A                     ; $C20A27  0F 1A 42 00  MX
+    BIT #$D0C0                      ; $C20A2B  89 C0 D0     MX
+    BNE L_C20A11                    ; $C20A2E  D0 E1        MX
+    LDA #$0000                      ; $C20A30  A9 00 00     MX
+    BIT $08ED                       ; $C20A33  2C ED 08     MX
+    BPL L_C20A3F                    ; $C20A36  10 07        MX
+    LDA $08ED                       ; $C20A38  AD ED 08     MX
+    EOR #$FFFF                      ; $C20A3B  49 FF FF     MX
+    INC                             ; $C20A3E  1A           MX
 L_C20A3F:
-    JSL L_C2050A            ; $C20A3F  22 0A 05 C2  MX
-    JSR L_C20DF0            ; $C20A43  20 F0 0D     MX
-    RTL                     ; $C20A46  6B           MX
+    JSL L_C2050A                    ; $C20A3F  22 0A 05 C2  MX
+    JSR L_C20DF0                    ; $C20A43  20 F0 0D     MX
+    RTL                             ; $C20A46  6B           MX
 L_C20A47:
-    LDA #$0200              ; $C20A47  A9 00 02     MX
-    STA $08E1               ; $C20A4A  8D E1 08     MX
-    STA $08E3               ; $C20A4D  8D E3 08     MX
-    SEP #$20                ; $C20A50  E2 20        MX
-    STA $00211B             ; $C20A52  8F 1B 21 00  mX
-    STA $00211E             ; $C20A56  8F 1E 21 00  mX
-    XBA                     ; $C20A5A  EB           mX
-    STA $00211B             ; $C20A5B  8F 1B 21 00  mX
-    STA $00211E             ; $C20A5F  8F 1E 21 00  mX
-    REP #$20                ; $C20A63  C2 20        mX
-    LDA $076D               ; $C20A65  AD 6D 07     MX
-    SEC                     ; $C20A68  38           MX
-    SBC #$0040              ; $C20A69  E9 40 00     MX
-    BPL L_C20A71            ; $C20A6C  10 03        MX
-    ASL                     ; $C20A6E  0A           MX
-    BRA L_C20A90            ; $C20A6F  80 1F        MX
+    LDA #$0200                      ; $C20A47  A9 00 02     MX
+    STA $08E1                       ; $C20A4A  8D E1 08     MX
+    STA $08E3                       ; $C20A4D  8D E3 08     MX
+    SEP #$20                        ; $C20A50  E2 20        MX
+    STA $00211B                     ; $C20A52  8F 1B 21 00  mX
+    STA $00211E                     ; $C20A56  8F 1E 21 00  mX
+    XBA                             ; $C20A5A  EB           mX
+    STA $00211B                     ; $C20A5B  8F 1B 21 00  mX
+    STA $00211E                     ; $C20A5F  8F 1E 21 00  mX
+    REP #$20                        ; $C20A63  C2 20        mX
+    LDA $076D                       ; $C20A65  AD 6D 07     MX
+    SEC                             ; $C20A68  38           MX
+    SBC #$0040                      ; $C20A69  E9 40 00     MX
+    BPL L_C20A71                    ; $C20A6C  10 03        MX
+    ASL                             ; $C20A6E  0A           MX
+    BRA L_C20A90                    ; $C20A6F  80 1F        MX
 L_C20A71:
-    STA $08ED               ; $C20A71  8D ED 08     MX
-    LDA $0000,Y             ; $C20A74  B9 00 00     MX
-    LSR                     ; $C20A77  4A           MX
-    LSR                     ; $C20A78  4A           MX
-    LSR                     ; $C20A79  4A           MX
-    LSR                     ; $C20A7A  4A           MX
-    SEC                     ; $C20A7B  38           MX
-    SBC #$0020              ; $C20A7C  E9 20 00     MX
-    BPL L_C20A86            ; $C20A7F  10 05        MX
-    LDA #$0000              ; $C20A81  A9 00 00     MX
-    BRA L_C20A90            ; $C20A84  80 0A        MX
+    STA $08ED                       ; $C20A71  8D ED 08     MX
+    LDA $0000,Y                     ; $C20A74  B9 00 00     MX
+    LSR                             ; $C20A77  4A           MX
+    LSR                             ; $C20A78  4A           MX
+    LSR                             ; $C20A79  4A           MX
+    LSR                             ; $C20A7A  4A           MX
+    SEC                             ; $C20A7B  38           MX
+    SBC #$0020                      ; $C20A7C  E9 20 00     MX
+    BPL L_C20A86                    ; $C20A7F  10 05        MX
+    LDA #$0000                      ; $C20A81  A9 00 00     MX
+    BRA L_C20A90                    ; $C20A84  80 0A        MX
 L_C20A86:
-    CMP $08ED               ; $C20A86  CD ED 08     MX
-    BCC L_C20A8E            ; $C20A89  90 03        MX
-    LDA $08ED               ; $C20A8B  AD ED 08     MX
+    CMP $08ED                       ; $C20A86  CD ED 08     MX
+    BCC L_C20A8E                    ; $C20A89  90 03        MX
+    LDA $08ED                       ; $C20A8B  AD ED 08     MX
 L_C20A8E:
-    ASL                     ; $C20A8E  0A           MX
-    ASL                     ; $C20A8F  0A           MX
+    ASL                             ; $C20A8E  0A           MX
+    ASL                             ; $C20A8F  0A           MX
 L_C20A90:
-    STA $08ED               ; $C20A90  8D ED 08     MX
-    LDA $076F               ; $C20A93  AD 6F 07     MX
-    SEC                     ; $C20A96  38           MX
-    SBC #$0038              ; $C20A97  E9 38 00     MX
-    BPL L_C20A9F            ; $C20A9A  10 03        MX
-    ASL                     ; $C20A9C  0A           MX
-    BRA L_C20ABE            ; $C20A9D  80 1F        MX
+    STA $08ED                       ; $C20A90  8D ED 08     MX
+    LDA $076F                       ; $C20A93  AD 6F 07     MX
+    SEC                             ; $C20A96  38           MX
+    SBC #$0038                      ; $C20A97  E9 38 00     MX
+    BPL L_C20A9F                    ; $C20A9A  10 03        MX
+    ASL                             ; $C20A9C  0A           MX
+    BRA L_C20ABE                    ; $C20A9D  80 1F        MX
 L_C20A9F:
-    STA $08EF               ; $C20A9F  8D EF 08     MX
-    LDA $0002,Y             ; $C20AA2  B9 02 00     MX
-    LSR                     ; $C20AA5  4A           MX
-    LSR                     ; $C20AA6  4A           MX
-    LSR                     ; $C20AA7  4A           MX
-    LSR                     ; $C20AA8  4A           MX
-    SEC                     ; $C20AA9  38           MX
-    SBC #$001C              ; $C20AAA  E9 1C 00     MX
-    BPL L_C20AB4            ; $C20AAD  10 05        MX
-    LDA #$0000              ; $C20AAF  A9 00 00     MX
-    BRA L_C20ABE            ; $C20AB2  80 0A        MX
+    STA $08EF                       ; $C20A9F  8D EF 08     MX
+    LDA $0002,Y                     ; $C20AA2  B9 02 00     MX
+    LSR                             ; $C20AA5  4A           MX
+    LSR                             ; $C20AA6  4A           MX
+    LSR                             ; $C20AA7  4A           MX
+    LSR                             ; $C20AA8  4A           MX
+    SEC                             ; $C20AA9  38           MX
+    SBC #$001C                      ; $C20AAA  E9 1C 00     MX
+    BPL L_C20AB4                    ; $C20AAD  10 05        MX
+    LDA #$0000                      ; $C20AAF  A9 00 00     MX
+    BRA L_C20ABE                    ; $C20AB2  80 0A        MX
 L_C20AB4:
-    CMP $08EF               ; $C20AB4  CD EF 08     MX
-    BCC L_C20ABC            ; $C20AB7  90 03        MX
-    LDA $08EF               ; $C20AB9  AD EF 08     MX
+    CMP $08EF                       ; $C20AB4  CD EF 08     MX
+    BCC L_C20ABC                    ; $C20AB7  90 03        MX
+    LDA $08EF                       ; $C20AB9  AD EF 08     MX
 L_C20ABC:
-    ASL                     ; $C20ABC  0A           MX
-    ASL                     ; $C20ABD  0A           MX
+    ASL                             ; $C20ABC  0A           MX
+    ASL                             ; $C20ABD  0A           MX
 L_C20ABE:
-    STA $08EF               ; $C20ABE  8D EF 08     MX
-    LDA $076D               ; $C20AC1  AD 6D 07     MX
-    CMP #$0040              ; $C20AC4  C9 40 00     MX
-    BCC L_C20ACC            ; $C20AC7  90 03        MX
-    LDA #$0040              ; $C20AC9  A9 40 00     MX
+    STA $08EF                       ; $C20ABE  8D EF 08     MX
+    LDA $076D                       ; $C20AC1  AD 6D 07     MX
+    CMP #$0040                      ; $C20AC4  C9 40 00     MX
+    BCC L_C20ACC                    ; $C20AC7  90 03        MX
+    LDA #$0040                      ; $C20AC9  A9 40 00     MX
 L_C20ACC:
-    STA $08E5               ; $C20ACC  8D E5 08     MX
-    LDA $076F               ; $C20ACF  AD 6F 07     MX
-    CMP #$0038              ; $C20AD2  C9 38 00     MX
-    BCC L_C20ADA            ; $C20AD5  90 03        MX
-    LDA #$0038              ; $C20AD7  A9 38 00     MX
+    STA $08E5                       ; $C20ACC  8D E5 08     MX
+    LDA $076F                       ; $C20ACF  AD 6F 07     MX
+    CMP #$0038                      ; $C20AD2  C9 38 00     MX
+    BCC L_C20ADA                    ; $C20AD5  90 03        MX
+    LDA #$0038                      ; $C20AD7  A9 38 00     MX
 L_C20ADA:
-    STA $08E7               ; $C20ADA  8D E7 08     MX
-    RTS                     ; $C20ADD  60           MX
+    STA $08E7                       ; $C20ADA  8D E7 08     MX
+    RTS                             ; $C20ADD  60           MX
 L_C20ADE:
-    PHB                     ; $C20ADE  8B           MX
-    PEA $0000               ; $C20ADF  F4 00 00     MX
-    PLB                     ; $C20AE2  AB           MX
-    SEP #$20                ; $C20AE3  E2 20        MX
-    STZ $420C               ; $C20AE5  9C 0C 42     mX
-    STZ $210D               ; $C20AE8  9C 0D 21     mX
-    STZ $210D               ; $C20AEB  9C 0D 21     mX
-    STZ $210E               ; $C20AEE  9C 0E 21     mX
-    STZ $210E               ; $C20AF1  9C 0E 21     mX
-    LDA #$80                ; $C20AF4  A9 80        mX
-    STA $211A               ; $C20AF6  8D 1A 21     mX
-    LDA #$07                ; $C20AF9  A9 07        mX
-    STA $2105               ; $C20AFB  8D 05 21     mX
-    LDA #$11                ; $C20AFE  A9 11        mX
-    STA $212C               ; $C20B00  8D 2C 21     mX
-    STZ $211C               ; $C20B03  9C 1C 21     mX
-    STZ $211C               ; $C20B06  9C 1C 21     mX
-    STZ $211D               ; $C20B09  9C 1D 21     mX
-    STZ $211D               ; $C20B0C  9C 1D 21     mX
-    STZ $211F               ; $C20B0F  9C 1F 21     mX
-    STZ $211F               ; $C20B12  9C 1F 21     mX
-    STZ $2120               ; $C20B15  9C 20 21     mX
-    STZ $2120               ; $C20B18  9C 20 21     mX
-    REP #$20                ; $C20B1B  C2 20        mX
-    STZ $2116               ; $C20B1D  9C 16 21     MX
-    LDX #$4000              ; $C20B20  A2 00 40     MX
+    PHB                             ; $C20ADE  8B           MX
+    PEA $0000                       ; $C20ADF  F4 00 00     MX
+    PLB                             ; $C20AE2  AB           MX
+    SEP #$20                        ; $C20AE3  E2 20        MX
+    STZ $420C                       ; $C20AE5  9C 0C 42     mX
+    STZ $210D                       ; $C20AE8  9C 0D 21     mX
+    STZ $210D                       ; $C20AEB  9C 0D 21     mX
+    STZ $210E                       ; $C20AEE  9C 0E 21     mX
+    STZ $210E                       ; $C20AF1  9C 0E 21     mX
+    LDA #$80                        ; $C20AF4  A9 80        mX
+    STA $211A                       ; $C20AF6  8D 1A 21     mX
+    LDA #$07                        ; $C20AF9  A9 07        mX
+    STA $2105                       ; $C20AFB  8D 05 21     mX
+    LDA #$11                        ; $C20AFE  A9 11        mX
+    STA $212C                       ; $C20B00  8D 2C 21     mX
+    STZ $211C                       ; $C20B03  9C 1C 21     mX
+    STZ $211C                       ; $C20B06  9C 1C 21     mX
+    STZ $211D                       ; $C20B09  9C 1D 21     mX
+    STZ $211D                       ; $C20B0C  9C 1D 21     mX
+    STZ $211F                       ; $C20B0F  9C 1F 21     mX
+    STZ $211F                       ; $C20B12  9C 1F 21     mX
+    STZ $2120                       ; $C20B15  9C 20 21     mX
+    STZ $2120                       ; $C20B18  9C 20 21     mX
+    REP #$20                        ; $C20B1B  C2 20        mX
+    STZ $2116                       ; $C20B1D  9C 16 21     MX
+    LDX #$4000                      ; $C20B20  A2 00 40     MX
 L_C20B23:
-    STZ $2118               ; $C20B23  9C 18 21     MX
-    DEX                     ; $C20B26  CA           MX
-    BNE L_C20B23            ; $C20B27  D0 FA        MX
-    PLB                     ; $C20B29  AB           MX
-    PLB                     ; $C20B2A  AB           MX
-    RTS                     ; $C20B2B  60           MX
+    STZ $2118                       ; $C20B23  9C 18 21     MX
+    DEX                             ; $C20B26  CA           MX
+    BNE L_C20B23                    ; $C20B27  D0 FA        MX
+    PLB                             ; $C20B29  AB           MX
+    PLB                             ; $C20B2A  AB           MX
+    RTS                             ; $C20B2B  60           MX
 L_C20B2C:
-    LDA #$0000              ; $C20B2C  A9 00 00     MX
-    BIT $08ED               ; $C20B2F  2C ED 08     MX
-    BPL L_C20B3D            ; $C20B32  10 09        MX
-    LDA $08ED               ; $C20B34  AD ED 08     MX
-    EOR #$FFFF              ; $C20B37  49 FF FF     MX
-    INC                     ; $C20B3A  1A           MX
-    LSR                     ; $C20B3B  4A           MX
-    LSR                     ; $C20B3C  4A           MX
+    LDA #$0000                      ; $C20B2C  A9 00 00     MX
+    BIT $08ED                       ; $C20B2F  2C ED 08     MX
+    BPL L_C20B3D                    ; $C20B32  10 09        MX
+    LDA $08ED                       ; $C20B34  AD ED 08     MX
+    EOR #$FFFF                      ; $C20B37  49 FF FF     MX
+    INC                             ; $C20B3A  1A           MX
+    LSR                             ; $C20B3B  4A           MX
+    LSR                             ; $C20B3C  4A           MX
 L_C20B3D:
-    STA $002116             ; $C20B3D  8F 16 21 00  MX
-    SEP #$20                ; $C20B41  E2 20        MX
-    LDA #$00                ; $C20B43  A9 00        mX
-    STA $002115             ; $C20B45  8F 15 21 00  mX
-    LDA $076D               ; $C20B49  AD 6D 07     mX
-    STA $004202             ; $C20B4C  8F 02 42 00  mX
-    REP #$20                ; $C20B50  C2 20        mX
-    LDA $08EF               ; $C20B52  AD EF 08     MX
-    LSR                     ; $C20B55  4A           MX
-    LSR                     ; $C20B56  4A           MX
-    SEP #$20                ; $C20B57  E2 20        MX
-    STA $004203             ; $C20B59  8F 03 42 00  mX
-    REP #$20                ; $C20B5D  C2 20        mX
-    LDA $08ED               ; $C20B5F  AD ED 08     MX
-    BPL L_C20B67            ; $C20B62  10 03        MX
-    LDA #$0000              ; $C20B64  A9 00 00     MX
+    STA $002116                     ; $C20B3D  8F 16 21 00  MX
+    SEP #$20                        ; $C20B41  E2 20        MX
+    LDA #$00                        ; $C20B43  A9 00        mX
+    STA $002115                     ; $C20B45  8F 15 21 00  mX
+    LDA $076D                       ; $C20B49  AD 6D 07     mX
+    STA $004202                     ; $C20B4C  8F 02 42 00  mX
+    REP #$20                        ; $C20B50  C2 20        mX
+    LDA $08EF                       ; $C20B52  AD EF 08     MX
+    LSR                             ; $C20B55  4A           MX
+    LSR                             ; $C20B56  4A           MX
+    SEP #$20                        ; $C20B57  E2 20        MX
+    STA $004203                     ; $C20B59  8F 03 42 00  mX
+    REP #$20                        ; $C20B5D  C2 20        mX
+    LDA $08ED                       ; $C20B5F  AD ED 08     MX
+    BPL L_C20B67                    ; $C20B62  10 03        MX
+    LDA #$0000                      ; $C20B64  A9 00 00     MX
 L_C20B67:
-    LSR                     ; $C20B67  4A           MX
-    LSR                     ; $C20B68  4A           MX
-    CLC                     ; $C20B69  18           MX
-    ADC $004216             ; $C20B6A  6F 16 42 00  MX
-    ASL                     ; $C20B6E  0A           MX
-    CLC                     ; $C20B6F  18           MX
-    ADC $076B               ; $C20B70  6D 6B 07     MX
-    TAX                     ; $C20B73  AA           MX
-    LDY $08E7               ; $C20B74  AC E7 08     MX
+    LSR                             ; $C20B67  4A           MX
+    LSR                             ; $C20B68  4A           MX
+    CLC                             ; $C20B69  18           MX
+    ADC $004216                     ; $C20B6A  6F 16 42 00  MX
+    ASL                             ; $C20B6E  0A           MX
+    CLC                             ; $C20B6F  18           MX
+    ADC $076B                       ; $C20B70  6D 6B 07     MX
+    TAX                             ; $C20B73  AA           MX
+    LDY $08E7                       ; $C20B74  AC E7 08     MX
 L_C20B77:
-    PHX                     ; $C20B77  DA           MX
-    PHY                     ; $C20B78  5A           MX
-    LDY $08E5               ; $C20B79  AC E5 08     MX
+    PHX                             ; $C20B77  DA           MX
+    PHY                             ; $C20B78  5A           MX
+    LDY $08E5                       ; $C20B79  AC E5 08     MX
 L_C20B7C:
-    LDA $68E0,X             ; $C20B7C  BD E0 68     MX
-    AND #$0007              ; $C20B7F  29 07 00     MX
-    PHA                     ; $C20B82  48           MX
-    LDA $68E0,X             ; $C20B83  BD E0 68     MX
-    AND #$01F0              ; $C20B86  29 F0 01     MX
-    LSR                     ; $C20B89  4A           MX
-    ORA $01,S               ; $C20B8A  03 01        MX
-    STA $01,S               ; $C20B8C  83 01        MX
-    PLA                     ; $C20B8E  68           MX
-    SEP #$20                ; $C20B8F  E2 20        MX
-    STA $002118             ; $C20B91  8F 18 21 00  mX
-    REP #$20                ; $C20B95  C2 20        mX
-    INX                     ; $C20B97  E8           MX
-    INX                     ; $C20B98  E8           MX
-    DEY                     ; $C20B99  88           MX
-    BNE L_C20B7C            ; $C20B9A  D0 E0        MX
-    LDA #$0080              ; $C20B9C  A9 80 00     MX
-    SEC                     ; $C20B9F  38           MX
-    SBC $08E5               ; $C20BA0  ED E5 08     MX
-    BEQ L_C20BB5            ; $C20BA3  F0 10        MX
-    BMI L_C20BB5            ; $C20BA5  30 0E        MX
-    TAY                     ; $C20BA7  A8           MX
-    SEP #$20                ; $C20BA8  E2 20        MX
-    LDA #$00                ; $C20BAA  A9 00        mX
+    LDA $68E0,X                     ; $C20B7C  BD E0 68     MX
+    AND #$0007                      ; $C20B7F  29 07 00     MX
+    PHA                             ; $C20B82  48           MX
+    LDA $68E0,X                     ; $C20B83  BD E0 68     MX
+    AND #$01F0                      ; $C20B86  29 F0 01     MX
+    LSR                             ; $C20B89  4A           MX
+    ORA $01,S                       ; $C20B8A  03 01        MX
+    STA $01,S                       ; $C20B8C  83 01        MX
+    PLA                             ; $C20B8E  68           MX
+    SEP #$20                        ; $C20B8F  E2 20        MX
+    STA $002118                     ; $C20B91  8F 18 21 00  mX
+    REP #$20                        ; $C20B95  C2 20        mX
+    INX                             ; $C20B97  E8           MX
+    INX                             ; $C20B98  E8           MX
+    DEY                             ; $C20B99  88           MX
+    BNE L_C20B7C                    ; $C20B9A  D0 E0        MX
+    LDA #$0080                      ; $C20B9C  A9 80 00     MX
+    SEC                             ; $C20B9F  38           MX
+    SBC $08E5                       ; $C20BA0  ED E5 08     MX
+    BEQ L_C20BB5                    ; $C20BA3  F0 10        MX
+    BMI L_C20BB5                    ; $C20BA5  30 0E        MX
+    TAY                             ; $C20BA7  A8           MX
+    SEP #$20                        ; $C20BA8  E2 20        MX
+    LDA #$00                        ; $C20BAA  A9 00        mX
 L_C20BAC:
-    STA $002118             ; $C20BAC  8F 18 21 00  mX
-    DEY                     ; $C20BB0  88           mX
-    BNE L_C20BAC            ; $C20BB1  D0 F9        mX
-    REP #$20                ; $C20BB3  C2 20        mX
+    STA $002118                     ; $C20BAC  8F 18 21 00  mX
+    DEY                             ; $C20BB0  88           mX
+    BNE L_C20BAC                    ; $C20BB1  D0 F9        mX
+    REP #$20                        ; $C20BB3  C2 20        mX
 L_C20BB5:
-    PLY                     ; $C20BB5  7A           MX
-    PLA                     ; $C20BB6  68           MX
-    CLC                     ; $C20BB7  18           MX
-    ADC $0773               ; $C20BB8  6D 73 07     MX
-    TAX                     ; $C20BBB  AA           MX
-    DEY                     ; $C20BBC  88           MX
-    BNE L_C20B77            ; $C20BBD  D0 B8        MX
-    RTS                     ; $C20BBF  60           MX
+    PLY                             ; $C20BB5  7A           MX
+    PLA                             ; $C20BB6  68           MX
+    CLC                             ; $C20BB7  18           MX
+    ADC $0773                       ; $C20BB8  6D 73 07     MX
+    TAX                             ; $C20BBB  AA           MX
+    DEY                             ; $C20BBC  88           MX
+    BNE L_C20B77                    ; $C20BBD  D0 B8        MX
+    RTS                             ; $C20BBF  60           MX
 L_C20BC0:
-    PHB                     ; $C20BC0  8B           MX
-    PEA $007F               ; $C20BC1  F4 7F 00     MX
-    PLB                     ; $C20BC4  AB           MX
-    LDA #$0000              ; $C20BC5  A9 00 00     MX
-    STA $002116             ; $C20BC8  8F 16 21 00  MX
-    SEP #$20                ; $C20BCC  E2 20        MX
-    LDA #$80                ; $C20BCE  A9 80        mX
-    STA $002115             ; $C20BD0  8F 15 21 00  mX
-    REP #$20                ; $C20BD4  C2 20        mX
-    LDX #$0000              ; $C20BD6  A2 00 00     MX
+    PHB                             ; $C20BC0  8B           MX
+    PEA $007F                       ; $C20BC1  F4 7F 00     MX
+    PLB                             ; $C20BC4  AB           MX
+    LDA #$0000                      ; $C20BC5  A9 00 00     MX
+    STA $002116                     ; $C20BC8  8F 16 21 00  MX
+    SEP #$20                        ; $C20BCC  E2 20        MX
+    LDA #$80                        ; $C20BCE  A9 80        mX
+    STA $002115                     ; $C20BD0  8F 15 21 00  mX
+    REP #$20                        ; $C20BD4  C2 20        mX
+    LDX #$0000                      ; $C20BD6  A2 00 00     MX
 L_C20BD9:
-    JSR L_C20BEA            ; $C20BD9  20 EA 0B     MX
-    TXA                     ; $C20BDC  8A           MX
-    CLC                     ; $C20BDD  18           MX
-    ADC #$0080              ; $C20BDE  69 80 00     MX
-    TAX                     ; $C20BE1  AA           MX
-    CPX #$8000              ; $C20BE2  E0 00 80     MX
-    BCC L_C20BD9            ; $C20BE5  90 F2        MX
-    PLB                     ; $C20BE7  AB           MX
-    PLB                     ; $C20BE8  AB           MX
-    RTS                     ; $C20BE9  60           MX
+    JSR L_C20BEA                    ; $C20BD9  20 EA 0B     MX
+    TXA                             ; $C20BDC  8A           MX
+    CLC                             ; $C20BDD  18           MX
+    ADC #$0080                      ; $C20BDE  69 80 00     MX
+    TAX                             ; $C20BE1  AA           MX
+    CPX #$8000                      ; $C20BE2  E0 00 80     MX
+    BCC L_C20BD9                    ; $C20BE5  90 F2        MX
+    PLB                             ; $C20BE7  AB           MX
+    PLB                             ; $C20BE8  AB           MX
+    RTS                             ; $C20BE9  60           MX
 L_C20BEA:
-    PHX                     ; $C20BEA  DA           MX
-    JSR L_C20C23            ; $C20BEB  20 23 0C     MX
-    INX                     ; $C20BEE  E8           MX
-    INX                     ; $C20BEF  E8           MX
-    INX                     ; $C20BF0  E8           MX
-    INX                     ; $C20BF1  E8           MX
-    JSR L_C20C23            ; $C20BF2  20 23 0C     MX
-    INX                     ; $C20BF5  E8           MX
-    INX                     ; $C20BF6  E8           MX
-    INX                     ; $C20BF7  E8           MX
-    INX                     ; $C20BF8  E8           MX
-    JSR L_C20C23            ; $C20BF9  20 23 0C     MX
-    INX                     ; $C20BFC  E8           MX
-    INX                     ; $C20BFD  E8           MX
-    INX                     ; $C20BFE  E8           MX
-    INX                     ; $C20BFF  E8           MX
-    JSR L_C20C23            ; $C20C00  20 23 0C     MX
-    TXA                     ; $C20C03  8A           MX
-    CLC                     ; $C20C04  18           MX
-    ADC #$0034              ; $C20C05  69 34 00     MX
-    TAX                     ; $C20C08  AA           MX
-    JSR L_C20C23            ; $C20C09  20 23 0C     MX
-    INX                     ; $C20C0C  E8           MX
-    INX                     ; $C20C0D  E8           MX
-    INX                     ; $C20C0E  E8           MX
-    INX                     ; $C20C0F  E8           MX
-    JSR L_C20C23            ; $C20C10  20 23 0C     MX
-    INX                     ; $C20C13  E8           MX
-    INX                     ; $C20C14  E8           MX
-    INX                     ; $C20C15  E8           MX
-    INX                     ; $C20C16  E8           MX
-    JSR L_C20C23            ; $C20C17  20 23 0C     MX
-    INX                     ; $C20C1A  E8           MX
-    INX                     ; $C20C1B  E8           MX
-    INX                     ; $C20C1C  E8           MX
-    INX                     ; $C20C1D  E8           MX
-    JSR L_C20C23            ; $C20C1E  20 23 0C     MX
-    PLX                     ; $C20C21  FA           MX
-    RTS                     ; $C20C22  60           MX
+    PHX                             ; $C20BEA  DA           MX
+    JSR L_C20C23                    ; $C20BEB  20 23 0C     MX
+    INX                             ; $C20BEE  E8           MX
+    INX                             ; $C20BEF  E8           MX
+    INX                             ; $C20BF0  E8           MX
+    INX                             ; $C20BF1  E8           MX
+    JSR L_C20C23                    ; $C20BF2  20 23 0C     MX
+    INX                             ; $C20BF5  E8           MX
+    INX                             ; $C20BF6  E8           MX
+    INX                             ; $C20BF7  E8           MX
+    INX                             ; $C20BF8  E8           MX
+    JSR L_C20C23                    ; $C20BF9  20 23 0C     MX
+    INX                             ; $C20BFC  E8           MX
+    INX                             ; $C20BFD  E8           MX
+    INX                             ; $C20BFE  E8           MX
+    INX                             ; $C20BFF  E8           MX
+    JSR L_C20C23                    ; $C20C00  20 23 0C     MX
+    TXA                             ; $C20C03  8A           MX
+    CLC                             ; $C20C04  18           MX
+    ADC #$0034                      ; $C20C05  69 34 00     MX
+    TAX                             ; $C20C08  AA           MX
+    JSR L_C20C23                    ; $C20C09  20 23 0C     MX
+    INX                             ; $C20C0C  E8           MX
+    INX                             ; $C20C0D  E8           MX
+    INX                             ; $C20C0E  E8           MX
+    INX                             ; $C20C0F  E8           MX
+    JSR L_C20C23                    ; $C20C10  20 23 0C     MX
+    INX                             ; $C20C13  E8           MX
+    INX                             ; $C20C14  E8           MX
+    INX                             ; $C20C15  E8           MX
+    INX                             ; $C20C16  E8           MX
+    JSR L_C20C23                    ; $C20C17  20 23 0C     MX
+    INX                             ; $C20C1A  E8           MX
+    INX                             ; $C20C1B  E8           MX
+    INX                             ; $C20C1C  E8           MX
+    INX                             ; $C20C1D  E8           MX
+    JSR L_C20C23                    ; $C20C1E  20 23 0C     MX
+    PLX                             ; $C20C21  FA           MX
+    RTS                             ; $C20C22  60           MX
 L_C20C23:
-    PHX                     ; $C20C23  DA           MX
-    JSR L_C20C32            ; $C20C24  20 32 0C     MX
-    TXA                     ; $C20C27  8A           MX
-    CLC                     ; $C20C28  18           MX
-    ADC #$0020              ; $C20C29  69 20 00     MX
-    TAX                     ; $C20C2C  AA           MX
-    JSR L_C20C32            ; $C20C2D  20 32 0C     MX
-    PLX                     ; $C20C30  FA           MX
-    RTS                     ; $C20C31  60           MX
+    PHX                             ; $C20C23  DA           MX
+    JSR L_C20C32                    ; $C20C24  20 32 0C     MX
+    TXA                             ; $C20C27  8A           MX
+    CLC                             ; $C20C28  18           MX
+    ADC #$0020                      ; $C20C29  69 20 00     MX
+    TAX                             ; $C20C2C  AA           MX
+    JSR L_C20C32                    ; $C20C2D  20 32 0C     MX
+    PLX                             ; $C20C30  FA           MX
+    RTS                             ; $C20C31  60           MX
 L_C20C32:
-    SEP #$20                ; $C20C32  E2 20        MX
-    LDA #$80                ; $C20C34  A9 80        mX
-    JSR L_C20C63            ; $C20C36  20 63 0C     mX
-    LDA $46                 ; $C20C39  A5 46        mX
-    STA $002119             ; $C20C3B  8F 19 21 00  mX
-    LDA #$20                ; $C20C3F  A9 20        mX
-    JSR L_C20C63            ; $C20C41  20 63 0C     mX
-    LDA $46                 ; $C20C44  A5 46        mX
-    STA $002119             ; $C20C46  8F 19 21 00  mX
-    LDA #$08                ; $C20C4A  A9 08        mX
-    JSR L_C20C63            ; $C20C4C  20 63 0C     mX
-    LDA $46                 ; $C20C4F  A5 46        mX
-    STA $002119             ; $C20C51  8F 19 21 00  mX
-    LDA #$02                ; $C20C55  A9 02        mX
-    JSR L_C20C63            ; $C20C57  20 63 0C     mX
-    LDA $46                 ; $C20C5A  A5 46        mX
-    STA $002119             ; $C20C5C  8F 19 21 00  mX
-    REP #$20                ; $C20C60  C2 20        mX
-    RTS                     ; $C20C62  60           MX
+    SEP #$20                        ; $C20C32  E2 20        MX
+    LDA #$80                        ; $C20C34  A9 80        mX
+    JSR L_C20C63                    ; $C20C36  20 63 0C     mX
+    LDA $46                         ; $C20C39  A5 46        mX
+    STA $002119                     ; $C20C3B  8F 19 21 00  mX
+    LDA #$20                        ; $C20C3F  A9 20        mX
+    JSR L_C20C63                    ; $C20C41  20 63 0C     mX
+    LDA $46                         ; $C20C44  A5 46        mX
+    STA $002119                     ; $C20C46  8F 19 21 00  mX
+    LDA #$08                        ; $C20C4A  A9 08        mX
+    JSR L_C20C63                    ; $C20C4C  20 63 0C     mX
+    LDA $46                         ; $C20C4F  A5 46        mX
+    STA $002119                     ; $C20C51  8F 19 21 00  mX
+    LDA #$02                        ; $C20C55  A9 02        mX
+    JSR L_C20C63                    ; $C20C57  20 63 0C     mX
+    LDA $46                         ; $C20C5A  A5 46        mX
+    STA $002119                     ; $C20C5C  8F 19 21 00  mX
+    REP #$20                        ; $C20C60  C2 20        mX
+    RTS                             ; $C20C62  60           MX
 L_C20C63:
-    STZ $46                 ; $C20C63  64 46        mX
-    CLC                     ; $C20C65  18           mX
-    BIT $0011,X             ; $C20C66  3C 11 00     mX
-    BEQ L_C20C6C            ; $C20C69  F0 01        mX
-    SEC                     ; $C20C6B  38           mX
+    STZ $46                         ; $C20C63  64 46        mX
+    CLC                             ; $C20C65  18           mX
+    BIT $0011,X                     ; $C20C66  3C 11 00     mX
+    BEQ L_C20C6C                    ; $C20C69  F0 01        mX
+    SEC                             ; $C20C6B  38           mX
 L_C20C6C:
-    ROL $46                 ; $C20C6C  26 46        mX
-    BIT $0010,X             ; $C20C6E  3C 10 00     mX
-    BEQ L_C20C74            ; $C20C71  F0 01        mX
-    SEC                     ; $C20C73  38           mX
+    ROL $46                         ; $C20C6C  26 46        mX
+    BIT $0010,X                     ; $C20C6E  3C 10 00     mX
+    BEQ L_C20C74                    ; $C20C71  F0 01        mX
+    SEC                             ; $C20C73  38           mX
 L_C20C74:
-    ROL $46                 ; $C20C74  26 46        mX
-    BIT $0001,X             ; $C20C76  3C 01 00     mX
-    BEQ L_C20C7C            ; $C20C79  F0 01        mX
-    SEC                     ; $C20C7B  38           mX
+    ROL $46                         ; $C20C74  26 46        mX
+    BIT $0001,X                     ; $C20C76  3C 01 00     mX
+    BEQ L_C20C7C                    ; $C20C79  F0 01        mX
+    SEC                             ; $C20C7B  38           mX
 L_C20C7C:
-    ROL $46                 ; $C20C7C  26 46        mX
-    BIT $0000,X             ; $C20C7E  3C 00 00     mX
-    BEQ L_C20C84            ; $C20C81  F0 01        mX
-    SEC                     ; $C20C83  38           mX
+    ROL $46                         ; $C20C7C  26 46        mX
+    BIT $0000,X                     ; $C20C7E  3C 00 00     mX
+    BEQ L_C20C84                    ; $C20C81  F0 01        mX
+    SEC                             ; $C20C83  38           mX
 L_C20C84:
-    ROL $46                 ; $C20C84  26 46        mX
-    RTS                     ; $C20C86  60           mX
+    ROL $46                         ; $C20C84  26 46        mX
+    RTS                             ; $C20C86  60           mX
 L_C20C87:
-    LDA #$01FC              ; $C20C87  A9 FC 01     MX
-    STA $18FE               ; $C20C8A  8D FE 18     MX
-    LDA $089F               ; $C20C8D  AD 9F 08     MX
-    LSR                     ; $C20C90  4A           MX
-    LSR                     ; $C20C91  4A           MX
-    LSR                     ; $C20C92  4A           MX
-    AND #$0001              ; $C20C93  29 01 00     MX
-    CLC                     ; $C20C96  18           MX
-    ADC #$0048              ; $C20C97  69 48 00     MX
-    STA $46                 ; $C20C9A  85 46        MX
-    LDY #$40A8              ; $C20C9C  A0 A8 40     MX
-    JSR L_C20DA9            ; $C20C9F  20 A9 0D     MX
-    LDY #$411D              ; $C20CA2  A0 1D 41     MX
-    JSR L_C20DA9            ; $C20CA5  20 A9 0D     MX
-    LDA $089F               ; $C20CA8  AD 9F 08     MX
-    LSR                     ; $C20CAB  4A           MX
-    LSR                     ; $C20CAC  4A           MX
-    LSR                     ; $C20CAD  4A           MX
-    AND #$0001              ; $C20CAE  29 01 00     MX
-    CLC                     ; $C20CB1  18           MX
-    ADC #$004A              ; $C20CB2  69 4A 00     MX
-    STA $46                 ; $C20CB5  85 46        MX
-    LDA $08C7               ; $C20CB7  AD C7 08     MX
-    CMP #$000F              ; $C20CBA  C9 0F 00     MX
-    BNE L_C20D0B            ; $C20CBD  D0 4C        MX
-    LDY $097C               ; $C20CBF  AC 7C 09     MX
-    LDX $68E0,Y             ; $C20CC2  BE E0 68     MX
-    BNE L_C20CCA            ; $C20CC5  D0 03        MX
-    JMP L_C20D8E            ; $C20CC7  4C 8E 0D     MX
+    LDA #$01FC                      ; $C20C87  A9 FC 01     MX
+    STA $18FE                       ; $C20C8A  8D FE 18     MX
+    LDA $089F                       ; $C20C8D  AD 9F 08     MX
+    LSR                             ; $C20C90  4A           MX
+    LSR                             ; $C20C91  4A           MX
+    LSR                             ; $C20C92  4A           MX
+    AND #$0001                      ; $C20C93  29 01 00     MX
+    CLC                             ; $C20C96  18           MX
+    ADC #$0048                      ; $C20C97  69 48 00     MX
+    STA $46                         ; $C20C9A  85 46        MX
+    LDY #$40A8                      ; $C20C9C  A0 A8 40     MX
+    JSR L_C20DA9                    ; $C20C9F  20 A9 0D     MX
+    LDY #$411D                      ; $C20CA2  A0 1D 41     MX
+    JSR L_C20DA9                    ; $C20CA5  20 A9 0D     MX
+    LDA $089F                       ; $C20CA8  AD 9F 08     MX
+    LSR                             ; $C20CAB  4A           MX
+    LSR                             ; $C20CAC  4A           MX
+    LSR                             ; $C20CAD  4A           MX
+    AND #$0001                      ; $C20CAE  29 01 00     MX
+    CLC                             ; $C20CB1  18           MX
+    ADC #$004A                      ; $C20CB2  69 4A 00     MX
+    STA $46                         ; $C20CB5  85 46        MX
+    LDA $08C7                       ; $C20CB7  AD C7 08     MX
+    CMP #$000F                      ; $C20CBA  C9 0F 00     MX
+    BNE L_C20D0B                    ; $C20CBD  D0 4C        MX
+    LDY $097C                       ; $C20CBF  AC 7C 09     MX
+    LDX $68E0,Y                     ; $C20CC2  BE E0 68     MX
+    BNE L_C20CCA                    ; $C20CC5  D0 03        MX
+    JMP L_C20D8E                    ; $C20CC7  4C 8E 0D     MX
 L_C20CCA:
-    INY                     ; $C20CCA  C8           MX
-    INY                     ; $C20CCB  C8           MX
-    LDA $68E0,Y             ; $C20CCC  B9 E0 68     MX
-    PHA                     ; $C20CCF  48           MX
-    INY                     ; $C20CD0  C8           MX
-    INY                     ; $C20CD1  C8           MX
+    INY                             ; $C20CCA  C8           MX
+    INY                             ; $C20CCB  C8           MX
+    LDA $68E0,Y                     ; $C20CCC  B9 E0 68     MX
+    PHA                             ; $C20CCF  48           MX
+    INY                             ; $C20CD0  C8           MX
+    INY                             ; $C20CD1  C8           MX
 L_C20CD2:
-    LDA $68E0,Y             ; $C20CD2  B9 E0 68     MX
-    ORA $68E2,Y             ; $C20CD5  19 E2 68     MX
-    BEQ L_C20CFF            ; $C20CD8  F0 25        MX
-    LDA $68EC,Y             ; $C20CDA  B9 EC 68     MX
-    CMP #$0030              ; $C20CDD  C9 30 00     MX
-    BNE L_C20CFF            ; $C20CE0  D0 1D        MX
-    LDA $68E0,Y             ; $C20CE2  B9 E0 68     MX
-    ASL                     ; $C20CE5  0A           MX
-    ASL                     ; $C20CE6  0A           MX
-    ASL                     ; $C20CE7  0A           MX
-    ASL                     ; $C20CE8  0A           MX
-    CLC                     ; $C20CE9  18           MX
-    ADC #$0008              ; $C20CEA  69 08 00     MX
-    STA $5E                 ; $C20CED  85 5E        MX
-    LDA $68E2,Y             ; $C20CEF  B9 E2 68     MX
-    ASL                     ; $C20CF2  0A           MX
-    ASL                     ; $C20CF3  0A           MX
-    ASL                     ; $C20CF4  0A           MX
-    ASL                     ; $C20CF5  0A           MX
-    CLC                     ; $C20CF6  18           MX
-    ADC #$0008              ; $C20CF7  69 08 00     MX
-    STA $62                 ; $C20CFA  85 62        MX
-    JSR L_C20DBF            ; $C20CFC  20 BF 0D     MX
+    LDA $68E0,Y                     ; $C20CD2  B9 E0 68     MX
+    ORA $68E2,Y                     ; $C20CD5  19 E2 68     MX
+    BEQ L_C20CFF                    ; $C20CD8  F0 25        MX
+    LDA $68EC,Y                     ; $C20CDA  B9 EC 68     MX
+    CMP #$0030                      ; $C20CDD  C9 30 00     MX
+    BNE L_C20CFF                    ; $C20CE0  D0 1D        MX
+    LDA $68E0,Y                     ; $C20CE2  B9 E0 68     MX
+    ASL                             ; $C20CE5  0A           MX
+    ASL                             ; $C20CE6  0A           MX
+    ASL                             ; $C20CE7  0A           MX
+    ASL                             ; $C20CE8  0A           MX
+    CLC                             ; $C20CE9  18           MX
+    ADC #$0008                      ; $C20CEA  69 08 00     MX
+    STA $5E                         ; $C20CED  85 5E        MX
+    LDA $68E2,Y                     ; $C20CEF  B9 E2 68     MX
+    ASL                             ; $C20CF2  0A           MX
+    ASL                             ; $C20CF3  0A           MX
+    ASL                             ; $C20CF4  0A           MX
+    ASL                             ; $C20CF5  0A           MX
+    CLC                             ; $C20CF6  18           MX
+    ADC #$0008                      ; $C20CF7  69 08 00     MX
+    STA $62                         ; $C20CFA  85 62        MX
+    JSR L_C20DBF                    ; $C20CFC  20 BF 0D     MX
 L_C20CFF:
-    TYA                     ; $C20CFF  98           MX
-    CLC                     ; $C20D00  18           MX
-    ADC $01,S               ; $C20D01  63 01        MX
-    TAY                     ; $C20D03  A8           MX
-    DEX                     ; $C20D04  CA           MX
-    BNE L_C20CD2            ; $C20D05  D0 CB        MX
-    PLA                     ; $C20D07  68           MX
-    JMP L_C20D8E            ; $C20D08  4C 8E 0D     MX
+    TYA                             ; $C20CFF  98           MX
+    CLC                             ; $C20D00  18           MX
+    ADC $01,S                       ; $C20D01  63 01        MX
+    TAY                             ; $C20D03  A8           MX
+    DEX                             ; $C20D04  CA           MX
+    BNE L_C20CD2                    ; $C20D05  D0 CB        MX
+    PLA                             ; $C20D07  68           MX
+    JMP L_C20D8E                    ; $C20D08  4C 8E 0D     MX
 L_C20D0B:
-    LDX #$0014              ; $C20D0B  A2 14 00     MX
-    LDY #$3784              ; $C20D0E  A0 84 37     MX
+    LDX #$0014                      ; $C20D0B  A2 14 00     MX
+    LDY #$3784                      ; $C20D0E  A0 84 37     MX
 L_C20D11:
-    LDA $0041,Y             ; $C20D11  B9 41 00     MX
-    AND #$00FF              ; $C20D14  29 FF 00     MX
-    CMP #$0014              ; $C20D17  C9 14 00     MX
-    BNE L_C20D27            ; $C20D1A  D0 0B        MX
-    LDA $006B,Y             ; $C20D1C  B9 6B 00     MX
-    BIT #$0008              ; $C20D1F  89 08 00     MX
-    BNE L_C20D27            ; $C20D22  D0 03        MX
-    JSR L_C20D8F            ; $C20D24  20 8F 0D     MX
+    LDA $0041,Y                     ; $C20D11  B9 41 00     MX
+    AND #$00FF                      ; $C20D14  29 FF 00     MX
+    CMP #$0014                      ; $C20D17  C9 14 00     MX
+    BNE L_C20D27                    ; $C20D1A  D0 0B        MX
+    LDA $006B,Y                     ; $C20D1C  B9 6B 00     MX
+    BIT #$0008                      ; $C20D1F  89 08 00     MX
+    BNE L_C20D27                    ; $C20D22  D0 03        MX
+    JSR L_C20D8F                    ; $C20D24  20 8F 0D     MX
 L_C20D27:
-    TYA                     ; $C20D27  98           MX
-    CLC                     ; $C20D28  18           MX
-    ADC #$0075              ; $C20D29  69 75 00     MX
-    TAY                     ; $C20D2C  A8           MX
-    DEX                     ; $C20D2D  CA           MX
-    BNE L_C20D11            ; $C20D2E  D0 E1        MX
-    LDX #$0064              ; $C20D30  A2 64 00     MX
-    LDY #$F4E0              ; $C20D33  A0 E0 F4     MX
+    TYA                             ; $C20D27  98           MX
+    CLC                             ; $C20D28  18           MX
+    ADC #$0075                      ; $C20D29  69 75 00     MX
+    TAY                             ; $C20D2C  A8           MX
+    DEX                             ; $C20D2D  CA           MX
+    BNE L_C20D11                    ; $C20D2E  D0 E1        MX
+    LDX #$0064                      ; $C20D30  A2 64 00     MX
+    LDY #$F4E0                      ; $C20D33  A0 E0 F4     MX
 L_C20D36:
-    LDA $0000,Y             ; $C20D36  B9 00 00     MX
-    ORA $0002,Y             ; $C20D39  19 02 00     MX
-    BEQ L_C20D85            ; $C20D3C  F0 47        MX
-    LDA $0004,Y             ; $C20D3E  B9 04 00     MX
-    AND #$00FF              ; $C20D41  29 FF 00     MX
-    BEQ L_C20D85            ; $C20D44  F0 3F        MX
-    PHX                     ; $C20D46  DA           MX
-    LDA $000B,Y             ; $C20D47  B9 0B 00     MX
-    AND #$00FF              ; $C20D4A  29 FF 00     MX
-    ASL                     ; $C20D4D  0A           MX
-    ASL                     ; $C20D4E  0A           MX
-    STA $42                 ; $C20D4F  85 42        MX
-    ASL                     ; $C20D51  0A           MX
-    ASL                     ; $C20D52  0A           MX
-    CLC                     ; $C20D53  18           MX
-    ADC $42                 ; $C20D54  65 42        MX
-    CLC                     ; $C20D56  18           MX
-    ADC $08AB               ; $C20D57  6D AB 08     MX
-    TAX                     ; $C20D5A  AA           MX
-    LDA $C116C6,X           ; $C20D5B  BF C6 16 C1  MX
-    ASL                     ; $C20D5F  0A           MX
-    STA $42                 ; $C20D60  85 42        MX
-    ASL                     ; $C20D62  0A           MX
-    ASL                     ; $C20D63  0A           MX
-    ASL                     ; $C20D64  0A           MX
-    ASL                     ; $C20D65  0A           MX
-    SEC                     ; $C20D66  38           MX
-    SBC $42                 ; $C20D67  E5 42        MX
-    TAX                     ; $C20D69  AA           MX
-    LDA $C15AE4,X           ; $C20D6A  BF E4 5A C1  MX
-    PLX                     ; $C20D6E  FA           MX
-    CMP #$0014              ; $C20D6F  C9 14 00     MX
-    BNE L_C20D85            ; $C20D72  D0 11        MX
-    LDA $0000,Y             ; $C20D74  B9 00 00     MX
-    STA $5E                 ; $C20D77  85 5E        MX
-    LDA $0002,Y             ; $C20D79  B9 02 00     MX
-    CLC                     ; $C20D7C  18           MX
-    ADC #$0010              ; $C20D7D  69 10 00     MX
-    STA $62                 ; $C20D80  85 62        MX
-    JSR L_C20DBF            ; $C20D82  20 BF 0D     MX
+    LDA $0000,Y                     ; $C20D36  B9 00 00     MX
+    ORA $0002,Y                     ; $C20D39  19 02 00     MX
+    BEQ L_C20D85                    ; $C20D3C  F0 47        MX
+    LDA $0004,Y                     ; $C20D3E  B9 04 00     MX
+    AND #$00FF                      ; $C20D41  29 FF 00     MX
+    BEQ L_C20D85                    ; $C20D44  F0 3F        MX
+    PHX                             ; $C20D46  DA           MX
+    LDA $000B,Y                     ; $C20D47  B9 0B 00     MX
+    AND #$00FF                      ; $C20D4A  29 FF 00     MX
+    ASL                             ; $C20D4D  0A           MX
+    ASL                             ; $C20D4E  0A           MX
+    STA $42                         ; $C20D4F  85 42        MX
+    ASL                             ; $C20D51  0A           MX
+    ASL                             ; $C20D52  0A           MX
+    CLC                             ; $C20D53  18           MX
+    ADC $42                         ; $C20D54  65 42        MX
+    CLC                             ; $C20D56  18           MX
+    ADC $08AB                       ; $C20D57  6D AB 08     MX
+    TAX                             ; $C20D5A  AA           MX
+    LDA $C116C6,X                   ; $C20D5B  BF C6 16 C1  MX
+    ASL                             ; $C20D5F  0A           MX
+    STA $42                         ; $C20D60  85 42        MX
+    ASL                             ; $C20D62  0A           MX
+    ASL                             ; $C20D63  0A           MX
+    ASL                             ; $C20D64  0A           MX
+    ASL                             ; $C20D65  0A           MX
+    SEC                             ; $C20D66  38           MX
+    SBC $42                         ; $C20D67  E5 42        MX
+    TAX                             ; $C20D69  AA           MX
+    LDA $C15AE4,X                   ; $C20D6A  BF E4 5A C1  MX
+    PLX                             ; $C20D6E  FA           MX
+    CMP #$0014                      ; $C20D6F  C9 14 00     MX
+    BNE L_C20D85                    ; $C20D72  D0 11        MX
+    LDA $0000,Y                     ; $C20D74  B9 00 00     MX
+    STA $5E                         ; $C20D77  85 5E        MX
+    LDA $0002,Y                     ; $C20D79  B9 02 00     MX
+    CLC                             ; $C20D7C  18           MX
+    ADC #$0010                      ; $C20D7D  69 10 00     MX
+    STA $62                         ; $C20D80  85 62        MX
+    JSR L_C20DBF                    ; $C20D82  20 BF 0D     MX
 L_C20D85:
-    TYA                     ; $C20D85  98           MX
-    CLC                     ; $C20D86  18           MX
-    ADC #$0014              ; $C20D87  69 14 00     MX
-    TAY                     ; $C20D8A  A8           MX
-    DEX                     ; $C20D8B  CA           MX
-    BNE L_C20D36            ; $C20D8C  D0 A8        MX
+    TYA                             ; $C20D85  98           MX
+    CLC                             ; $C20D86  18           MX
+    ADC #$0014                      ; $C20D87  69 14 00     MX
+    TAY                             ; $C20D8A  A8           MX
+    DEX                             ; $C20D8B  CA           MX
+    BNE L_C20D36                    ; $C20D8C  D0 A8        MX
 L_C20D8E:
-    RTS                     ; $C20D8E  60           MX
+    RTS                             ; $C20D8E  60           MX
 L_C20D8F:
-    LDA $006B,Y             ; $C20D8F  B9 6B 00     MX
-    BIT #$0080              ; $C20D92  89 80 00     MX
-    BEQ L_C20DA8            ; $C20D95  F0 11        MX
-    LDA $0000,Y             ; $C20D97  B9 00 00     MX
-    STA $5E                 ; $C20D9A  85 5E        MX
-    LDA $0002,Y             ; $C20D9C  B9 02 00     MX
-    CLC                     ; $C20D9F  18           MX
-    ADC #$0010              ; $C20DA0  69 10 00     MX
-    STA $62                 ; $C20DA3  85 62        MX
-    JSR L_C20DBF            ; $C20DA5  20 BF 0D     MX
+    LDA $006B,Y                     ; $C20D8F  B9 6B 00     MX
+    BIT #$0080                      ; $C20D92  89 80 00     MX
+    BEQ L_C20DA8                    ; $C20D95  F0 11        MX
+    LDA $0000,Y                     ; $C20D97  B9 00 00     MX
+    STA $5E                         ; $C20D9A  85 5E        MX
+    LDA $0002,Y                     ; $C20D9C  B9 02 00     MX
+    CLC                             ; $C20D9F  18           MX
+    ADC #$0010                      ; $C20DA0  69 10 00     MX
+    STA $62                         ; $C20DA3  85 62        MX
+    JSR L_C20DBF                    ; $C20DA5  20 BF 0D     MX
 L_C20DA8:
-    RTS                     ; $C20DA8  60           MX
+    RTS                             ; $C20DA8  60           MX
 L_C20DA9:
-    LDA $006B,Y             ; $C20DA9  B9 6B 00     MX
-    BIT #$0080              ; $C20DAC  89 80 00     MX
-    BEQ L_C20DBE            ; $C20DAF  F0 0D        MX
-    LDA $0000,Y             ; $C20DB1  B9 00 00     MX
-    STA $5E                 ; $C20DB4  85 5E        MX
-    LDA $0002,Y             ; $C20DB6  B9 02 00     MX
-    STA $62                 ; $C20DB9  85 62        MX
-    JSR L_C20DBF            ; $C20DBB  20 BF 0D     MX
+    LDA $006B,Y                     ; $C20DA9  B9 6B 00     MX
+    BIT #$0080                      ; $C20DAC  89 80 00     MX
+    BEQ L_C20DBE                    ; $C20DAF  F0 0D        MX
+    LDA $0000,Y                     ; $C20DB1  B9 00 00     MX
+    STA $5E                         ; $C20DB4  85 5E        MX
+    LDA $0002,Y                     ; $C20DB6  B9 02 00     MX
+    STA $62                         ; $C20DB9  85 62        MX
+    JSR L_C20DBF                    ; $C20DBB  20 BF 0D     MX
 L_C20DBE:
-    RTS                     ; $C20DBE  60           MX
+    RTS                             ; $C20DBE  60           MX
 L_C20DBF:
-    LDA $5E                 ; $C20DBF  A5 5E        MX
-    LSR                     ; $C20DC1  4A           MX
-    LSR                     ; $C20DC2  4A           MX
-    SEC                     ; $C20DC3  38           MX
-    SBC $08ED               ; $C20DC4  ED ED 08     MX
-    BPL L_C20DCE            ; $C20DC7  10 05        MX
-    CMP #$FFF8              ; $C20DC9  C9 F8 FF     MX
-    BCS L_C20DD3            ; $C20DCC  B0 05        MX
+    LDA $5E                         ; $C20DBF  A5 5E        MX
+    LSR                             ; $C20DC1  4A           MX
+    LSR                             ; $C20DC2  4A           MX
+    SEC                             ; $C20DC3  38           MX
+    SBC $08ED                       ; $C20DC4  ED ED 08     MX
+    BPL L_C20DCE                    ; $C20DC7  10 05        MX
+    CMP #$FFF8                      ; $C20DC9  C9 F8 FF     MX
+    BCS L_C20DD3                    ; $C20DCC  B0 05        MX
 L_C20DCE:
-    CMP #$0100              ; $C20DCE  C9 00 01     MX
-    BCS L_C20DEF            ; $C20DD1  B0 1C        MX
+    CMP #$0100                      ; $C20DCE  C9 00 01     MX
+    BCS L_C20DEF                    ; $C20DD1  B0 1C        MX
 L_C20DD3:
-    STA $5E                 ; $C20DD3  85 5E        MX
-    LDA $62                 ; $C20DD5  A5 62        MX
-    LSR                     ; $C20DD7  4A           MX
-    LSR                     ; $C20DD8  4A           MX
-    SEC                     ; $C20DD9  38           MX
-    SBC $08EF               ; $C20DDA  ED EF 08     MX
-    BPL L_C20DE4            ; $C20DDD  10 05        MX
-    CMP #$FFF8              ; $C20DDF  C9 F8 FF     MX
-    BCS L_C20DE9            ; $C20DE2  B0 05        MX
+    STA $5E                         ; $C20DD3  85 5E        MX
+    LDA $62                         ; $C20DD5  A5 62        MX
+    LSR                             ; $C20DD7  4A           MX
+    LSR                             ; $C20DD8  4A           MX
+    SEC                             ; $C20DD9  38           MX
+    SBC $08EF                       ; $C20DDA  ED EF 08     MX
+    BPL L_C20DE4                    ; $C20DDD  10 05        MX
+    CMP #$FFF8                      ; $C20DDF  C9 F8 FF     MX
+    BCS L_C20DE9                    ; $C20DE2  B0 05        MX
 L_C20DE4:
-    CMP #$00E0              ; $C20DE4  C9 E0 00     MX
-    BCS L_C20DEF            ; $C20DE7  B0 06        MX
+    CMP #$00E0                      ; $C20DE4  C9 E0 00     MX
+    BCS L_C20DEF                    ; $C20DE7  B0 06        MX
 L_C20DE9:
-    STA $62                 ; $C20DE9  85 62        MX
-    JSL L_C0BBD1            ; $C20DEB  22 D1 BB C0  MX
+    STA $62                         ; $C20DE9  85 62        MX
+    JSL L_C0BBD1                    ; $C20DEB  22 D1 BB C0  MX
 L_C20DEF:
-    RTS                     ; $C20DEF  60           MX
+    RTS                             ; $C20DEF  60           MX
 L_C20DF0:
-    LDA #$0000              ; $C20DF0  A9 00 00     MX
-    TAX                     ; $C20DF3  AA           MX
+    LDA #$0000                      ; $C20DF0  A9 00 00     MX
+    TAX                             ; $C20DF3  AA           MX
 L_C20DF4:
-    PHA                     ; $C20DF4  48           MX
-    JSL L_C03F6E            ; $C20DF5  22 6E 3F C0  MX
-    TXA                     ; $C20DF9  8A           MX
-    CLC                     ; $C20DFA  18           MX
-    ADC #$0080              ; $C20DFB  69 80 00     MX
-    TAX                     ; $C20DFE  AA           MX
-    PLA                     ; $C20DFF  68           MX
-    INC                     ; $C20E00  1A           MX
-    INC                     ; $C20E01  1A           MX
-    BIT #$000F              ; $C20E02  89 0F 00     MX
-    BNE L_C20E0B            ; $C20E05  D0 04        MX
-    CLC                     ; $C20E07  18           MX
-    ADC #$0010              ; $C20E08  69 10 00     MX
+    PHA                             ; $C20DF4  48           MX
+    JSL L_C03F6E                    ; $C20DF5  22 6E 3F C0  MX
+    TXA                             ; $C20DF9  8A           MX
+    CLC                             ; $C20DFA  18           MX
+    ADC #$0080                      ; $C20DFB  69 80 00     MX
+    TAX                             ; $C20DFE  AA           MX
+    PLA                             ; $C20DFF  68           MX
+    INC                             ; $C20E00  1A           MX
+    INC                             ; $C20E01  1A           MX
+    BIT #$000F                      ; $C20E02  89 0F 00     MX
+    BNE L_C20E0B                    ; $C20E05  D0 04        MX
+    CLC                             ; $C20E07  18           MX
+    ADC #$0010                      ; $C20E08  69 10 00     MX
 L_C20E0B:
-    CPX #$8000              ; $C20E0B  E0 00 80     MX
-    BCC L_C20DF4            ; $C20E0E  90 E4        MX
-    RTS                     ; $C20E10  60           MX
-L_C20E11:
-    SEP #$20                ; $C20E11  E2 20        MX
-    LDA #$00                ; $C20E13  A9 00        mX
-    STA $D6                 ; $C20E15  85 D6        mX
-    LDA $414B               ; $C20E17  AD 4B 41     mX
-    CMP #$06                ; $C20E1A  C9 06        mX
-    BEQ L_C20E21            ; $C20E1C  F0 03        mX
-    JMP L_C20F05            ; $C20E1E  4C 05 0F     mX
+    CPX #$8000                      ; $C20E0B  E0 00 80     MX
+    BCC L_C20DF4                    ; $C20E0E  90 E4        MX
+    RTS                             ; $C20E10  60           MX
+cycle_item:
+    SEP #$20                        ; $C20E11  E2 20        MX
+    LDA #$00                        ; $C20E13  A9 00        mX
+    STA $D6                         ; $C20E15  85 D6        mX
+    LDA $414B                       ; $C20E17  AD 4B 41     mX
+    CMP #$06                        ; $C20E1A  C9 06        mX
+    BEQ L_C20E21                    ; $C20E1C  F0 03        mX
+    JMP L_C20F05                    ; $C20E1E  4C 05 0F     mX
 L_C20E21:
-    LDA $4188               ; $C20E21  AD 88 41     mX
-    BMI L_C20E29            ; $C20E24  30 03        mX
-    JMP L_C20EDF            ; $C20E26  4C DF 0E     mX
+    LDA $4188                       ; $C20E21  AD 88 41     mX
+    BMI L_C20E29                    ; $C20E24  30 03        mX
+    JMP L_C20EDF                    ; $C20E26  4C DF 0E     mX
 L_C20E29:
-    LDA $06FB               ; $C20E29  AD FB 06     mX
-    BIT #$40                ; $C20E2C  89 40        mX
-    BEQ L_C20E49            ; $C20E2E  F0 19        mX
-    LDA $073E               ; $C20E30  AD 3E 07     mX
-    BIT #$40                ; $C20E33  89 40        mX
-    BNE L_C20E49            ; $C20E35  D0 12        mX
-    LDA $0866               ; $C20E37  AD 66 08     mX
-    BEQ L_C20E45            ; $C20E3A  F0 09        mX
-    JSR L_C20F89            ; $C20E3C  20 89 0F     mX
-    LDA #$02                ; $C20E3F  A9 02        mX
-    STA $D6                 ; $C20E41  85 D6        mX
-    BRA L_C20E49            ; $C20E43  80 04        mX
+    LDA $06FB                       ; $C20E29  AD FB 06     mX
+    BIT #$40                        ; $C20E2C  89 40        mX
+    BEQ L_C20E49                    ; $C20E2E  F0 19        mX
+    LDA $073E                       ; $C20E30  AD 3E 07     mX
+    BIT #$40                        ; $C20E33  89 40        mX
+    BNE L_C20E49                    ; $C20E35  D0 12        mX
+    LDA $0866                       ; $C20E37  AD 66 08     mX
+    BEQ L_C20E45                    ; $C20E3A  F0 09        mX
+    JSR L_C20F89                    ; $C20E3C  20 89 0F     mX
+    LDA #$02                        ; $C20E3F  A9 02        mX
+    STA $D6                         ; $C20E41  85 D6        mX
+    BRA L_C20E49                    ; $C20E43  80 04        mX
 L_C20E45:
-    LDA #$01                ; $C20E45  A9 01        mX
-    STA $D6                 ; $C20E47  85 D6        mX
+    LDA #$01                        ; $C20E45  A9 01        mX
+    STA $D6                         ; $C20E47  85 D6        mX
 L_C20E49:
-    LDA $06F3               ; $C20E49  AD F3 06     mX
-    BIT #$20                ; $C20E4C  89 20        mX
-    BEQ L_C20EBC            ; $C20E4E  F0 6C        mX
-    LDA $073D               ; $C20E50  AD 3D 07     mX
-    BIT #$20                ; $C20E53  89 20        mX
-    BNE L_C20EBC            ; $C20E55  D0 65        mX
-    LDY #$0000              ; $C20E57  A0 00 00     mX
-    LDA $09BC               ; $C20E5A  AD BC 09     mX
-    CMP $0861,Y             ; $C20E5D  D9 61 08     mX
-    BEQ L_C20E78            ; $C20E60  F0 16        mX
-    INY                     ; $C20E62  C8           mX
-    CMP $0861,Y             ; $C20E63  D9 61 08     mX
-    BEQ L_C20E78            ; $C20E66  F0 10        mX
-    INY                     ; $C20E68  C8           mX
-    CMP $0861,Y             ; $C20E69  D9 61 08     mX
-    BEQ L_C20E78            ; $C20E6C  F0 0A        mX
-    INY                     ; $C20E6E  C8           mX
-    CMP $0861,Y             ; $C20E6F  D9 61 08     mX
-    BEQ L_C20E78            ; $C20E72  F0 04        mX
-    INY                     ; $C20E74  C8           mX
-    JMP L_C20F58            ; $C20E75  4C 58 0F     mX
+    LDA $06F3                       ; $C20E49  AD F3 06     mX
+    BIT #$20                        ; $C20E4C  89 20        mX
+    BEQ L_C20EBC                    ; $C20E4E  F0 6C        mX
+    LDA $073D                       ; $C20E50  AD 3D 07     mX
+    BIT #$20                        ; $C20E53  89 20        mX
+    BNE L_C20EBC                    ; $C20E55  D0 65        mX
+    LDY #$0000                      ; $C20E57  A0 00 00     mX
+    LDA $09BC                       ; $C20E5A  AD BC 09     mX
+    CMP $0861,Y                     ; $C20E5D  D9 61 08     mX
+    BEQ L_C20E78                    ; $C20E60  F0 16        mX
+    INY                             ; $C20E62  C8           mX
+    CMP $0861,Y                     ; $C20E63  D9 61 08     mX
+    BEQ L_C20E78                    ; $C20E66  F0 10        mX
+    INY                             ; $C20E68  C8           mX
+    CMP $0861,Y                     ; $C20E69  D9 61 08     mX
+    BEQ L_C20E78                    ; $C20E6C  F0 0A        mX
+    INY                             ; $C20E6E  C8           mX
+    CMP $0861,Y                     ; $C20E6F  D9 61 08     mX
+    BEQ L_C20E78                    ; $C20E72  F0 04        mX
+    INY                             ; $C20E74  C8           mX
+    JMP L_C20F58                    ; $C20E75  4C 58 0F     mX
 L_C20E78:
-    PHA                     ; $C20E78  48           mX
-    LDA $09E4               ; $C20E79  AD E4 09     mX
-    STA $0861,Y             ; $C20E7C  99 61 08     mX
-    STA $09BC               ; $C20E7F  8D BC 09     mX
-    LDY #$0000              ; $C20E82  A0 00 00     mX
-    CMP $0865,Y             ; $C20E85  D9 65 08     mX
-    BEQ L_C20EA1            ; $C20E88  F0 17        mX
-    INY                     ; $C20E8A  C8           mX
-    CMP $0865,Y             ; $C20E8B  D9 65 08     mX
-    BEQ L_C20EA1            ; $C20E8E  F0 11        mX
-    INY                     ; $C20E90  C8           mX
-    CMP $0865,Y             ; $C20E91  D9 65 08     mX
-    BEQ L_C20EA1            ; $C20E94  F0 0B        mX
-    INY                     ; $C20E96  C8           mX
-    CMP $0865,Y             ; $C20E97  D9 65 08     mX
-    BEQ L_C20EA1            ; $C20E9A  F0 05        mX
-    INY                     ; $C20E9C  C8           mX
-    PLA                     ; $C20E9D  68           mX
-    JMP L_C20F58            ; $C20E9E  4C 58 0F     mX
+    PHA                             ; $C20E78  48           mX
+    LDA $09E4                       ; $C20E79  AD E4 09     mX
+    STA $0861,Y                     ; $C20E7C  99 61 08     mX
+    STA $09BC                       ; $C20E7F  8D BC 09     mX
+    LDY #$0000                      ; $C20E82  A0 00 00     mX
+    CMP $0865,Y                     ; $C20E85  D9 65 08     mX
+    BEQ L_C20EA1                    ; $C20E88  F0 17        mX
+    INY                             ; $C20E8A  C8           mX
+    CMP $0865,Y                     ; $C20E8B  D9 65 08     mX
+    BEQ L_C20EA1                    ; $C20E8E  F0 11        mX
+    INY                             ; $C20E90  C8           mX
+    CMP $0865,Y                     ; $C20E91  D9 65 08     mX
+    BEQ L_C20EA1                    ; $C20E94  F0 0B        mX
+    INY                             ; $C20E96  C8           mX
+    CMP $0865,Y                     ; $C20E97  D9 65 08     mX
+    BEQ L_C20EA1                    ; $C20E9A  F0 05        mX
+    INY                             ; $C20E9C  C8           mX
+    PLA                             ; $C20E9D  68           mX
+    JMP L_C20F58                    ; $C20E9E  4C 58 0F     mX
 L_C20EA1:
-    PLA                     ; $C20EA1  68           mX
-    STA $0865,Y             ; $C20EA2  99 65 08     mX
-    STA $09E4               ; $C20EA5  8D E4 09     mX
-    LDA $40F1               ; $C20EA8  AD F1 40     mX
-    ORA #$08                ; $C20EAB  09 08        mX
-    STA $40F1               ; $C20EAD  8D F1 40     mX
-    LDA $4166               ; $C20EB0  AD 66 41     mX
-    ORA #$08                ; $C20EB3  09 08        mX
-    STA $4166               ; $C20EB5  8D 66 41     mX
-    LDA #$02                ; $C20EB8  A9 02        mX
-    STA $D6                 ; $C20EBA  85 D6        mX
+    PLA                             ; $C20EA1  68           mX
+    STA $0865,Y                     ; $C20EA2  99 65 08     mX
+    STA $09E4                       ; $C20EA5  8D E4 09     mX
+    LDA $40F1                       ; $C20EA8  AD F1 40     mX
+    ORA #$08                        ; $C20EAB  09 08        mX
+    STA $40F1                       ; $C20EAD  8D F1 40     mX
+    LDA $4166                       ; $C20EB0  AD 66 41     mX
+    ORA #$08                        ; $C20EB3  09 08        mX
+    STA $4166                       ; $C20EB5  8D 66 41     mX
+    LDA #$02                        ; $C20EB8  A9 02        mX
+    STA $D6                         ; $C20EBA  85 D6        mX
 L_C20EBC:
-    LDA $06FB               ; $C20EBC  AD FB 06     mX
-    BIT #$80                ; $C20EBF  89 80        mX
-    BEQ L_C20EDC            ; $C20EC1  F0 19        mX
-    LDA $073E               ; $C20EC3  AD 3E 07     mX
-    BIT #$80                ; $C20EC6  89 80        mX
-    BNE L_C20EDC            ; $C20EC8  D0 12        mX
-    LDA $0862               ; $C20ECA  AD 62 08     mX
-    BEQ L_C20ED8            ; $C20ECD  F0 09        mX
-    JSR L_C20FBE            ; $C20ECF  20 BE 0F     mX
-    LDA #$02                ; $C20ED2  A9 02        mX
-    STA $D6                 ; $C20ED4  85 D6        mX
-    BRA L_C20EDC            ; $C20ED6  80 04        mX
+    LDA $06FB                       ; $C20EBC  AD FB 06     mX
+    BIT #$80                        ; $C20EBF  89 80        mX
+    BEQ L_C20EDC                    ; $C20EC1  F0 19        mX
+    LDA $073E                       ; $C20EC3  AD 3E 07     mX
+    BIT #$80                        ; $C20EC6  89 80        mX
+    BNE L_C20EDC                    ; $C20EC8  D0 12        mX
+    LDA $0862                       ; $C20ECA  AD 62 08     mX
+    BEQ L_C20ED8                    ; $C20ECD  F0 09        mX
+    JSR L_C20FBE                    ; $C20ECF  20 BE 0F     mX
+    LDA #$02                        ; $C20ED2  A9 02        mX
+    STA $D6                         ; $C20ED4  85 D6        mX
+    BRA L_C20EDC                    ; $C20ED6  80 04        mX
 L_C20ED8:
-    LDA #$01                ; $C20ED8  A9 01        mX
-    STA $D6                 ; $C20EDA  85 D6        mX
+    LDA #$01                        ; $C20ED8  A9 01        mX
+    STA $D6                         ; $C20EDA  85 D6        mX
 L_C20EDC:
-    JMP L_C20F58            ; $C20EDC  4C 58 0F     mX
+    JMP L_C20F58                    ; $C20EDC  4C 58 0F     mX
 L_C20EDF:
-    LDA $06FB               ; $C20EDF  AD FB 06     mX
-    BIT #$80                ; $C20EE2  89 80        mX
-    BEQ L_C20EFF            ; $C20EE4  F0 19        mX
-    LDA $073E               ; $C20EE6  AD 3E 07     mX
-    BIT #$80                ; $C20EE9  89 80        mX
-    BNE L_C20EFF            ; $C20EEB  D0 12        mX
-    LDA $0862               ; $C20EED  AD 62 08     mX
-    BEQ L_C20EFB            ; $C20EF0  F0 09        mX
-    JSR L_C20FBE            ; $C20EF2  20 BE 0F     mX
-    LDA #$02                ; $C20EF5  A9 02        mX
-    STA $D6                 ; $C20EF7  85 D6        mX
-    BRA L_C20EFF            ; $C20EF9  80 04        mX
+    LDA $06FB                       ; $C20EDF  AD FB 06     mX
+    BIT #$80                        ; $C20EE2  89 80        mX
+    BEQ L_C20EFF                    ; $C20EE4  F0 19        mX
+    LDA $073E                       ; $C20EE6  AD 3E 07     mX
+    BIT #$80                        ; $C20EE9  89 80        mX
+    BNE L_C20EFF                    ; $C20EEB  D0 12        mX
+    LDA $0862                       ; $C20EED  AD 62 08     mX
+    BEQ L_C20EFB                    ; $C20EF0  F0 09        mX
+    JSR L_C20FBE                    ; $C20EF2  20 BE 0F     mX
+    LDA #$02                        ; $C20EF5  A9 02        mX
+    STA $D6                         ; $C20EF7  85 D6        mX
+    BRA L_C20EFF                    ; $C20EF9  80 04        mX
 L_C20EFB:
-    LDA #$01                ; $C20EFB  A9 01        mX
-    STA $D6                 ; $C20EFD  85 D6        mX
+    LDA #$01                        ; $C20EFB  A9 01        mX
+    STA $D6                         ; $C20EFD  85 D6        mX
 L_C20EFF:
-    JSR L_C20FF3            ; $C20EFF  20 F3 0F     mX
-    JMP L_C20F58            ; $C20F02  4C 58 0F     mX
+    JSR L_C20FF3                    ; $C20EFF  20 F3 0F     mX
+    JMP L_C20F58                    ; $C20F02  4C 58 0F     mX
 L_C20F05:
-    LDA $4113               ; $C20F05  AD 13 41     mX
-    BMI L_C20F0D            ; $C20F08  30 03        mX
-    JMP L_C20F30            ; $C20F0A  4C 30 0F     mX
+    LDA $4113                       ; $C20F05  AD 13 41     mX
+    BMI L_C20F0D                    ; $C20F08  30 03        mX
+    JMP L_C20F30                    ; $C20F0A  4C 30 0F     mX
 L_C20F0D:
-    JSR L_C20FF3            ; $C20F0D  20 F3 0F     mX
-    LDA $06FB               ; $C20F10  AD FB 06     mX
-    BIT #$80                ; $C20F13  89 80        mX
-    BEQ L_C20F30            ; $C20F15  F0 19        mX
-    LDA $073E               ; $C20F17  AD 3E 07     mX
-    BIT #$80                ; $C20F1A  89 80        mX
-    BNE L_C20F30            ; $C20F1C  D0 12        mX
-    LDA $0862               ; $C20F1E  AD 62 08     mX
-    BEQ L_C20F2C            ; $C20F21  F0 09        mX
-    JSR L_C20FBE            ; $C20F23  20 BE 0F     mX
-    LDA #$02                ; $C20F26  A9 02        mX
-    STA $D6                 ; $C20F28  85 D6        mX
-    BRA L_C20F30            ; $C20F2A  80 04        mX
+    JSR L_C20FF3                    ; $C20F0D  20 F3 0F     mX
+    LDA $06FB                       ; $C20F10  AD FB 06     mX
+    BIT #$80                        ; $C20F13  89 80        mX
+    BEQ L_C20F30                    ; $C20F15  F0 19        mX
+    LDA $073E                       ; $C20F17  AD 3E 07     mX
+    BIT #$80                        ; $C20F1A  89 80        mX
+    BNE L_C20F30                    ; $C20F1C  D0 12        mX
+    LDA $0862                       ; $C20F1E  AD 62 08     mX
+    BEQ L_C20F2C                    ; $C20F21  F0 09        mX
+    JSR L_C20FBE                    ; $C20F23  20 BE 0F     mX
+    LDA #$02                        ; $C20F26  A9 02        mX
+    STA $D6                         ; $C20F28  85 D6        mX
+    BRA L_C20F30                    ; $C20F2A  80 04        mX
 L_C20F2C:
-    LDA #$01                ; $C20F2C  A9 01        mX
-    STA $D6                 ; $C20F2E  85 D6        mX
+    LDA #$01                        ; $C20F2C  A9 01        mX
+    STA $D6                         ; $C20F2E  85 D6        mX
 L_C20F30:
-    LDA $4188               ; $C20F30  AD 88 41     mX
-    BMI L_C20F38            ; $C20F33  30 03        mX
-    JMP L_C20F58            ; $C20F35  4C 58 0F     mX
+    LDA $4188                       ; $C20F30  AD 88 41     mX
+    BMI L_C20F38                    ; $C20F33  30 03        mX
+    JMP L_C20F58                    ; $C20F35  4C 58 0F     mX
 L_C20F38:
-    LDA $06FD               ; $C20F38  AD FD 06     mX
-    BIT #$80                ; $C20F3B  89 80        mX
-    BEQ L_C20F58            ; $C20F3D  F0 19        mX
-    LDA $0740               ; $C20F3F  AD 40 07     mX
-    BIT #$80                ; $C20F42  89 80        mX
-    BNE L_C20F58            ; $C20F44  D0 12        mX
-    LDA $0866               ; $C20F46  AD 66 08     mX
-    BEQ L_C20F54            ; $C20F49  F0 09        mX
-    JSR L_C20F89            ; $C20F4B  20 89 0F     mX
-    LDA #$02                ; $C20F4E  A9 02        mX
-    STA $D6                 ; $C20F50  85 D6        mX
-    BRA L_C20F58            ; $C20F52  80 04        mX
+    LDA $06FD                       ; $C20F38  AD FD 06     mX
+    BIT #$80                        ; $C20F3B  89 80        mX
+    BEQ L_C20F58                    ; $C20F3D  F0 19        mX
+    LDA $0740                       ; $C20F3F  AD 40 07     mX
+    BIT #$80                        ; $C20F42  89 80        mX
+    BNE L_C20F58                    ; $C20F44  D0 12        mX
+    LDA $0866                       ; $C20F46  AD 66 08     mX
+    BEQ L_C20F54                    ; $C20F49  F0 09        mX
+    JSR L_C20F89                    ; $C20F4B  20 89 0F     mX
+    LDA #$02                        ; $C20F4E  A9 02        mX
+    STA $D6                         ; $C20F50  85 D6        mX
+    BRA L_C20F58                    ; $C20F52  80 04        mX
 L_C20F54:
-    LDA #$01                ; $C20F54  A9 01        mX
-    STA $D6                 ; $C20F56  85 D6        mX
+    LDA #$01                        ; $C20F54  A9 01        mX
+    STA $D6                         ; $C20F56  85 D6        mX
 L_C20F58:
-    LDA $D6                 ; $C20F58  A5 D6        mX
-    BEQ L_C20F74            ; $C20F5A  F0 18        mX
-    BIT #$01                ; $C20F5C  89 01        mX
-    BEQ L_C20F68            ; $C20F5E  F0 08        mX
-    PHA                     ; $C20F60  48           mX
-    LDA #$7C                ; $C20F61  A9 7C        mX
-    JSL L_C20182            ; $C20F63  22 82 01 C2  mX
-    PLA                     ; $C20F67  68           mX
+    LDA $D6                         ; $C20F58  A5 D6        mX
+    BEQ L_C20F74                    ; $C20F5A  F0 18        mX
+    BIT #$01                        ; $C20F5C  89 01        mX
+    BEQ L_C20F68                    ; $C20F5E  F0 08        mX
+    PHA                             ; $C20F60  48           mX
+    LDA #$7C                        ; $C20F61  A9 7C        mX
+    JSL L_C20182                    ; $C20F63  22 82 01 C2  mX
+    PLA                             ; $C20F67  68           mX
 L_C20F68:
-    BIT #$02                ; $C20F68  89 02        mX
-    BEQ L_C20F74            ; $C20F6A  F0 08        mX
-    PHA                     ; $C20F6C  48           mX
-    LDA #$7B                ; $C20F6D  A9 7B        mX
-    JSL L_C20182            ; $C20F6F  22 82 01 C2  mX
-    PLA                     ; $C20F73  68           mX
+    BIT #$02                        ; $C20F68  89 02        mX
+    BEQ L_C20F74                    ; $C20F6A  F0 08        mX
+    PHA                             ; $C20F6C  48           mX
+    LDA #$7B                        ; $C20F6D  A9 7B        mX
+    JSL L_C20182                    ; $C20F6F  22 82 01 C2  mX
+    PLA                             ; $C20F73  68           mX
 L_C20F74:
-    LDA $06F3               ; $C20F74  AD F3 06     mX
-    STA $073D               ; $C20F77  8D 3D 07     mX
-    LDA $06FB               ; $C20F7A  AD FB 06     mX
-    STA $073E               ; $C20F7D  8D 3E 07     mX
-    LDA $06FD               ; $C20F80  AD FD 06     mX
-    STA $0740               ; $C20F83  8D 40 07     mX
-    REP #$20                ; $C20F86  C2 20        mX
-    RTL                     ; $C20F88  6B           MX
+    LDA $06F3                       ; $C20F74  AD F3 06     mX
+    STA $073D                       ; $C20F77  8D 3D 07     mX
+    LDA $06FB                       ; $C20F7A  AD FB 06     mX
+    STA $073E                       ; $C20F7D  8D 3E 07     mX
+    LDA $06FD                       ; $C20F80  AD FD 06     mX
+    STA $0740                       ; $C20F83  8D 40 07     mX
+    REP #$20                        ; $C20F86  C2 20        mX
+    RTL                             ; $C20F88  6B           MX
 L_C20F89:
-    LDY #$0000              ; $C20F89  A0 00 00     mX
-    LDA $0865               ; $C20F8C  AD 65 08     mX
-    PHA                     ; $C20F8F  48           mX
-    LDA $0866,Y             ; $C20F90  B9 66 08     mX
-    BEQ L_C20FAB            ; $C20F93  F0 16        mX
-    STA $0865,Y             ; $C20F95  99 65 08     mX
-    INY                     ; $C20F98  C8           mX
-    LDA $0866,Y             ; $C20F99  B9 66 08     mX
-    BEQ L_C20FAB            ; $C20F9C  F0 0D        mX
-    STA $0865,Y             ; $C20F9E  99 65 08     mX
-    INY                     ; $C20FA1  C8           mX
-    LDA $0866,Y             ; $C20FA2  B9 66 08     mX
-    BEQ L_C20FAB            ; $C20FA5  F0 04        mX
-    STA $0865,Y             ; $C20FA7  99 65 08     mX
-    INY                     ; $C20FAA  C8           mX
+    LDY #$0000                      ; $C20F89  A0 00 00     mX
+    LDA $0865                       ; $C20F8C  AD 65 08     mX
+    PHA                             ; $C20F8F  48           mX
+    LDA $0866,Y                     ; $C20F90  B9 66 08     mX
+    BEQ L_C20FAB                    ; $C20F93  F0 16        mX
+    STA $0865,Y                     ; $C20F95  99 65 08     mX
+    INY                             ; $C20F98  C8           mX
+    LDA $0866,Y                     ; $C20F99  B9 66 08     mX
+    BEQ L_C20FAB                    ; $C20F9C  F0 0D        mX
+    STA $0865,Y                     ; $C20F9E  99 65 08     mX
+    INY                             ; $C20FA1  C8           mX
+    LDA $0866,Y                     ; $C20FA2  B9 66 08     mX
+    BEQ L_C20FAB                    ; $C20FA5  F0 04        mX
+    STA $0865,Y                     ; $C20FA7  99 65 08     mX
+    INY                             ; $C20FAA  C8           mX
 L_C20FAB:
-    PLA                     ; $C20FAB  68           mX
-    STA $0865,Y             ; $C20FAC  99 65 08     mX
-    LDA $0865               ; $C20FAF  AD 65 08     mX
-    STA $09E4               ; $C20FB2  8D E4 09     mX
-    LDA $4166               ; $C20FB5  AD 66 41     mX
-    ORA #$08                ; $C20FB8  09 08        mX
-    STA $4166               ; $C20FBA  8D 66 41     mX
-    RTS                     ; $C20FBD  60           mX
+    PLA                             ; $C20FAB  68           mX
+    STA $0865,Y                     ; $C20FAC  99 65 08     mX
+    LDA $0865                       ; $C20FAF  AD 65 08     mX
+    STA $09E4                       ; $C20FB2  8D E4 09     mX
+    LDA $4166                       ; $C20FB5  AD 66 41     mX
+    ORA #$08                        ; $C20FB8  09 08        mX
+    STA $4166                       ; $C20FBA  8D 66 41     mX
+    RTS                             ; $C20FBD  60           mX
 L_C20FBE:
-    LDY #$0000              ; $C20FBE  A0 00 00     mX
-    LDA $0861               ; $C20FC1  AD 61 08     mX
-    PHA                     ; $C20FC4  48           mX
-    LDA $0862,Y             ; $C20FC5  B9 62 08     mX
-    BEQ L_C20FE0            ; $C20FC8  F0 16        mX
-    STA $0861,Y             ; $C20FCA  99 61 08     mX
-    INY                     ; $C20FCD  C8           mX
-    LDA $0862,Y             ; $C20FCE  B9 62 08     mX
-    BEQ L_C20FE0            ; $C20FD1  F0 0D        mX
-    STA $0861,Y             ; $C20FD3  99 61 08     mX
-    INY                     ; $C20FD6  C8           mX
-    LDA $0862,Y             ; $C20FD7  B9 62 08     mX
-    BEQ L_C20FE0            ; $C20FDA  F0 04        mX
-    STA $0861,Y             ; $C20FDC  99 61 08     mX
-    INY                     ; $C20FDF  C8           mX
+    LDY #$0000                      ; $C20FBE  A0 00 00     mX
+    LDA $0861                       ; $C20FC1  AD 61 08     mX
+    PHA                             ; $C20FC4  48           mX
+    LDA $0862,Y                     ; $C20FC5  B9 62 08     mX
+    BEQ L_C20FE0                    ; $C20FC8  F0 16        mX
+    STA $0861,Y                     ; $C20FCA  99 61 08     mX
+    INY                             ; $C20FCD  C8           mX
+    LDA $0862,Y                     ; $C20FCE  B9 62 08     mX
+    BEQ L_C20FE0                    ; $C20FD1  F0 0D        mX
+    STA $0861,Y                     ; $C20FD3  99 61 08     mX
+    INY                             ; $C20FD6  C8           mX
+    LDA $0862,Y                     ; $C20FD7  B9 62 08     mX
+    BEQ L_C20FE0                    ; $C20FDA  F0 04        mX
+    STA $0861,Y                     ; $C20FDC  99 61 08     mX
+    INY                             ; $C20FDF  C8           mX
 L_C20FE0:
-    PLA                     ; $C20FE0  68           mX
-    STA $0861,Y             ; $C20FE1  99 61 08     mX
-    LDA $0861               ; $C20FE4  AD 61 08     mX
-    STA $09BC               ; $C20FE7  8D BC 09     mX
-    LDA $40F1               ; $C20FEA  AD F1 40     mX
-    ORA #$08                ; $C20FED  09 08        mX
-    STA $40F1               ; $C20FEF  8D F1 40     mX
-    RTS                     ; $C20FF2  60           mX
+    PLA                             ; $C20FE0  68           mX
+    STA $0861,Y                     ; $C20FE1  99 61 08     mX
+    LDA $0861                       ; $C20FE4  AD 61 08     mX
+    STA $09BC                       ; $C20FE7  8D BC 09     mX
+    LDA $40F1                       ; $C20FEA  AD F1 40     mX
+    ORA #$08                        ; $C20FED  09 08        mX
+    STA $40F1                       ; $C20FEF  8D F1 40     mX
+    RTS                             ; $C20FF2  60           mX
 L_C20FF3:
-    LDA $06F3               ; $C20FF3  AD F3 06     mX
-    BIT #$20                ; $C20FF6  89 20        mX
-    BEQ L_C21005            ; $C20FF8  F0 0B        mX
-    LDA $073D               ; $C20FFA  AD 3D 07     mX
-    BIT #$20                ; $C20FFD  89 20        mX
-    BNE L_C21005            ; $C20FFF  D0 04        mX
-    LDA #$01                ; $C21001  A9 01        mX
-    STA $D6                 ; $C21003  85 D6        mX
+    LDA $06F3                       ; $C20FF3  AD F3 06     mX
+    BIT #$20                        ; $C20FF6  89 20        mX
+    BEQ L_C21005                    ; $C20FF8  F0 0B        mX
+    LDA $073D                       ; $C20FFA  AD 3D 07     mX
+    BIT #$20                        ; $C20FFD  89 20        mX
+    BNE L_C21005                    ; $C20FFF  D0 04        mX
+    LDA #$01                        ; $C21001  A9 01        mX
+    STA $D6                         ; $C21003  85 D6        mX
 L_C21005:
-    LDA $06FB               ; $C21005  AD FB 06     mX
-    BIT #$40                ; $C21008  89 40        mX
-    BEQ L_C21017            ; $C2100A  F0 0B        mX
-    LDA $073E               ; $C2100C  AD 3E 07     mX
-    BIT #$40                ; $C2100F  89 40        mX
-    BNE L_C21017            ; $C21011  D0 04        mX
-    LDA #$01                ; $C21013  A9 01        mX
-    STA $D6                 ; $C21015  85 D6        mX
+    LDA $06FB                       ; $C21005  AD FB 06     mX
+    BIT #$40                        ; $C21008  89 40        mX
+    BEQ L_C21017                    ; $C2100A  F0 0B        mX
+    LDA $073E                       ; $C2100C  AD 3E 07     mX
+    BIT #$40                        ; $C2100F  89 40        mX
+    BNE L_C21017                    ; $C21011  D0 04        mX
+    LDA #$01                        ; $C21013  A9 01        mX
+    STA $D6                         ; $C21015  85 D6        mX
 L_C21017:
-    RTS                     ; $C21017  60           mX
+    RTS                             ; $C21017  60           mX
     db $52,$4E,$43,$02,$00,$00,$BE,$20,$00,$00,$7B,$84,$F4,$C9,$4A,$0C ; $C21018
     db $02,$04,$2E,$BB,$00,$00,$DA,$6B,$5A,$2B,$86,$02,$90,$62,$92,$21 ; $C21028
     db $4E,$01,$0A,$01,$8C,$29,$CC,$41,$4A,$21,$86,$08,$10,$52,$06,$2A ; $C21038

@@ -13,6 +13,9 @@ import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
 from disasm68k import ROWS, SPECREG, decode, rev16  # noqa: E402
+import names  # noqa: E402
+
+CODE_NAMES = names.load("genesis")[0]
 
 CANDIDATES = {}
 for r in ROWS:
@@ -196,7 +199,7 @@ def assemble(path, out, start):
     """Assemble one listing, which must begin at start; returns the address after its last byte."""
     pc = None
     for ln, line in enumerate(open(path), 1):
-        text = line.split(";", 1)[0].strip()
+        text = names.unname(line.split(";", 1)[0].strip(), CODE_NAMES)
         if not text:
             continue
         try:
