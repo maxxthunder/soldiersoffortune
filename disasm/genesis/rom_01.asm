@@ -206,8 +206,8 @@ L_01022E:
     BCLR #$01,D3                            ; $01022E  0883 0001
     BSET #$00,D3                            ; $010232  08C3 0000
 L_010236:
-    MOVE.W $4E(A5),D0                       ; $010236  302D 004E
-    CMP.W $4C(A5),D0                        ; $01023A  B06D 004C
+    MOVE.W $4E(A5),D0                       ; $010236  302D 004E            p2_lives
+    CMP.W $4C(A5),D0                        ; $01023A  B06D 004C            p1_lives
     BCC.S L_010244                          ; $01023E  6404
     BSET #$04,D3                            ; $010240  08C3 0004
 L_010244:
@@ -277,7 +277,7 @@ L_0102D4:
 L_0102FA:
     TST.W $958(A5)                          ; $0102FA  4A6D 0958
     BMI.W L_010414                          ; $0102FE  6B00 0114
-    LEA $40B8(A5),A4                        ; $010302  49ED 40B8
+    LEA $40B8(A5),A4                        ; $010302  49ED 40B8            p1_object
     TST.W $9D6(A5)                          ; $010306  4A6D 09D6
     BEQ.S L_010318                          ; $01030A  670C
     BTST #$01,$45(A6)                       ; $01030C  082E 0001 0045
@@ -464,12 +464,12 @@ L_010506:
     dc.b $00,$00,$00,$00,$00,$01,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00 ; $010536
     dc.b $00,$00,$00,$00,$00,$00                                         ; $010546
 L_01054C:
-    LEA $412E(A5),A4                        ; $01054C  49ED 412E
+    LEA $412E(A5),A4                        ; $01054C  49ED 412E            p2_object
     BTST #$07,$6C(A4)                       ; $010550  082C 0007 006C
     BEQ.S L_010586                          ; $010556  672E
     CMPI.W #$0006,$2E(A4)                   ; $010558  0C6C 0006 002E
     BNE.S L_010586                          ; $01055E  6626
-    LEA $40B8(A5),A6                        ; $010560  4DED 40B8
+    LEA $40B8(A5),A6                        ; $010560  4DED 40B8            p1_object
     CMPI.B #$06,$58(A6)                     ; $010564  0C2E 0006 0058
     BEQ.S L_010586                          ; $01056A  671A
     TST.B $58(A4)                           ; $01056C  4A2C 0058
@@ -482,7 +482,7 @@ L_010586:
     RTS                                     ; $010586  4E75
 L_010588:
     MOVEA.L $6BC(A5),A0                     ; $010588  206D 06BC
-    LEA $40B8(A5),A6                        ; $01058C  4DED 40B8
+    LEA $40B8(A5),A6                        ; $01058C  4DED 40B8            p1_object
     MOVE.W $908(A5),D0                      ; $010590  302D 0908
     BMI.S L_0105CC                          ; $010594  6B36
     MOVE.L $44(A5),D2                       ; $010596  242D 0044
@@ -502,7 +502,7 @@ L_0105BE:
     BPL.S L_0105CC                          ; $0105C4  6A06
     MOVE.W #$FFFF,$908(A5)                  ; $0105C6  3B7C FFFF 0908
 L_0105CC:
-    LEA $412E(A5),A6                        ; $0105CC  4DED 412E
+    LEA $412E(A5),A6                        ; $0105CC  4DED 412E            p2_object
     MOVE.W $90A(A5),D0                      ; $0105D0  302D 090A
     BMI.S L_01060C                          ; $0105D4  6B36
     MOVE.L $48(A5),D2                       ; $0105D6  242D 0048
@@ -865,14 +865,14 @@ L_010A7E:
     BTST #$00,$8E4(A5)                      ; $010A8A  082D 0000 08E4
     BNE.W L_010B16                          ; $010A90  6600 0084
     MOVEM.L A0-A1/A4,-(A7)                  ; $010A94  48E7 00C8
-    LEA $40B8(A5),A4                        ; $010A98  49ED 40B8
+    LEA $40B8(A5),A4                        ; $010A98  49ED 40B8            p1_object
     BTST #$07,$6C(A4)                       ; $010A9C  082C 0007 006C
     BEQ.S L_010AAE                          ; $010AA2  670A
     BSR.W L_012FBA                          ; $010AA4  6100 2514
     CMP.W $3A(A6),D0                        ; $010AA8  B06E 003A
     BEQ.S L_010ACE                          ; $010AAC  6720
 L_010AAE:
-    LEA $412E(A5),A4                        ; $010AAE  49ED 412E
+    LEA $412E(A5),A4                        ; $010AAE  49ED 412E            p2_object
     BTST #$07,$6C(A4)                       ; $010AB2  082C 0007 006C
     BEQ.W L_010AC6                          ; $010AB8  6700 000C
     BSR.W L_012FBA                          ; $010ABC  6100 24FC
@@ -2882,10 +2882,10 @@ L_012F9E:
     ANDI #$1B,CCR                           ; $012FA2  023C 001B
     RTS                                     ; $012FA6  4E75
 L_012FA8:
-    LEA $412E(A5),A4                        ; $012FA8  49ED 412E
+    LEA $412E(A5),A4                        ; $012FA8  49ED 412E            p2_object
     CMPA.L #$00FF40B8,A6                    ; $012FAC  BDFC 00FF 40B8
     BEQ.S L_012FB8                          ; $012FB2  6704
-    LEA $40B8(A5),A4                        ; $012FB4  49ED 40B8
+    LEA $40B8(A5),A4                        ; $012FB4  49ED 40B8            p1_object
 L_012FB8:
     RTS                                     ; $012FB8  4E75
 L_012FBA:
@@ -2932,9 +2932,9 @@ L_013024:
     MOVEA.L D3,A3                           ; $01302A  2643
     MOVE.W (A6),D6                          ; $01302C  3C16
     MOVE.W $2(A6),D7                        ; $01302E  3E2E 0002
-    LEA $40B8(A5),A4                        ; $013032  49ED 40B8
+    LEA $40B8(A5),A4                        ; $013032  49ED 40B8            p1_object
     BSR.W L_013056                          ; $013036  6100 001E
-    LEA $412E(A5),A4                        ; $01303A  49ED 412E
+    LEA $412E(A5),A4                        ; $01303A  49ED 412E            p2_object
     BSR.W L_013056                          ; $01303E  6100 0016
     TST.W D4                                ; $013042  4A44
     BMI.S L_01304E                          ; $013044  6B08
@@ -3100,7 +3100,7 @@ L_013212:
     MOVEQ #$00,D5                           ; $013212  7A00
     MOVEQ #$00,D6                           ; $013214  7C00
     MOVEQ #$00,D7                           ; $013216  7E00
-    LEA $40B8(A5),A6                        ; $013218  4DED 40B8
+    LEA $40B8(A5),A6                        ; $013218  4DED 40B8            p1_object
     BTST #$07,$6C(A6)                       ; $01321C  082E 0007 006C
     BEQ.S L_01323E                          ; $013222  671A
     CMPI.W #$0006,$2E(A6)                   ; $013224  0C6E 0006 002E
@@ -3112,7 +3112,7 @@ L_013212:
     ADD.W D1,D7                             ; $01323A  DE41
     ADDQ.W #1,D5                            ; $01323C  5245
 L_01323E:
-    LEA $412E(A5),A6                        ; $01323E  4DED 412E
+    LEA $412E(A5),A6                        ; $01323E  4DED 412E            p2_object
     BTST #$07,$6C(A6)                       ; $013242  082E 0007 006C
     BEQ.S L_01325C                          ; $013248  6712
     CMPI.W #$0006,$2E(A6)                   ; $01324A  0C6E 0006 002E
@@ -3132,10 +3132,10 @@ L_013266:
     MOVEQ #$00,D7                           ; $013268  7E00
     RTS                                     ; $01326A  4E75
 L_01326C:
-    LEA $40B8(A5),A6                        ; $01326C  4DED 40B8
+    LEA $40B8(A5),A6                        ; $01326C  4DED 40B8            p1_object
     BTST #$07,$6C(A6)                       ; $013270  082E 0007 006C
     BNE.S L_013284                          ; $013276  660C
-    LEA $412E(A5),A6                        ; $013278  4DED 412E
+    LEA $412E(A5),A6                        ; $013278  4DED 412E            p2_object
     BTST #$07,$6C(A6)                       ; $01327C  082E 0007 006C
     BEQ.S L_01328E                          ; $013282  670A
 L_013284:
@@ -3364,11 +3364,11 @@ L_0134A0:
 L_0134D6:
     BCLR #$00,$3D4(A5)                      ; $0134D6  08AD 0000 03D4
     LEA L_013532(PC),A4                     ; $0134DC  49FA 0054
-    LEA $40B8(A5),A6                        ; $0134E0  4DED 40B8
+    LEA $40B8(A5),A6                        ; $0134E0  4DED 40B8            p1_object
     BSR.W L_013552                          ; $0134E4  6100 006C
     BSET #$00,$3D4(A5)                      ; $0134E8  08ED 0000 03D4
     LEA L_013542(PC),A4                     ; $0134EE  49FA 0052
-    LEA $412E(A5),A6                        ; $0134F2  4DED 412E
+    LEA $412E(A5),A6                        ; $0134F2  4DED 412E            p2_object
     BSR.W L_013552                          ; $0134F6  6100 005A
     TST.B $9A2(A5)                          ; $0134FA  4A2D 09A2
     BEQ.S L_013530                          ; $0134FE  6730
@@ -3428,11 +3428,11 @@ L_0135AC:
     BCLR #$00,$49(A6)                       ; $0135AE  08AE 0000 0049
     BEQ.W L_0135DE                          ; $0135B4  6700 0028
     MOVE.L A4,-(A7)                         ; $0135B8  2F0C
-    LEA $AE4(A5),A4                         ; $0135BA  49ED 0AE4
+    LEA $AE4(A5),A4                         ; $0135BA  49ED 0AE4            p1_money
     MOVE.B $40(A6),D0                       ; $0135BE  102E 0040
     ANDI.W #$0001,D0                        ; $0135C2  0240 0001
     BEQ.S L_0135CC                          ; $0135C6  6704
-    LEA $B0C(A5),A4                         ; $0135C8  49ED 0B0C
+    LEA $B0C(A5),A4                         ; $0135C8  49ED 0B0C            p2_money
 L_0135CC:
     MOVE.W $4(A4),D7                        ; $0135CC  3E2C 0004
     MOVEA.L (A7)+,A4                        ; $0135D0  285F
@@ -3470,11 +3470,11 @@ L_013634:
     BCLR #$03,$49(A6)                       ; $013638  08AE 0003 0049
     BEQ.S L_01368E                          ; $01363E  674E
     MOVE.L A4,-(A7)                         ; $013640  2F0C
-    LEA $AE4(A5),A4                         ; $013642  49ED 0AE4
+    LEA $AE4(A5),A4                         ; $013642  49ED 0AE4            p1_money
     MOVE.B $40(A6),D0                       ; $013646  102E 0040
     ANDI.W #$0001,D0                        ; $01364A  0240 0001
     BEQ.S L_013654                          ; $01364E  6704
-    LEA $B0C(A5),A4                         ; $013650  49ED 0B0C
+    LEA $B0C(A5),A4                         ; $013650  49ED 0B0C            p2_money
 L_013654:
     MOVE.W $18(A4),D0                       ; $013654  302C 0018
     MOVEA.L (A7)+,A4                        ; $013658  285F
@@ -4194,7 +4194,7 @@ L_013E4C:
     MOVE.W $0(A0,D0.W),D0                   ; $013E6A  3030 0000
     BCLR #$05,D0                            ; $013E6E  0880 0005
     SUBI.W #$0041,D0                        ; $013E72  0440 0041
-    CMP.W $960(A5),D0                       ; $013E76  B06D 0960
+    CMP.W $960(A5),D0                       ; $013E76  B06D 0960            level_counter
     BEQ.S L_013E80                          ; $013E7A  6704
     ADDQ.W #1,$B48(A5)                      ; $013E7C  526D 0B48
 L_013E80:
@@ -4605,7 +4605,7 @@ L_014270:
     MOVE.W $0(A0,D2.W),D2                   ; $014294  3430 2000
     BCLR #$05,D2                            ; $014298  0882 0005
     SUBI.W #$0041,D2                        ; $01429C  0442 0041
-    CMP.W $960(A5),D2                       ; $0142A0  B46D 0960
+    CMP.W $960(A5),D2                       ; $0142A0  B46D 0960            level_counter
     BEQ.S L_0142B4                          ; $0142A4  670E
     ANDI.W #$00FF,D3                        ; $0142A6  0243 00FF
     CMP.W D1,D3                             ; $0142AA  B641
@@ -4887,17 +4887,17 @@ L_014596:
 L_0145D2:
     MOVE.L A4,-(A7)                         ; $0145D2  2F0C
     MOVE.L A6,-(A7)                         ; $0145D4  2F0E
-    LEA $40B8(A5),A6                        ; $0145D6  4DED 40B8
+    LEA $40B8(A5),A6                        ; $0145D6  4DED 40B8            p1_object
     BTST #$07,$6C(A6)                       ; $0145DA  082E 0007 006C
     BEQ.S L_0145F2                          ; $0145E0  6710
-    LEA $AE4(A5),A4                         ; $0145E2  49ED 0AE4
+    LEA $AE4(A5),A4                         ; $0145E2  49ED 0AE4            p1_money
     MOVE.B $5(A4),$48(A6)                   ; $0145E6  1D6C 0005 0048
     BSET #$00,$49(A6)                       ; $0145EC  08EE 0000 0049
 L_0145F2:
-    LEA $412E(A5),A6                        ; $0145F2  4DED 412E
+    LEA $412E(A5),A6                        ; $0145F2  4DED 412E            p2_object
     BTST #$07,$6C(A6)                       ; $0145F6  082E 0007 006C
     BEQ.S L_01460E                          ; $0145FC  6710
-    LEA $B0C(A5),A4                         ; $0145FE  49ED 0B0C
+    LEA $B0C(A5),A4                         ; $0145FE  49ED 0B0C            p2_money
     MOVE.B $5(A4),$48(A6)                   ; $014602  1D6C 0005 0048
     BSET #$00,$49(A6)                       ; $014608  08EE 0000 0049
 L_01460E:
@@ -4979,7 +4979,7 @@ L_0146DE:
     ADD.W D3,D3                             ; $0146E6  D643
     CMPI.B #$1F,$4D(A5,D3.W)                ; $0146E8  0C35 001F 304D
     BEQ.S L_0146FA                          ; $0146EE  670A
-    BSET #$07,$4C(A5,D3.W)                  ; $0146F0  08F5 0007 304C
+    BSET #$07,$4C(A5,D3.W)                  ; $0146F0  08F5 0007 304C       p1_lives
     ADDQ.B #1,$4D(A5,D3.W)                  ; $0146F6  5235 304D
 L_0146FA:
     RTS                                     ; $0146FA  4E75
@@ -4997,13 +4997,13 @@ L_014700:
     ADDQ.W #8,D0                            ; $014712  5040
     MOVE.W D0,$8FA(A5)                      ; $014714  3B40 08FA
     MOVEM.L D0-D7/A0-A4/A6,-(A7)            ; $014718  48E7 FFFA
-    LEA $40B8(A5),A6                        ; $01471C  4DED 40B8
+    LEA $40B8(A5),A6                        ; $01471C  4DED 40B8            p1_object
     BTST #$00,$6D(A6)                       ; $014720  082E 0000 006D
     BEQ.S L_014732                          ; $014726  670A
     BSR.W L_00FF1C                          ; $014728  6100 B7F2
     JSR L_008D94                            ; $01472C  4EB9 0000 8D94
 L_014732:
-    LEA $412E(A5),A6                        ; $014732  4DED 412E
+    LEA $412E(A5),A6                        ; $014732  4DED 412E            p2_object
     BTST #$00,$6D(A6)                       ; $014736  082E 0000 006D
     BEQ.S L_014748                          ; $01473C  670A
     BSR.W L_00FF1C                          ; $01473E  6100 B7DC
@@ -5050,11 +5050,11 @@ L_014786:
     ADD.B D0,$48(A6)                        ; $014786  D12E 0048
     BSET #$00,$49(A6)                       ; $01478A  08EE 0000 0049
     MOVE.L A4,-(A7)                         ; $014790  2F0C
-    LEA $AE4(A5),A4                         ; $014792  49ED 0AE4
+    LEA $AE4(A5),A4                         ; $014792  49ED 0AE4            p1_money
     MOVE.B $40(A6),D0                       ; $014796  102E 0040
     ANDI.W #$0001,D0                        ; $01479A  0240 0001
     BEQ.S L_0147A4                          ; $01479E  6704
-    LEA $B0C(A5),A4                         ; $0147A0  49ED 0B0C
+    LEA $B0C(A5),A4                         ; $0147A0  49ED 0B0C            p2_money
 L_0147A4:
     MOVE.W $4(A4),D0                        ; $0147A4  302C 0004
     MOVEA.L (A7)+,A4                        ; $0147A8  285F
@@ -5075,7 +5075,7 @@ L_0147CE:
     MOVE.B #$06,$58(A6)                     ; $0147CE  1D7C 0006 0058
     BTST #$00,$40(A6)                       ; $0147D4  082E 0000 0040
     BNE.S L_0147F6                          ; $0147DA  661A
-    LEA $412E(A5),A4                        ; $0147DC  49ED 412E
+    LEA $412E(A5),A4                        ; $0147DC  49ED 412E            p2_object
     BTST #$07,$6C(A4)                       ; $0147E0  082C 0007 006C
     BEQ.S L_0147F6                          ; $0147E6  670E
     CMPI.W #$0006,$2E(A4)                   ; $0147E8  0C6C 0006 002E
@@ -5086,10 +5086,10 @@ L_0147CE:
 L_0147F6:
     RTS                                     ; $0147F6  4E75
 L_0147F8:
-    MOVE.W $946(A5),D1                      ; $0147F8  322D 0946
+    MOVE.W $946(A5),D1                      ; $0147F8  322D 0946            p1_character
     BTST #$00,$40(A6)                       ; $0147FC  082E 0000 0040
     BEQ.S L_014808                          ; $014802  6704
-    MOVE.W $948(A5),D1                      ; $014804  322D 0948
+    MOVE.W $948(A5),D1                      ; $014804  322D 0948            p2_character
 L_014808:
     MOVE.B $014823(PC,D1.W),D1              ; $014808  123B 1019
     MOVE.W $52(A6),D0                       ; $01480C  302E 0052
@@ -5372,9 +5372,9 @@ L_014B1C:
     MOVEA.L (A7)+,A6                        ; $014B50  2C5F
     BRA.S L_014B64                          ; $014B52  6010
 L_014B54:
-    LEA $40B8(A5),A6                        ; $014B54  4DED 40B8
+    LEA $40B8(A5),A6                        ; $014B54  4DED 40B8            p1_object
     BSR.W L_014C3C                          ; $014B58  6100 00E2
-    LEA $412E(A5),A6                        ; $014B5C  4DED 412E
+    LEA $412E(A5),A6                        ; $014B5C  4DED 412E            p2_object
     BSR.W L_014C3C                          ; $014B60  6100 00DA
 L_014B64:
     MOVEA.L (A7)+,A6                        ; $014B64  2C5F
@@ -5500,7 +5500,7 @@ L_014C9E:
     ADDI.W #$0030,D3                        ; $014CB0  0643 0030
     MOVE.W D7,D4                            ; $014CB4  3807
     ADDI.W #$0030,D4                        ; $014CB6  0644 0030
-    LEA $40B8(A5),A6                        ; $014CBA  4DED 40B8
+    LEA $40B8(A5),A6                        ; $014CBA  4DED 40B8            p1_object
     BTST #$07,$6C(A6)                       ; $014CBE  082E 0007 006C
     BEQ.S L_014CE6                          ; $014CC4  6720
     BSR.W L_012DFE                          ; $014CC6  6100 E136
@@ -5515,7 +5515,7 @@ L_014C9E:
     MOVEQ #$FF,D0                           ; $014CE2  70FF
     BRA.S L_014D14                          ; $014CE4  602E
 L_014CE6:
-    LEA $412E(A5),A6                        ; $014CE6  4DED 412E
+    LEA $412E(A5),A6                        ; $014CE6  4DED 412E            p2_object
     BTST #$07,$6C(A6)                       ; $014CEA  082E 0007 006C
     BEQ.S L_014D12                          ; $014CF0  6720
     BSR.W L_012DFE                          ; $014CF2  6100 E10A
@@ -8216,7 +8216,7 @@ L_01D992:
     MOVE.W (A0)+,$4(A6)                     ; $01D996  3D58 0004
     MOVE.W (A0)+,$4(A6)                     ; $01D99A  3D58 0004
     MOVE.W #$9200,$4(A6)                    ; $01D99E  3D7C 9200 0004
-    SF $65A(A5)                             ; $01D9A4  51ED 065A
+    SF $65A(A5)                             ; $01D9A4  51ED 065A            pads_menu
     JSR L_000C60                            ; $01D9A8  4EB9 0000 0C60
     JSR L_0023E8                            ; $01D9AE  4EB9 0000 23E8
     JMP L_003DCC                            ; $01D9B4  4EF9 0000 3DCC
@@ -8281,7 +8281,7 @@ L_01DA44:
     MOVEM.L (A7)+,D0-D7/A0-A6               ; $01DA5E  4CDF 7FFF
     RTS                                     ; $01DA62  4E75
 L_01DA64:
-    MOVE.W #$000B,$00FFFF94                 ; $01DA64  33FC 000B 00FF FF94
+    MOVE.W #$000B,$00FFFF94                 ; $01DA64  33FC 000B 00FF FF94  sound_mailbox
     MOVE.W #$000B,$3E2(A5)                  ; $01DA6C  3B7C 000B 03E2
     MOVE.L A7,$14A8(A5)                     ; $01DA72  2B4F 14A8
     LEA $660E(A5),A0                        ; $01DA76  41ED 660E
@@ -8293,7 +8293,7 @@ L_01DA64:
     JSR L_0045E6                            ; $01DA90  4EB9 0000 45E6
     JSR L_0015E0                            ; $01DA96  4EB9 0000 15E0
     MOVE.W #$0002,$6F0(A5)                  ; $01DA9C  3B7C 0002 06F0
-    CLR.B $65B(A5)                          ; $01DAA2  422D 065B
+    CLR.B $65B(A5)                          ; $01DAA2  422D 065B            pad2_enabled
     LEA $00C00000,A6                        ; $01DAA6  4DF9 00C0 0000
     MOVE.W #$9200,$4(A6)                    ; $01DAAC  3D7C 9200 0004
     BSR.W L_01D982                          ; $01DAB2  6100 FECE
@@ -8392,14 +8392,14 @@ L_01DBF0:
     MOVE.L (A7)+,D1                         ; $01DBF0  221F
 L_01DBF2:
     MOVE.L D0,-(A7)                         ; $01DBF2  2F00
-    MOVE.L $472(A5),D0                      ; $01DBF4  202D 0472
+    MOVE.L $472(A5),D0                      ; $01DBF4  202D 0472            frame_counter
 L_01DBF8:
-    CMP.L $472(A5),D0                       ; $01DBF8  B0AD 0472
+    CMP.L $472(A5),D0                       ; $01DBF8  B0AD 0472            frame_counter
     BEQ.S L_01DBF8                          ; $01DBFC  67FA
     MOVE.L (A7)+,D0                         ; $01DBFE  201F
-    BTST #$05,$3D7(A5)                      ; $01DC00  082D 0005 03D7
+    BTST #$05,$3D7(A5)                      ; $01DC00  082D 0005 03D7       pad1_raw_th_low
     BEQ.S L_01DBCA                          ; $01DC06  67C2
-    BTST #$05,$3D6(A5)                      ; $01DC08  082D 0005 03D6
+    BTST #$05,$3D6(A5)                      ; $01DC08  082D 0005 03D6       pad1_raw_th_high
     BEQ.S L_01DBCA                          ; $01DC0E  67BA
     DBRA D0,L_01DBF2                        ; $01DC10  51C8 FFE0
     RTS                                     ; $01DC14  4E75
@@ -8501,9 +8501,9 @@ L_01DCF8:
     MOVEQ #$13,D0                           ; $01DD1C  7013
 L_01DD1E:
     MOVE.L D0,-(A7)                         ; $01DD1E  2F00
-    MOVE.L $472(A5),D0                      ; $01DD20  202D 0472
+    MOVE.L $472(A5),D0                      ; $01DD20  202D 0472            frame_counter
 L_01DD24:
-    CMP.L $472(A5),D0                       ; $01DD24  B0AD 0472
+    CMP.L $472(A5),D0                       ; $01DD24  B0AD 0472            frame_counter
     BEQ.S L_01DD24                          ; $01DD28  67FA
     MOVE.L (A7)+,D0                         ; $01DD2A  201F
     BSR.W L_01D9DA                          ; $01DD2C  6100 FCAC
@@ -8552,9 +8552,9 @@ L_01DD80:
     MOVEQ #$00,D1                           ; $01DDBE  7200
 L_01DDC0:
     MOVE.L D0,-(A7)                         ; $01DDC0  2F00
-    MOVE.L $472(A5),D0                      ; $01DDC2  202D 0472
+    MOVE.L $472(A5),D0                      ; $01DDC2  202D 0472            frame_counter
 L_01DDC6:
-    CMP.L $472(A5),D0                       ; $01DDC6  B0AD 0472
+    CMP.L $472(A5),D0                       ; $01DDC6  B0AD 0472            frame_counter
     BEQ.S L_01DDC6                          ; $01DDCA  67FA
     MOVE.L (A7)+,D0                         ; $01DDCC  201F
     BSR.W L_01D9F4                          ; $01DDCE  6100 FC24
@@ -8576,9 +8576,9 @@ L_01DDC6:
     MOVEQ #$00,D1                           ; $01DE0A  7200
 L_01DE0C:
     MOVE.L D0,-(A7)                         ; $01DE0C  2F00
-    MOVE.L $472(A5),D0                      ; $01DE0E  202D 0472
+    MOVE.L $472(A5),D0                      ; $01DE0E  202D 0472            frame_counter
 L_01DE12:
-    CMP.L $472(A5),D0                       ; $01DE12  B0AD 0472
+    CMP.L $472(A5),D0                       ; $01DE12  B0AD 0472            frame_counter
     BEQ.S L_01DE12                          ; $01DE16  67FA
     MOVE.L (A7)+,D0                         ; $01DE18  201F
     BSR.W L_01D9DA                          ; $01DE1A  6100 FBBE
@@ -8590,9 +8590,9 @@ L_01DE12:
     SUBI.W #$000C,D1                        ; $01DE30  0441 000C
 L_01DE34:
     MOVE.L D0,-(A7)                         ; $01DE34  2F00
-    MOVE.L $472(A5),D0                      ; $01DE36  202D 0472
+    MOVE.L $472(A5),D0                      ; $01DE36  202D 0472            frame_counter
 L_01DE3A:
-    CMP.L $472(A5),D0                       ; $01DE3A  B0AD 0472
+    CMP.L $472(A5),D0                       ; $01DE3A  B0AD 0472            frame_counter
     BEQ.S L_01DE3A                          ; $01DE3E  67FA
     MOVE.L (A7)+,D0                         ; $01DE40  201F
     BSR.W L_01D9DA                          ; $01DE42  6100 FB96
@@ -8608,9 +8608,9 @@ L_01DE3A:
     MOVE.L A1,$14B0(A5)                     ; $01DE68  2B49 14B0
     BSR.W L_01DF34                          ; $01DE6C  6100 00C6
     MOVE.L D0,-(A7)                         ; $01DE70  2F00
-    MOVE.L $472(A5),D0                      ; $01DE72  202D 0472
+    MOVE.L $472(A5),D0                      ; $01DE72  202D 0472            frame_counter
 L_01DE76:
-    CMP.L $472(A5),D0                       ; $01DE76  B0AD 0472
+    CMP.L $472(A5),D0                       ; $01DE76  B0AD 0472            frame_counter
     BEQ.S L_01DE76                          ; $01DE7A  67FA
     MOVE.L (A7)+,D0                         ; $01DE7C  201F
     BSR.W L_01DD50                          ; $01DE7E  6100 FED0
@@ -8619,9 +8619,9 @@ L_01DE76:
     MOVEQ #$0E,D0                           ; $01DE88  700E
 L_01DE8A:
     MOVE.L D0,-(A7)                         ; $01DE8A  2F00
-    MOVE.L $472(A5),D0                      ; $01DE8C  202D 0472
+    MOVE.L $472(A5),D0                      ; $01DE8C  202D 0472            frame_counter
 L_01DE90:
-    CMP.L $472(A5),D0                       ; $01DE90  B0AD 0472
+    CMP.L $472(A5),D0                       ; $01DE90  B0AD 0472            frame_counter
     BEQ.S L_01DE90                          ; $01DE94  67FA
     MOVE.L (A7)+,D0                         ; $01DE96  201F
     BSR.W L_01D9F4                          ; $01DE98  6100 FB5A
@@ -8752,7 +8752,7 @@ L_01E134:
 L_01E162:
     LEA $00C00000,A6                        ; $01E162  4DF9 00C0 0000
     JSR L_0015E0                            ; $01E168  4EB9 0000 15E0
-    MOVE.W #$000C,$00FFFF94                 ; $01E16E  33FC 000C 00FF FF94
+    MOVE.W #$000C,$00FFFF94                 ; $01E16E  33FC 000C 00FF FF94  sound_mailbox
     MOVE.W #$000C,$3E2(A5)                  ; $01E176  3B7C 000C 03E2
     JSR L_0023E8                            ; $01E17C  4EB9 0000 23E8
     JSR L_000C60                            ; $01E182  4EB9 0000 0C60
@@ -8776,7 +8776,7 @@ L_01E1CE:
     CLR.W $72E(A5)                          ; $01E1D6  426D 072E
     CLR.W $730(A5)                          ; $01E1DA  426D 0730
     JSR L_0045E6                            ; $01E1DE  4EB9 0000 45E6
-    CLR.B $65B(A5)                          ; $01E1E4  422D 065B
+    CLR.B $65B(A5)                          ; $01E1E4  422D 065B            pad2_enabled
     MOVEQ #$0C,D0                           ; $01E1E8  700C
     JSR L_002012                            ; $01E1EA  4EB9 0000 2012
     MOVE.L D0,-(A7)                         ; $01E1F0  2F00
@@ -8800,9 +8800,9 @@ L_01E1CE:
     BSR.W L_01E2E8                          ; $01E23C  6100 00AA
     JSR L_0023E8                            ; $01E240  4EB9 0000 23E8
     MOVE.L D0,-(A7)                         ; $01E246  2F00
-    MOVE.L $472(A5),D0                      ; $01E248  202D 0472
+    MOVE.L $472(A5),D0                      ; $01E248  202D 0472            frame_counter
 L_01E24C:
-    CMP.L $472(A5),D0                       ; $01E24C  B0AD 0472
+    CMP.L $472(A5),D0                       ; $01E24C  B0AD 0472            frame_counter
     BEQ.S L_01E24C                          ; $01E250  67FA
     MOVE.L (A7)+,D0                         ; $01E252  201F
     LEA $7418(A5),A0                        ; $01E254  41ED 7418
@@ -9024,9 +9024,9 @@ L_01E644:
     MOVE.W #$00A0,D0                        ; $01E664  303C 00A0
 L_01E668:
     MOVE.L D0,-(A7)                         ; $01E668  2F00
-    MOVE.L $472(A5),D0                      ; $01E66A  202D 0472
+    MOVE.L $472(A5),D0                      ; $01E66A  202D 0472            frame_counter
 L_01E66E:
-    CMP.L $472(A5),D0                       ; $01E66E  B0AD 0472
+    CMP.L $472(A5),D0                       ; $01E66E  B0AD 0472            frame_counter
     BEQ.S L_01E66E                          ; $01E672  67FA
     MOVE.L (A7)+,D0                         ; $01E674  201F
     BSR.W L_01D9E6                          ; $01E676  6100 F36E
@@ -9050,9 +9050,9 @@ L_01E684:
     ADDI.W #$0014,D0                        ; $01E6AA  0640 0014
 L_01E6AE:
     MOVE.L D0,-(A7)                         ; $01E6AE  2F00
-    MOVE.L $472(A5),D0                      ; $01E6B0  202D 0472
+    MOVE.L $472(A5),D0                      ; $01E6B0  202D 0472            frame_counter
 L_01E6B4:
-    CMP.L $472(A5),D0                       ; $01E6B4  B0AD 0472
+    CMP.L $472(A5),D0                       ; $01E6B4  B0AD 0472            frame_counter
     BEQ.S L_01E6B4                          ; $01E6B8  67FA
     MOVE.L (A7)+,D0                         ; $01E6BA  201F
     BSR.W L_01D9E6                          ; $01E6BC  6100 F328
@@ -9064,9 +9064,9 @@ L_01E6B4:
 L_01E6CE:
     MOVEM.L D0-D7/A0-A6,-(A7)               ; $01E6CE  48E7 FFFE
     MOVE.L D0,-(A7)                         ; $01E6D2  2F00
-    MOVE.L $472(A5),D0                      ; $01E6D4  202D 0472
+    MOVE.L $472(A5),D0                      ; $01E6D4  202D 0472            frame_counter
 L_01E6D8:
-    CMP.L $472(A5),D0                       ; $01E6D8  B0AD 0472
+    CMP.L $472(A5),D0                       ; $01E6D8  B0AD 0472            frame_counter
     BEQ.S L_01E6D8                          ; $01E6DC  67FA
     MOVE.L (A7)+,D0                         ; $01E6DE  201F
     MOVEQ #$00,D1                           ; $01E6E0  7200

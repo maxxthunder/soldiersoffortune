@@ -3314,7 +3314,7 @@ L_14CECE:
     MOVE.W #$FFFF,$00FFFFA8                 ; $14CED6  33FC FFFF 00FF FFA8
     RTS                                     ; $14CEDE  4E75
 L_14CEE0:
-    MOVE.W D0,$00FFFF94                     ; $14CEE0  33C0 00FF FF94
+    MOVE.W D0,$00FFFF94                     ; $14CEE0  33C0 00FF FF94       sound_mailbox
     RTS                                     ; $14CEE6  4E75
 L_14CEE8:
     MOVE.W D0,$00FFFFA2                     ; $14CEE8  33C0 00FF FFA2
@@ -3326,15 +3326,15 @@ L_14CEF0:
     RTS                                     ; $14CEFC  4E75
 L_14CEFE:
     TST.W $00FFFF92                         ; $14CEFE  4A79 00FF FF92
-    BNE.S L_14CF08                          ; $14CF04  6602
+    BNE.S z80_send_commands                 ; $14CF04  6602
     RTS                                     ; $14CF06  4E75
-L_14CF08:
+z80_send_commands:
     MOVE.W #$0100,$00A11100                 ; $14CF08  33FC 0100 00A1 1100
 L_14CF10:
     BTST #$00,$00A11100                     ; $14CF10  0839 0000 00A1 1100
     BNE.S L_14CF10                          ; $14CF18  66F6
     MOVE.W #$002D,D0                        ; $14CF1A  303C 002D
-    LEA $00FFFF94,A0                        ; $14CF1E  41F9 00FF FF94
+    LEA $00FFFF94,A0                        ; $14CF1E  41F9 00FF FF94       sound_mailbox
     LEA $00A01F80,A5                        ; $14CF24  4BF9 00A0 1F80
 L_14CF2A:
     MOVE.B (A0)+,(A5)+                      ; $14CF2A  1AD8
@@ -3342,7 +3342,7 @@ L_14CF2A:
     MOVE.W #$0000,$00A11100                 ; $14CF30  33FC 0000 00A1 1100
 L_14CF38:
     MOVEQ #$FF,D0                           ; $14CF38  70FF
-    MOVE.W D0,$00FFFF94                     ; $14CF3A  33C0 00FF FF94
+    MOVE.W D0,$00FFFF94                     ; $14CF3A  33C0 00FF FF94       sound_mailbox
     MOVE.L D0,$00FFFF96                     ; $14CF40  23C0 00FF FF96
     MOVE.L D0,$00FFFF9A                     ; $14CF46  23C0 00FF FF9A
     MOVE.L D0,$00FFFF9E                     ; $14CF4C  23C0 00FF FF9E
@@ -3352,7 +3352,7 @@ L_14CF38:
     MOVE.L D0,$00FFFFB2                     ; $14CF64  23C0 00FF FFB2
     MOVE.W D0,$00FFFFBE                     ; $14CF6A  33C0 00FF FFBE
     RTS                                     ; $14CF70  4E75
-L_14CF72:
+z80_load_driver:
     BSR.W L_14CFFA                          ; $14CF72  6100 0086
     MOVE.W #$0100,$00A11100                 ; $14CF76  33FC 0100 00A1 1100
     MOVE.W #$0100,$00A11200                 ; $14CF7E  33FC 0100 00A1 1200
@@ -3360,14 +3360,14 @@ L_14CF86:
     BTST #$00,$00A11100                     ; $14CF86  0839 0000 00A1 1100
     BNE.S L_14CF86                          ; $14CF8E  66F6
     MOVE.W #$121E,D0                        ; $14CF90  303C 121E
-    LEA L_14D044(PC),A0                     ; $14CF94  41FA 00AE
+    LEA z80_driver(PC),A0                   ; $14CF94  41FA 00AE
     LEA $00A00000,A1                        ; $14CF98  43F9 00A0 0000
 L_14CF9E:
     MOVE.B (A0)+,(A1)+                      ; $14CF9E  12D8
     DBRA D0,L_14CF9E                        ; $14CFA0  51C8 FFFC
     BSR.S L_14CF38                          ; $14CFA4  6192
     MOVE.W #$002D,D0                        ; $14CFA6  303C 002D
-    LEA $00FFFF94,A0                        ; $14CFAA  41F9 00FF FF94
+    LEA $00FFFF94,A0                        ; $14CFAA  41F9 00FF FF94       sound_mailbox
     LEA $00A01F80,A1                        ; $14CFB0  43F9 00A0 1F80
 L_14CFB6:
     MOVE.B (A0)+,(A1)+                      ; $14CFB6  12D8
@@ -3409,7 +3409,7 @@ L_14D030:
     LSR.W #8,D0                             ; $14D03E  E048
     MOVE.B D0,(A0)+                         ; $14D040  10C0
     RTS                                     ; $14D042  4E75
-L_14D044:
+z80_driver:
     dc.b $F3,$31,$80,$1F,$CD,$3C,$01,$CD,$96,$01,$FD,$21,$00,$40,$ED,$56 ; $14D044
     dc.b $FB,$C3,$14,$01,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00 ; $14D054
     dc.b $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00 ; $14D064
