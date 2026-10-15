@@ -192,7 +192,8 @@ def encode(mnem, opstr, pc):
     raise ValueError(f"cannot encode {mnem} {opstr}")
 
 
-def assemble(path, out):
+def assemble(path, out, start):
+    """Assemble one listing, which must begin at start; returns the address after its last byte."""
     pc = None
     for ln, line in enumerate(open(path), 1):
         text = line.split(";", 1)[0].strip()
@@ -201,6 +202,7 @@ def assemble(path, out):
         try:
             if text.startswith("org "):
                 pc = int(text[5:], 16)
+                assert pc == start, f"org ${pc:06X} leaves a gap or overlap; previous listing ended at ${start:06X}"
             elif text.endswith(":"):
                 lab = re.fullmatch(r"L_([0-9A-F]{6}):", text)
                 assert not lab or int(lab.group(1), 16) == pc, f"label at wrong address {pc:06X}"
@@ -210,21 +212,27 @@ def assemble(path, out):
                 else:
                     mnem, _, ops = text.partition(" ")
                     b = encode(mnem, ops.strip(), pc)
+                assert pc + len(b) <= len(out), f"runs past the end of the ROM at ${pc:06X}"
                 out[pc:pc + len(b)] = b
                 pc += len(b)
+                start = pc
         except Exception as e:
             raise SystemExit(f"{path}:{ln}: {e}")
+    return start
 
 
 def main(asm_dir, rom_path, out_path=None):
     rom = open(rom_path, "rb").read()
     out = bytearray(len(rom))
+    pc = 0
     for f in sorted(glob.glob(os.path.join(asm_dir, "rom_*.asm"))):
-        assemble(f, out)
+        pc = assemble(f, out, pc)
+    if pc != len(rom):
+        raise SystemExit(f"MISMATCH: listings end at ${pc:06X}, ROM is ${len(rom):06X} bytes")
     if out_path:
         open(out_path, "wb").write(out)
     diffs = [i for i in range(len(rom)) if rom[i] != out[i]]
-    if diffs or len(out) != len(rom):
+    if diffs:
         raise SystemExit(f"MISMATCH: {len(diffs)} bytes differ, first at file offset ${diffs[0]:06X}")
     print(f"OK: {len(out)} bytes, identical to {os.path.basename(rom_path)}")
 
