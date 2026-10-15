@@ -896,13 +896,76 @@ L_C2074F:
     DEX                     ; $C2074F  CA           MX
     BNE L_C20726            ; $C20750  D0 D4        MX
     RTL                     ; $C20752  6B           MX
-    db $08,$C2,$20,$DA,$48,$29,$FF,$00,$E2,$20,$F0,$0E,$AA,$BF,$54,$00 ; $C20753
-    db $C8,$18,$63,$01,$F0,$02,$10,$02,$A9,$01,$C2,$20,$FA,$29,$FF,$00 ; $C20763
-    db $FA,$28,$6B,$08,$C2,$20,$48,$DA,$A5,$46,$29,$FF,$00,$E2,$20,$F0 ; $C20773
-    db $0E,$AA,$BF,$54,$00,$C8,$18,$65,$46,$F0,$02,$10,$02,$A9,$01,$C2 ; $C20783
-    db $20,$29,$FF,$00,$85,$46,$FA,$68,$28,$6B,$DA,$48,$29,$FF,$00,$F0 ; $C20793
-    db $1B,$E2,$20,$AA,$BF,$54,$01,$C8,$18,$63,$01,$D0,$02,$A9,$01,$C2 ; $C207A3
-    db $20,$29,$FF,$00,$89,$80,$00,$F0,$03,$09,$00,$FF,$FA,$FA,$6B     ; $C207B3
+L_C20753:
+    PHP                     ; $C20753  08           MX
+    REP #$20                ; $C20754  C2 20        MX
+    PHX                     ; $C20756  DA           MX
+    PHA                     ; $C20757  48           MX
+    AND #$00FF              ; $C20758  29 FF 00     MX
+    SEP #$20                ; $C2075B  E2 20        MX
+    BEQ L_C2076D            ; $C2075D  F0 0E        mX
+    TAX                     ; $C2075F  AA           mX
+    LDA $C80054,X           ; $C20760  BF 54 00 C8  mX
+    CLC                     ; $C20764  18           mX
+    ADC $01,S               ; $C20765  63 01        mX
+    BEQ L_C2076B            ; $C20767  F0 02        mX
+    BPL L_C2076D            ; $C20769  10 02        mX
+L_C2076B:
+    LDA #$01                ; $C2076B  A9 01        mX
+L_C2076D:
+    REP #$20                ; $C2076D  C2 20        mX
+    PLX                     ; $C2076F  FA           MX
+    AND #$00FF              ; $C20770  29 FF 00     MX
+    PLX                     ; $C20773  FA           MX
+    PLP                     ; $C20774  28           MX
+    RTL                     ; $C20775  6B           MX
+L_C20776:
+    PHP                     ; $C20776  08           MX
+    REP #$20                ; $C20777  C2 20        MX
+    PHA                     ; $C20779  48           MX
+    PHX                     ; $C2077A  DA           MX
+    LDA $46                 ; $C2077B  A5 46        MX
+    AND #$00FF              ; $C2077D  29 FF 00     MX
+    SEP #$20                ; $C20780  E2 20        MX
+    BEQ L_C20792            ; $C20782  F0 0E        mX
+    TAX                     ; $C20784  AA           mX
+    LDA $C80054,X           ; $C20785  BF 54 00 C8  mX
+    CLC                     ; $C20789  18           mX
+    ADC $46                 ; $C2078A  65 46        mX
+    BEQ L_C20790            ; $C2078C  F0 02        mX
+    BPL L_C20792            ; $C2078E  10 02        mX
+L_C20790:
+    LDA #$01                ; $C20790  A9 01        mX
+L_C20792:
+    REP #$20                ; $C20792  C2 20        mX
+    AND #$00FF              ; $C20794  29 FF 00     MX
+    STA $46                 ; $C20797  85 46        MX
+    PLX                     ; $C20799  FA           MX
+    PLA                     ; $C2079A  68           MX
+    PLP                     ; $C2079B  28           MX
+    RTL                     ; $C2079C  6B           MX
+L_C2079D:
+    PHX                     ; $C2079D  DA           MX
+    PHA                     ; $C2079E  48           MX
+    AND #$00FF              ; $C2079F  29 FF 00     MX
+    BEQ L_C207BF            ; $C207A2  F0 1B        MX
+    SEP #$20                ; $C207A4  E2 20        MX
+    TAX                     ; $C207A6  AA           mX
+    LDA $C80154,X           ; $C207A7  BF 54 01 C8  mX
+    CLC                     ; $C207AB  18           mX
+    ADC $01,S               ; $C207AC  63 01        mX
+    BNE L_C207B2            ; $C207AE  D0 02        mX
+    LDA #$01                ; $C207B0  A9 01        mX
+L_C207B2:
+    REP #$20                ; $C207B2  C2 20        mX
+    AND #$00FF              ; $C207B4  29 FF 00     MX
+    BIT #$0080              ; $C207B7  89 80 00     MX
+    BEQ L_C207BF            ; $C207BA  F0 03        MX
+    ORA #$FF00              ; $C207BC  09 00 FF     MX
+L_C207BF:
+    PLX                     ; $C207BF  FA           MX
+    PLX                     ; $C207C0  FA           MX
+    RTL                     ; $C207C1  6B           MX
 L_C207C2:
     LDA $076D               ; $C207C2  AD 6D 07     MX
     LSR                     ; $C207C5  4A           MX

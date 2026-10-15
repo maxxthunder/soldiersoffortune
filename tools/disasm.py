@@ -137,23 +137,57 @@ def returns(rom, addr, m, x, memo):
     return memo[key]
 
 
+def jump_table(rom, table, mask, stride, code, data):
+    """Targets of a JMP/JSR (table,X) dispatch; marks the table's bytes as data.
+    shortcut: length is guessed (index mask, first target, existing code, $0000/$FFFF words),
+    handlers more than $1000 from the first are taken as the end, as are code, $0000/$FFFF and
+    the index mask, so a table followed by nearby-looking words can still overshoot."""
+    bank, targets, end = table & 0xFF0000, [], 0x10000
+    limit = min(64, mask + 1 if mask is not None else 64)  # mask is applied before the index is doubled
+    for i in range(limit):
+        lo = (table + stride * i) & 0xFFFF
+        off = to_off(bank | lo)
+        if lo + 1 >= end or off is None or off + 1 >= len(rom) or off in code or off + 1 in code:
+            break
+        w = rom[off] | rom[off + 1] << 8
+        if w in (0, 0xFFFF) or to_off(bank | w) is None or table & 0xFFFF <= w <= lo + 1                 or targets and abs(w - (targets[0] & 0xFFFF)) > 0x1000:
+            break
+        data.update((off, off + 1))
+        targets.append(bank | w)
+        if w > table & 0xFFFF:
+            end = min(end, w)
+    return targets
+
+
 def trace(rom, entries):
     code = {}      # offset -> (size, m, x)
     labels = set()  # offsets
+    data = set()    # offsets of jump-table words, never traced as code
     memo = {}
     work = [(a, m, x, ()) for a, m, x in entries]
     while work:
         addr, m, x, stk = work.pop()
+        mask = None  # last AND #imm on this path, bounds a following jump table
+        shift = stride = 0  # ASLs just before TAX give the table's entry size
         while True:
             off = to_off(addr)
-            if off is None or off >= len(rom) or off in code:
+            if off is None or off >= len(rom) or off in code or off in data:
                 break
             name, mode = OPS[rom[off]]
             n = size_of(mode, m, x)
-            if off + n > len(rom) or any(off + i in code for i in range(1, n)):
+            if off + n > len(rom) or any(off + i in code or off + i in data for i in range(1, n)):
                 break
             code[off] = (n, m, x)
             arg = int.from_bytes(rom[off + 1:off + n], "little")
+            shift, prev_shift = (shift + 1 if name == "ASL" and mode == "imp" else 0), shift
+            if name == "AND" and mode == "immM":
+                mask = arg
+            elif name == "TAX":
+                stride = 1 << max(prev_shift, 1)
+            elif name in ("JMP", "JSR") and mode == "absix":
+                for t in jump_table(rom, (addr & 0xFF0000) | arg, mask, stride or 2, code, data):
+                    labels.add(to_off(t))
+                    work.append((t, m, x, ()))
             nxt = (addr & 0xFF0000) | ((addr + n) & 0xFFFF)
             tgt = target(name, mode, addr, n, arg)
             call = name in ("JSR", "JSL") and tgt is not None
