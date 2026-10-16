@@ -11,6 +11,7 @@ import os
 import sys
 
 import names
+import rnc
 
 EXTRA_ENTRIES = []  # addresses
 REGIONS = {0x14D044: (0x14E263, "Z80 sound driver: copied to Z80 RAM $0000 by z80_load_driver")}  # start: (end, title)
@@ -447,6 +448,11 @@ def main(rom_path, outdir):
         assert t < len(rom) and (t in code or not used[t]), f"names.txt: ${t:06X} is inside an instruction"
     labels = {t for t in jumps | refs | set(entries) if t in code or not used[t]} | set(code_names)
     typed = typed_data(rom, code, used, guesses(rom, code))
+    regions = dict(REGIONS)
+    for off in rnc.scan(rom):
+        method, un, pk = rnc.header(rom, off)[:3]
+        regions[off] = (off + rnc.HEADER + pk, f"RNC method {method} block: {pk} bytes packed, {un} unpacked (tools/rnc.py)")
+    ends = {end for end, _ in regions.values()}
 
     os.makedirs(outdir, exist_ok=True)
     a, chunk = 0, 0x10000
@@ -454,10 +460,10 @@ def main(rom_path, outdir):
         start, end = a, min(a - a % chunk + chunk, len(rom))
         lines = [f"org ${a:06X}", ""]
         while a < end:
-            if a in (end for end, _ in REGIONS.values()):
+            if a in ends:
                 lines += ["; ---- end of region ----", ""]
-            if a in REGIONS:
-                lines += ["", f"; ---- {REGIONS[a][1]} (${a:06X}-${REGIONS[a][0] - 1:06X}) ----"]
+            if a in regions:
+                lines += ["", f"; ---- {regions[a][1]} (${a:06X}-${regions[a][0] - 1:06X}) ----"]
             if a in labels:
                 lines.append(f"{code_names.get(a, 'L_%06X' % a)}:")
             if a in code:
@@ -476,8 +482,7 @@ def main(rom_path, outdir):
                 a += size
             else:
                 stop = a + 1
-                bounds = set(REGIONS) | {end for end, _ in REGIONS.values()}
-                while stop < len(rom) and stop not in code and stop not in labels and stop not in typed                         and stop not in bounds and stop - a < 16:
+                while stop < len(rom) and stop not in code and stop not in labels and stop not in typed                         and stop not in regions and stop not in ends and stop - a < 16:
                     stop += 1
                 lines.append(f"    dc.b {','.join('$%02X' % b for b in rom[a:stop]):<64}; ${a:06X}")
                 a = stop
