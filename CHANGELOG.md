@@ -2,6 +2,12 @@
 
 Changes to the [password generator](https://maxxthunder.github.io/soldiersoffortune/). The version is shown at the bottom of the page.
 
+## 1.0.10 (2026-10-16)
+- The page has a tab icon.
+- Super Nintendo replaces SNES in Big text, decode messages and the page text.
+- Big text fills 80% of the screen's width, and the tap-to-cross-off groups are gone.
+- On small phones, the notes no longer scroll sideways, and the line above the Big text password wraps evenly.
+
 ## 1.0.9 (2026-10-15)
 - A mistyped password from another console now gets suggested fixes too, not only one from the selected console.
 
