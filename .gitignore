@@ -1,8 +1,9 @@
 *.sfc
 *.smc
-# ROMs: never commit them (README.md is the only .md in the root)
+# ROMs: never commit them (README.md and CHANGELOG.md are the only .md files in the root)
 /*.md
 !/README.md
+!/CHANGELOG.md
 __pycache__/
 unpacked/
 *.adf
