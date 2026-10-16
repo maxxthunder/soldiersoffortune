@@ -17,9 +17,9 @@
 It works offline too: save [`tools/sof_password_generator.html`](tools/sof_password_generator.html) and open it in a browser.
 
 <p align="center">
-  <img src="docs/images/generator-1.0.2.png" alt="The generator: console picker, password, and the two players' characters, lives and levels" width="560">
+  <img src="docs/images/generator-1.0.3.png" alt="The generator: console picker, password, and the two players' characters, lives and levels" width="560">
   &nbsp;
-  <img src="docs/images/big_text-1.0.2.png" alt="Big text view on a phone, with the first group of four crossed off" width="210">
+  <img src="docs/images/big_text-1.0.3.png" alt="Big text view on a phone, with the first group of four crossed off" width="210">
 </p>
 <p align="center"><sub>Left: the generator. Right: <b>Big text</b>, for reading the password off your phone while you type it in.</sub></p>
 
@@ -40,7 +40,7 @@ For example, `W1V19S2SH21Q` on the SNES is World 2, one player: the Brigand with
 - **Typo.** Characters like B/8, S/5 and 0/Q are easy to mix up. The generator suggests fixes.
 - **World 1.** Only the original Amiga version takes World 1 passwords. Every other version starts there, so its passwords start at World 2.
 
-<p align="center"><img src="docs/images/decode-1.0.2.gif" alt="Decoding a mistyped password: the generator finds the checksum error, suggests the fix, and loads the party" width="600"></p>
+<p align="center"><img src="docs/images/decode-1.0.3.gif" alt="Decoding a mistyped password: the generator finds the checksum error, suggests the fix, and loads the party" width="600"></p>
 
 ## What a password keeps
 
