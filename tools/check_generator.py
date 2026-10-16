@@ -16,7 +16,7 @@ import sof_password as P  # noqa: E402
 
 JS = r"""
 const fs = require("fs");
-const src = fs.readFileSync(process.argv[1], "utf8").match(/<script>([\s\S]*)<\/script>/)[1];
+const src = [...fs.readFileSync(process.argv[1], "utf8").matchAll(/<script>([\s\S]*?)<\/script>/g)].pop()[1];  // the page's own script is the last one
 const module = { exports: {} };
 new Function("module", src)(module);
 const G = module.exports, cases = JSON.parse(fs.readFileSync(0, "utf8"));
