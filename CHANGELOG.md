@@ -2,6 +2,9 @@
 
 Changes to the [password generator](https://maxxthunder.github.io/soldiersoffortune/). The version is shown at the bottom of the page.
 
+## 1.0.9 (2026-10-15)
+- A mistyped password from another console now gets suggested fixes too, not only one from the selected console.
+
 ## 1.0.8 (2026-10-15)
 - The password uses Space Mono, a bolder font that's easier to read from across the room.
 
