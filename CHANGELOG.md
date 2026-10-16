@@ -2,6 +2,9 @@
 
 Changes to the [password generator](https://maxxthunder.github.io/soldiersoffortune/). The version is shown at the bottom of the page.
 
+## 1.0.5 (2026-10-15)
+- Verified the site with Google Search Console.
+
 ## 1.0.4 (2026-10-15)
 - Big text reminds you to start the game with the right number of players.
 - Max everything and Fresh party can be undone.
