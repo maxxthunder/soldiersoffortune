@@ -2,6 +2,9 @@
 
 Changes to the [password generator](https://maxxthunder.github.io/soldiersoffortune/). The version is shown at the bottom of the page.
 
+## 1.0.8 (2026-10-15)
+- The password uses Space Mono, a bolder font that's easier to read from across the room.
+
 ## 1.0.7 (2026-10-15)
 - The console buttons read Super Nintendo, Genesis/Mega Drive and Amiga, and stay on one line on phones.
 - Small code cleanups.
