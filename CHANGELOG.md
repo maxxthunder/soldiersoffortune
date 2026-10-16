@@ -2,6 +2,10 @@
 
 Changes to the [password generator](https://maxxthunder.github.io/soldiersoffortune/). The version is shown at the bottom of the page.
 
+## 1.0.6 (2026-10-15)
+- The page has explicit `<head>` and `<body>` tags, so Google Search Console can find its verification tag.
+- Fixed the HTML validation errors: the logo has a placeholder image until it loads, and the lives, level and money labels no longer wrap their buttons.
+
 ## 1.0.5 (2026-10-15)
 - Verified the site with Google Search Console.
 
