@@ -8,7 +8,7 @@
 
 <p align="center"><img src="docs/images/characters.png" alt="The six mercenaries: Brigand, Mercenary, Gentleman, Navvie, Thug and Scientist (Preacher)" width="504"></p>
 
-**[Open the password generator →](https://maxxthunder.github.io/soldiersoffortune/)**
+**[Open the password generator →](https://maxxthunder.github.io/soldiersoffortune/)** &nbsp;[![v1.0.9](https://img.shields.io/badge/version-1.0.9-d4894a)](CHANGELOG.md)
 
 - **Make a password** for any world, party, lives, character levels and money.
 - **Decode a password** you already have to see what it holds, and fix typos.
@@ -27,11 +27,25 @@ It works offline too: save [`tools/sof_password_generator.html`](tools/sof_passw
 
 | Console | Released as | Passwords |
 |---------|-------------|-----------|
-| SNES | *Soldiers of Fortune* (US), *The Chaos Engine* (Europe) | Same for the US and European cartridges |
-| Genesis / Mega Drive | *Soldiers of Fortune* (US), *The Chaos Engine* (Europe) | Same for the US and European cartridges, but different from the SNES |
+| Super Nintendo | *Soldiers of Fortune* (US), *The Chaos Engine* (Europe) | Same for the US and European cartridges |
+| Genesis / Mega Drive | *Soldiers of Fortune* (US), *The Chaos Engine* (Europe) | Same for the US and European cartridges, but different from the Super Nintendo |
 | Amiga | *The Chaos Engine*, original (A500) and AGA (A1200) | Different from the consoles; only the original version takes World 1 |
 
-For example, `W1V19S2SH21Q` on the SNES is World 2, one player: the Brigand with the Thug as the computer partner.
+## Starter passwords
+
+Everything maxed for both players: 31 lives, character level 10 and 65,534 money, with the Brigand and the
+Thug. Start the game with the same number of players as the row.
+
+| World | Players | Super Nintendo | Genesis / Mega Drive | Amiga |
+|-------|---------|----------------|----------------------|-------|
+| 2 | 1 | `C1NN P4NN NNNN` | `#P0B KHZB BBBB` | `#P0B K4B7 GBBB` |
+| 3 | 1 | `R1NN PMNN NNNN` | `#K4B KHZB BBBB` | `#K4B K4B7 GBBB` |
+| 4 | 1 | `41NN P4NN NNNN` | `62RB KHZB BBBB` | `#YRB K877 GBBB` |
+| 2 | 2 | `B1NN PHNN NNNN` | `#N1B KHZB BBBB` | `#N1B K4B7 GBBB` |
+| 3 | 2 | `71NN P0NN NNNN` | `#J5B KHZB BBBB` | `#J5B K4B7 GBBB` |
+| 4 | 2 | `31NN PHNN NNNN` | `#XSB KHZB BBBB` | `#XSB K4B7 GBBB` |
+
+For any other party, use the [generator](https://maxxthunder.github.io/soldiersoffortune/).
 
 ## If a password won't work
 
@@ -54,7 +68,8 @@ version. [Prices →](docs/sof_password.md#shop-prices)
 | Character level | 0–10 per player |
 | Money | 0–65,534 per player, in steps of 2: an odd amount is saved as one less |
 
-## Research notes
+<details>
+<summary><b>Research notes</b></summary>
 
 *Soldiers of Fortune* is the US release of The Bitmap Brothers' *The Chaos Engine* (1993). The
 generator rests on the password code of all three versions, found in byte-exact disassemblies of the
@@ -70,7 +85,10 @@ SNES and Genesis games and checked against the games' own code.
 - **Leftover test passwords.** The SNES ROM holds nine unused developer passwords. Each has a valid
   checksum but starts in World 1, which the game refuses. [List →](docs/sof_password.md#leftover-test-passwords-cd2d8a)
 
-## Under the hood
+</details>
+
+<details>
+<summary><b>Under the hood</b></summary>
 
 The password tool also runs from the command line, with Python 3.8 or newer and no ROMs needed
 (with no arguments, it runs its self-test):
@@ -87,6 +105,8 @@ python tools/sof_password.py --amiga '#PMVFJGYFJY2'
 | [docs/disassembly.md](docs/disassembly.md) | Rebuilding the SNES and Genesis listings, the tools and checks, coverage, the controller code |
 | [docs/ram_map.md](docs/ram_map.md) | What the known RAM variables hold |
 | [CHANGELOG.md](CHANGELOG.md) | What changed in each version of the generator |
+
+</details>
 
 ## Credits
 
