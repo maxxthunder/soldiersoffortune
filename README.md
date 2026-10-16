@@ -86,6 +86,7 @@ python tools/sof_password.py --amiga '#PMVFJGYFJY2'
 | [docs/sof_password.md](docs/sof_password.md) | Password formats for SNES, Genesis and Amiga, European differences, shop prices, the test passwords |
 | [docs/disassembly.md](docs/disassembly.md) | Rebuilding the SNES and Genesis listings, the tools and checks, coverage, the controller code |
 | [docs/ram_map.md](docs/ram_map.md) | What the known RAM variables hold |
+| [CHANGELOG.md](CHANGELOG.md) | What changed in each version of the generator |
 
 ## Credits
 
