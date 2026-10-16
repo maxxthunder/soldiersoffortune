@@ -13,6 +13,7 @@ import os
 import sys
 
 import names
+import rnc
 
 EXTRA_ENTRIES = []  # (snes_addr, m, x)
 
@@ -341,6 +342,12 @@ def main(rom_path, outdir):
         assert o is not None and to_addr(o) == a and not inside(code, o), f"names.txt: ${a:06X} is not a label position"
         labels.add(o)
 
+    regions = {}  # file offset of each RNC block: (end offset, title)
+    for o in rnc.scan(rom):
+        method, un, pk = rnc.header(rom, o)[:3]
+        regions[o] = (o + rnc.HEADER + pk, f"RNC method {method} block: {pk} bytes packed, {un} unpacked (tools/rnc.py)")
+    ends = {end for end, _ in regions.values()}
+
     os.makedirs(outdir, exist_ok=True)
     size = 0x10000 if HIROM else 0x8000
     for bank in range(len(rom) // size):
@@ -349,6 +356,10 @@ def main(rom_path, outdir):
         lines = [f"; bank ${org >> 16:02X}  (file offset ${off:06X})", f"org ${org:06X}", ""]
         while off < end:
             addr = to_addr(off)
+            if off in ends:
+                lines += ["; ---- end of region ----", ""]
+            if off in regions:
+                lines += ["", f"; ---- {regions[off][1]} (${addr:06X}-${to_addr(regions[off][0] - 1):06X}) ----"]
             if off in labels:
                 lines.append(f"{code_names.get(addr, 'L_%06X' % addr)}:")
             if off in code:
@@ -361,7 +372,7 @@ def main(rom_path, outdir):
                 off += n
             else:
                 stop = off + 1
-                while stop < end and stop not in code and stop not in labels and stop - off < 16:
+                while stop < end and stop not in code and stop not in labels and stop not in regions                         and stop not in ends and stop - off < 16:
                     stop += 1
                 lines.append(f"    db {','.join('$%02X' % b for b in rom[off:stop]):<64}; ${addr:06X}")
                 off = stop
