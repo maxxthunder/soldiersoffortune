@@ -39,9 +39,16 @@ Checksum (computed with the checksum bits cleared): `(sum(v0..v11) - 66) & 0xF`.
 
 Money: before encoding, the game temporarily adds the resale value of each player's equipment to their cash ($CD329D; costs come from the table at $CD11A0 and the multipliers 250/300/15/250/80). After decoding, it subtracts the value of the equipment currently held, floored at 0. So a password keeps total worth, not the items themselves.
 
+## European release (The Chaos Engine)
+
+The same passwords work on the European SNES and Mega Drive cartridges.
+
+- **SNES** (`Chaos Engine, The (Europe).sfc`): bank $CD, which holds the menus, the password code, the shop and its prices, is byte-identical to the US ROM. The ROMs differ only in banks $C0, $C1–$C3, $D0–$D2 (game code and title/story screens).
+- **Mega Drive** (`Chaos Engine, The (Europe).md`, 2 MB): the same routines, $21C bytes later (build $7556, checksum $774A, decode $7764, encode $861E, tiles $86FA, typed keys $871E, character pairs $7516). Some RAM variables sit 2–4 bytes further on: characters $948/$94A, level $962, player 2 control $4160, money $AE8/$B10, stats $AFC/$B24, player objects $40BC/$4132. `tools/sof_genesis_romcheck.py` runs this ROM's own encoder and decoder in the emulator and agrees with `gen_encode`/`gen_decode` on 400 random parties and 2,000 random strings. Shop prices are the same (tables at $496A and $49AE, copy at $1F2FE).
+
 ## Shop prices
 
-Both versions charge the same. SNES: menu prices at $CD1180 (one word per menu entry), special items at $CD11A0 (one word per item id). Genesis: longs at $45FC+$14A and $45FC+$196, with a copy at $1EF24.
+Every version charges the same, including the Amiga (tables in the RNC block at disk 1 `$046E00`). SNES: menu prices at $CD1180 (one word per menu entry), special items at $CD11A0 (one word per item id). Genesis: longs at $45FC+$14A and $45FC+$196, with a copy at $1EF24.
 
 | Item | Price |
 |------|-------|
@@ -111,4 +118,25 @@ Checksum: `d = 0; for i, x in enumerate(p): d = rol8(d + x, (13 - i) & 7)`, then
 
 Scramble: swap p0 and p5. The first output character is the swapped-in p5. After that, each output character is the plain value XORed with s, the running sum (mod 32) of the output characters before it.
 
-Verified by running the ROM's own encoder ($834A) and decoder ($7548) in the unicorn 68000 emulator. On 400 random game states, the ROM produced the same passwords as `gen_encode`, decoded them back to the same fields, and rejected each one with −2 when the player setup didn't match. On 2,000 random strings, the ROM and `gen_decode` agreed on which passwords are valid. The PC/Amiga passwords found online use the same alphabet and decode to the right world, but they fail the Genesis checksum, so the PC format is a close relative rather than the same format.
+Verified by running the ROM's own encoder ($834A) and decoder ($7548) in the unicorn 68000 emulator. On 400 random game states, the ROM produced the same passwords as `gen_encode`, decoded them back to the same fields, and rejected each one with −2 when the player setup didn't match. On 2,000 random strings, the ROM and `gen_decode` agreed on which passwords are valid. Amiga passwords found online use the same alphabet and decode to the right world but fail the Genesis checksum; the Amiga section below explains why.
+
+## Amiga version
+
+The Amiga *Chaos Engine* (European release, 1993; two disks) uses the Genesis format with one change: the scramble swaps value 0 with value **7** instead of value 5. Everything else is shared with the Genesis: the alphabet (`#` in place of `@`), the screen tiles, the checksum routine, the 30 character pairs (the sixth character is the Preacher), the field layout and the running-sum XOR. So Amiga and Genesis passwords are not interchangeable. The same party, Brigand + Thug at world 2 with 3 lives each, no levels and 2,000 money each, is `#PMVFJGYFJY2` on the Amiga and `BZ2LYHFW#9F2` on the Genesis.
+
+| | Original (OCS, built 19/4/1993) | AGA (A1200, built 8/11/1993) |
+|---|---|---|
+| Main program | RNC block at disk 1 `$009E1C` (467,768 bytes unpacked) | RNC block at disk 1 `$000874` (552,720 bytes unpacked) |
+| Decode / encode | `$9F46` / `$B51A` | `$A3C0` / `$AFA8` |
+| Checksum | `$9F2C` (byte-identical to Genesis `$752E`) | `$A3A6` |
+| Password text, tiles, pairs | `$B4EC`, `$B621`, `$A164` | `$AF7A`, `$B0AF`, `$A5E6` |
+| World 1 passwords (level counter 0) | accepted | rejected, as on the consoles |
+
+Addresses are offsets into the unpacked program, which loads at address 0. Both versions reject a level counter with bit 1 set, and a password set up for the wrong player count.
+
+The disks are written in AmigaDOS track format but carry no filesystem: a loader in the boot block reads raw sectors, and the game data is RNC-packed (both methods; 12 blocks on original disk 1, 74 on disk 2). From track 7 on, the AGA disks switch to a custom track format (sync `$4891`), which hasn't been decoded; the AGA main program sits in the readable part.
+
+Verified by running each version's own encoder and decoder in the unicorn 68000 emulator, as for the Genesis: on 300 random parties the game produced the predicted passwords and decoded them back, and on 3,000 random strings it agreed with the model on every accept, reject and decoded field. The disk images were read from IPF files with a small IPF reader and unpacked with `tools/rnc.py`; that reader and the Amiga emulator checks aren't in the repo yet.
+
+`tools/sof_password.py` has `amiga_encode` and `amiga_decode` (pass `aga=True` to reject world 1, as the AGA version does), and `--amiga` decodes from the command line. The generator page has an Amiga option, with a World 1 choice for the original version. Both were checked against each Amiga version's own code in the emulator on 300 random parties and 2,000 random strings. Its self-test includes five passwords produced by the Amiga encoder.
+
