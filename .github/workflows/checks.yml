@@ -20,6 +20,11 @@ jobs:
         run: python tools/sof_password.py
       - name: Web generator matches sof_password.py
         run: python tools/check_generator.py
+      - name: Page footer and README badge match the CHANGELOG version
+        run: |
+          v=$(grep -m1 -oP '^## \K[0-9.]+' CHANGELOG.md)
+          grep -q ">v$v</a>" tools/sof_password_generator.html || { echo "Page footer isn't v$v"; exit 1; }
+          grep -qF "badge/version-$v-" README.md || { echo "README badge isn't $v"; exit 1; }
       - name: Every 68000 opcode round-trips
         run: python tools/check_68k.py
       - name: names.txt loads

@@ -8,7 +8,7 @@
 
 <p align="center"><img src="docs/images/characters.png" alt="The six mercenaries: Brigand, Mercenary, Gentleman, Navvie, Thug and Scientist (Preacher)" width="504"></p>
 
-**[Open the password generator →](https://maxxthunder.github.io/soldiersoffortune/)** &nbsp;[![v1.0.9](https://img.shields.io/badge/version-1.0.9-d4894a)](CHANGELOG.md)
+**[Open the password generator →](https://maxxthunder.github.io/soldiersoffortune/)** &nbsp;[![v1.0.10](https://img.shields.io/badge/version-1.0.10-d4894a)](CHANGELOG.md)
 
 - **Make a password** for any world, party, lives, character levels and money.
 - **Decode a password** you already have to see what it holds, and fix typos.
@@ -19,7 +19,7 @@ It works offline too: save [`tools/sof_password_generator.html`](tools/sof_passw
 <p align="center">
   <img src="docs/images/generator-1.0.8.png" alt="The generator: console picker, password, and the two players' characters, lives and levels" width="560">
   &nbsp;
-  <img src="docs/images/big_text-1.0.8.png" alt="Big text view on a phone, with the first group of four crossed off" width="248">
+  <img src="docs/images/big_text-1.0.10.png" alt="Big text view on a phone" width="248">
 </p>
 <p align="center"><sub>Left: the generator. Right: <b>Big text</b>, for reading the password off your phone while you type it in.</sub></p>
 
