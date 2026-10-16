@@ -1,6 +1,6 @@
-"""Soldiers of Fortune (USA) password decoder/encoder, SNES and Genesis.
+"""Soldiers of Fortune (USA) password decoder/encoder for the SNES, Genesis and Amiga versions.
 
-Usage: python tools/sof_password.py [--genesis] [PASSWORD ...]   (no args: run self-test)
+Usage: python tools/sof_password.py [--genesis | --amiga] [PASSWORD ...]   (no args: run self-test)
 SNES mirrors bank $CD: encode $CD3199, decode $CD3039, checksum $CD3398, XOR $CD323E,
 text<->values $CD314E/$CD3177. Genesis mirrors 68000 code: build $733A, scramble $834E,
 decode $7548, checksum $752E. See docs/sof_password.md.
@@ -20,7 +20,7 @@ def checksum(v):
 
 def decode(pw):
     """Password -> dict, or ValueError where the game would show INVALID PASSWORD."""
-    pw = pw.upper().replace(" ", "")
+    pw = pw.upper().replace(" ", "").replace("-", "").replace("I", "1").replace("O", "0")  # as typed: I/O for 1/0
     if len(pw) != 12 or any(c not in ALPHABET for c in pw):
         raise ValueError("need 12 characters from " + ALPHABET)
     v = [ALPHABET.index(c) ^ 0x15 for c in pw]
@@ -81,8 +81,9 @@ def gen_checksum(p):
     return d & 0x55
 
 
-def gen_encode(f):
-    """Same fields as encode(); layout and scramble of the Genesis version."""
+def gen_encode(f, swap=5):
+    """Same fields as encode(); layout and scramble of the Genesis version. The Amiga version is the
+    same with swap=7 (see amiga_encode)."""
     n = f["p1_stat"] * 11 + f["p2_stat"]
     m1, m2 = f["p1_money"] >> 1, f["p2_money"] >> 1
     p = [PAIRS.index((f["p1_char"], f["p2_char"])), f["level"] & 0x1E | f["two_players"] & 1,
@@ -92,7 +93,7 @@ def gen_encode(f):
     p[1] |= (c & 1) << 4
     p[5] |= (c >> 2 & 1) << 2 | (c >> 4 & 1) << 3 | (c >> 6 & 1) << 4
     q = p[:]
-    q[0], q[5] = p[5], p[0]
+    q[0], q[swap] = p[swap], p[0]
     s, v = q[0], [q[0]]
     for x in q[1:]:  # each value is XORed with a running sum of the previous output
         v.append(x ^ s)
@@ -100,8 +101,9 @@ def gen_encode(f):
     return "".join(GEN_ALPHABET[x] for x in v)
 
 
-def gen_decode(pw):
-    pw = pw.upper().replace(" ", "")
+def gen_decode(pw, swap=5, world1=False):
+    """Genesis password -> dict. swap=7, world1=True decodes an original Amiga password (amiga_decode)."""
+    pw = pw.upper().replace(" ", "").replace("-", "").replace("I", "1").replace("O", "0")  # as typed: I/O for 1/0
     if len(pw) != 12 or any(c not in GEN_ALPHABET for c in pw):
         raise ValueError("need 12 characters from " + GEN_ALPHABET)
     v = [GEN_ALPHABET.index(c) for c in pw]
@@ -111,7 +113,7 @@ def gen_decode(pw):
     for x in v[1:]:
         p.append(x ^ s)
         s = (s + x) & 0x1F
-    p[0], p[5] = p[5], p[0]
+    p[0], p[swap] = p[swap], p[0]
     stored = (p[1] >> 4 & 1) | (p[5] >> 2 & 1) << 2 | (p[5] >> 3 & 1) << 4 | (p[5] >> 4 & 1) << 6
     p[1] &= ~0x10
     p[5] &= 3
@@ -119,8 +121,8 @@ def gen_decode(pw):
         raise ValueError("bad checksum")
     if p[0] >= len(PAIRS):
         raise ValueError("character pair past the table")
-    if p[1] & 2 or not p[1] & ~1:
-        raise ValueError("level must be 4, 8 or 12")
+    if p[1] & 2 or not (world1 or p[1] & ~1):
+        raise ValueError("level must be 0, 4, 8 or 12" if world1 else "level must be 4, 8 or 12")
     n = p[4] | p[5] << 5
     if n // 11 >= 11:
         raise ValueError("stat out of range")
@@ -136,6 +138,17 @@ def gen_decode(pw):
         "p1_money": (p[8] << 10 | p[7] << 5 | p[6]) << 1,   # $0AE4, cash + equipment value
         "p2_money": (p[9] << 10 | p[10] << 5 | p[11]) << 1,  # $0B0C
     }
+
+
+def amiga_encode(f):
+    """The Amiga version (original and AGA): the Genesis format, but the scramble swaps value 0 with
+    value 7 instead of 5. Level 0 (world 1) encodes too; only the original Amiga version accepts it."""
+    return gen_encode(f, swap=7)
+
+
+def amiga_decode(pw, aga=False):
+    """Amiga password -> dict. The original version accepts world 1 (level 0); the AGA version doesn't."""
+    return gen_decode(pw, swap=7, world1=not aga)
 
 
 def show(d, chars=CHARS):
@@ -158,19 +171,24 @@ def self_test():
                     ("p1_money", range(0, 65536, 2)), ("p2_money", range(0, 65536, 2))]:
         for x in vals:
             f = dict(base, **{k: x})
-            assert decode(encode(f)) == f, (k, x)
+            assert decode(encode(f)) == f and gen_decode(gen_encode(f)) == f, (k, x)
     for a, b in PAIRS:
         f = dict(base, p1_char=a, p2_char=b)
-        assert decode(encode(f)) == f
-        assert gen_decode(gen_encode(f)) == f
-    for k, vals in [("two_players", [0, 1]), ("level", [4, 8, 12]), ("p1_lives", range(32)),
-                    ("p2_lives", range(32)), ("p1_stat", range(11)), ("p2_stat", range(11)),
-                    ("p1_money", range(0, 65536, 2)), ("p2_money", range(0, 65536, 2))]:
-        for x in vals:
-            f = dict(base, **{k: x})
-            assert gen_decode(gen_encode(f)) == f, ("genesis", k, x)
+        assert decode(encode(f)) == f and gen_decode(gen_encode(f)) == f
     for pw in GEN_KNOWN:
         assert gen_encode(gen_decode(pw)) == pw, pw
+    for pw, (note, f) in AMIGA_KNOWN.items():
+        assert amiga_encode(f) == pw and amiga_decode(pw) == f, pw
+        if f["level"]:
+            assert amiga_decode(pw, aga=True) == f
+            try:
+                assert gen_decode(pw) != f  # not the same party as a Genesis password
+            except ValueError:
+                pass
+    for k, vals in [("level", [0, 4, 8, 12]), ("p1_lives", range(32)), ("p1_stat", range(11)), ("p2_money", range(0, 65536, 2))]:
+        for x in vals:
+            f = dict(base, **{k: x})
+            assert amiga_decode(amiga_encode(f)) == f, ("amiga", k, x)
     pw = encode(base)
     bad = pw[:3] + ALPHABET[(ALPHABET.index(pw[3]) + 1) % 32] + pw[4:]
     try:
@@ -181,6 +199,18 @@ def self_test():
     print("ok")
 
 
+# Produced by the Amiga game's own encoder (original $B51A, AGA $AFA8) run in an emulator; see docs/sof_password.md.
+# The AGA version produces the same passwords except for world 1, which it rejects.
+_party = lambda two, level, a, b, l1, l2, s1, s2, m1, m2: dict(two_players=two, level=level, p1_char=a, p2_char=b, p1_lives=l1,
+                                                               p2_lives=l2, p1_stat=s1, p2_stat=s2, p1_money=m1, p2_money=m2)
+AMIGA_KNOWN = {
+    "#PMVFJGYFJY2": ("world 2, Brigand + Thug", _party(0, 4, 0, 4, 3, 3, 0, 0, 2000, 2000)),
+    "6F2WFF7DT5SC": ("world 3, Gentleman + Brigand", _party(0, 8, 2, 0, 9, 4, 6, 3, 12000, 8000)),
+    "KX7VM5XPHN#G": ("world 2, 2 players, Navvie + Gentleman", _party(1, 4, 3, 2, 5, 5, 1, 1, 500, 750)),
+    "#YRBKC3D9BBB": ("world 4, Preacher + Thug, everything maxed", _party(0, 12, 5, 4, 31, 31, 10, 10, 65534, 65534)),
+    "#TR3YS72KSF2": ("world 1 (original Amiga only), Mercenary + Navvie", _party(0, 0, 1, 3, 3, 3, 0, 0, 2000, 2000)),
+}
+
 # Produced by the Genesis ROM's own encoder ($834A) run in an emulator; see docs/sof_password.md
 GEN_KNOWN = {"JS2TF2MW4G8W": "world 3, Gentleman + Brigand", "NS8SB98X#NBC": "world 2, Preacher + Thug",
              "T5S4LM2J8DWD": "world 2, 2 players, Navvie + Gentleman", "X522Q03Y61Y5": "world 3, Navvie + Preacher"}
@@ -188,11 +218,11 @@ GEN_KNOWN = {"JS2TF2MW4G8W": "world 3, Gentleman + Brigand", "NS8SB98X#NBC": "wo
 
 if __name__ == "__main__":
     args = sys.argv[1:]
-    gen = "--genesis" in args
-    args = [a for a in args if a != "--genesis"]
+    gen, amiga = "--genesis" in args, "--amiga" in args
+    args = [a for a in args if a not in ("--genesis", "--amiga")]
     if not args:
         self_test()
         for pw, note in KNOWN.items():
             print(pw, note, show(decode(pw)))
     for p in args:
-        print(p, show(gen_decode(p), GEN_CHARS) if gen else show(decode(p)))
+        print(p, show(amiga_decode(p), GEN_CHARS) if amiga else show(gen_decode(p), GEN_CHARS) if gen else show(decode(p)))

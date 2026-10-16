@@ -1,3 +1,13 @@
 *.sfc
-Soldiers of Fortune (USA).md
+*.smc
+# ROMs: never commit them (README.md is the only .md in the root)
+/*.md
+!/README.md
 __pycache__/
+unpacked/
+*.adf
+*.ipf
+*.dms
+*.lha
+*.hdf
+assets/
