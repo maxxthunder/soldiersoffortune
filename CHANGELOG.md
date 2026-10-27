@@ -2,6 +2,15 @@
 
 Changes to the [password generator](https://maxxthunder.github.io/soldiersoffortune/). The version is shown at the bottom of the page.
 
+## 1.1.0 (2026-10-27)
+- A password decodes as soon as all 12 characters are typed or pasted; no need to press Decode.
+- Loading a password can be undone, like Max everything and Fresh party.
+- Keyboard shortcuts on a computer: paste a password anywhere on the page to decode it, C copies, B opens Big text, Z undoes.
+- On iPhone, sliders follow your finger anywhere along them instead of scrolling the page.
+- On phones, a slider no longer jumps under your finger when the line above it changes after loading a password.
+- Big text on a phone held sideways opens at its top and scrolls, so nothing is cut off.
+- The decode box turns off autocorrect and types in capitals on phones.
+
 ## 1.0.10 (2026-10-16)
 - The page has a tab icon.
 - Super Nintendo replaces SNES in Big text, decode messages and the page text.
