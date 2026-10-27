@@ -8,7 +8,7 @@
 
 <p align="center"><img src="docs/images/characters.png" alt="The six mercenaries: Brigand, Mercenary, Gentleman, Navvie, Thug and Scientist (Preacher)" width="504"></p>
 
-**[Open the password generator →](https://maxxthunder.github.io/soldiersoffortune/)** &nbsp;[![v1.0.10](https://img.shields.io/badge/version-1.0.10-d4894a)](CHANGELOG.md)
+**[Open the password generator →](https://maxxthunder.github.io/soldiersoffortune/)** &nbsp;[![v1.1.0](https://img.shields.io/badge/version-1.1.0-d4894a)](CHANGELOG.md)
 
 - **Make a password** for any world, party, lives, character levels and money.
 - **Decode a password** you already have to see what it holds, and fix typos.
