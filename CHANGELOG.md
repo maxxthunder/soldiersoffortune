@@ -2,6 +2,11 @@
 
 Changes to the [password generator](https://maxxthunder.github.io/soldiersoffortune/). The version is shown at the bottom of the page.
 
+## 1.2.0 (2026-11-05)
+- Light mode. It follows the device setting until you tap the sun / moon button in the top-right corner, which flips it and remembers your choice. The password plate and Big text stay dark.
+- The password plate's top edge takes the console's colour: purple for Super Nintendo, blue for Genesis, red for Amiga.
+- A decoded password gets a ✓ line under the decode box saying which console it's for and what it holds; a rejected one gets ✗ and the reason.
+
 ## 1.1.0 (2026-10-27)
 - A password decodes as soon as all 12 characters are typed or pasted; no need to press Decode.
 - Loading a password can be undone, like Max everything and Fresh party.
