@@ -2,6 +2,11 @@
 
 Changes to the [password generator](https://maxxthunder.github.io/soldiersoffortune/). The version is shown at the bottom of the page.
 
+## 1.2.1 (2026-11-07)
+- On phones, an up-or-down swipe that starts on a slider scrolls the page again; a tap or a sideways drag still sets it.
+- The light / dark button flips back to following the device when you tap it to match the device's own setting.
+- The light / dark button has its icon and label before the page's script runs, so screen readers can name it straight away.
+
 ## 1.2.0 (2026-11-05)
 - Light mode. It follows the device setting until you tap the sun / moon button in the top-right corner, which flips it and remembers your choice. The password plate and Big text stay dark.
 - The password plate's top edge takes the console's colour: purple for Super Nintendo, blue for Genesis, red for Amiga.
