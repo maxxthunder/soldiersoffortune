@@ -38,14 +38,17 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Copy the generator page to gh-pages
+      - name: Copy the generator page and its offline files to gh-pages
         run: |
-          cp tools/sof_password_generator.html "$RUNNER_TEMP/index.html"
+          mkdir "$RUNNER_TEMP/site"
+          cp tools/sof_password_generator.html "$RUNNER_TEMP/site/index.html"
+          cp tools/sw.js tools/manifest.webmanifest tools/icon-192.png tools/icon-512.png "$RUNNER_TEMP/site/"
           git fetch --depth=1 origin gh-pages
           git checkout gh-pages
-          cp "$RUNNER_TEMP/index.html" index.html
-          if git diff --quiet; then echo "gh-pages is already up to date"; exit 0; fi
+          cp "$RUNNER_TEMP"/site/* .
+          git add index.html sw.js manifest.webmanifest icon-192.png icon-512.png
+          if git diff --cached --quiet; then echo "gh-pages is already up to date"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -am "Update generator page from main (${GITHUB_SHA::7})"
+          git commit -m "Update generator page from main (${GITHUB_SHA::7})"
           git push origin gh-pages
