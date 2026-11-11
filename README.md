@@ -8,7 +8,7 @@
 
 <p align="center"><img src="docs/images/characters.png" alt="The six mercenaries: Brigand, Mercenary, Gentleman, Navvie, Thug and Scientist (Preacher)" width="504"></p>
 
-**[Open the password generator →](https://maxxthunder.github.io/soldiersoffortune/)** &nbsp;[![v1.3.0](https://img.shields.io/badge/version-1.3.0-d4894a)](CHANGELOG.md)
+**[Open the password generator →](https://maxxthunder.github.io/soldiersoffortune/)** &nbsp;[![v1.3.1](https://img.shields.io/badge/version-1.3.1-d4894a)](CHANGELOG.md)
 
 - **Make a password** for any world, party, lives, character levels and money.
 - **Decode a password** you already have to see what it holds, and fix typos.
@@ -104,6 +104,7 @@ python tools/sof_password.py --amiga '#PMVFJGYFJY2'
 | [docs/sof_password.md](docs/sof_password.md) | Password formats for SNES, Genesis and Amiga, European differences, shop prices, the test passwords |
 | [docs/disassembly.md](docs/disassembly.md) | Rebuilding the SNES and Genesis listings, the tools and checks, coverage, the controller code |
 | [docs/ram_map.md](docs/ram_map.md) | What the known RAM variables hold |
+| [docs/game_genie.md](docs/game_genie.md) | The official SNES Game Genie codes decoded to the ROM bytes they change |
 | [CHANGELOG.md](CHANGELOG.md) | What changed in each version of the generator |
 
 </details>
