@@ -2,6 +2,9 @@
 
 Changes to the [password generator](https://maxxthunder.github.io/soldiersoffortune/). The version is shown at the bottom of the page.
 
+## 1.4.0 (2026-11-12)
+- Game Genie codes for the Super Nintendo. A folded section under the players has tick boxes for infinite lives, stronger food, special powers, cheaper shop prices, and each party member's starting power and health. It lists the codes to enter, up to the Game Genie's limit of 5.
+
 ## 1.3.1 (2026-11-10)
 - New page [docs/game_genie.md](docs/game_genie.md): the 115 official SNES Game Genie codes decoded to the ROM bytes they change, including the two the official list mislabels.
 
